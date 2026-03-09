@@ -1,0 +1,31 @@
+name: ink-ci
+
+on:
+  pull_request:
+    paths:
+      - "code/**"
+      - "executable/**"
+      - ".github/workflows/ink-ci.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "code/**"
+      - "executable/**"
+      - ".github/workflows/ink-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ./code
+      - name: pytest
+        run: python -m pytest code/tests -q
+      - name: package build
+        run: python -m pip wheel ./code --no-deps -w dist

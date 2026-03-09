@@ -1,0 +1,27 @@
+....                                                                     [100%]
+4 passed in 0.05s
+[GATE_B] lossless_roundtrip_pass=True
+[GATE_C] compression_pass=True
+[GATE_C] fidelity_pass=True
+[GATE_C] pressure_pass=True
+[GATE_C] latency_pass=True
+[GATE_D] uncaught_crash_rate=0.0
+[GATE_D] determinism_unique_hashes=1
+
+[GATE_M] m1_pass=False
+[GATE_M] m2_pass=True
+[GATE_M] m3_pass=True
+[GATE_M] m4_pass=True
+
+[GATE_F] fg1_pass=True
+[GATE_F] fg2_pass=True
+[GATE_F] fg3_pass=True
+
+[GATE_M] m1_pass=False
+[GATE_M] m2_pass=True
+[GATE_M] m3_pass=True
+[GATE_M] m4_pass=True
+
+[GATE_F] fg1_pass=True
+[GATE_F] fg2_pass=True
+[GATE_F] fg3_pass=True

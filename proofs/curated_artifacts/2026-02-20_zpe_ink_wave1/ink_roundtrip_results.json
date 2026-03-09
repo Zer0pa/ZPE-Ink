@@ -1,0 +1,8 @@
+{
+  "canonical_hash": "9533f8bc03681d8c73cb449cfa39a2dd985dedf071c612e00c56e304db5d8bef",
+  "claim_id": "INK-C001",
+  "pass": true,
+  "point_count_total": 9834,
+  "sample_file": "artifacts/2026-02-20_zpe_ink_wave1/samples/synthetic_lossless.zpink",
+  "stroke_count": 48
+}

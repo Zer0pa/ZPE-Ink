@@ -1,0 +1,8 @@
+{
+  "claim_id": "INK-C005",
+  "median_ms_per_stroke": 0.8174798203125,
+  "min_ms_per_stroke": 0.73501040625,
+  "p95_ms_per_stroke": 0.9368733625000001,
+  "pass": true,
+  "threshold_ms_per_stroke": 2.0
+}

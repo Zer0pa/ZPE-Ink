@@ -1,0 +1,37 @@
+{
+  "adapter_statuses": {
+    "csharp_managed": {
+      "evidence": "maximalization_gate_results.json",
+      "status": "READY"
+    },
+    "pyo3_native": {
+      "evidence": "ink_cross_runtime_parity.json",
+      "status": "READY"
+    },
+    "python": {
+      "evidence": "ink_roundtrip_results.json",
+      "status": "READY"
+    },
+    "swift_native": {
+      "evidence": "ink_cross_runtime_parity.json",
+      "status": "READY"
+    },
+    "wasm": {
+      "evidence": "ink_cross_runtime_parity.json",
+      "status": "READY"
+    }
+  },
+  "parity_keys": [
+    "artifacts",
+    "claim_id",
+    "node_decode_returncode",
+    "pass",
+    "pyo3_build_returncode",
+    "pyo3_import_returncode",
+    "python_hash",
+    "swift_decode_returncode",
+    "swift_hash",
+    "wasm_build_returncode",
+    "wasm_hash"
+  ]
+}

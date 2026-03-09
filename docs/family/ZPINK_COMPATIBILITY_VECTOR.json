@@ -1,0 +1,30 @@
+{
+  "contract_version": "zpink-v1",
+  "package_version": "0.1.0",
+  "repo_model": "private-staging",
+  "default_branch": "main",
+  "header": {
+    "magic": "ZPINK",
+    "version": 1,
+    "header_bytes": 22,
+    "endianness": "little"
+  },
+  "modes": {
+    "0": "lossless",
+    "1": "high",
+    "2": "medium",
+    "3": "sketch"
+  },
+  "flags": {
+    "pressure": 1,
+    "tilt": 2,
+    "azimuth": 4
+  },
+  "breaking_change_policy": {
+    "required_for_breaking_change": [
+      "contract_version_increment",
+      "format-doc-update",
+      "rerun-of-proof-surface"
+    ]
+  }
+}

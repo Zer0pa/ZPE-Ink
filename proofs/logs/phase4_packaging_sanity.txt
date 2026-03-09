@@ -1,0 +1,13 @@
+Processing ./ZPE-Ink/code
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: zpe-ink
+  Building wheel for zpe-ink (pyproject.toml): started
+  Building wheel for zpe-ink (pyproject.toml): finished with status 'done'
+  Created wheel for zpe-ink: filename=zpe_ink-0.1.0-py3-none-any.whl size=9071 sha256=e80ca04f2b7dcddf21a104ca9a3ab4f1cfee04754a01df03f57851f74950a37e
+  Stored in directory: /private/var/folders/49/b6bj2qfd5nl4vndxv7rb9dh00000gn/T/pip-ephem-wheel-cache-rxy82_c2/wheels/09/71/73/8d3885de14b7b97966e441c4b922966b0086bda5430ab67aec
+Successfully built zpe-ink

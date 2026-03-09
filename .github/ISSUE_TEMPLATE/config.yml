@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support
+    url: https://github.com/Zer0pa/ZPE-Ink/blob/main/docs/SUPPORT.md
+    about: Routing for support and evidence questions.
+  - name: Security reporting
+    url: https://github.com/Zer0pa/ZPE-Ink/blob/main/SECURITY.md
+    about: Private vulnerability reporting policy.
