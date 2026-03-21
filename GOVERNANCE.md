@@ -1,13 +1,17 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Governance
 
-This repo is governed by evidence discipline.
+Evidence discipline and claim boundaries for the ZPE-Ink private staging surface.
 
 ## Rules
 
 - runtime and artifact truth outrank prose
 - mixed evidence is not a pass
-- unresolved contradictions must stay explicit
-- package or contract changes that break `.zpink` compatibility require a compatibility-vector update
+- unresolved contradictions stay explicit
+- compatibility changes require a compatibility-vector update
 
 ## Status Terms
 
@@ -18,7 +22,7 @@ This repo is governed by evidence discipline.
 
 ## Current Governance Reality
 
-- package boundary: normalized
-- private staging: allowed
-- public release: not allowed
+- claim boundary: `proofs/reruns/benchmark_freeze_local/claim_scope_map.json`
+- sovereign release surface: `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`
 - current repo truth: `INCONCLUSIVE`
+- public release: not allowed

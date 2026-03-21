@@ -6,7 +6,9 @@ PYTHON_BIN="${PYTHON_BIN:-python3}"
 mkdir -p "$ART_ROOT"
 export PYTHONPATH="${PYTHONPATH:-}:code"
 
-source code/scripts/load_env.sh > /dev/null
+if [[ -f .env ]]; then
+  source code/scripts/load_env.sh > /dev/null
+fi
 
 "$PYTHON_BIN" code/scripts/gate_a_setup.py --artifact-root "$ART_ROOT"
 "$PYTHON_BIN" -m pytest code/tests/test_codec_roundtrip.py > "$ART_ROOT/regression_results.txt"

@@ -1,0 +1,10 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling pyo3-build-config v0.22.6
+   Compiling pyo3-ffi v0.22.6
+   Compiling pyo3-macros-backend v0.22.6
+   Compiling pyo3 v0.22.6
+   Compiling pyo3-macros v0.22.6
+    Checking zpe_ink_native v0.1.0 (/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/python_native)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.30s

@@ -28,20 +28,29 @@ def append_command_log(log_path: Path, label: str, command: str, rc: int, stdout
 
 
 def run_command(command: list[str], log_path: Path, label: str) -> dict[str, Any]:
-    proc = subprocess.run(command, capture_output=True, text=True)
+    try:
+        proc = subprocess.run(command, capture_output=True, text=True)
+        rc = proc.returncode
+        stdout = proc.stdout
+        stderr = proc.stderr
+    except FileNotFoundError as exc:
+        rc = 127
+        stdout = ""
+        stderr = str(exc)
+
     append_command_log(
         log_path,
         label=label,
         command=" ".join(command),
-        rc=proc.returncode,
-        stdout=proc.stdout,
-        stderr=proc.stderr,
+        rc=rc,
+        stdout=stdout,
+        stderr=stderr,
     )
     return {
         "command": command,
-        "returncode": proc.returncode,
-        "stdout": proc.stdout,
-        "stderr": proc.stderr,
+        "returncode": rc,
+        "stdout": stdout,
+        "stderr": stderr,
     }
 
 

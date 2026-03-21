@@ -9,8 +9,22 @@ description = "ZPE Ink Wave-1 codec and falsification harness"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Zer0pa Labs"}]
-license = {text = "LicenseRef-Zer0pa-SAL-6.0"}
+license = "LicenseRef-Zer0pa-SAL-6.0"
 dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2.2",
+    "pytest>=8.0",
+]
+telemetry = [
+    "comet-ml>=3.49",
+]
+
+[project.scripts]
+zpe-ink = "zpe_ink.cli:entrypoint"
+zpe-ink-demo = "zpe_ink.cli:demo_entry"
+zpe-ink-verify-roundtrip = "zpe_ink.cli:verify_roundtrip_entry"
 
 [tool.setuptools]
 include-package-data = false

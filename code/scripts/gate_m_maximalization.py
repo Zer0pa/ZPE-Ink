@@ -68,7 +68,7 @@ public static class Runner {
             "mcs",
             "-out:" + str(runner_bin),
             str(runner_src),
-            str(Path("bindings/csharp/ZpeInk.cs")),
+            str(ROOT / "bindings" / "csharp" / "ZpeInk.cs"),
         ],
         log_path,
         "max_csharp_compile",

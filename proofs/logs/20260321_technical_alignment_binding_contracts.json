@@ -1,0 +1,145 @@
+{
+  "checks": [
+    {
+      "expected": "ZPINK",
+      "id": "python_magic",
+      "observed": "ZPINK",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/zpe_ink/codec.py",
+      "status": "PASS"
+    },
+    {
+      "expected": 1,
+      "id": "python_version",
+      "observed": 1,
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/zpe_ink/codec.py",
+      "status": "PASS"
+    },
+    {
+      "expected": 22,
+      "id": "python_header_bytes",
+      "observed": 22,
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/zpe_ink/codec.py",
+      "status": "PASS"
+    },
+    {
+      "expected": {
+        "azimuth": 4,
+        "pressure": 1,
+        "tilt": 2
+      },
+      "id": "python_flags",
+      "observed": {
+        "azimuth": 4,
+        "pressure": 1,
+        "tilt": 2
+      },
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/zpe_ink/codec.py",
+      "status": "PASS"
+    },
+    {
+      "expected": "0.1.0",
+      "id": "package_version",
+      "observed": "0.1.0",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/pyproject.toml",
+      "status": "PASS"
+    },
+    {
+      "expected": "abi3-py311",
+      "id": "python_native_abi3_baseline",
+      "observed": [
+        "abi3-py311",
+        "extension-module"
+      ],
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/python_native/Cargo.toml",
+      "status": "PASS"
+    },
+    {
+      "expected": "extension-module",
+      "id": "python_native_extension_module",
+      "observed": [
+        "abi3-py311",
+        "extension-module"
+      ],
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/python_native/Cargo.toml",
+      "status": "PASS"
+    },
+    {
+      "id": "python_native_magic",
+      "needle": "b\"ZPINK\"",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/python_native/src/lib.rs",
+      "status": "PASS"
+    },
+    {
+      "id": "python_native_version",
+      "needle": "\"0.1.0\"",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/python_native/src/lib.rs",
+      "status": "PASS"
+    },
+    {
+      "id": "python_native_header_bytes",
+      "needle": "input.len() < 22",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/python_native/src/lib.rs",
+      "status": "PASS"
+    },
+    {
+      "id": "wasm_magic",
+      "needle": "b\"ZPINK\"",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/wasm/src/lib.rs",
+      "status": "PASS"
+    },
+    {
+      "id": "wasm_version",
+      "needle": "const VERSION: u8 = 1;",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/wasm/src/lib.rs",
+      "status": "PASS"
+    },
+    {
+      "id": "wasm_header_bytes",
+      "needle": "input.len() < 22",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/wasm/src/lib.rs",
+      "status": "PASS"
+    },
+    {
+      "id": "swift_magic",
+      "needle": "\"ZPINK\"",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/swift/ZPEInk.swift",
+      "status": "PASS"
+    },
+    {
+      "id": "swift_version",
+      "needle": "\"0.1.0\"",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/swift/ZPEInk.swift",
+      "status": "PASS"
+    },
+    {
+      "id": "swift_header_bytes",
+      "needle": "bytes.count >= 22",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/swift/ZPEInk.swift",
+      "status": "PASS"
+    },
+    {
+      "id": "csharp_magic",
+      "needle": "'Z'",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/csharp/ZpeInk.cs",
+      "status": "PASS"
+    },
+    {
+      "id": "csharp_version",
+      "needle": "\"0.1.0\"",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/csharp/ZpeInk.cs",
+      "status": "PASS"
+    },
+    {
+      "id": "csharp_header_bytes",
+      "needle": "bytes.Length < 22",
+      "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/bindings/csharp/ZpeInk.cs",
+      "status": "PASS"
+    }
+  ],
+  "contract_version": "zpink-v1",
+  "failure_count": 0,
+  "package_version": "0.1.0",
+  "repo_root": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink",
+  "status": "PASS",
+  "vector_path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/docs/family/ZPINK_COMPATIBILITY_VECTOR.json"
+}

@@ -1,0 +1,21 @@
+Requirement already satisfied: pip in /private/var/folders/49/b6bj2qfd5nl4vndxv7rb9dh00000gn/T/tmp.l8iS2MysE6/venv/lib/python3.14/site-packages (25.3)
+Collecting pip
+  Using cached pip-26.0.1-py3-none-any.whl.metadata (4.7 kB)
+Using cached pip-26.0.1-py3-none-any.whl (1.8 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 25.3
+    Uninstalling pip-25.3:
+      Successfully uninstalled pip-25.3
+Successfully installed pip-26.0.1
+Processing ./dist/zpe_ink-0.1.0-py3-none-any.whl
+Installing collected packages: zpe-ink
+Successfully installed zpe-ink-0.1.0
+0.1.0
+roundtrip_ok
+{
+  "encoded_bytes": 778,
+  "mode": "lossless",
+  "seed": 20260220,
+  "stroke_count": 3
+}

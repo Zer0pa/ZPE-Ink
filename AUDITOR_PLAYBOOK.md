@@ -1,16 +1,14 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Auditor Playbook
 
-This is the shortest honest local verification path for the private staging snapshot.
+Shortest honest local verification path for the private staging snapshot.
 
-## What You Can Establish
-
-- the repo has a clean inner boundary
-- the `zpe_ink` package installs from `code/`
-- the current pytest surface passes locally
-- the curated Wave-1 proof anchors are present
-- the current contradiction is explicit, not hidden
-
-## Short Path
+<p>
+  <img src=".github/assets/readme/section-bars/setup-and-verification.svg" alt="SETUP AND VERIFICATION" width="100%">
+</p>
 
 ```bash
 python -m venv .venv
@@ -18,18 +16,30 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ./code
 python -m pytest code/tests -q
-python executable/demo.py
-python executable/verify_roundtrip.py
+python -m zpe_ink demo
+python -m zpe_ink verify-roundtrip
+python code/scripts/verify_binding_contracts.py --repo-root .
 python executable/verify_cross_runtime.py
-python -m pip wheel ./code --no-deps -w dist
+python -m build --wheel --sdist ./code --outdir dist
 ```
 
-## Inspect These Files Together
+Notes:
+
+- `verify_cross_runtime.py` summarizes curated parity artifacts and binding-contract checks; it does not rebuild all native runtimes.
+- The installable release unit is the Python package under `code/`.
+
+<p>
+  <img src=".github/assets/readme/section-bars/proof-corpus.svg" alt="PROOF CORPUS" width="100%">
+</p>
+
+Inspect these files together:
 
 - `proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md`
+- `proofs/reruns/benchmark_freeze_local/claim_scope_map.json`
+- `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`
 - `proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/quality_gate_scorecard.json`
 - `proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/handoff_manifest.json`
-- `proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/claim_status_delta.md`
 - `proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/ink_cross_runtime_parity.json`
+- `proofs/reruns/phase3_external/external_boundary_manifest.json`
 
-If those surfaces disagree, the repo state is still `INCONCLUSIVE`.
+If those surfaces disagree, the repo state remains `INCONCLUSIVE`.

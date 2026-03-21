@@ -1,0 +1,8 @@
+prune .pytest_cache
+prune build
+prune zpe_ink.egg-info
+prune bindings/wasm/pkg
+prune bindings/wasm/target
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude .DS_Store

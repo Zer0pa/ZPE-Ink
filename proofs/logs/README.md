@@ -1,5 +1,8 @@
 # Logs
 
-This directory is for low-cost repo-local sanity logs and future rerun summaries.
+This directory holds repo-local verification logs and technical alignment outputs.
 
-Phase 3 and Phase 4 only add lightweight packaging and import sanity artifacts here.
+Current contents include:
+
+- technical alignment build, test, binding, and wheel install logs (2026-03-21)
+- phase4 local smoke logs

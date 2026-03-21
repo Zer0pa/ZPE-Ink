@@ -57,7 +57,7 @@ def main() -> int:
         [
             "wasm-pack",
             "build",
-            "bindings/wasm",
+            str(ROOT / "bindings" / "wasm"),
             "--target",
             "nodejs",
             "--release",
@@ -69,18 +69,25 @@ def main() -> int:
     )
 
     node_rc, node_out, node_err = _run_capture(
-        ["node", "scripts/wasm_decode_runner.mjs", str(parity_file)],
+        ["node", str(ROOT / "scripts" / "wasm_decode_runner.mjs"), str(parity_file)],
     )
-    append_command_log(log_path, "gate_e_node_decode", "node scripts/wasm_decode_runner.mjs", node_rc, node_out, node_err)
+    append_command_log(
+        log_path,
+        "gate_e_node_decode",
+        f"node {ROOT / 'scripts' / 'wasm_decode_runner.mjs'}",
+        node_rc,
+        node_out,
+        node_err,
+    )
 
     swift_bin = parity_dir / "swift_decode_bin"
     swift_build_rc, swift_build_out, swift_build_err = _run_capture(
-        ["swiftc", "scripts/swift_decode.swift", "-o", str(swift_bin)]
+        ["swiftc", str(ROOT / "scripts" / "swift_decode.swift"), "-o", str(swift_bin)]
     )
     append_command_log(
         log_path,
         "gate_e_swift_build",
-        "swiftc scripts/swift_decode.swift -o <bin>",
+        f"swiftc {ROOT / 'scripts' / 'swift_decode.swift'} -o <bin>",
         swift_build_rc,
         swift_build_out,
         swift_build_err,
@@ -121,7 +128,7 @@ def main() -> int:
         "--interpreter",
         sys.executable,
         "-m",
-        "bindings/python_native/Cargo.toml",
+        str(ROOT / "bindings" / "python_native" / "Cargo.toml"),
         "-o",
         str(parity_dir / "wheels"),
     ]

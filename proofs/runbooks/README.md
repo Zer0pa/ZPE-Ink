@@ -1,11 +1,11 @@
 # Runbooks
 
-These runbooks were imported from the original sector workspace.
+These runbooks were imported from the original sector workspace and include historical path references.
 
 Current status:
 
-- dead machine-absolute paths were removed from the master surface
-- some gate documents still use the historical `artifacts/2026-02-20_zpe_ink_wave1` artifact-root convention
-- future reruns inside this repo should write to `proofs/reruns/INK-Canonical-<UTC timestamp>/`
+- master runbook reflects the staged repo boundary
+- some gate documents still use historical `artifacts/2026-02-20_zpe_ink_wave1` paths
+- reruns in this repo currently land under `proofs/reruns/` with named phase folders
 
-Phase 5 should finish the remaining runbook normalization before broad reruns.
+If a runbook still references historical paths, treat it as a historical snapshot unless explicitly updated.

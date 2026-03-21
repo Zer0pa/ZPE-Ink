@@ -24,8 +24,34 @@ jobs:
       - name: install
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e ./code
+          python -m pip install -e './code[dev]'
       - name: pytest
         run: python -m pytest code/tests -q
+      - name: verify installed module smoke
+        run: |
+          python -m zpe_ink verify-roundtrip
+          python -m zpe_ink demo
+      - name: verify binding contract consistency
+        run: python code/scripts/verify_binding_contracts.py --repo-root .
       - name: package build
-        run: python -m pip wheel ./code --no-deps -w dist
+        run: python -m build --wheel --sdist ./code --outdir dist
+      - name: verify wheel install surface
+        run: |
+          python -m pip install --force-reinstall dist/zpe_ink-*.whl
+          zpe-ink-verify-roundtrip
+          zpe-ink-demo
+
+  bindings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - name: cargo check python-native binding
+        run: PYO3_PYTHON="$(which python)" cargo check --manifest-path code/bindings/python_native/Cargo.toml
+      - name: cargo check wasm binding
+        run: cargo check --manifest-path code/bindings/wasm/Cargo.toml --target wasm32-unknown-unknown
