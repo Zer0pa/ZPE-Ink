@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Release Readiness
 
 ## Current Verdict
@@ -10,3 +14,7 @@ NO-GO. Contradiction remains OPEN. Blind clone is INCONCLUSIVE.
 ## Release Rules (Truth Surface)
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/RELEASING.md
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/PUBLIC_AUDIT_LIMITS.md
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

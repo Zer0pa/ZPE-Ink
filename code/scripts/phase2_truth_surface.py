@@ -285,7 +285,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--phase1-root",
-        default=str(REPO_ROOT / "proofs" / "reruns" / "phase1_m1_local"),
+        default=str(REPO_ROOT / "proofs" / "reruns" / "benchmark_freeze_local"),
     )
     parser.add_argument(
         "--contradiction-root",

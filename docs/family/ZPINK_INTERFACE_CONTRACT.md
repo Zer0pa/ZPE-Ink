@@ -10,6 +10,8 @@
 
 This document is the canonical `.zpink` packet contract. Any compatibility changes must update `docs/family/ZPINK_COMPATIBILITY_VECTOR.json`.
 
+Reader orientation: a `.zpink` packet represents a stroke stream with deterministic deltas. `mode` selects fidelity tier, `flags` gate optional channels, and pressure is mandatory in v1 (the codec enforces it for every stroke).
+
 <p>
   <img src="../../.github/assets/readme/section-bars/word-layout.svg" alt="WORD LAYOUT" width="100%">
 </p>
@@ -60,3 +62,7 @@ This document is the canonical `.zpink` packet contract. Any compatibility chang
 
 - Deltas are run-length encoded as repeated segments: `delta[zigzag-varuint]` then `run_len[varuint]`.
 - Decoders must fail on zero-length runs, overflow, and trailing bytes.
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

@@ -1,3 +1,7 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Code Of Conduct
 
 This project follows an evidence-led conduct standard.
@@ -16,4 +20,8 @@ Unacceptable behavior:
 - inflating claims beyond the proof surface
 - publishing private information without permission
 
-Report conduct issues to `architects@zer0pa.ai`.
+Report conduct issues to `architects@zer0pa.ai`. For security-related conduct issues, see `SECURITY.md`.
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

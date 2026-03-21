@@ -12,7 +12,7 @@ url: https://github.com/Zer0pa/ZPE-Ink
 license: LicenseRef-Zer0pa-SAL-6.0
 abstract: >-
   ZPE-Ink is a deterministic digital-ink codec centered on the .zpink
-  stream format, with curated Wave-1 proof anchors and a private-first
+  stream format, with current proof anchors and a private-first
   staging workflow.
 keywords:
   - digital ink

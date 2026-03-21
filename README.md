@@ -4,7 +4,17 @@
 
 # ZPE-Ink
 
-Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a curated Wave-1 proof subset. It is not release-ready.
+Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a current proof subset and rerun surface. It is not release-ready.
+
+Status in plain language:
+
+- What this is: a staged `.zpink` codec with a Python install surface and repo-local bindings.
+- Proven: structured-tier compression exceeds 5x vs raw float32 and cross-runtime parity logs pass locally.
+- Blocked: sovereign release surface is `FAIL` and blind-clone verification is `INCONCLUSIVE`.
+
+Sovereign release surface: `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`.
+
+Prereqs for local verification: Python 3.11+, Rust toolchain, and `wasm32-unknown-unknown` target for binding checks.
 
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
@@ -26,13 +36,13 @@ python -m pip install -e './code[dev]'
 python -m pytest code/tests -q
 python -m zpe_ink demo
 python -m zpe_ink verify-roundtrip</code></pre>
-      <p>Authority point: <code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></p>
+      <p>Authoritative artifact: <code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></p>
     </td>
     <td width="44%" valign="top">
       <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
         <thead>
           <tr>
-            <th align="left">Canonical coordinates</th>
+            <th align="left">Key coordinates</th>
             <th align="left">Value</th>
           </tr>
         </thead>
@@ -59,6 +69,8 @@ python -m zpe_ink verify-roundtrip</code></pre>
   </tr>
 </table>
 
+How to read this table: it reports the latest measured ratios and boundaries; it does not imply release readiness.
+
 <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
   <thead>
     <tr>
@@ -77,6 +89,8 @@ python -m zpe_ink verify-roundtrip</code></pre>
   </tbody>
 </table>
 
+How to read this table: these are the current authority anchors; any conflict keeps the repo `INCONCLUSIVE`.
+
 <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
   <thead>
     <tr>
@@ -86,12 +100,12 @@ python -m zpe_ink verify-roundtrip</code></pre>
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>quality_gate_scorecard.json</code></td><td>Pass-side quality surface</td><td><code>pass=true</code>, <code>total_score=47</code></td></tr>
-    <tr><td><code>handoff_manifest.json</code></td><td>Sovereign release surface</td><td><code>go_no_go=NO-GO</code></td></tr>
-    <tr><td><code>ink_cross_runtime_parity.json</code></td><td>Curated cross-runtime parity</td><td><code>pass=true</code></td></tr>
-    <tr><td><code>determinism_replay_results.json</code></td><td>Determinism replay</td><td><code>pass=true</code>, <code>runs=5</code></td></tr>
-    <tr><td><code>claim_scope_map.json</code></td><td>Claim boundary</td><td><code>structured-tier-only</code></td></tr>
-    <tr><td><code>contradiction_resolution_manifest.json</code></td><td>Contradiction state</td><td><code>INCONCLUSIVE</code></td></tr>
+    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Sovereign release surface</td><td><code>release_surface_verdict=FAIL</code></td></tr>
+    <tr><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td><td>Claim boundary</td><td><code>structured-tier-only</code></td></tr>
+    <tr><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td><td>Structured-tier ratios</td><td><code>appendix_all_pass=false</code></td></tr>
+    <tr><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td><td>Cross-runtime parity log</td><td><code>status=pass</code></td></tr>
+    <tr><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td><td>Binding contract check</td><td><code>status=PASS</code></td></tr>
+    <tr><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td><td>Blind-clone gate</td><td><code>verdict=INCONCLUSIVE</code></td></tr>
   </tbody>
 </table>
 
@@ -116,7 +130,7 @@ python -m zpe_ink verify-roundtrip</code></pre>
     <tr><td>Hard-corpus transport</td><td><code>FAIL</code> (below best comparators)</td><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td></tr>
     <tr><td>Release surface</td><td><code>FAIL</code> / <code>INCONCLUSIVE</code></td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
     <tr><td>Blind clone</td><td><code>INCONCLUSIVE</code></td><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td></tr>
-    <tr><td>Cross-runtime parity (curated)</td><td><code>PASS</code></td><td><code>proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/ink_cross_runtime_parity.json</code></td></tr>
+    <tr><td>Cross-runtime parity (current)</td><td><code>PASS</code></td><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td></tr>
     <tr><td>Contract alignment (repo-local)</td><td><code>PASS</code></td><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td></tr>
   </tbody>
 </table>
@@ -135,7 +149,7 @@ python -m zpe_ink verify-roundtrip</code></pre>
   <tbody>
     <tr><td><code>code/</code></td><td>Installable Python package, tests, bindings, scripts</td></tr>
     <tr><td><code>docs/</code></td><td>Architecture, contracts, support, legal boundaries, doc registry</td></tr>
-    <tr><td><code>proofs/</code></td><td>Curated Wave-1 anchors, reruns, logs, runbooks</td></tr>
+    <tr><td><code>proofs/</code></td><td>Reruns, logs, runbooks, current proof anchors</td></tr>
     <tr><td><code>executable/</code></td><td>Local smoke and verification entry points</td></tr>
   </tbody>
 </table>
@@ -148,10 +162,15 @@ python -m zpe_ink verify-roundtrip</code></pre>
   <img src=".github/assets/readme/section-bars/open-risks-non-blocking.svg" alt="OPEN RISKS (NON-BLOCKING)" width="100%">
 </p>
 
+Release blockers:
+
 - Sovereign release surface remains <code>FAIL</code> / <code>INCONCLUSIVE</code> while the handoff manifest remains <code>NO-GO</code>.
 - UNIPEN access remains unresolved; IAM remains registration-gated; cross-script authority is still restricted to Calliar-only evidence.
 - Blind clone is still <code>INCONCLUSIVE</code> until the gate-a resource probe rerun is recorded on the updated code.
-- Primitive-token branch beats Brotli on the structured tier but is blocked by bounded Calliar fidelity loss.
+
+Constraints and technical debt:
+
+- Primitive-token branch is candidate-only; Calliar bounded fidelity fails with large Hausdorff error.
 - Telemetry reruns are incomplete in this shell without <code>COMET_API_KEY</code> and <code>RUNPOD_API_KEY</code>.
 
 <p>

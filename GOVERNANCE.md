@@ -11,7 +11,14 @@ Evidence discipline and claim boundaries for the ZPE-Ink private staging surface
 - runtime and artifact truth outrank prose
 - mixed evidence is not a pass
 - unresolved contradictions stay explicit
-- compatibility changes require a compatibility-vector update
+- compatibility changes require a compatibility-vector update at `docs/family/ZPINK_COMPATIBILITY_VECTOR.json`
+
+Decision authority order:
+
+- artifacts and manifests
+- logs and runbooks
+- narrative docs
+- commentary
 
 ## Status Terms
 
@@ -26,3 +33,7 @@ Evidence discipline and claim boundaries for the ZPE-Ink private staging surface
 - sovereign release surface: `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`
 - current repo truth: `INCONCLUSIVE`
 - public release: not allowed
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

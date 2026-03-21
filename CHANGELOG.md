@@ -1,4 +1,10 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Changelog
+
+This is not a public release history. It tracks private staging changes only.
 
 ## 2026-03-21
 
@@ -12,5 +18,9 @@
 - formed a clean inner repo boundary under `ZPE-Ink/`
 - moved the package to `code/` with explicit setuptools package discovery
 - added repo-local front-door, docs, audit, and proof surfaces
-- imported a curated subset of the 2026-02-20 Wave-1 proof bundle
+- imported a historical subset of the 2026-02-20 Wave-1 proof bundle (now removed)
 - kept the current readiness verdict explicit: `INCONCLUSIVE`
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

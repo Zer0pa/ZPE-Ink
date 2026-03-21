@@ -1,6 +1,12 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Security Policy
 
 Report security issues privately to `architects@zer0pa.ai`.
+
+Response expectation: best-effort triage within 5 business days.
 
 Use this channel for:
 
@@ -16,3 +22,9 @@ Do not use this channel for:
 - evidence disputes about documented claims
 
 Those belong in standard issues with artifact-backed reproduction.
+
+Materially affect this repo means the vulnerability is exploitable in code paths shipped or tested here.
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

@@ -41,8 +41,7 @@
 11. `python3 code/scripts/generate_handoff.py --artifact-root proofs/reruns/INK-Canonical-<UTC timestamp> --max-wave`
 
 ## Expected Outputs
-- Historical curated Wave-1 outputs remain under:
-  - `proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/`
+- Legacy curated Wave-1 outputs were removed during cleanup.
 - Future rerun outputs should land under:
   - `proofs/reruns/INK-Canonical-<UTC timestamp>/`
 - Appendix E artifacts under:

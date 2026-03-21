@@ -7,6 +7,8 @@
 Date: 2026-03-09
 State: private staging snapshot
 
+Why you are reading this: it is a historical snapshot note that does not supersede current rerun evidence.
+
 <p>
   <img src="../../.github/assets/readme/section-bars/unreleased.svg" alt="UNRELEASED" width="100%">
 </p>
@@ -20,7 +22,7 @@ This note describes the 2026-03-09 staged snapshot. Later reruns exist but do no
 Included:
 
 - package source under `code/`
-- curated Wave-1 proof subset under `proofs/`
+- current proof subset under `proofs/`
 - minimal audit and support surfaces
 
 <p>
@@ -41,3 +43,7 @@ Current release verdict:
 
 - not greenlit
 - current repo truth remains `INCONCLUSIVE`
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

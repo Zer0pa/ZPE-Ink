@@ -7,6 +7,28 @@ Documentation index for the ZPE-Ink private staging surface. This repo documents
 ---
 
 <p>
+  <img src="../.github/assets/readme/section-bars/where-to-go.svg" alt="WHERE TO GO" width="100%">
+</p>
+
+<table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <th align="left">Role</th>
+      <th align="left">Start here</th>
+      <th align="left">Use it when</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Auditor</td><td><code>AUDITOR_PLAYBOOK.md</code></td><td>Running the shortest verification pass</td></tr>
+    <tr><td>Integrator</td><td><code>docs/ARCHITECTURE.md</code></td><td>Understanding runtime surfaces and contracts</td></tr>
+    <tr><td>Contributor</td><td><code>CONTRIBUTING.md</code></td><td>Preparing evidence-backed changes</td></tr>
+    <tr><td>Security reporter</td><td><code>SECURITY.md</code></td><td>Submitting vulnerability reports</td></tr>
+  </tbody>
+</table>
+
+---
+
+<p>
   <img src="../.github/assets/readme/section-bars/faq-and-support.svg" alt="FAQ AND SUPPORT" width="100%">
 </p>
 
@@ -131,4 +153,8 @@ Documentation index for the ZPE-Ink private staging surface. This repo documents
   <img src="../.github/assets/readme/section-bars/what-this-directory-is-not.svg" alt="WHAT THIS DIRECTORY IS NOT" width="100%">
 </p>
 
-- `docs/team_review/` contains historical review packs and is not a current authority surface.
+- Historical review packs have been removed from this repo; only current authority surfaces remain.
+
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

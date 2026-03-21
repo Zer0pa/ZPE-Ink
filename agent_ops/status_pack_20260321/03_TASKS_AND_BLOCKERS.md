@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Tasks and Blockers
 
 ## Active Tasks
@@ -13,5 +17,9 @@
 - Blind clone is INCONCLUSIVE due to optional binary probe in gate script.
 
 ## Evidence
-- /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/blind_clone/10_blind_clone_verdict.json
+- /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/blind_clone_verdict.json
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/external_boundary_manifest.json
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

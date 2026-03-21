@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Status Summary (2026-03-21)
 
 ## Executive Snapshot
@@ -19,3 +23,7 @@ The authoritative status sources for this snapshot are:
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/README.md
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/docs/DOC_REGISTRY.md
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/docs/FALSIFICATION_REPORT.md
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

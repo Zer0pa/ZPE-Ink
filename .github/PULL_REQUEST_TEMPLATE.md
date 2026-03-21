@@ -2,6 +2,10 @@
 
 ## Evidence
 
+Artifacts:
+
+Claim impact:
+
 ## Risk
 
 ## Checks run

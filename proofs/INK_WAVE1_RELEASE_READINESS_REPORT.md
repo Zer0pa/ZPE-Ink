@@ -1,8 +1,14 @@
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Ink Wave-1 Release Readiness Report
 
 Date: 2026-03-09
 Updated: 2026-03-21 (rerun context only; verdict unchanged)
 Verdict: `INCONCLUSIVE`
+Decision rule: `NO-GO` on the sovereign release surface overrides all positive signals.
+Last verified commit: `0534605763e8e1e86b3a8271009217e3b18df56a`
 
 ## Why The Verdict Is Inconclusive
 
@@ -12,27 +18,19 @@ The quality scorecard passes while the sovereign handoff manifest remains `NO-GO
 
 | surface | artifact | field | value | effect on verdict |
 |---|---|---|---|---|
-| quality gate | `quality_gate_scorecard.json` | `pass` | `true` | pass-side signal |
-| handoff manifest | `handoff_manifest.json` | `go_no_go` | `NO-GO` | hard release blocker |
+| release gate | `contradiction_resolution_manifest.json` | `release_go_no_go` | `NO-GO` | hard release blocker |
+| release surface | `contradiction_resolution_manifest.json` | `release_surface_verdict` | `FAIL` | blocks release |
 | transport snapshot | `baseline_results.json` | `appendix_all_pass` | `false` | keeps verdict inconclusive |
+| parity log | `20260321_technical_alignment_cross_runtime.json` | `status` | `pass` | local parity signal |
 
 ## Proof Anchor Summary
 
 | artifact | claim_or_gate | pass | key fact |
 |---|---|---|---|
-| `ink_roundtrip_results.json` | `INK-C001` | `true` | `9834` points, `48` strokes |
-| `ink_cross_runtime_parity.json` | `INK-C006` | `true` | Python/Swift/WASM hashes match |
-| `determinism_replay_results.json` | determinism | `true` | `5` runs, `1` unique hash |
-
-## Curated Proof Anchors
-
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/quality_gate_scorecard.json`
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/handoff_manifest.json`
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/claim_status_delta.md`
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/ink_roundtrip_results.json`
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/ink_cross_runtime_parity.json`
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/determinism_replay_results.json`
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/integration_readiness_contract.json`
+| `contradiction_resolution_manifest.json` | release gate | `false` | `release_go_no_go = NO-GO` |
+| `claim_scope_map.json` | claim boundary | `true` | structured-tier only |
+| `20260321_technical_alignment_cross_runtime.json` | parity | `pass` | local parity log |
+| `20260321_technical_alignment_binding_contracts.json` | contracts | `pass` | repo-local contract check |
 
 ## Update Notes (2026-03-21)
 
@@ -45,3 +43,7 @@ The quality scorecard passes while the sovereign handoff manifest remains `NO-GO
 - UNIPEN parity closure (external access unresolved)
 - IAM parity closure (registration-gated)
 - blind-clone rerun with the updated gate-a resource probe
+
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

@@ -1,6 +1,12 @@
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Proofs
 
-This repo carries a curated proof subset plus in-repo reruns and technical alignment logs. It does not carry the full outer-workspace warehouse.
+This repo carries the current proof subset plus in-repo reruns and technical alignment logs. It does not carry the full outer-workspace warehouse.
+
+How to use this index: start with the contradiction manifest and claim scope map, then consult the release readiness report for the narrative verdict.
 
 Key entry points:
 
@@ -13,7 +19,10 @@ Key entry points:
 
 Notes:
 
-- `curated_artifacts/2026-02-20_zpe_ink_wave1/` is the historical Wave-1 anchor set
 - `reruns/` contains post-staging executions and candidate-branch results
 - `logs/` contains technical alignment and verification logs
 - the raw artifact warehouse remains outside the repo boundary
+
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

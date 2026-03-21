@@ -1,6 +1,14 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Releasing
 
 This repo follows a private-first release path.
+
+Release vocabulary: the sovereign release surface is the contradiction manifest at `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`. `INCONCLUSIVE` means unresolved evidence; `NO-GO` means release is blocked.
+
+Prereqs for the verification path: Python 3.11+, Rust toolchain, and `wasm32-unknown-unknown` target.
 
 Current technical release unit:
 
@@ -47,8 +55,14 @@ Technical verification path before any release decision:
 6. `PYO3_PYTHON="$(which python)" cargo check --manifest-path code/bindings/python_native/Cargo.toml`
 7. `cargo check --manifest-path code/bindings/wasm/Cargo.toml --target wasm32-unknown-unknown`
 
+What this does not mean: this repo does not authorize public release or package registry distribution.
+
 Current blockers:
 
 - sovereign release surface remains `FAIL` while the handoff manifest is `NO-GO`
 - UNIPEN parity remains unresolved
 - blind-clone verdict is still `INCONCLUSIVE` pending a rerun of gate-a resource probe
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

@@ -9,7 +9,7 @@ Support routing for the ZPE-Ink private staging surface.
 </p>
 
 - Use GitHub issues for reproducible bugs or documentation defects.
-- Use evidence dispute issues for contradictory proof or claim surfaces.
+- Use evidence dispute issues for contradictory proof or claim surfaces (`.github/ISSUE_TEMPLATE/evidence_dispute.md`).
 - Use `architects@zer0pa.ai` for security reports.
 
 <p>
@@ -32,4 +32,8 @@ Support routing for the ZPE-Ink private staging surface.
   <img src="../.github/assets/readme/section-bars/response-expectations.svg" alt="RESPONSE EXPECTATIONS" width="100%">
 </p>
 
-This repo is private staging only. There is no public support SLA. Evidence-first issues receive priority.
+This repo is private staging only. There is no public support SLA; responses are best-effort. Evidence-first issues receive priority.
+
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

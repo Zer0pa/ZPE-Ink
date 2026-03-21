@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Architecture Snapshot
 
 ## Runtime Surfaces
@@ -11,3 +15,7 @@
 
 ## Architecture Reference
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/docs/ARCHITECTURE.md
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Boundaries and Exclusions
 
 ## Claim Boundaries
@@ -13,3 +17,7 @@ Source:
 
 Source:
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/external_boundary_manifest.json
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

@@ -1,3 +1,7 @@
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Verification Runs (Local)
 
 ## Technical Alignment Logs
@@ -10,3 +14,7 @@
 ## Verification Entry Points
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/executable/verify_cross_runtime.py
 - /Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/executable/verify_roundtrip.py
+
+<p>
+  <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

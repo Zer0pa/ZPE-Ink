@@ -1,6 +1,12 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # Roadmap
 
-This repo-local note is subordinate to `/Users/Zer0pa/ZPE/ZPE Ink/.gpd/ROADMAP.md`.
+This repo-local note is subordinate to the internal `.gpd/ROADMAP.md`.
+
+Audience: internal engineering and verification stakeholders.
 
 ## Current State (2026-03-21)
 
@@ -18,3 +24,7 @@ This repo-local note is subordinate to `/Users/Zer0pa/ZPE/ZPE Ink/.gpd/ROADMAP.m
 
 - wedge proof and enterprise-readiness decisions
 - release gating and public-readiness decisions
+
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>

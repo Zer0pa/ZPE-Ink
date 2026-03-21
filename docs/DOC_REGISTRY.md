@@ -1,6 +1,20 @@
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
+
 # ZPE-Ink Doc Registry
 
 Canonical registry for the ZPE-Ink private staging surface. This registry lists the counted canonical docs and the supporting authority set.
+
+What counts as authoritative: contradictions and claim scope artifacts outrank logs; logs outrank narrative docs; narrative docs outrank commentary.
+
+Primary entry points for cold readers:
+
+- `README.md`
+- `AUDITOR_PLAYBOOK.md`
+- `proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md`
+
+Render requirement: preserve the HTML tables and section-bar layout in README and docs index; do not “markdown-ify” the tables.
 
 ## Counted Canonical Docs
 
@@ -39,6 +53,10 @@ Canonical registry for the ZPE-Ink private staging surface. This registry lists 
 | `docs/family/ZPINK_COMPATIBILITY_VECTOR.json` | Compatibility anchor |
 | `docs/family/ZPINK_RELEASE_NOTE.md` | Staged release note |
 | `proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md` | Release readiness report |
-| `proofs/curated_artifacts/2026-02-20_zpe_ink_wave1/*` | Historical Wave-1 anchors |
+| `proofs/reruns/benchmark_freeze_local/*` | Current benchmark freeze surface |
 | `proofs/reruns/*` | Post-staging reruns and candidate branches |
 | `proofs/logs/*` | Technical verification logs |
+
+<p>
+  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
+</p>
