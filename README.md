@@ -10,9 +10,9 @@ SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
 
 ## What This Is
 
-ZPE-Ink encodes stylus and pen input into `.zpink` transport packets — **>5× compression vs raw float32** on the structured tier, with verified cross-runtime parity across Python, Rust, WASM, Swift, and C# bindings.
+ZPE-Ink encodes stylus and pen input into `.zpink` transport packets — **>5× compression vs raw float32** on the structured tier, with full encode/decode parity across Python and Rust/WASM bindings. Swift and C# bindings provide header-level contract validation (magic, version, header size) but do not yet implement payload decode.
 
-If you're building note-taking, annotation, whiteboard, or signature surfaces and need consistent ink-stream encoding that works identically across runtimes: this is that codec. The `.zpink` format is the transport unit; the multi-runtime binding surface is the integration path.
+If you're building note-taking, annotation, whiteboard, or signature surfaces and need consistent ink-stream encoding: this is that codec. The `.zpink` format is the transport unit. The Python codec is the authority implementation; Rust/WASM provide verified decode parity; Swift/C# provide header interop for format detection.
 
 The repo is a **staged proof surface**. Structured-tier compression passes. Release surface verdict: **FAIL**. Blind-clone verification: **INCONCLUSIVE**. Hard-corpus pass: not closed. This is not a release-ready package.
 
@@ -31,7 +31,7 @@ Deterministic digital-ink codec centered on the `.zpink` packet format. This rep
 Status in plain language:
 
 - What this is: a staged `.zpink` codec with a Python install surface and repo-local bindings.
-- Proven: structured-tier compression exceeds 5x vs raw float32 and cross-runtime parity logs pass locally.
+- Proven: structured-tier compression exceeds 5x vs raw float32; Python/Rust/WASM decode parity passes locally; Swift/C# header contracts pass.
 - Blocked: sovereign release surface is `FAIL` and blind-clone verification is `INCONCLUSIVE`.
 
 Sovereign release surface: `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`.
