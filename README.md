@@ -8,55 +8,19 @@
 
 ## What This Is
 
-ZPE-Ink is a deterministic digital-ink transport codec for structured pen-stream workflows across multiple runtimes, built around the `.zpink` packet format.
+ZPE-Ink is a deterministic digital-ink transport codec for structured pen-stream workflows. It encodes stylus input into `.zpink` packets with **>5× compression vs raw float32** on the structured tier, and verifies cross-runtime parity across Python, Rust, WASM, Swift, and C# bindings.
 
-## Commercial Wedge
+This is for teams building stylus, note-taking, annotation, whiteboard, or signature input where consistent ink-stream representation matters across environments. The `.zpink` format is the transport unit; the multi-runtime binding surface is the integration story.
 
-This is for **stylus/note/annotation/whiteboard/signature/cross-runtime pen-input teams** who need to move raw ink streams consistently across environments. The business value is cross-runtime parity and bounded structured-tier transport: **>5× compression vs raw float32** on the structured tier, with deterministic encode/decode across Python, Rust, WASM, Swift, and C# binding surfaces.
+The repo is a **staged proof surface**. Structured-tier compression passes. The release surface verdict is `FAIL`. Blind-clone verification is `INCONCLUSIVE`. Hard-corpus pass is not closed. This is not a release-ready package.
 
-## Technical Wedge
-
-The technical edge is a multi-runtime `.zpink` codec with structured-tier compression exceeding 5× vs raw float32 and cross-runtime parity verification. Current strongest claim is structured-tier pass — hard-corpus and sovereign release surface are blocked. Bindings exist for Python (installable), Rust, WASM, Swift, and C#.
-
-## Current Readiness
-
-**`STAGED_PROOF_SURFACE`** — Structured-tier compression passes. Release surface verdict is `FAIL`. Blind-clone verification is `INCONCLUSIVE`. This is a staged proof surface, not a release-ready package.
-
-## What Is Proved
-
-- Structured-tier compression exceeds 5× vs raw float32
-- Cross-runtime parity logs pass locally
-- Python install surface works from `code/`
-- Multi-runtime binding surface exists (Rust, WASM, Swift, C#)
-- Contradiction resolution manifest preserved for audit
-
-## What Is Not Being Claimed
-
-- Release readiness — sovereign release surface is `FAIL`
-- Blind-clone verification — `INCONCLUSIVE`
-- Hard-corpus pass — not closed
-- General digital-ink dominance — claims bounded to structured tier only
-- Runtime coupling to ZPE-IMC
-
-## Ideal First Buyer
-
-Stylus/annotation runtime team or cross-platform pen-input infrastructure team seeking deterministic ink-stream transport.
-
-## Deployment Model
-
-SDK — Python package with repo-local Rust/WASM/Swift/C# bindings. Private repo checkout today.
-
-## Authority / Proof Anchors
+**Not claimed:** release readiness, blind-clone closure, hard-corpus pass, general digital-ink dominance, or runtime coupling to ZPE-IMC.
 
 | Anchor | Artifact |
 |---|---|
-| Claim scope map | [`proofs/reruns/benchmark_freeze_local/claim_scope_map.json`](proofs/reruns/benchmark_freeze_local/claim_scope_map.json) |
-| Contradiction resolution | [`proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`](proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json) |
-| Final status | [`proofs/FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
-
-## Role In The Zer0pa Family
-
-ZPE-Ink is a secondary product candidate in the Zer0pa deterministic encoding family. [ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) is the umbrella integration layer; this repo is the domain-specific digital-ink wedge. Not currently the lead commercial front door.
+| Claim scope map | [`claim_scope_map.json`](proofs/reruns/benchmark_freeze_local/claim_scope_map.json) |
+| Contradiction resolution | [`contradiction_resolution_manifest.json`](proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json) |
+| Final status | [`FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
 
 ---
 
