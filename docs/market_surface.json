@@ -1,0 +1,25 @@
+{
+  "repo_name": "ZPE-Ink",
+  "repo_role": "secondary_product_candidate",
+  "status": "staged_proof_surface",
+  "plain_english_summary": "Deterministic digital-ink transport codec for structured pen-stream workflows across multiple runtimes.",
+  "commercial_wedge": "Cross-runtime parity and >5× compression for structured ink streams. Multi-runtime bindings (Python, Rust, WASM, Swift, C#).",
+  "technical_wedge": "Multi-runtime .zpink codec with structured-tier compression >5× vs raw float32. Cross-runtime parity verified locally.",
+  "ideal_first_buyer": "Stylus/annotation runtime team or cross-platform pen-input infrastructure team",
+  "deployment_model": "SDK — Python package with repo-local Rust/WASM/Swift/C# bindings",
+  "proof_anchors": [
+    "proofs/reruns/benchmark_freeze_local/claim_scope_map.json",
+    "proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json",
+    "proofs/FINAL_STATUS.md"
+  ],
+  "not_claimed": [
+    "Release readiness (sovereign surface FAIL)",
+    "Blind-clone verification (INCONCLUSIVE)",
+    "Hard-corpus pass",
+    "General digital-ink dominance",
+    "Runtime coupling to ZPE-IMC"
+  ],
+  "family_position": "Secondary product candidate in the Zer0pa deterministic encoding family. Not the lead commercial front door.",
+  "license": "LicenseRef-Zer0pa-SAL-6.0",
+  "contact": "architects@zer0pa.ai"
+}
