@@ -4,6 +4,28 @@
 
 # ZPE-Ink
 
+SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
+
+---
+
+## What This Is
+
+ZPE-Ink encodes stylus and pen input into `.zpink` transport packets — **>5× compression vs raw float32** on the structured tier, with verified cross-runtime parity across Python, Rust, WASM, Swift, and C# bindings.
+
+If you're building note-taking, annotation, whiteboard, or signature surfaces and need consistent ink-stream encoding that works identically across runtimes: this is that codec. The `.zpink` format is the transport unit; the multi-runtime binding surface is the integration path.
+
+The repo is a **staged proof surface**. Structured-tier compression passes. Release surface verdict: **FAIL**. Blind-clone verification: **INCONCLUSIVE**. Hard-corpus pass: not closed. This is not a release-ready package.
+
+**Not claimed:** release readiness, blind-clone closure, hard-corpus pass, general digital-ink dominance, or runtime coupling to ZPE-IMC.
+
+| Anchor | Artifact |
+|---|---|
+| Claim scope map | [`claim_scope_map.json`](proofs/reruns/benchmark_freeze_local/claim_scope_map.json) |
+| Contradiction resolution | [`contradiction_resolution_manifest.json`](proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json) |
+| Final status | [`FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
+
+---
+
 Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a current proof subset and rerun surface. It is not release-ready.
 
 Status in plain language:
