@@ -4,12 +4,13 @@ import argparse
 import json
 import math
 import random
+import shutil
 import statistics
 import sys
 import tarfile
 import time
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -146,6 +147,54 @@ def _parse_inkml_samples(root: Path, limit: int) -> tuple[list[Path], list[list[
     return files, samples, parse_failures
 
 
+def _validated_archive_path(destination_root: Path, archive_name: str) -> Path:
+    normalized = archive_name.replace("\\", "/")
+    relative_path = PurePosixPath(normalized)
+    if relative_path.is_absolute() or any(part == ".." for part in relative_path.parts):
+        raise ValueError(f"unsafe archive member path: {archive_name}")
+    if not relative_path.parts:
+        return destination_root
+    target = destination_root.joinpath(*relative_path.parts).resolve(strict=False)
+    if target != destination_root and destination_root not in target.parents:
+        raise ValueError(f"archive member escapes extraction root: {archive_name}")
+    return target
+
+
+def _safe_extract_tar(archive_path: Path, destination_root: Path) -> None:
+    destination_root = destination_root.resolve()
+    with tarfile.open(archive_path, "r:*") as handle:
+        for member in handle.getmembers():
+            if member.name in {"", ".", "./"}:
+                continue
+            target = _validated_archive_path(destination_root, member.name)
+            if member.isdir():
+                target.mkdir(parents=True, exist_ok=True)
+                continue
+            if not member.isfile():
+                raise ValueError(f"unsupported tar member type for safe extraction: {member.name}")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            extracted = handle.extractfile(member)
+            if extracted is None:
+                raise ValueError(f"missing tar member payload: {member.name}")
+            with extracted, target.open("wb") as output:
+                shutil.copyfileobj(extracted, output)
+
+
+def _safe_extract_zip(archive_path: Path, destination_root: Path) -> None:
+    destination_root = destination_root.resolve()
+    with zipfile.ZipFile(archive_path) as handle:
+        for member in handle.infolist():
+            if member.filename in {"", ".", "./"}:
+                continue
+            target = _validated_archive_path(destination_root, member.filename)
+            if member.is_dir():
+                target.mkdir(parents=True, exist_ok=True)
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with handle.open(member) as extracted, target.open("wb") as output:
+                shutil.copyfileobj(extracted, output)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact-root", required=True)
@@ -189,8 +238,7 @@ def main() -> int:
         log_path,
         "net_new_mathwriting_download",
     )
-    with tarfile.open(math_tgz, "r:gz") as handle:
-        handle.extractall(math_dir)
+    _safe_extract_tar(math_tgz, math_dir)
     append_command_log(log_path, "net_new_mathwriting_extract", f"tar -xzf {math_tgz}", 0, "extracted", "")
 
     math_extract = math_dir / "mathwriting-2024-excerpt"
@@ -229,8 +277,7 @@ def main() -> int:
         log_path,
         "net_new_crohme_fallback_download",
     )
-    with zipfile.ZipFile(crohme_zip) as handle:
-        handle.extractall(crohme_dir)
+    _safe_extract_zip(crohme_zip, crohme_dir)
     append_command_log(log_path, "net_new_crohme_extract", f"unzip {crohme_zip}", 0, "extracted", "")
 
     crohme_extract = crohme_dir / "ICFHR_package"
@@ -317,8 +364,7 @@ def main() -> int:
         log_path,
         "net_new_uji_download",
     )
-    with zipfile.ZipFile(uji_zip) as handle:
-        handle.extractall(uji_dir)
+    _safe_extract_zip(uji_zip, uji_dir)
     append_command_log(log_path, "net_new_uji_extract", f"unzip {uji_zip}", 0, "extracted", "")
 
     uji_samples = load_uji_pen_characters(uji_dir, limit=140)
