@@ -4,6 +4,18 @@
 
 # ZPE-Ink
 
+5.590209480060199x structured-tier ratio.
+
+- `.zpink` packet codec.
+- >5× compression vs raw float32. Structured-tier round-trip verified. Release surface: `FAIL`.
+- Install unit: `code/`.
+- Transfer unit: `.zpink` packets.
+- Bindings: repo-local sources.
+- Authority surface: `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`.
+- Python 3.11+.
+- Rust toolchain.
+- `wasm32-unknown-unknown` target.
+
 SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
 
 ---
@@ -42,7 +54,10 @@ Prereqs for local verification: Python 3.11+, Rust toolchain, and `wasm32-unknow
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
 
-ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. The installable release unit is the Python package under `code/`. The Rust/WASM/Swift/C# bindings are repo-local source surfaces and are not part of the pip install unit.
+- Deterministic `.zpink` transfer surface.
+- Python package under `code/`.
+- Rust/WASM/Swift/C# repo-local sources.
+- Pip install excludes binding artifacts.
 
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
@@ -76,6 +91,18 @@ python -m zpe_ink verify-roundtrip</code></pre>
           <tr>
             <td>Contact</td>
             <td><code>architects@zer0pa.ai</code></td>
+          </tr>
+          <tr>
+            <td>Install unit</td>
+            <td><code>code/</code> Python package</td>
+          </tr>
+          <tr>
+            <td>Transfer unit</td>
+            <td><code>.zpink</code> packet streams</td>
+          </tr>
+          <tr>
+            <td>Binding packaging</td>
+            <td><code>repo-local source surfaces</code></td>
           </tr>
           <tr>
             <td>Current verdict</td>
