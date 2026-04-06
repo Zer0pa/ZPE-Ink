@@ -3,9 +3,9 @@
     {
       "inkml_files": 70,
       "metrics": {
-        "compression_ratio": 1.0944074088858728,
+        "compression_ratio": 1.1869939819024116,
         "max_hausdorff_px": 0.0,
-        "median_ms_per_stroke": 0.0818195,
+        "median_ms_per_stroke": 0.09940625,
         "name": "mathwriting_excerpt",
         "point_count": 3427,
         "pressure_rmse_percent": 0.0,
@@ -21,9 +21,9 @@
     {
       "inkml_files": 90,
       "metrics": {
-        "compression_ratio": 1.301456280301924,
+        "compression_ratio": 1.4359918590390641,
         "max_hausdorff_px": 0.0,
-        "median_ms_per_stroke": 0.07112763756613756,
+        "median_ms_per_stroke": 0.07404045145145147,
         "name": "crohme_icfhr_package",
         "point_count": 54593,
         "pressure_rmse_percent": 0.0,
@@ -40,9 +40,9 @@
     {
       "category": "cat",
       "metrics": {
-        "compression_ratio": 0.7672150822623394,
+        "compression_ratio": 1.0181166633485965,
         "max_hausdorff_px": 0.0,
-        "median_ms_per_stroke": 0.025060598214285714,
+        "median_ms_per_stroke": 0.0261367625,
         "name": "quickdraw_cat_simplified",
         "point_count": 15342,
         "pressure_rmse_percent": 0.0,
@@ -57,9 +57,9 @@
     },
     {
       "metrics": {
-        "compression_ratio": 1.0014344130681454,
+        "compression_ratio": 1.0891056834850636,
         "max_hausdorff_px": 0.0,
-        "median_ms_per_stroke": 0.075875,
+        "median_ms_per_stroke": 0.07760449999999999,
         "name": "digilets_raw_complete",
         "point_count": 5847,
         "pressure_rmse_percent": 0.0,

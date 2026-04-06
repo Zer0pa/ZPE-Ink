@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import math
 import statistics
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -174,9 +175,9 @@ def evaluate_samples(name: str, samples: list[list[dict[str, list[int]]]]) -> di
         if not sample:
             continue
 
-        start = __import__("time").perf_counter_ns()
+        start = time.perf_counter_ns()
         encoded = encode_zpink(sample, mode="lossless")
-        elapsed_ms = (__import__("time").perf_counter_ns() - start) / 1_000_000.0
+        elapsed_ms = (time.perf_counter_ns() - start) / 1_000_000.0
         decoded = decode_zpink(encoded)["strokes"]
         roundtrip_pass = roundtrip_pass and decoded == sample
 

@@ -157,6 +157,19 @@ def _read_i32(data: bytes, offset: int) -> tuple[int, int]:
     return struct.unpack_from("<i", data, offset)[0], end
 
 
+def _resolve_optional_channel(
+    strokes: list[dict[str, list[int]]],
+    key: str,
+    requested: bool | None,
+) -> bool:
+    has_nonzero = any(any(int(value) != 0 for value in stroke.get(key, [])) for stroke in strokes)
+    if requested is False and has_nonzero:
+        raise ZPInkEncodeError(f"{key} channel contains non-zero values but include_{key}=False")
+    if requested is None:
+        return has_nonzero
+    return requested
+
+
 def _apply_quantization(values: list[int], mode: str) -> list[int]:
     if mode == "lossless":
         return values
@@ -169,8 +182,8 @@ def encode_zpink(
     strokes: list[dict[str, list[int]]],
     *,
     mode: str = "lossless",
-    include_tilt: bool = True,
-    include_azimuth: bool = True,
+    include_tilt: bool | None = None,
+    include_azimuth: bool | None = None,
     seed: int = 20260220,
 ) -> bytes:
     """Encode stroke arrays into .zpink bytes.
@@ -187,6 +200,9 @@ def encode_zpink(
 
     if mode not in MODE_TO_CODE:
         raise ZPInkEncodeError(f"unsupported mode: {mode}")
+
+    include_tilt = _resolve_optional_channel(strokes, "tilt", include_tilt)
+    include_azimuth = _resolve_optional_channel(strokes, "azimuth", include_azimuth)
 
     flags = FLAG_PRESSURE
     if include_tilt:
