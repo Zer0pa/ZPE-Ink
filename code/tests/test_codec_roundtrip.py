@@ -44,3 +44,26 @@ def test_quantized_high_mode_stays_finite() -> None:
     assert len(decoded["strokes"]) == len(strokes)
     for stroke in decoded["strokes"]:
         assert len(stroke["x"]) > 0
+
+
+def test_zero_optional_channels_are_omitted_by_default() -> None:
+    strokes = _sample_strokes()
+    zero_optional = []
+    for stroke in strokes:
+        zero_optional.append(
+            {
+                "x": stroke["x"],
+                "y": stroke["y"],
+                "pressure": stroke["pressure"],
+                "tilt": [0] * len(stroke["x"]),
+                "azimuth": [0] * len(stroke["x"]),
+            }
+        )
+
+    encoded_default = encode_zpink(zero_optional, mode="lossless")
+    encoded_full = encode_zpink(zero_optional, mode="lossless", include_tilt=True, include_azimuth=True)
+    decoded = decode_zpink(encoded_default)
+
+    assert decoded["strokes"] == zero_optional
+    assert decoded["flags"] == 0b001
+    assert len(encoded_default) < len(encoded_full)

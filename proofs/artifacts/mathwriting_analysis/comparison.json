@@ -1,0 +1,419 @@
+{
+  "codec_change": "auto-suppress zero tilt/azimuth channels unless explicitly requested",
+  "crohme": {
+    "after": {
+      "max_ratio": 3.3411764705882354,
+      "mean_points_per_stroke": 27.381779279376442,
+      "mean_ratio": 1.7634915635268305,
+      "mean_stroke_count": 21.833333333333332,
+      "median_ratio": 1.336975138108144,
+      "min_ratio": 1.1797528895974492,
+      "sample_count": 90,
+      "worst_samples": [
+        {
+          "compression_ratio": 1.1797528895974492,
+          "encoded_bytes": 2509,
+          "point_count": 370,
+          "points_per_stroke": 17.61904761904762,
+          "raw_bytes": 2960,
+          "sample_index": 45,
+          "stroke_count": 21
+        },
+        {
+          "compression_ratio": 1.198237885462555,
+          "encoded_bytes": 2497,
+          "point_count": 374,
+          "points_per_stroke": 17.80952380952381,
+          "raw_bytes": 2992,
+          "sample_index": 44,
+          "stroke_count": 21
+        },
+        {
+          "compression_ratio": 1.2023529411764706,
+          "encoded_bytes": 3400,
+          "point_count": 511,
+          "points_per_stroke": 19.653846153846153,
+          "raw_bytes": 4088,
+          "sample_index": 48,
+          "stroke_count": 26
+        },
+        {
+          "compression_ratio": 1.212211466865227,
+          "encoded_bytes": 2686,
+          "point_count": 407,
+          "points_per_stroke": 20.35,
+          "raw_bytes": 3256,
+          "sample_index": 46,
+          "stroke_count": 20
+        },
+        {
+          "compression_ratio": 1.2166003411028994,
+          "encoded_bytes": 3518,
+          "point_count": 535,
+          "points_per_stroke": 19.814814814814813,
+          "raw_bytes": 4280,
+          "sample_index": 51,
+          "stroke_count": 27
+        },
+        {
+          "compression_ratio": 1.2171185301366794,
+          "encoded_bytes": 4463,
+          "point_count": 679,
+          "points_per_stroke": 25.14814814814815,
+          "raw_bytes": 5432,
+          "sample_index": 43,
+          "stroke_count": 27
+        },
+        {
+          "compression_ratio": 1.2212852573422506,
+          "encoded_bytes": 3439,
+          "point_count": 525,
+          "points_per_stroke": 22.82608695652174,
+          "raw_bytes": 4200,
+          "sample_index": 37,
+          "stroke_count": 23
+        },
+        {
+          "compression_ratio": 1.2262020006453695,
+          "encoded_bytes": 3099,
+          "point_count": 475,
+          "points_per_stroke": 20.652173913043477,
+          "raw_bytes": 3800,
+          "sample_index": 47,
+          "stroke_count": 23
+        },
+        {
+          "compression_ratio": 1.2335252719129879,
+          "encoded_bytes": 3126,
+          "point_count": 482,
+          "points_per_stroke": 20.956521739130434,
+          "raw_bytes": 3856,
+          "sample_index": 85,
+          "stroke_count": 23
+        },
+        {
+          "compression_ratio": 1.2348401323043,
+          "encoded_bytes": 4535,
+          "point_count": 700,
+          "points_per_stroke": 20.58823529411765,
+          "raw_bytes": 5600,
+          "sample_index": 49,
+          "stroke_count": 34
+        }
+      ]
+    },
+    "before": {
+      "max_ratio": 2.9278350515463916,
+      "mean_points_per_stroke": 27.381779279376442,
+      "mean_ratio": 1.5198496338378722,
+      "mean_stroke_count": 21.833333333333332,
+      "median_ratio": 1.2329685809452966,
+      "min_ratio": 1.0404217926186292,
+      "sample_count": 90,
+      "worst_samples": [
+        {
+          "compression_ratio": 1.0404217926186292,
+          "encoded_bytes": 2845,
+          "point_count": 370,
+          "points_per_stroke": 17.61904761904762,
+          "raw_bytes": 2960,
+          "sample_index": 45,
+          "stroke_count": 21
+        },
+        {
+          "compression_ratio": 1.0561242499117542,
+          "encoded_bytes": 2833,
+          "point_count": 374,
+          "points_per_stroke": 17.80952380952381,
+          "raw_bytes": 2992,
+          "sample_index": 44,
+          "stroke_count": 21
+        },
+        {
+          "compression_ratio": 1.071278825995807,
+          "encoded_bytes": 3816,
+          "point_count": 511,
+          "points_per_stroke": 19.653846153846153,
+          "raw_bytes": 4088,
+          "sample_index": 48,
+          "stroke_count": 26
+        },
+        {
+          "compression_ratio": 1.083166999334664,
+          "encoded_bytes": 3006,
+          "point_count": 407,
+          "points_per_stroke": 20.35,
+          "raw_bytes": 3256,
+          "sample_index": 46,
+          "stroke_count": 20
+        },
+        {
+          "compression_ratio": 1.0835443037974684,
+          "encoded_bytes": 3950,
+          "point_count": 535,
+          "points_per_stroke": 19.814814814814813,
+          "raw_bytes": 4280,
+          "sample_index": 51,
+          "stroke_count": 27
+        },
+        {
+          "compression_ratio": 1.0960484568791462,
+          "encoded_bytes": 3467,
+          "point_count": 475,
+          "points_per_stroke": 20.652173913043477,
+          "raw_bytes": 3800,
+          "sample_index": 47,
+          "stroke_count": 23
+        },
+        {
+          "compression_ratio": 1.1025792478834415,
+          "encoded_bytes": 5079,
+          "point_count": 700,
+          "points_per_stroke": 20.58823529411765,
+          "raw_bytes": 5600,
+          "sample_index": 49,
+          "stroke_count": 34
+        },
+        {
+          "compression_ratio": 1.103230890464933,
+          "encoded_bytes": 3807,
+          "point_count": 525,
+          "points_per_stroke": 22.82608695652174,
+          "raw_bytes": 4200,
+          "sample_index": 37,
+          "stroke_count": 23
+        },
+        {
+          "compression_ratio": 1.1036061820263308,
+          "encoded_bytes": 3494,
+          "point_count": 482,
+          "points_per_stroke": 20.956521739130434,
+          "raw_bytes": 3856,
+          "sample_index": 85,
+          "stroke_count": 23
+        },
+        {
+          "compression_ratio": 1.1097037793667006,
+          "encoded_bytes": 4895,
+          "point_count": 679,
+          "points_per_stroke": 25.14814814814815,
+          "raw_bytes": 5432,
+          "sample_index": 43,
+          "stroke_count": 27
+        }
+      ]
+    },
+    "mean_ratio_delta": 0.24364192968895826
+  },
+  "finding": {
+    "evidence": "The lowest-ratio MathWriting samples have low points-per-stroke and improve when zero tilt/azimuth streams are omitted.",
+    "implemented_fix": "encode_zpink now auto-disables zero-valued tilt and azimuth channels while preserving lossless reconstruction.",
+    "primary_driver": "short multi-stroke samples pay disproportionate per-stroke optional-channel overhead"
+  },
+  "generated_on": "2026-04-06",
+  "mathwriting": {
+    "after": {
+      "max_ratio": 2.064516129032258,
+      "mean_points_per_stroke": 33.46071428571429,
+      "mean_ratio": 1.1495532802067019,
+      "mean_stroke_count": 1.7428571428571429,
+      "median_ratio": 1.1123216848649207,
+      "min_ratio": 0.2962962962962963,
+      "sample_count": 70,
+      "worst_samples": [
+        {
+          "compression_ratio": 0.2962962962962963,
+          "encoded_bytes": 54,
+          "point_count": 2,
+          "points_per_stroke": 2.0,
+          "raw_bytes": 16,
+          "sample_index": 32,
+          "stroke_count": 1
+        },
+        {
+          "compression_ratio": 0.7384615384615385,
+          "encoded_bytes": 130,
+          "point_count": 12,
+          "points_per_stroke": 6.0,
+          "raw_bytes": 96,
+          "sample_index": 13,
+          "stroke_count": 2
+        },
+        {
+          "compression_ratio": 0.7384615384615385,
+          "encoded_bytes": 130,
+          "point_count": 12,
+          "points_per_stroke": 12.0,
+          "raw_bytes": 96,
+          "sample_index": 29,
+          "stroke_count": 1
+        },
+        {
+          "compression_ratio": 0.8372093023255814,
+          "encoded_bytes": 86,
+          "point_count": 9,
+          "points_per_stroke": 9.0,
+          "raw_bytes": 72,
+          "sample_index": 47,
+          "stroke_count": 1
+        },
+        {
+          "compression_ratio": 0.8403361344537815,
+          "encoded_bytes": 238,
+          "point_count": 25,
+          "points_per_stroke": 12.5,
+          "raw_bytes": 200,
+          "sample_index": 28,
+          "stroke_count": 2
+        },
+        {
+          "compression_ratio": 0.8863636363636364,
+          "encoded_bytes": 352,
+          "point_count": 39,
+          "points_per_stroke": 13.0,
+          "raw_bytes": 312,
+          "sample_index": 39,
+          "stroke_count": 3
+        },
+        {
+          "compression_ratio": 0.916030534351145,
+          "encoded_bytes": 262,
+          "point_count": 30,
+          "points_per_stroke": 7.5,
+          "raw_bytes": 240,
+          "sample_index": 49,
+          "stroke_count": 4
+        },
+        {
+          "compression_ratio": 0.9318681318681319,
+          "encoded_bytes": 455,
+          "point_count": 53,
+          "points_per_stroke": 13.25,
+          "raw_bytes": 424,
+          "sample_index": 58,
+          "stroke_count": 4
+        },
+        {
+          "compression_ratio": 0.9584664536741214,
+          "encoded_bytes": 626,
+          "point_count": 75,
+          "points_per_stroke": 37.5,
+          "raw_bytes": 600,
+          "sample_index": 21,
+          "stroke_count": 2
+        },
+        {
+          "compression_ratio": 0.9642184557438794,
+          "encoded_bytes": 531,
+          "point_count": 64,
+          "points_per_stroke": 32.0,
+          "raw_bytes": 512,
+          "sample_index": 14,
+          "stroke_count": 2
+        }
+      ]
+    },
+    "before": {
+      "max_ratio": 1.991111111111111,
+      "mean_points_per_stroke": 33.46071428571429,
+      "mean_ratio": 1.0552415093903653,
+      "mean_stroke_count": 1.7428571428571429,
+      "median_ratio": 1.0288727468388486,
+      "min_ratio": 0.22857142857142856,
+      "sample_count": 70,
+      "worst_samples": [
+        {
+          "compression_ratio": 0.22857142857142856,
+          "encoded_bytes": 70,
+          "point_count": 2,
+          "points_per_stroke": 2.0,
+          "raw_bytes": 16,
+          "sample_index": 32,
+          "stroke_count": 1
+        },
+        {
+          "compression_ratio": 0.5925925925925926,
+          "encoded_bytes": 162,
+          "point_count": 12,
+          "points_per_stroke": 6.0,
+          "raw_bytes": 96,
+          "sample_index": 13,
+          "stroke_count": 2
+        },
+        {
+          "compression_ratio": 0.6575342465753424,
+          "encoded_bytes": 146,
+          "point_count": 12,
+          "points_per_stroke": 12.0,
+          "raw_bytes": 96,
+          "sample_index": 29,
+          "stroke_count": 1
+        },
+        {
+          "compression_ratio": 0.7058823529411765,
+          "encoded_bytes": 102,
+          "point_count": 9,
+          "points_per_stroke": 9.0,
+          "raw_bytes": 72,
+          "sample_index": 47,
+          "stroke_count": 1
+        },
+        {
+          "compression_ratio": 0.7361963190184049,
+          "encoded_bytes": 326,
+          "point_count": 30,
+          "points_per_stroke": 7.5,
+          "raw_bytes": 240,
+          "sample_index": 49,
+          "stroke_count": 4
+        },
+        {
+          "compression_ratio": 0.7407407407407407,
+          "encoded_bytes": 270,
+          "point_count": 25,
+          "points_per_stroke": 12.5,
+          "raw_bytes": 200,
+          "sample_index": 28,
+          "stroke_count": 2
+        },
+        {
+          "compression_ratio": 0.78,
+          "encoded_bytes": 400,
+          "point_count": 39,
+          "points_per_stroke": 13.0,
+          "raw_bytes": 312,
+          "sample_index": 39,
+          "stroke_count": 3
+        },
+        {
+          "compression_ratio": 0.8169556840077071,
+          "encoded_bytes": 519,
+          "point_count": 53,
+          "points_per_stroke": 13.25,
+          "raw_bytes": 424,
+          "sample_index": 58,
+          "stroke_count": 4
+        },
+        {
+          "compression_ratio": 0.8401826484018264,
+          "encoded_bytes": 219,
+          "point_count": 23,
+          "points_per_stroke": 11.5,
+          "raw_bytes": 184,
+          "sample_index": 42,
+          "stroke_count": 2
+        },
+        {
+          "compression_ratio": 0.8406779661016949,
+          "encoded_bytes": 295,
+          "point_count": 31,
+          "points_per_stroke": 10.333333333333334,
+          "raw_bytes": 248,
+          "sample_index": 40,
+          "stroke_count": 3
+        }
+      ]
+    },
+    "mean_ratio_delta": 0.09431177081633657
+  }
+}

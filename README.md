@@ -216,3 +216,9 @@ Constraints and technical debt:
     <tr><td>Support routing</td><td><code>docs/SUPPORT.md</code></td></tr>
   </tbody>
 </table>
+
+## Ecosystem Cross-Links
+
+- [ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) — reference repo for shared repo-shape, documentation layout, and workstream-family alignment.
+- [Public Benchmark Summary](proofs/artifacts/public_benchmarks/README.md) — current external corpus benchmark surface for this repo.
+- [MathWriting Gap Analysis](proofs/artifacts/mathwriting_analysis/README.md) — current hard-corpus diagnosis and the implemented overhead reduction.
