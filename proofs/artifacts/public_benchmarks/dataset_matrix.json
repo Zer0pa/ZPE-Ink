@@ -1,0 +1,100 @@
+{
+  "datasets": [
+    {
+      "inkml_files": 70,
+      "metrics": {
+        "compression_ratio": 1.0944074088858728,
+        "max_hausdorff_px": 0.0,
+        "median_ms_per_stroke": 0.0818195,
+        "name": "mathwriting_excerpt",
+        "point_count": 3427,
+        "pressure_rmse_percent": 0.0,
+        "roundtrip_pass": true,
+        "sample_count": 70,
+        "stroke_count": 122
+      },
+      "name": "MathWriting",
+      "parse_failures": 0,
+      "source_url": "https://storage.googleapis.com/mathwriting_data/mathwriting-2024-excerpt.tgz",
+      "status": "benchmarked"
+    },
+    {
+      "inkml_files": 90,
+      "metrics": {
+        "compression_ratio": 1.301456280301924,
+        "max_hausdorff_px": 0.0,
+        "median_ms_per_stroke": 0.07112763756613756,
+        "name": "crohme_icfhr_package",
+        "point_count": 54593,
+        "pressure_rmse_percent": 0.0,
+        "roundtrip_pass": true,
+        "sample_count": 90,
+        "stroke_count": 1965
+      },
+      "name": "CROHME",
+      "note": "The revised 2019 landing path was not used; the public ICFHR package remained available.",
+      "parse_failures": 0,
+      "source_url": "https://oldweb.isical.ac.in/~crohme/ICFHR_package.zip",
+      "status": "benchmarked_fallback"
+    },
+    {
+      "category": "cat",
+      "metrics": {
+        "compression_ratio": 0.7672150822623394,
+        "max_hausdorff_px": 0.0,
+        "median_ms_per_stroke": 0.025060598214285714,
+        "name": "quickdraw_cat_simplified",
+        "point_count": 15342,
+        "pressure_rmse_percent": 0.0,
+        "roundtrip_pass": true,
+        "sample_count": 256,
+        "stroke_count": 2464
+      },
+      "name": "QuickDraw",
+      "note": "Simplified NDJSON category sample with synthesized pressure/tilt/azimuth channels.",
+      "source_url": "https://storage.googleapis.com/quickdraw_dataset/full/simplified/cat.ndjson",
+      "status": "benchmarked"
+    },
+    {
+      "metrics": {
+        "compression_ratio": 1.0014344130681454,
+        "max_hausdorff_px": 0.0,
+        "median_ms_per_stroke": 0.075875,
+        "name": "digilets_raw_complete",
+        "point_count": 5847,
+        "pressure_rmse_percent": 0.0,
+        "roundtrip_pass": true,
+        "sample_count": 180,
+        "stroke_count": 235
+      },
+      "name": "DigiLeTs",
+      "note": "Parsed from raw complete participant files with pen-down stroke segmentation.",
+      "source_url": "https://github.com/CognitiveModeling/DigiLeTs",
+      "status": "benchmarked"
+    },
+    {
+      "name": "IAM On-Line",
+      "note": "Landing page reachable, but direct agent-only dataset acquisition remains registration-gated.",
+      "probe": {
+        "http_status": 200,
+        "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-gb\" lang=\"en-gb\">\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/style.css\" />\n    <title>Research Group on Computer Vision and Artificial Intelligence &mdash; Computer Vision and Artificial Intelligence</title>\n    <link rel=\"author\"\n   ",
+        "status": "reachable",
+        "url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database"
+      },
+      "source_url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database",
+      "status": "skipped_access"
+    },
+    {
+      "name": "UNIPEN",
+      "note": "Direct host probe failed in-lane.",
+      "probe": {
+        "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "status": "failed",
+        "url": "https://unipen.nici.ru.nl"
+      },
+      "source_url": "https://unipen.nici.ru.nl",
+      "status": "skipped_access"
+    }
+  ],
+  "generated_on": "2026-04-06"
+}
