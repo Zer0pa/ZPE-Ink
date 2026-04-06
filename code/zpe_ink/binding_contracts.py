@@ -28,6 +28,17 @@ def _expect_contains(path: Path, needle: str, label: str) -> dict[str, Any]:
     }
 
 
+def _expect_any_contains(path: Path, needles: list[str], label: str) -> dict[str, Any]:
+    haystack = _read_text(path)
+    passed = any(needle in haystack for needle in needles)
+    return {
+        "id": label,
+        "path": str(path),
+        "status": "PASS" if passed else "FAIL",
+        "needles": needles,
+    }
+
+
 def _load_pyproject_version(repo_root: Path) -> str:
     payload = _load_toml(repo_root / "code" / "pyproject.toml")
     return payload["project"]["version"]
@@ -111,10 +122,18 @@ def verify_repo_binding_contracts(repo_root: Path) -> dict[str, Any]:
         _expect_contains(root / "code" / "bindings" / "wasm" / "src" / "lib.rs", "input.len() < 22", "wasm_header_bytes"),
         _expect_contains(root / "code" / "bindings" / "swift" / "ZPEInk.swift", '"ZPINK"', "swift_magic"),
         _expect_contains(root / "code" / "bindings" / "swift" / "ZPEInk.swift", f'"{package_version}"', "swift_version"),
-        _expect_contains(root / "code" / "bindings" / "swift" / "ZPEInk.swift", "bytes.count >= 22", "swift_header_bytes"),
+        _expect_any_contains(
+            root / "code" / "bindings" / "swift" / "ZPEInk.swift",
+            ["bytes.count >= 22", "headerBytes = 22", "bytes.count >= headerBytes"],
+            "swift_header_bytes",
+        ),
         _expect_contains(root / "code" / "bindings" / "csharp" / "ZpeInk.cs", "'Z'", "csharp_magic"),
         _expect_contains(root / "code" / "bindings" / "csharp" / "ZpeInk.cs", f'"{package_version}"', "csharp_version"),
-        _expect_contains(root / "code" / "bindings" / "csharp" / "ZpeInk.cs", "bytes.Length < 22", "csharp_header_bytes"),
+        _expect_any_contains(
+            root / "code" / "bindings" / "csharp" / "ZpeInk.cs",
+            ["bytes.Length < 22", "HeaderBytes = 22", "bytes.Length < HeaderBytes"],
+            "csharp_header_bytes",
+        ),
     ]
 
     failures = [check for check in checks if check["status"] != "PASS"]

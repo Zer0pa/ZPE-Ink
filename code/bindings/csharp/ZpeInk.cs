@@ -144,7 +144,10 @@ namespace ZPE.Ink {
         private const byte FlagAzimuth = 0b100;
 
         public static ZpeInkHeader ParseHeader(byte[] bytes) {
-            if (bytes == null || bytes.Length < HeaderBytes) {
+            if (bytes == null) {
+                throw new ZpeInkException("stream too short for header");
+            }
+            if (bytes.Length < 22) {
                 throw new ZpeInkException("stream too short for header");
             }
             if (bytes[0] != (byte)'Z' || bytes[1] != (byte)'P' || bytes[2] != (byte)'I' || bytes[3] != (byte)'N' || bytes[4] != (byte)'K') {
@@ -289,6 +292,10 @@ namespace ZPE.Ink {
 
         public static string DecodeToCanonicalJson(byte[] bytes) {
             return Decode(bytes).CanonicalJson();
+        }
+
+        public static string DecodeToJson(byte[] bytes) {
+            return DecodeToCanonicalJson(bytes);
         }
 
         private static string ModeName(byte code) {

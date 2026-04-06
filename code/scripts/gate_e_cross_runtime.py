@@ -52,6 +52,8 @@ def main() -> int:
     py_decoded = decode_zpink(payload)
     py_json = canonical_json(py_decoded)
     py_hash = _sha(py_json)
+    expected_json_file = parity_dir / "expected_decoded.json"
+    expected_json_file.write_text(py_json, encoding="utf-8")
 
     wasm_build = run_command(
         [
@@ -82,18 +84,24 @@ def main() -> int:
 
     swift_bin = parity_dir / "swift_decode_bin"
     swift_build_rc, swift_build_out, swift_build_err = _run_capture(
-        ["swiftc", str(ROOT / "scripts" / "swift_decode.swift"), "-o", str(swift_bin)]
+        [
+            "swiftc",
+            str(ROOT / "bindings" / "swift" / "ZPEInk.swift"),
+            str(ROOT / "bindings" / "swift" / "Tests" / "ZPEInkParity.swift"),
+            "-o",
+            str(swift_bin),
+        ]
     )
     append_command_log(
         log_path,
         "gate_e_swift_build",
-        f"swiftc {ROOT / 'scripts' / 'swift_decode.swift'} -o <bin>",
+        f"swiftc {ROOT / 'bindings' / 'swift' / 'ZPEInk.swift'} {ROOT / 'bindings' / 'swift' / 'Tests' / 'ZPEInkParity.swift'} -o <bin>",
         swift_build_rc,
         swift_build_out,
         swift_build_err,
     )
     if swift_build_rc == 0:
-        swift_rc, swift_out, swift_err = _run_capture([str(swift_bin), str(parity_file)])
+        swift_rc, swift_out, swift_err = _run_capture([str(swift_bin), str(parity_file), str(expected_json_file)])
     else:
         swift_rc, swift_out, swift_err = swift_build_rc, "", swift_build_err
     append_command_log(
@@ -105,10 +113,50 @@ def main() -> int:
         swift_err,
     )
 
+    csharp_bin = parity_dir / "csharp_decode.exe"
+    csharp_build_rc, csharp_build_out, csharp_build_err = _run_capture(
+        [
+            "mcs",
+            "-out:" + str(csharp_bin),
+            str(ROOT / "bindings" / "csharp" / "Tests" / "ZpeInkParity.cs"),
+            str(ROOT / "bindings" / "csharp" / "ZpeInk.cs"),
+        ]
+    )
+    append_command_log(
+        log_path,
+        "gate_e_csharp_build",
+        f"mcs -out:{csharp_bin} {ROOT / 'bindings' / 'csharp' / 'Tests' / 'ZpeInkParity.cs'} {ROOT / 'bindings' / 'csharp' / 'ZpeInk.cs'}",
+        csharp_build_rc,
+        csharp_build_out,
+        csharp_build_err,
+    )
+    if csharp_build_rc == 0:
+        csharp_rc, csharp_out, csharp_err = _run_capture(
+            ["mono", str(csharp_bin), str(parity_file), str(expected_json_file)]
+        )
+    else:
+        csharp_rc, csharp_out, csharp_err = csharp_build_rc, "", csharp_build_err
+    append_command_log(
+        log_path,
+        "gate_e_csharp_decode",
+        f"mono {csharp_bin}",
+        csharp_rc,
+        csharp_out,
+        csharp_err,
+    )
+
     wasm_hash = _sha(_canonicalize(node_out.strip())) if node_rc == 0 else None
     swift_hash = _sha(_canonicalize(swift_out.strip())) if swift_rc == 0 else None
+    csharp_hash = _sha(_canonicalize(csharp_out.strip())) if csharp_rc == 0 else None
 
-    parity_pass = node_rc == 0 and swift_rc == 0 and wasm_hash == py_hash and swift_hash == py_hash
+    parity_pass = (
+        node_rc == 0
+        and swift_rc == 0
+        and csharp_rc == 0
+        and wasm_hash == py_hash
+        and swift_hash == py_hash
+        and csharp_hash == py_hash
+    )
 
     # PyO3 path validation.
     machine = platform.machine().lower()
@@ -187,8 +235,10 @@ def main() -> int:
         "python_hash": py_hash,
         "wasm_hash": wasm_hash,
         "swift_hash": swift_hash,
+        "csharp_hash": csharp_hash,
         "node_decode_returncode": node_rc,
         "swift_decode_returncode": swift_rc,
+        "csharp_decode_returncode": csharp_rc,
         "wasm_build_returncode": wasm_build["returncode"],
         "pyo3_build_returncode": pyo3_result["returncode"],
         "pyo3_import_returncode": pyo3_import_rc,
@@ -197,11 +247,13 @@ def main() -> int:
             "parity_input": str(parity_file),
             "node_stdout": str(parity_dir / "node_decoded.json"),
             "swift_stdout": str(parity_dir / "swift_decoded.json"),
+            "csharp_stdout": str(parity_dir / "csharp_decoded.json"),
         },
     }
 
     (parity_dir / "node_decoded.json").write_text(node_out, encoding="utf-8")
     (parity_dir / "swift_decoded.json").write_text(swift_out, encoding="utf-8")
+    (parity_dir / "csharp_decoded.json").write_text(csharp_out, encoding="utf-8")
     write_json(root / "ink_cross_runtime_parity.json", payload_json)
 
     if not parity_pass:
