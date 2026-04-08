@@ -1,0 +1,30 @@
+[2026-04-08T03:04:13.947081+00:00] phase3_iam_probe
+CMD: curl -L -sS --max-time 20 -o /dev/null -w %{http_code} %{url_effective} https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database
+RC: 0
+STDOUT:
+200 https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database
+---
+[2026-04-08T03:04:34.043540+00:00] phase3_casia_probe
+CMD: curl -L -sS --max-time 20 -o /dev/null -w %{http_code} %{url_effective} https://nlpr.ia.ac.cn/databases/handwriting/home.html
+RC: 28
+STDOUT:
+000 https://nlpr.ia.ac.cn/databases/handwriting/home.html
+STDERR:
+curl: (28) Connection timed out after 20008 milliseconds
+---
+[2026-04-08T03:04:35.907531+00:00] phase3_uji_page_probe
+CMD: curl -L -sS --max-time 20 -o /dev/null -w %{http_code} %{url_effective} https://archive.ics.uci.edu/dataset/160/uji+pen+characters
+RC: 0
+STDOUT:
+200 https://archive.ics.uci.edu/dataset/160/uji+pen+characters
+---
+[2026-04-08T03:04:39.788594+00:00] phase3_uji_download
+CMD: curl -L -sS --max-time 60 https://archive.ics.uci.edu/static/public/160/uji+pen+characters.zip -o /var/folders/49/b6bj2qfd5nl4vndxv7rb9dh00000gn/T/zpe-ink-phase3-uji-o33zjkk1/uji_pen_characters.zip
+RC: 0
+---
+[2026-04-08T03:04:39.810579+00:00] phase3_uji_extract
+CMD: safe-unzip /var/folders/49/b6bj2qfd5nl4vndxv7rb9dh00000gn/T/zpe-ink-phase3-uji-o33zjkk1/uji_pen_characters.zip
+RC: 0
+STDOUT:
+members=12
+---

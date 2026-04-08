@@ -1,26 +1,34 @@
 # ZPE-Ink Benchmarks
 
-This file is a scaffold for Phase 2.
-Real public-dataset rows land in Phase 3 only.
-Do not backfill synthetic or proxy data here.
+Public rows only. No proxy data is promoted here.
 
-## Reproducible Methodology
+## Methodology
 
-1. Record the repo commit, host, OS, Python version, Swift version, Rust toolchain, and browser/runtime version.
-2. Record the exact dataset URL or local path, the command used, the sample count, and whether the source is public or proxy.
-3. Run `encode -> decode -> verify` on the same sample set.
-4. Capture raw bytes, encoded bytes, ratio, fidelity metric, and wall-clock timing.
-5. Keep proxy/demo rows separate from public dataset rows.
+1. Run from the repo root: `python code/scripts/run_phase3_public_benchmarks.py`
+2. Artifact path: `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json`
+3. Baseline: raw float32 `x/y` payload, matching the repo's current authority surface.
+4. Fidelity rule: `exact` means decode output matched the source stroke arrays byte-for-byte at the integer channel level.
+5. Registration-gated datasets stay blocked until the real corpus is acquired in-lane. No proxy values are substituted into this table.
 
-## Phase 2 Scaffold
+## Dataset Table
 
-| dataset | source | baseline | zpe | ratio | fidelity | notes |
-|---|---|---|---|---|---|---|
-| Synthetic proxy | repo fixtures | raw float32 | n/a | n/a | roundtrip only | Proxy/demo surface only |
-| Public datasets | reserved for Phase 3 | raw float32 | n/a | n/a | n/a | IAM, CASIA, and other real rows land in Phase 3 |
+| dataset | strokes | points_per_stroke | raw_size | compressed | ratio | roundtrip_fidelity |
+|---|---:|---:|---:|---:|---:|---|
+| IAM On-Line Handwriting | blocked | blocked | blocked | blocked | blocked | blocked |
+| CASIA Online Handwriting | blocked | blocked | blocked | blocked | blocked | blocked |
+| UJI Pen Characters | 1,854 | 40.23 | 596,736 B | 370,379 B | 1.6111x | exact |
 
-## Phase 3 Reservation
+## Sources
 
-- Use only freely available public datasets.
-- Replace proxy rows with measured rows from runnable scripts.
-- Cite the dataset URL, the exact command, and the fidelity metric for each row.
+- IAM On-Line Handwriting: `https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database`
+  Probe result on 2026-04-08: `HTTP/1.1 200 OK`. No direct public corpus download was established for this phase.
+- CASIA Online Handwriting: `https://nlpr.ia.ac.cn/databases/handwriting/home.html`
+  Probe result on 2026-04-08: `rc=28`, `status=000` after the bounded 20-second probe. No direct public corpus download was established for this phase.
+- UJI Pen Characters: `https://archive.ics.uci.edu/dataset/160/uji+pen+characters`
+  Download URL used: `https://archive.ics.uci.edu/static/public/160/uji+pen+characters.zip`
+  Archive SHA-256: `06e484103d21ead80ec7675059d3ffe66f39f51bfcb9c77a00fbbfb1c85546dc`
+
+## Notes
+
+- UJI metrics were measured over `1,364` isolated-character samples and `74,592` total points.
+- This file does not widen the repo claim surface beyond the current structured-tier authority boundary.

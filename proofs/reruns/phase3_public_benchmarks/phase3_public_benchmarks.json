@@ -1,0 +1,79 @@
+{
+  "baseline": "raw float32 xy payload",
+  "generated_from": "code/scripts/run_phase3_public_benchmarks.py",
+  "probes": {
+    "casia": {
+      "final_url": "https://nlpr.ia.ac.cn/databases/handwriting/home.html",
+      "returncode": 28,
+      "status_code": "000",
+      "url": "https://nlpr.ia.ac.cn/databases/handwriting/home.html"
+    },
+    "iam": {
+      "final_url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database",
+      "returncode": 0,
+      "status_code": "200",
+      "url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database"
+    },
+    "uji_page": {
+      "final_url": "https://archive.ics.uci.edu/dataset/160/uji+pen+characters",
+      "returncode": 0,
+      "status_code": "200",
+      "url": "https://archive.ics.uci.edu/dataset/160/uji+pen+characters"
+    }
+  },
+  "rows": [
+    {
+      "compressed_size_bytes": null,
+      "compression_ratio": null,
+      "dataset": "IAM On-Line Handwriting",
+      "note": "Registration-gated dataset. Official page reachable via HTTP 200, but no direct public corpus download was established for this phase.",
+      "points_per_stroke": null,
+      "probe": {
+        "final_url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database",
+        "returncode": 0,
+        "status_code": "200",
+        "url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database"
+      },
+      "raw_size_bytes": null,
+      "roundtrip_fidelity": null,
+      "source_url": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database",
+      "status": "blocked",
+      "strokes": null
+    },
+    {
+      "compressed_size_bytes": null,
+      "compression_ratio": null,
+      "dataset": "CASIA Online Handwriting",
+      "note": "Registration-gated dataset. Official access probe failed or timed out from this environment, with rc=28 and status=000.",
+      "points_per_stroke": null,
+      "probe": {
+        "final_url": "https://nlpr.ia.ac.cn/databases/handwriting/home.html",
+        "returncode": 28,
+        "status_code": "000",
+        "url": "https://nlpr.ia.ac.cn/databases/handwriting/home.html"
+      },
+      "raw_size_bytes": null,
+      "roundtrip_fidelity": null,
+      "source_url": "https://nlpr.ia.ac.cn/databases/handwriting/home.html",
+      "status": "blocked",
+      "strokes": null
+    },
+    {
+      "archive_sha256": "06e484103d21ead80ec7675059d3ffe66f39f51bfcb9c77a00fbbfb1c85546dc",
+      "compressed_size_bytes": 370379,
+      "compression_ratio": 1.6111,
+      "dataset": "UJI Pen Characters",
+      "download_url": "https://archive.ics.uci.edu/static/public/160/uji+pen+characters.zip",
+      "mode": "lossless",
+      "point_count": 74592,
+      "points_per_stroke": 40.23,
+      "raw_size_bytes": 596736,
+      "roundtrip_fidelity": "exact",
+      "sample_count": 1364,
+      "seed": 20260408,
+      "source_url": "https://archive.ics.uci.edu/dataset/160/uji+pen+characters",
+      "status": "measured",
+      "strokes": 1854
+    }
+  ]
+}
