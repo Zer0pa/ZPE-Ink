@@ -8,8 +8,16 @@ version = "0.1.0"
 description = "ZPE Ink Wave-1 codec and falsification harness"
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [{name = "Zer0pa Labs"}]
+authors = [{name = "Zer0pa"}]
 license = "LicenseRef-Zer0pa-SAL-6.0"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = []
 
 [project.optional-dependencies]
@@ -25,6 +33,12 @@ telemetry = [
 zpe-ink = "zpe_ink.cli:entrypoint"
 zpe-ink-demo = "zpe_ink.cli:demo_entry"
 zpe-ink-verify-roundtrip = "zpe_ink.cli:verify_roundtrip_entry"
+
+[project.urls]
+Homepage = "https://github.com/Zer0pa/ZPE-Ink"
+Documentation = "https://github.com/Zer0pa/ZPE-Ink/tree/main/docs"
+Repository = "https://github.com/Zer0pa/ZPE-Ink"
+Changelog = "https://github.com/Zer0pa/ZPE-Ink/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
 include-package-data = false

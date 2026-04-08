@@ -6,6 +6,11 @@
 
 This is not a public release history. It tracks private staging changes only.
 
+## Unreleased
+
+- reframed the README around stylus-stream use cases, platforms, personas, and ecosystem context
+- normalized package metadata and added project URLs and classifiers
+
 ## 2026-03-21
 
 - aligned the repo documentation surface to the current authority artifacts
