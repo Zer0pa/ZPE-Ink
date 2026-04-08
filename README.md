@@ -4,23 +4,29 @@
 
 # ZPE-Ink
 
-Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a current proof subset and rerun surface. It is not release-ready.
+Compress stylus streams for note-taking, annotation, and signature capture.
 
-Status in plain language:
-
-- What this is: a staged `.zpink` codec with a Python install surface and repo-local bindings.
-- Proven: structured-tier compression exceeds 5x vs raw float32 and cross-runtime parity logs pass locally.
-- Blocked: sovereign release surface is `FAIL` and blind-clone verification is `INCONCLUSIVE`.
-
-Sovereign release surface: `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`.
-
-Prereqs for local verification: Python 3.11+, Rust toolchain, and `wasm32-unknown-unknown` target for binding checks.
+- 5.590209480060199x structured-tier ratio.
+- Supported surfaces: iOS (Swift) | Web (WASM) | Python | C#.
+- Built for: GoodNotes-style app developer | Digital signature compliance engineer.
+- Competitive context: GitHub has no established open-source ink compression line; PencilKit, Windows Ink, and Wacom stay proprietary ecosystem surfaces.
+- Dataset ecosystem: [IAM On-Line Handwriting](https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database) | CASIA online handwriting | [UJI Pen Characters](https://archive.ics.uci.edu/dataset/160/uji+pen+characters).
+- Current gate: structured tier `PASS` | release surface `FAIL` | blind clone `INCONCLUSIVE`.
+- Install unit: `code/`.
+- Transfer unit: `.zpink` packets.
+- Bindings: repo-local sources.
+- Authority report: `proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md`.
+- Prereqs: Python 3.11+, Rust toolchain, `wasm32-unknown-unknown`.
 
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
 
-ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. The installable release unit is the Python package under `code/`. The Rust/WASM/Swift/C# bindings are repo-local source surfaces and are not part of the pip install unit.
+- `.zpink` packet codec.
+- Deterministic stylus-stream transport.
+- Python package under `code/`.
+- Repo-local Swift, WASM, and C# source surfaces.
+- Note-taking, annotation, signature capture.
 
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
@@ -31,12 +37,10 @@ ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. T
     <td width="56%" valign="top">
       <pre><code class="language-bash">python -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip
 python -m pip install -e './code[dev]'
-python -m pytest code/tests -q
 python -m zpe_ink demo
 python -m zpe_ink verify-roundtrip</code></pre>
-      <p>Authoritative artifact: <code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></p>
+      <p>Authoritative artifact: <code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></p>
     </td>
     <td width="44%" valign="top">
       <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
@@ -54,6 +58,14 @@ python -m zpe_ink verify-roundtrip</code></pre>
           <tr>
             <td>Contact</td>
             <td><code>architects@zer0pa.ai</code></td>
+          </tr>
+          <tr>
+            <td>Supported platforms</td>
+            <td><code>iOS (Swift) | Web (WASM) | Python | C#</code></td>
+          </tr>
+          <tr>
+            <td>Primary personas</td>
+            <td><code>GoodNotes-style app developer | Digital signature compliance engineer</code></td>
           </tr>
           <tr>
             <td>Current verdict</td>
@@ -80,12 +92,12 @@ How to read this table: it reports the latest measured ratios and boundaries; it
     </tr>
   </thead>
   <tbody>
-    <tr><td>Structured tier ratio</td><td><code>5.590209480060199x</code></td><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td></tr>
-    <tr><td>Structured tier best comparator</td><td><code>brotli 6.825565026256283x</code></td><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td></tr>
-    <tr><td>Hard corpus ratios</td><td><code>MathWriting 1.0944x</code>, <code>CROHME 1.3015x</code></td><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td></tr>
-    <tr><td>Release surface</td><td><code>FAIL</code> (handoff <code>NO-GO</code>)</td><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td></tr>
-    <tr><td>Blind clone</td><td><code>INCONCLUSIVE</code> (npm probe failure)</td><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td></tr>
-    <tr><td>Non-Latin corpus</td><td><code>Calliar 2.7746x</code></td><td><code>proofs/reruns/phase3_external/calliar_benchmark.json</code></td></tr>
+    <tr><td>Structured tier ratio</td><td><code>5.590209480060199x</code></td><td><code>proofs/runbooks/20260321T005520Z_codex_receipt.md</code></td></tr>
+    <tr><td>Structured tier best comparator</td><td><code>brotli 6.825565026256283x</code></td><td><code>proofs/runbooks/20260321T005520Z_codex_receipt.md</code></td></tr>
+    <tr><td>Hard corpus ratios</td><td><code>MathWriting 1.0944x</code>, <code>CROHME 1.3015x</code></td><td><code>agent_ops/status_pack_20260321/02_AUTHORITY_METRICS.md</code></td></tr>
+    <tr><td>Release surface</td><td><code>FAIL</code> (handoff <code>NO-GO</code>)</td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
+    <tr><td>Blind clone</td><td><code>INCONCLUSIVE</code> (npm probe failure)</td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
+    <tr><td>Non-Latin corpus</td><td><code>Calliar executed; release surface still FAIL</code></td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
   </tbody>
 </table>
 
@@ -100,12 +112,12 @@ How to read this table: these are the current authority anchors; any conflict ke
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Sovereign release surface</td><td><code>release_surface_verdict=FAIL</code></td></tr>
-    <tr><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td><td>Claim boundary</td><td><code>structured-tier-only</code></td></tr>
-    <tr><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td><td>Structured-tier ratios</td><td><code>appendix_all_pass=false</code></td></tr>
-    <tr><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td><td>Cross-runtime parity log</td><td><code>status=pass</code></td></tr>
+    <tr><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td><td>Sovereign release surface</td><td><code>Verdict=INCONCLUSIVE | NO-GO</code></td></tr>
+    <tr><td><code>proofs/runbooks/20260321T005520Z_codex_receipt.md</code></td><td>Claim boundary</td><td><code>structured-tier-only phrasing preserved</code></td></tr>
+    <tr><td><code>agent_ops/status_pack_20260321/02_AUTHORITY_METRICS.md</code></td><td>Structured-tier ratios</td><td><code>structured tier &gt;5x; hard corpus below comparator</code></td></tr>
+    <tr><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td><td>Cross-runtime parity log</td><td><code>swift_native=READY</code>, <code>wasm=READY</code>, <code>csharp_managed=READY</code></td></tr>
     <tr><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td><td>Binding contract check</td><td><code>status=PASS</code></td></tr>
-    <tr><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td><td>Blind-clone gate</td><td><code>verdict=INCONCLUSIVE</code></td></tr>
+    <tr><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td><td>Blind-clone gate</td><td><code>blind clone = INCONCLUSIVE</code></td></tr>
   </tbody>
 </table>
 
@@ -126,11 +138,11 @@ How to read this table: these are the current authority anchors; any conflict ke
     </tr>
   </thead>
   <tbody>
-    <tr><td>Structured-tier transport</td><td><code>PASS</code> (&gt;5x vs raw float32)</td><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td></tr>
-    <tr><td>Hard-corpus transport</td><td><code>FAIL</code> (below best comparators)</td><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td></tr>
+    <tr><td>Structured-tier transport</td><td><code>PASS</code> (&gt;5x vs raw float32)</td><td><code>proofs/runbooks/20260321T005520Z_codex_receipt.md</code></td></tr>
+    <tr><td>Hard-corpus transport</td><td><code>FAIL</code> (below best comparators)</td><td><code>agent_ops/status_pack_20260321/02_AUTHORITY_METRICS.md</code></td></tr>
     <tr><td>Release surface</td><td><code>FAIL</code> / <code>INCONCLUSIVE</code></td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
-    <tr><td>Blind clone</td><td><code>INCONCLUSIVE</code></td><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td></tr>
-    <tr><td>Cross-runtime parity (current)</td><td><code>PASS</code></td><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td></tr>
+    <tr><td>Blind clone</td><td><code>INCONCLUSIVE</code></td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
+    <tr><td>Cross-runtime parity (current)</td><td><code>READY</code></td><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td></tr>
     <tr><td>Contract alignment (repo-local)</td><td><code>PASS</code></td><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td></tr>
   </tbody>
 </table>
