@@ -50,7 +50,7 @@ ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. T
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
 </p>
 
-## Current Authority
+## Commercial Readiness
 
 | Field | Value |
 |-------|-------|
@@ -70,7 +70,7 @@ Confidence basis: 4/6 verification checks currently PASS.
   <img src=".github/assets/readme/section-bars/lane-status-snapshot.svg" alt="LANE STATUS SNAPSHOT" width="100%">
 </p>
 
-## Verification Status
+## Tests and Verification
 
 | Code | Check | Verdict |
 |------|-------|---------|
