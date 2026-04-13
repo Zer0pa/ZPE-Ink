@@ -1,0 +1,190 @@
+{
+  "comparators": {
+    "brotli": {
+      "command": [
+        "/usr/local/bin/brotli",
+        "-q",
+        "11",
+        "-c"
+      ],
+      "path": "/usr/local/bin/brotli",
+      "version": "brotli 1.2.0"
+    },
+    "lz4": {
+      "command": [
+        "/usr/local/bin/lz4",
+        "-9",
+        "-z",
+        "-c"
+      ],
+      "path": "/usr/local/bin/lz4",
+      "version": "*** lz4 v1.10.0 64-bit multithread, by Yann Collet ***"
+    },
+    "raw_float32_xy": {
+      "version": "baseline"
+    },
+    "zstd": {
+      "command": [
+        "/usr/local/bin/zstd",
+        "-19",
+        "-q",
+        "-c"
+      ],
+      "path": "/usr/local/bin/zstd",
+      "version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
+    }
+  },
+  "freeze_rules": {
+    "compression_unit": "per-sample compression with encoded sizes summed across the corpus",
+    "raw_baseline": "little-endian float32 x/y pairs only, matching the existing raw float32 coordinate baseline",
+    "same_corpus_rule": "Each comparator sees the same raw x/y payload bytes before compression"
+  },
+  "generated_at": "2026-03-20T17:46:16Z",
+  "hard_corpus": {
+    "datasets": [
+      {
+        "name": "mathwriting",
+        "point_count": 3427,
+        "ratios": {
+          "brotli": 1.62561517936555,
+          "lz4": 1.0278173502286871,
+          "raw_float32_xy": 1.0,
+          "zpe_ink": 1.0944074088858728,
+          "zstd": 1.3205529598766919
+        },
+        "sample_count": 70,
+        "sizes_bytes": {
+          "brotli": 16865,
+          "lz4": 26674,
+          "raw_float32_xy": 27416,
+          "zpe_ink": 25051,
+          "zstd": 20761
+        },
+        "stroke_count": 122
+      },
+      {
+        "name": "crohme",
+        "point_count": 54593,
+        "ratios": {
+          "brotli": 2.157058753802995,
+          "lz4": 1.344576517999255,
+          "raw_float32_xy": 1.0,
+          "zpe_ink": 1.301456280301924,
+          "zstd": 1.884287822177736
+        },
+        "sample_count": 90,
+        "sizes_bytes": {
+          "brotli": 202472,
+          "lz4": 324819,
+          "raw_float32_xy": 436744,
+          "zpe_ink": 335581,
+          "zstd": 231782
+        },
+        "stroke_count": 1965
+      }
+    ]
+  },
+  "schema_version": 1,
+  "source_artifact_root": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local",
+  "structured_tier": {
+    "datasets": [
+      {
+        "name": "synthetic_lossless",
+        "point_count": 9834,
+        "ratios": {
+          "brotli": 6.870917030567686,
+          "lz4": 1.9723225030084235,
+          "raw_float32_xy": 1.0,
+          "zpe_ink": 6.073650891685324,
+          "zstd": 4.896191187453323
+        },
+        "sample_count": 1,
+        "sizes_bytes": {
+          "brotli": 11450,
+          "lz4": 39888,
+          "raw_float32_xy": 78672,
+          "zpe_ink": 12953,
+          "zstd": 16068
+        },
+        "stroke_count": 48
+      },
+      {
+        "name": "iam_proxy",
+        "point_count": 16986,
+        "ratios": {
+          "brotli": 6.575437917352173,
+          "lz4": 1.977070360239772,
+          "raw_float32_xy": 1.0,
+          "zpe_ink": 6.194465970734376,
+          "zstd": 4.837076851884811
+        },
+        "sample_count": 1,
+        "sizes_bytes": {
+          "brotli": 20666,
+          "lz4": 68732,
+          "raw_float32_xy": 135888,
+          "zpe_ink": 21937,
+          "zstd": 28093
+        },
+        "stroke_count": 64
+      },
+      {
+        "name": "unipen_proxy",
+        "point_count": 22969,
+        "ratios": {
+          "brotli": 7.030340130848988,
+          "lz4": 2.0233661840004404,
+          "raw_float32_xy": 1.0,
+          "zpe_ink": 4.502511577760898,
+          "zstd": 5.026589342378816
+        },
+        "sample_count": 1,
+        "sizes_bytes": {
+          "brotli": 26137,
+          "lz4": 90815,
+          "raw_float32_xy": 183752,
+          "zpe_ink": 40811,
+          "zstd": 36556
+        },
+        "stroke_count": 64
+      }
+    ],
+    "overall_ratios": {
+      "brotli": 6.825565026256283,
+      "lz4": 1.990919682416212,
+      "raw_float32_xy": 1.0,
+      "zpe_ink": 5.590209480060199,
+      "zstd": 4.9199524605723175
+    },
+    "threshold": 5.0
+  },
+  "supporting_public_corpora": {
+    "datasets": [
+      {
+        "name": "uji_pen_characters",
+        "point_count": 6402,
+        "ratios": {
+          "brotli": 1.948561862730178,
+          "lz4": 1.062462400165958,
+          "raw_float32_xy": 1.0,
+          "zpe_ink": 1.5110193243841274,
+          "zstd": 1.6000999750062483
+        },
+        "sample_count": 140,
+        "sizes_bytes": {
+          "brotli": 26284,
+          "lz4": 48205,
+          "raw_float32_xy": 51216,
+          "zpe_ink": 33895,
+          "zstd": 32008
+        },
+        "stroke_count": 166
+      }
+    ]
+  },
+  "transport_gate_snapshot": {
+    "appendix_all_pass": false,
+    "core_claims_pass": true,
+    "quality_scorecard_pass": true
+  }
+}

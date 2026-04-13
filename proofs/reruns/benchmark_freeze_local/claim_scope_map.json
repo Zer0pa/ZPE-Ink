@@ -1,0 +1,44 @@
+{
+  "allowed_claims": [
+    "The current transport kernel remains above 5x on the structured tier against the raw float32 baseline.",
+    "Transport quality and runtime parity remain locally credible and separate from hard-corpus authority."
+  ],
+  "authority_surface": {
+    "broad_claim_verdict": "FAIL",
+    "contradiction_status": "OPEN",
+    "current_scope": "structured-tier-only",
+    "engineering_comparator_verdict": "FAIL",
+    "hard_corpus_verdict": "FAIL",
+    "license_surface": "LicenseRef-Zer0pa-SAL-6.0",
+    "sovereign_release_verdict": "FAIL",
+    "structured_tier_verdict": "PASS",
+    "transport_gates_verdict": "PASS"
+  },
+  "blocked_claims": [
+    "Broad handwriting-compression superiority across public hard corpora.",
+    "Superiority over all frozen engineering comparators on the structured tier.",
+    "Release-ready or enterprise-ready language while the sovereign release surface remains non-pass.",
+    "Any claim that treats structured-tier success as direct IAM/UNIPEN or non-Latin closure."
+  ],
+  "next_boundary_requirements": [
+    "Direct IAM/UNIPEN closure or an explicit decision to leave that surface outside the current claim family.",
+    "A real non-Latin online-stroke corpus if cross-script authority is still required.",
+    "Blind-clone or external-host verification before any release or public-readiness claim."
+  ],
+  "ratios": {
+    "hard_corpus": {
+      "crohme": 1.301456280301924,
+      "mathwriting": 1.0944074088858728
+    },
+    "structured_engineering_comparators": {
+      "brotli": 6.825565026256283,
+      "lz4": 1.990919682416212,
+      "zstd": 4.9199524605723175
+    },
+    "structured_tier": 5.590209480060199
+  },
+  "schema_version": 1,
+  "thresholds": {
+    "structured_ratio_min": 5.0
+  }
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zpe-ink"
+version = "0.1.0"
+description = "ZPE Ink Wave-1 codec and falsification harness"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Zer0pa"}]
+license = "LicenseRef-Zer0pa-SAL-6.2"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2.2",
+    "pytest>=8.0",
+]
+telemetry = [
+    "comet-ml>=3.49",
+]
+
+[project.scripts]
+zpe-ink = "zpe_ink.cli:entrypoint"
+zpe-ink-demo = "zpe_ink.cli:demo_entry"
+zpe-ink-verify-roundtrip = "zpe_ink.cli:verify_roundtrip_entry"
+
+[tool.setuptools]
+include-package-data = false
+package-dir = {"" = "code"}
+
+[tool.setuptools.packages.find]
+where = ["code"]
+include = ["zpe_ink*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["code"]
+testpaths = ["code/tests"]
+addopts = "-q"

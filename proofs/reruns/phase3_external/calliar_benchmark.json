@@ -1,0 +1,15 @@
+{
+  "corpus": "calliar",
+  "limit": "all",
+  "sample_count": 2500,
+  "skipped_samples": 0,
+  "stroke_count": 31971,
+  "point_count": 1904422,
+  "compression_ratio": 2.774608127006351,
+  "max_hausdorff_px": 0.0,
+  "median_ms_per_stroke": 0.0545215625,
+  "source": {
+    "archive": "/root/zpe-blind-clone/calliar-main.zip",
+    "inner_dataset": "Calliar-main/calliar_dataset/dataset.zip"
+  }
+}

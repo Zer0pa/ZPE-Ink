@@ -22,6 +22,30 @@ Prereqs for local verification: Python 3.11+, Rust toolchain, and `wasm32-unknow
 
 ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. The installable release unit is the Python package under `code/`. The Rust/WASM/Swift/C# bindings are repo-local source surfaces and are not part of the pip install unit.
 
+## Key Metrics
+
+| Metric | Value | Baseline |
+|--------|-------|----------|
+| STRUCTURED_TIER | 5.5902× | vs Brotli 6.8256× |
+| CALLIAR | 2.7746× | 2500-sample corpus |
+| CROHME | 1.3015× | vs Brotli 2.1571× |
+| MATHWRITING | 1.0944× | vs Brotli 1.6256× |
+
+> Source: [`proofs/reruns/benchmark_freeze_local/baseline_results.json`](proofs/reruns/benchmark_freeze_local/baseline_results.json), [`proofs/reruns/phase3_external/calliar_benchmark.json`](proofs/reruns/phase3_external/calliar_benchmark.json)
+
+## Competitive Benchmarks
+
+> Source: [`proofs/reruns/benchmark_freeze_local/baseline_results.json`](proofs/reruns/benchmark_freeze_local/baseline_results.json)
+
+| Tool | Structured | CROHME | MathWriting |
+|------|------------|--------|-------------|
+| **ZPE-Ink** | **5.59×** | **1.30×** | **1.09×** |
+| Brotli | 6.83× | 2.16× | 1.63× |
+| Zstd | 4.92× | 1.88× | 1.32× |
+| LZ4 | 1.99× | 1.34× | 1.03× |
+
+ZPE-Ink loses to Brotli on every retained frozen comparator surface. No retained Calliar comparator is published in the current proof tree, so the non-Latin corpus remains a standalone evidence point rather than a competitive claim.
+
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
 </p>
