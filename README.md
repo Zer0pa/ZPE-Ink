@@ -20,7 +20,36 @@ Prereqs for local verification: Python 3.11+, Rust toolchain, and `wasm32-unknow
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
 
-ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. The installable release unit is the Python package under `code/`. The Rust/WASM/Swift/C# bindings are repo-local source surfaces and are not part of the pip install unit.
+## What This Is
+
+ZPE-Ink is the staged codec surface for .zpink stream encoding and decoding.
+
+The installable release unit is the Python package under code/.
+
+The Rust/WASM/Swift/C# bindings are repo-local source surfaces and are not part of the pip install unit.
+
+## Key Metrics
+
+| Metric | Value | Baseline |
+|--------|-------|----------|
+| COMPRESSION | 5.59× | vs brotli 6.83× |
+| BINDINGS | 5 languages | — |
+| ROUND_TRIP | lossless | — |
+| RELEASE_GATE | FAIL | not yet shipped |
+
+## What We Prove
+
+- Dual-layer encoding: exact delta values plus 8-code compass direction tokens
+- Cross-runtime decode parity verified across Python, Rust, WASM, Swift, and C#
+- Gestural search queries ink strokes by directional motif on compressed data
+- Header contracts (magic, version, header size) enforced across all 5 bindings
+
+## What We Don't Claim
+
+- No claim of release readiness (release surface FAIL)
+- No claim of blind-clone closure (INCONCLUSIVE)
+- No claim of hard-corpus pass
+- No claim of general digital-ink dominance
 
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
@@ -109,6 +138,15 @@ How to read this table: these are the current authority anchors; any conflict ke
   </tbody>
 </table>
 
+## Commercial Readiness
+
+| Field | Value |
+|-------|-------|
+| Verdict | INCONCLUSIVE |
+| Commit SHA | 98B5ED7 |
+| Confidence | 67% |
+| Source | proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md |
+
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Ink Masthead Option 3.2" width="100%">
 </p>
@@ -117,23 +155,16 @@ How to read this table: these are the current authority anchors; any conflict ke
   <img src=".github/assets/readme/section-bars/lane-status-snapshot.svg" alt="LANE STATUS SNAPSHOT" width="100%">
 </p>
 
-<table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
-  <thead>
-    <tr>
-      <th align="left">Surface</th>
-      <th align="left">Status</th>
-      <th align="left">Evidence</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Structured-tier transport</td><td><code>PASS</code> (&gt;5x vs raw float32)</td><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td></tr>
-    <tr><td>Hard-corpus transport</td><td><code>FAIL</code> (below best comparators)</td><td><code>proofs/reruns/benchmark_freeze_local/baseline_results.json</code></td></tr>
-    <tr><td>Release surface</td><td><code>FAIL</code> / <code>INCONCLUSIVE</code></td><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td></tr>
-    <tr><td>Blind clone</td><td><code>INCONCLUSIVE</code></td><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td></tr>
-    <tr><td>Cross-runtime parity (current)</td><td><code>PASS</code></td><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td></tr>
-    <tr><td>Contract alignment (repo-local)</td><td><code>PASS</code></td><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td></tr>
-  </tbody>
-</table>
+## Tests and Verification
+
+| Code | Check | Verdict |
+|------|-------|---------|
+| V_01 | STRUCTURED-TIER_COMPRESSION_BOUN... | PASS |
+| V_02 | PYTHON/RUST/WASM_PARITY | PASS |
+| V_03 | SWIFT/C#_HEADER_CONTRACTS | PASS |
+| V_04 | PYTEST_REGRESSION_SURFACE | PASS |
+| V_05 | SOVEREIGN_RELEASE_SURFACE | FAIL |
+| V_06 | BLIND-CLONE_CLOSURE | INC |
 
 <p>
   <img src=".github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">
