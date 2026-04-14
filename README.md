@@ -162,6 +162,8 @@ Verification anchors: `proofs/logs/20260321_technical_alignment_pytest.txt`, `pr
 - [ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap) - adjacent motion-stream codec in the ZPE transport family.
 - [ZPE-XR](https://github.com/Zer0pa/ZPE-XR) - sibling XR motion compression surface with multi-runtime packaging work.
 
+**Observability:** [Comet dashboard](https://www.comet.com/zer0pa/zpe-ink/view/new/panels) (public)
+
 | Route | Target |
 |-------|--------|
 | Documentation index | `docs/README.md` |
