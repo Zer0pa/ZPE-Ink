@@ -133,7 +133,12 @@ Any contradiction across these anchors keeps the repo `INCONCLUSIVE`.
 
 ## Quick Start
 
-Prereqs for local verification: Python 3.11+, Rust toolchain, and `wasm32-unknown-unknown` target for binding checks.
+```bash
+# Install from PyPI
+pip install zpe-ink
+```
+
+Or install from source (development). Prereqs: Python 3.11+, Rust toolchain, and `wasm32-unknown-unknown` target for binding checks.
 
 ```bash
 python -m venv .venv
