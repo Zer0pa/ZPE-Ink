@@ -12,7 +12,7 @@ Deterministic digital-ink codec centered on the `.zpink` packet format. This rep
 
 ## What This Is
 
-Cross-runtime parity and 5×+ compression for digital ink. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android. Strokes are tokenised using 8-direction Freeman chain codes packed as 4-bit nibbles.
+Cross-runtime deterministic ink codec. 1.0–2.8× compression on real public corpora; 5.59× on structured tier vs raw float32 xy-only baseline. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android. Strokes are tokenised using 8-direction Freeman chain codes packed as 4-bit nibbles.
 
 ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. Validated through Calliar non-Latin corpus. Bindings surface: Rust, WASM, Swift, C#.
 
@@ -27,7 +27,8 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 
 | Metric | Value | Baseline |
 |--------|-------|----------|
-| STRUCT_CR | 5.59× | vs raw float32 |
+| STRUCT_CR | 5.59× | structured tier, synthetic data, vs raw float32 xy-only baseline |
+| REAL_CR | 1.02–2.77× | 5 public datasets (MathWriting, CROHME, QuickDraw, DigiLeTs, Calliar) |
 | PARITY | 3/3 | Py/Rust/WASM decode |
 | BINDINGS | 5 | Py/Rust/WASM/Swift/C# |
 | GATES | 4/6 | sovereign surface FAIL |
@@ -64,6 +65,7 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 - No claim of blind-clone closure (INCONCLUSIVE)
 - No claim of hard-corpus pass
 - No claim of general digital-ink dominance
+- 5× compression on real handwriting data — structured-tier 5.59× applies to synthetic data against a raw float32 xy-only baseline; real public corpora achieve 1.0–2.8×
 
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
