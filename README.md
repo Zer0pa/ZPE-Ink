@@ -12,7 +12,11 @@ Deterministic digital-ink codec centered on the `.zpink` packet format. This rep
 
 ## What This Is
 
-ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. The installable release unit is the Python package under `code/`. The Rust/WASM/Swift/C# bindings are repo-local source surfaces and are not part of the pip install unit.
+Cross-runtime parity and 5×+ compression for digital ink. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android.
+
+ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. Validated through Calliar non-Latin corpus. Bindings surface: Rust, WASM, Swift, C#.
+
+**Readiness: private-stage.** Structured-tier transport proved. Sovereign release surface remains FAIL.
 
 | Field | Value |
 |-------|-------|
@@ -29,6 +33,8 @@ ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. T
 | Release Surface | FAIL | NOT_READY |
 
 ## What We Prove
+
+> Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
 
 - Structured-tier compression exceeds 5× vs raw float32
 - Python/Rust/WASM decode parity passes locally
@@ -58,6 +64,8 @@ ZPE-Ink is the staged codec surface for `.zpink` stream encoding and decoding. T
 | Commit SHA | 98b5ed734735 |
 | Confidence | 67% |
 | Source | proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md |
+
+> **Evaluators:** Proof surface available for inspection. Sovereign surface FAIL — see Open Risks. Contact hello@zer0pa.com.
 
 Current authority reflects the latest committed verification surface. It does not imply release readiness.
 Confidence basis: 4/6 verification checks currently PASS.
@@ -150,3 +158,12 @@ Verification anchors: `proofs/logs/20260321_technical_alignment_pytest.txt`, `pr
 | Contribution workflow | `CONTRIBUTING.md` |
 | Security policy | `SECURITY.md` |
 | Support routing | `docs/SUPPORT.md` |
+
+## Who This Is For
+
+| | |
+|---|---|
+| **Ideal first buyer** | Stylus/annotation runtime team or cross-platform pen-input infrastructure team |
+| **Pain** | Ink streams vary across runtimes — iOS, Web, Android — requiring per-platform codecs with no determinism guarantee |
+| **Deployment** | SDK — Python package with repo-local Rust/WASM/Swift/C# bindings |
+| **Family position** | Secondary product candidate in the Zer0pa deterministic encoding family. Not the lead commercial front door |
