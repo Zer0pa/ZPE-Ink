@@ -32,6 +32,19 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 | BINDINGS | 5 | Py/Rust/WASM/Swift/C# |
 | GATES | 4/6 | sovereign surface FAIL |
 
+## Competitive Benchmarks
+
+> Structured tier; version-locked tools. Source: [`proofs/reruns/benchmark_freeze_local/`](proofs/reruns/benchmark_freeze_local/)
+
+| Tool | Ratio | Notes |
+|------|-------|-------|
+| Brotli (q11) | **6.83×** | wins structured tier |
+| **ZPE-Ink** | **5.59×** | 5 runtimes; deterministic |
+| zstd (l19) | 4.92× | — |
+| LZ4 (l9) | 1.99× | — |
+
+Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic encode.
+
 ## What We Prove
 
 > Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
