@@ -25,12 +25,12 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 
 ## Key Metrics
 
-| Metric | Value | Tag |
-|--------|-------|-----|
-| Structured Tier | >5× | VS_RAW_FLOAT32 |
-| Best Comparator | brotli 6.83× | BASELINE |
-| Bindings | Py/Rust/WASM/Swift/C# | MULTI_LANG |
-| Release Surface | FAIL | NOT_READY |
+| Metric | Value | Baseline |
+|--------|-------|----------|
+| STRUCT_CR | 5.59× | vs raw float32 |
+| PARITY | 3/3 | Py/Rust/WASM decode |
+| BINDINGS | 5 | Py/Rust/WASM/Swift/C# |
+| GATES | 4/6 | sovereign surface FAIL |
 
 ## What We Prove
 
