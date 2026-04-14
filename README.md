@@ -12,7 +12,7 @@ Deterministic digital-ink codec centered on the `.zpink` packet format. This rep
 
 ## What This Is
 
-Cross-runtime parity and 5×+ compression for digital ink. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android.
+Cross-runtime parity and 5×+ compression for digital ink. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android. Strokes are tokenised using 8-direction Freeman chain codes packed as 4-bit nibbles.
 
 ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. Validated through Calliar non-Latin corpus. Bindings surface: Rust, WASM, Swift, C#.
 
