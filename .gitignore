@@ -26,3 +26,5 @@ code/bindings/wasm/pkg/
 # Proof reruns (keep gitkeep)
 proofs/reruns/*
 !proofs/reruns/.gitkeep
+!proofs/reruns/phase3_public_benchmarks/
+!proofs/reruns/phase3_public_benchmarks/**
