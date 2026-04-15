@@ -77,6 +77,7 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 | Field | Value |
 |-------|-------|
 | Verdict | INCONCLUSIVE |
+| Release posture | Live work in progress; not a final official release |
 | Commit SHA | 98b5ed734735 |
 | Confidence | 67% |
 | Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
