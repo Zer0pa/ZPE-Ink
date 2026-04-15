@@ -1,13 +1,28 @@
-.DS_Store
-.pytest_cache/
-.venv/
-__pycache__/
-*.py[cod]
-*.egg-info/
+# Build & distribution
 build/
 dist/
+target/
+*.egg-info/
 
+# Virtual environments
+.venv/
+.venv*/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+
+# OS artifacts
+.DS_Store
+
+# Bindings build targets
 code/bindings/wasm/target/
 code/bindings/wasm/pkg/
+
+# Proof reruns (keep gitkeep)
 proofs/reruns/*
 !proofs/reruns/.gitkeep
