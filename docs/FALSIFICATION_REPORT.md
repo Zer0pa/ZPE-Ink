@@ -5,7 +5,7 @@
 # Falsification Report (Docs Pass)
 
 Date: 2026-03-21
-Scope: Documentation surface only. This report lists the claims adjusted during the docs pass and any remaining doc gaps.
+Scope: Documentation surface only. This is a historical report for the 2026-03-21 docs pass. Current authority now lives in `proofs/reruns/phase5_wedge/final_go_no_go_surface.json` and `proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json`.
 
 ## What Changed Since Last Report
 
@@ -14,27 +14,26 @@ Scope: Documentation surface only. This report lists the claims adjusted during 
 
 ## Unsupported Claims Removed Or Downgraded
 
-- Downgraded blind-clone status from implied "deferred" to explicit `INCONCLUSIVE` with evidence.
+- Downgraded blind-clone status from implied future work to explicit `INCONCLUSIVE` with evidence.
 - Downgraded non-Latin status from "unexecuted" to "executed but not release-closing" based on Calliar evidence.
 - Removed any implied claim of structured-tier superiority over all engineering comparators; Brotli remains higher on the structured tier.
-- Marked public release language as blocked while the handoff manifest remains `NO-GO`.
+- Kept broader release language outside the claim family while the sovereign handoff surface remained `NO-GO`.
 
 ## Path Or Render Issues Found
 
-- Root README and docs index lacked the ZPE-IMC visual system and section bars; fixed by embedding repo-local assets.
-- Docs index omitted proofs/runbooks and audit entry points; fixed by routing to `proofs/README.md` and `AUDITOR_PLAYBOOK.md`.
+- Root README and docs index lacked the repo-local visual system and section bars; fixed by embedding repo-local assets.
+- Docs index omitted the current proof and audit entry points; fixed by routing to the retained rerun and benchmark surfaces.
 - `docs/ARCHITECTURE.md` and `code/README.md` were underspecified; expanded to include authority maps and verification references.
 
 ## Remaining Owner Inputs
 
-- Decide whether to update or mark historical the gate runbooks under `proofs/runbooks/` that still reference pre-staging paths.
-- Decide whether any removed legacy artifacts should be reintroduced in a separate archive repo (not this repo).
-- Decide whether to publish a public package acquisition path beyond private staging.
+- Decide whether interoperability rehabilitation should become a future branch after the current `NO-GO` authority.
+- Decide whether any removed legacy artifacts belong in a separate archive repo rather than this proof surface.
 
 ## Live vs Local Drift
 
-- Local repo now carries the ZPE-IMC asset set under `.github/assets/readme` and embeds it in key docs.
-- Live GitHub render should be verified after push; no divergence is acceptable for the docs surfaces listed in `docs/DOC_REGISTRY.md`.
+- Local repo carries the current ZPE-Ink asset set under `.github/assets/readme` and embeds it in key docs.
+- Live GitHub render should match the README, docs, and proof readme surfaces after push.
 
 Key artifacts referenced:
 

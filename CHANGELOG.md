@@ -4,7 +4,7 @@
 
 # Changelog
 
-This is not a public release history. It tracks private staging changes only.
+This changelog tracks repo-internal beta iterations and documentation realignment.
 
 ## 2026-03-21
 
@@ -19,7 +19,7 @@ This is not a public release history. It tracks private staging changes only.
 - moved the package to `code/` with explicit setuptools package discovery
 - added repo-local front-door, docs, audit, and proof surfaces
 - imported a historical subset of the 2026-02-20 Wave-1 proof bundle (now removed)
-- kept the current readiness verdict explicit: `INCONCLUSIVE`
+- kept the then-current authority verdict explicit: `INCONCLUSIVE`
 
 <p>
   <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">

@@ -30,4 +30,4 @@ Public rows only. No proxy data is promoted here.
 ## Notes
 
 - UJI metrics were measured over `1,364` isolated-character samples and `74,592` total points.
-- This broadens the bounded public-handwriting surface only. It does not upgrade release readiness, hard-corpus authority, or the sovereign gate.
+- This broadens the bounded public-handwriting surface only. Current authority still sits under the structured-tier claim boundary and the open sovereign gate.

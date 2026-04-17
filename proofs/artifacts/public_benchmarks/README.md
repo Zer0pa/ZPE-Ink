@@ -12,4 +12,4 @@
 
 All benchmarked datasets ran `encode -> decode -> verify` using the repo-local lossless codec path.
 
-The UJI row broadens the bounded public-handwriting surface only. It does not change release readiness, hard-corpus verdicts, or the sovereign `FAIL` / `NO-GO` gate.
+The UJI row broadens the bounded public-handwriting surface only. Current authority remains structured-tier transport plus bounded public rows; it does not close the sovereign gate or the hard-corpus boundary.

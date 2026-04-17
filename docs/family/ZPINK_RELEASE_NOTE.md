@@ -5,15 +5,15 @@
 # ZPINK Release Note
 
 Date: 2026-03-09
-State: private staging snapshot
+State: historical beta snapshot
 
-Why you are reading this: it is a historical snapshot note that does not supersede current rerun evidence.
+Why you are reading this: it is a historical snapshot note. Current authority lives in the later rerun evidence and does not inherit this note's status language.
 
 <p>
   <img src="../../.github/assets/readme/section-bars/unreleased.svg" alt="UNRELEASED" width="100%">
 </p>
 
-This note describes the 2026-03-09 staged snapshot. Later reruns exist but do not change this snapshot’s release status.
+This note describes the 2026-03-09 beta snapshot. Later reruns changed the active authority surface, but they do not change what this snapshot contained.
 
 <p>
   <img src="../../.github/assets/readme/section-bars/what-changed-in-wave-1.svg" alt="WHAT CHANGED IN WAVE 1" width="100%">
@@ -41,8 +41,8 @@ Not included:
 
 Current release verdict:
 
-- not greenlit
-- current repo truth remains `INCONCLUSIVE`
+- this historical snapshot did not close the sovereign gate
+- current repo authority has since moved to `NO-GO` with a structured-tier-only claim boundary
 
 <p>
   <img src="../../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">

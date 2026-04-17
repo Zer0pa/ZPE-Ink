@@ -2,7 +2,7 @@
   <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
 </p>
 
-ZPE-Ink architecture and authority map for the staged `.zpink` codec surface.
+ZPE-Ink architecture and authority map for the live-beta `.zpink` codec surface.
 
 <p>
   <img src="../.github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
@@ -10,22 +10,25 @@ ZPE-Ink architecture and authority map for the staged `.zpink` codec surface.
 
 ZPE-Ink is a deterministic stroke-stream codec built around the `.zpink` packet envelope. The installable release unit is the Python package under `code/`.
 
-Pipeline narrative: capture stroke data → encode to `.zpink` → decode for playback → verify against proof surfaces.
+Core transport narrative: capture stroke data -> encode to `.zpink` -> decode for playback -> verify against proof surfaces.
+Tokenizer narrative: map stroke motion into 8-direction primitives with retained side channels when the tokenizer lane is under evaluation.
 
 <p>
   <img src="../.github/assets/readme/section-bars/public-api-contract.svg" alt="PUBLIC API CONTRACT" width="100%">
 </p>
 
-The canonical packet contract is defined here:
+The canonical packet and tokenizer contracts are defined here:
 
 - `docs/family/ZPINK_INTERFACE_CONTRACT.md`
 - `docs/family/ZPINK_COMPATIBILITY_VECTOR.json`
+- `code/zpe_ink/codec.py`
+- `code/zpe_ink/primitivetoken.py`
 
 <p>
   <img src="../.github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">
 </p>
 
-Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOURCE-VERIFIED` means source checks passed but it is not a pip-installed runtime surface.
+Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOURCE-VERIFIED` means source checks passed but it is not a pip-installed runtime surface; `CONTRACT-CHECKED` means header and version invariants were verified against the compatibility vector.
 
 <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
   <thead>
@@ -57,10 +60,11 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td><td>Release readiness and contradiction summary</td><td><code>INCONCLUSIVE</code></td></tr>
+    <tr><td><code>proofs/reruns/phase5_wedge/final_go_no_go_surface.json</code></td><td>Sovereign commercial verdict</td><td><code>NO-GO</code></td></tr>
     <tr><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td><td>Claim boundary and allowed statements</td><td><code>structured-tier-only</code></td></tr>
-    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Sovereign release surface</td><td><code>FAIL</code></td></tr>
-    <tr><td><code>proofs/reruns/phase3_external/external_boundary_manifest.json</code></td><td>External corpus boundary</td><td><code>UNIPEN FAIL</code>, <code>Calliar PASS</code></td></tr>
+    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Contradiction and release surface</td><td><code>OPEN</code> / <code>FAIL</code></td></tr>
+    <tr><td><code>proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json</code></td><td>Bounded public handwriting row</td><td><code>UJI 1.6111x exact</code></td></tr>
+    <tr><td><code>proofs/reruns/phase3_external/blind_clone_verdict.json</code></td><td>Untouched-host install and test surface</td><td><code>INCONCLUSIVE</code></td></tr>
   </tbody>
 </table>
 
@@ -68,4 +72,4 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
   <img src="../.github/assets/readme/section-bars/out-of-scope.svg" alt="OUT OF SCOPE" width="100%">
 </p>
 
-What is not covered: production-grade packaging for Swift/C#/WASM, runtime parity beyond contract checks, and public-release certification.
+What is not covered: hard-corpus superiority, cross-script closure, or a public release upgrade. The tokenizer lane is real, but the current sovereign authority still sits on the bounded transport surface rather than a promoted tokenizer product claim.

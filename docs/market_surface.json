@@ -2,9 +2,9 @@
   "repo_name": "ZPE-Ink",
   "repo_role": "secondary_product_candidate",
   "status": "STAGED_PROOF_SURFACE",
-  "plain_english_summary": "Deterministic digital-ink transport codec for structured pen-stream workflows across multiple runtimes.",
-  "commercial_wedge": "Cross-runtime parity and >5× compression for structured ink streams. Multi-runtime bindings (Python, Rust, WASM, Swift, C#). Bounded real-public surface now includes UJI Pen Characters at 1.6111x exact roundtrip.",
-  "technical_wedge": "Multi-runtime .zpink codec with 8-direction Freeman chain-code stroke tokenisation packed as 4-bit nibbles, structured-tier compression >5× vs raw float32. Cross-runtime parity verified locally. A bounded phase-03 public-benchmark artifact measures UJI Pen Characters at 1.6111x with exact roundtrip.",
+  "plain_english_summary": "Deterministic digital-ink transport codec with bounded public proof surfaces and a separate tokenizer lane.",
+  "commercial_wedge": "No current commercial wedge is proven. The narrowest future candidate is cross-runtime interoperability once real decoder parity is re-established on a clean repo state.",
+  "technical_wedge": "Deterministic .zpink packet transport with structured-tier compression at 5.590209480060199x versus raw float32, a bounded UJI public row at 1.6111x exact roundtrip, and a separate 8-direction tokenizer lane.",
   "ideal_first_buyer": "Stylus/annotation runtime team or cross-platform pen-input infrastructure team",
   "deployment_model": "SDK — Python package with repo-local Rust/WASM/Swift/C# bindings",
   "proof_anchors": [
@@ -14,14 +14,14 @@
     "proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json"
   ],
   "not_claimed": [
-    "Release readiness (sovereign surface FAIL)",
-    "Blind-clone verification (INCONCLUSIVE)",
+    "Release or enterprise readiness",
+    "Blind-clone closure",
     "Hard-corpus pass",
     "General digital-ink dominance",
     "Runtime coupling to ZPE-IMC",
-    "Any claim that the UJI Pen Characters row closes release readiness or hard-corpus authority"
+    "Any claim that the UJI Pen Characters row closes the sovereign gate or hard-corpus authority"
   ],
-  "family_position": "Secondary product candidate in the Zer0pa deterministic encoding family. Not the lead commercial front door.",
+  "family_position": "Independent encoding product in the ZPE portfolio. Current authority supports bounded beta evaluation, not a closed commercial wedge.",
   "license": "LicenseRef-Zer0pa-SAL-6.2",
   "license_surface": "Free below $100M annual revenue",
   "contact": "hello@zer0pa.com"

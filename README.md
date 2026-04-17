@@ -4,7 +4,7 @@
 
 # ZPE-Ink
 
-Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a current proof subset and rerun surface. It is not release-ready.
+Deterministic digital-ink codec centered on the `.zpink` packet format. ZPE-Ink is a live beta proof surface: useful now for bounded transport and proof inspection, still under active authority tightening before any broader release claim.
 
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
@@ -12,25 +12,27 @@ Deterministic digital-ink codec centered on the `.zpink` packet format. This rep
 
 ## What This Is
 
-Cross-runtime deterministic ink codec. 1.0–2.8× compression on bounded real public corpora, with an additional UJI Pen Characters row at 1.6111× exact roundtrip; 5.59× on structured tier vs raw float32 xy-only baseline. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android. Strokes are tokenised using 8-direction Freeman chain codes packed as 4-bit nibbles.
+Cross-runtime deterministic ink codec. Current authority preserves a structured-tier transport pass at `5.5902x` versus the raw float32 `x/y` baseline, plus a bounded UJI Pen Characters public row at `1.6111x` exact roundtrip. The core `.zpink` packet format carries `x`, `y`, `pressure`, optional `tilt`, and optional `azimuth` through a deterministic header and delta-RLE payload contract.
 
-ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. Validated through Calliar non-Latin corpus. Bindings surface: Rust, WASM, Swift, C#.
+ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity and deterministic interchange matter. The installable release unit is the Python package under `code/`. Rust, WASM, Swift, and C# remain repo-local verification and contract surfaces. A separate tokenizer lane maps stroke motion into 8-direction primitives packed as 4-bit nibbles; that lane is real, but it is not the sovereign transport claim.
 
-**Readiness: private-stage.** Structured-tier transport proved. Sovereign release surface remains FAIL.
+**Public posture: always in beta.** Useful now for bounded transport and inspection. Current sovereign authority remains `NO-GO`, so the repo does not claim release-ready or enterprise-ready status.
 
 | Field | Value |
 |-------|-------|
 | Architecture | STROKE_MANIFOLD |
 | Encoding | INK_DELTA_V1 |
+| Primitive scope | 8-direction tokenizer lane in `code/zpe_ink/primitivetoken.py`; core transport lives in `code/zpe_ink/codec.py` |
+| Current authority scope | structured-tier transport plus bounded public UJI row |
 
 ## Key Metrics
 
 | Metric | Value | Baseline |
 |--------|-------|----------|
-| STRUCT_CR | 5.59× | structured tier, synthetic data, vs raw float32 xy-only baseline |
-| REAL_CR | 1.02–2.77× | 5 public datasets (MathWriting, CROHME, QuickDraw, DigiLeTs, Calliar) |
-| UJI_PUBLIC | 1.6111× | exact roundtrip on bounded UJI Pen Characters public row |
-| PARITY | 3/3 | Py/Rust/WASM decode |
+| STRUCT_CR | 5.5902x | structured tier, synthetic data, versus raw float32 `x/y` baseline |
+| HARD_CORPUS | 1.0944x-1.3015x | MathWriting and CROHME rows in `claim_scope_map.json` |
+| UJI_PUBLIC | 1.6111x | exact roundtrip on `1,364` UJI samples / `74,592` points |
+| CURRENT_WEDGE | none proven | Phase 05 names interoperability as a future candidate, not a current wedge |
 
 ## Competitive Benchmarks
 
@@ -43,17 +45,17 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 | zstd (l19) | 4.92× | — |
 | LZ4 (l9) | 1.99× | — |
 
-Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic encode.
+Brotli wins on ratio. ZPE-Ink's distinct surface is deterministic multi-channel transport and runtime contract design, not structured-tier ratio leadership.
 
 ## What We Prove
 
 > Auditable guarantees backed by committed proof artifacts. Start at `proofs/reruns/phase5_wedge/final_go_no_go_surface.json`.
 
-- Structured-tier compression exceeds 5× vs raw float32
-- Python/Rust/WASM decode parity passes locally
-- Swift/C# header contracts pass (magic, version, header size)
-- Structured tier ratio: 5.59×
-- UJI Pen Characters public row: 1.6111× with exact roundtrip on `1,364` samples / `74,592` points
+- Structured-tier transport above `5x` versus raw float32 `x/y`
+- Bounded UJI Pen Characters row at `1.6111x` exact roundtrip
+- Binding contract alignment across Python, PyO3, WASM, Swift, and C#
+- Blind-clone install, roundtrip, and `pytest` execution on an untouched host
+- 8-direction tokenizer lane with retained pressure, tilt, and azimuth side channels
 
 <p>
   <img src=".github/assets/readme/section-bars/open-risks-non-blocking.svg" alt="OPEN RISKS (NON-BLOCKING)" width="100%">
@@ -61,31 +63,30 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 
 ## What We Don't Claim
 
-- No claim of release readiness (release surface FAIL)
-- No claim of blind-clone closure (INCONCLUSIVE)
-- No claim of hard-corpus pass
-- No claim of general digital-ink dominance
-- 5× compression on real handwriting data — structured-tier 5.59× applies to synthetic data against a raw float32 xy-only baseline; real public corpora achieve 1.0–2.8×
-- No claim that the UJI Pen Characters row closes release readiness, hard-corpus authority, or the sovereign gate
+- Release-ready or enterprise-ready posture
+- Hard-corpus superiority
+- Structured-tier ratio leadership over Brotli
+- Blind-clone closure
+- Cross-script authority closure
+- Tokenizer scaffold as a current commercial wedge
 
 <p>
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
 </p>
 
-## Commercial Readiness
+## Current Authority
 
 | Field | Value |
 |-------|-------|
-| Verdict | INCONCLUSIVE |
-| Release posture | Live work in progress; not a final official release |
-| Commit SHA | 98b5ed734735 |
-| Confidence | 67% |
+| Verdict | NO-GO |
+| Proof scope | structured-tier transport plus bounded public UJI row |
+| Release posture | live beta; useful now for bounded transport and proof inspection |
 | Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
 
-> **Evaluators:** Proof surface available for inspection. Sovereign surface FAIL — see Open Risks. Contact hello@zer0pa.com.
+> **Evaluators:** Proof surface available for inspection. Current authority names interoperability as the narrowest future candidate, not a current commercial wedge. Contact hello@zer0pa.com.
 
-Current authority reflects the latest committed verification surface. It does not imply release readiness.
-Confidence basis: 4/6 verification checks currently PASS.
+Current authority reflects the latest committed verification surfaces. It supports bounded transport use and proof inspection; it does not close the sovereign release gate.
+Current confidence remains bounded by the open contradiction surface and the unresolved blind-clone gate.
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Ink Masthead Option 3.2" width="100%">
@@ -100,11 +101,11 @@ Confidence basis: 4/6 verification checks currently PASS.
 | Code | Check | Verdict |
 |------|-------|---------|
 | V_01 | Structured-tier compression boundary | PASS |
-| V_02 | Python/Rust/WASM parity | PASS |
-| V_03 | Swift/C# header contracts | PASS |
-| V_04 | Pytest regression surface | PASS |
-| V_05 | Sovereign release surface | FAIL |
-| V_06 | Blind-clone closure | INC |
+| V_02 | Bounded public UJI row with exact roundtrip | PASS |
+| V_03 | Binding contract alignment (`zpink-v1`) | PASS |
+| V_04 | Historical regression and cross-runtime baseline logs | PASS |
+| V_05 | Blind-clone closure | INC |
+| V_06 | Sovereign release gate | FAIL |
 
 ## Proof Anchors
 
@@ -114,12 +115,12 @@ Confidence basis: 4/6 verification checks currently PASS.
 | proofs/reruns/benchmark_freeze_local/claim_scope_map.json | CURRENT |
 | proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json | CURRENT |
 | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json | CURRENT |
-| proofs/logs/20260321_technical_alignment_cross_runtime.json | VERIFIED |
-| proofs/logs/20260321_technical_alignment_binding_contracts.json | VERIFIED |
-| proofs/logs/20260321_technical_alignment_pytest.txt | VERIFIED |
-| proofs/logs/20260321_technical_alignment_wheel_install.txt | VERIFIED |
+| proofs/reruns/phase3_external/blind_clone_verdict.json | CURRENT |
+| proofs/logs/20260321_technical_alignment_cross_runtime.json | HISTORICAL_VERIFIED |
+| proofs/logs/20260321_technical_alignment_binding_contracts.json | HISTORICAL_VERIFIED |
+| proofs/logs/20260321_technical_alignment_pytest.txt | HISTORICAL_VERIFIED |
 
-Any contradiction across these anchors keeps the repo `INCONCLUSIVE`.
+Any contradiction across the current anchors keeps the release gate open.
 
 <p>
   <img src=".github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">
@@ -130,7 +131,7 @@ Any contradiction across these anchors keeps the repo `INCONCLUSIVE`.
 | Field | Value |
 |-------|-------|
 | Proof Anchors | 8 |
-| Modality Lanes | 6 |
+| Runtime Surfaces | 5 |
 | Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
 
 <p>
@@ -178,11 +179,10 @@ Verification anchors: `proofs/logs/20260321_technical_alignment_pytest.txt`, `pr
 | Route | Target |
 |-------|--------|
 | Documentation index | `docs/ARCHITECTURE.md` |
+| Packet contract | `docs/family/ZPINK_INTERFACE_CONTRACT.md` |
 | Auditor path | `proofs/reruns/phase5_wedge/final_go_no_go_surface.json` |
-| Governance rules | `GOVERNANCE.md` |
-| Release gate rules | `RELEASING.md` |
-| Contribution workflow | `CONTRIBUTING.md` |
-| Security policy | `SECURITY.md` |
+| Benchmark summary | `proofs/artifacts/public_benchmarks/README.md` |
+| Historical release note | `docs/family/ZPINK_RELEASE_NOTE.md` |
 | Support routing | `docs/LEGAL_BOUNDARIES.md` |
 
 ## Who This Is For
@@ -192,4 +192,4 @@ Verification anchors: `proofs/logs/20260321_technical_alignment_pytest.txt`, `pr
 | **Ideal first buyer** | Stylus/annotation runtime team or cross-platform pen-input infrastructure team |
 | **Pain** | Ink streams vary across runtimes — iOS, Web, Android — requiring per-platform codecs with no determinism guarantee |
 | **Deployment** | SDK — Python package with repo-local Rust/WASM/Swift/C# bindings |
-| **Family position** | Secondary product candidate in the Zer0pa deterministic encoding family. Not the lead commercial front door |
+| **Portfolio position** | Independent encoding product in the ZPE portfolio; current authority supports bounded beta evaluation, not a closed commercial wedge |
