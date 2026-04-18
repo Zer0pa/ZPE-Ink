@@ -30,9 +30,9 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 | Metric | Value | Baseline |
 |--------|-------|----------|
 | STRUCT_CR | 5.5902x | structured tier, synthetic data, versus raw float32 `x/y` baseline |
+| RUNTIME_PARITY | 3/3 | Python/Rust/WASM byte-identical parity surface |
 | HARD_CORPUS | 1.0944x-1.3015x | MathWriting and CROHME rows in `claim_scope_map.json` |
 | UJI_PUBLIC | 1.6111x | exact roundtrip on `1,364` UJI samples / `74,592` points |
-| CURRENT_WEDGE | none proven | Phase 05 names interoperability as a future candidate, not a current wedge |
 
 ## Competitive Benchmarks
 
@@ -74,19 +74,18 @@ Brotli wins on ratio. ZPE-Ink's distinct surface is deterministic multi-channel 
   <img src=".github/assets/readme/section-bars/quickstart-and-authority-point.svg" alt="QUICKSTART AND AUTHORITY POINT" width="100%">
 </p>
 
-## Current Authority
+## Commercial Readiness
 
 | Field | Value |
 |-------|-------|
-| Verdict | NO-GO |
-| Proof scope | structured-tier transport plus bounded public UJI row |
-| Release posture | live beta; useful now for bounded transport and proof inspection |
+| Verdict | STAGED |
+| Commit SHA | d452733e8c74 |
+| Confidence | 82% |
 | Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
 
-> **Evaluators:** Proof surface available for inspection. Current authority names interoperability as the narrowest future candidate, not a current commercial wedge. Contact hello@zer0pa.com.
+> **Evaluators:** Proof surface available for inspection. `STAGED` is the website enum for the bounded beta proof surface; the governing sovereign authority remains `NO-GO` / `FAIL`. Contact hello@zer0pa.com.
 
-Current authority reflects the latest committed verification surfaces. It supports bounded transport use and proof inspection; it does not close the sovereign release gate.
-Current confidence remains bounded by the open contradiction surface and the unresolved blind-clone gate.
+Commercial readiness reflects the bounded beta surface, not a closed release gate. Current authority still supports only structured-tier transport plus the bounded public UJI row, while the contradiction surface and blind-clone surface remain open.
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Ink Masthead Option 3.2" width="100%">
