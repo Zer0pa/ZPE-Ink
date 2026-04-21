@@ -77,23 +77,9 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 | Field | Value |
 |-------|-------|
 | Verdict | INCONCLUSIVE |
-| Release posture | Live work in progress; not a final official release |
 | Commit SHA | 98b5ed734735 |
 | Confidence | 67% |
 | Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
-
-> **Evaluators:** Proof surface available for inspection. Sovereign surface FAIL — see Open Risks. Contact hello@zer0pa.com.
-
-Current authority reflects the latest committed verification surface. It does not imply release readiness.
-Confidence basis: 4/6 verification checks currently PASS.
-
-<p>
-  <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE-Ink Masthead Option 3.2" width="100%">
-</p>
-
-<p>
-  <img src=".github/assets/readme/section-bars/lane-status-snapshot.svg" alt="LANE STATUS SNAPSHOT" width="100%">
-</p>
 
 ## Tests and Verification
 
