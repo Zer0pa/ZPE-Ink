@@ -30,7 +30,7 @@ def test_build_claim_scope_map_blocks_broad_claims_for_weak_hard_corpus() -> Non
         structured_comparator_ratios={"brotli": 6.82, "zstd": 4.91, "lz4": 1.99},
         hard_ratios={"mathwriting": 1.09, "crohme": 1.30},
         transport_gates_pass=True,
-        license_text="LicenseRef-Zer0pa-SAL-6.0",
+        license_text="LicenseRef-Zer0pa-SAL-7.0",
         sovereign_release_verdict="FAIL",
         contradiction_status="OPEN",
     )

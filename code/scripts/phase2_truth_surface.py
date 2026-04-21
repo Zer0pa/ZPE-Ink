@@ -52,8 +52,8 @@ def _read_release_report_verdict(path: Path) -> str:
 
 def _read_license_text(pyproject_path: Path) -> str:
     for line in pyproject_path.read_text(encoding="utf-8").splitlines():
-        if "LicenseRef-Zer0pa-SAL-6.0" in line:
-            return "LicenseRef-Zer0pa-SAL-6.0"
+        if "LicenseRef-Zer0pa-SAL-7.0" in line:
+            return "LicenseRef-Zer0pa-SAL-7.0"
     return "UNKNOWN"
 
 
