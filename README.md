@@ -4,7 +4,7 @@
 
 # ZPE-Ink
 
-Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a current proof subset and rerun surface. It is not release-ready.
+Deterministic digital-ink codec centered on the `.zpink` packet format. Always-in-beta: current proof subset and rerun surface are live and auditable.
 
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
@@ -16,7 +16,7 @@ Cross-runtime deterministic ink codec. 1.0–2.8× compression on bounded real p
 
 ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. Validated through Calliar non-Latin corpus. Bindings surface: Rust, WASM, Swift, C#.
 
-**Readiness: private-stage.** Structured-tier transport proved. Sovereign release surface remains FAIL.
+**Readiness: always-in-beta.** Structured-tier transport proved. Sovereign release surface remains FAIL.
 
 | Field | Value |
 |-------|-------|
