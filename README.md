@@ -4,6 +4,10 @@
 
 # ZPE-Ink
 
+<p align="left">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v7.0-e5e7eb?labelColor=111111" alt="License: SAL v7.0"></a>
+</p>
+
 Deterministic digital-ink codec centered on the `.zpink` packet format. This repo is a private staging snapshot with a current proof subset and rerun surface. It is not release-ready.
 
 <p>

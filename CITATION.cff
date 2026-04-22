@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: ZPE-Ink
+message: If you use this repo, please cite the software and the bounded validation artifact.
+type: software
+authors:
+  - name: Zer0pa (Pty) Ltd
+    email: architects@zer0pa.ai
+license: LicenseRef-Zer0pa-SAL-7.0
+version: 0.1.0
+repository-code: https://github.com/Zer0pa/ZPE-Ink
+abstract: >
+  ZPE-Ink is a deterministic digital-ink codec centered on the .zpink packet
+  format. It encodes stroke streams — pressure, tilt, timing — identically
+  across every runtime using 8-direction Freeman chain codes packed as 4-bit
+  nibbles.
