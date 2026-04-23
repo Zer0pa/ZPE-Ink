@@ -6,6 +6,10 @@
 
 Deterministic digital-ink codec centered on the `.zpink` packet format. Always-in-beta: current proof subset and rerun surface are live and auditable.
 
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v7.0-e5e7eb?labelColor=111111" alt="License: SAL v7.0"></a>
+</p>
+
 <p>
   <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
 </p>
