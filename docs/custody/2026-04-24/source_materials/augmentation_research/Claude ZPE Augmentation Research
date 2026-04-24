@@ -1,0 +1,564 @@
+# ZPE Portfolio — NeurIPS 2024/25 Frontier-First Augmentation Brief (2026-04-24)
+
+> Frontier-first synthesis across ten in-progress ZPE codec/infrastructure lanes, anchored in NeurIPS 2024/2025 (with ICLR/ICML 2024-25 and arXiv 2024-2026 where they are the frontier reference). Per the user's authorization, Non-Goals and Sovereign Gates are treated as priors, not hard constraints; where NeurIPS evidence argues for re-scoping a gate, that argument is made explicitly. Brief assumes PI based in Pretoria, South Africa, with parallel weighting of US / UK-EU / APAC-SA vehicles.
+
+---
+
+## Executive 1-page summary
+
+| Lane | Recommended primary move | Dominant NeurIPS 2024/25 lens | Top US grant | Top UK/EU grant | Top APAC/SA grant |
+|---|---|---|---|---|---|
+| **ZPE-XR** | Ship Fanmode deterministic-replay shim built on OmniTokenizer + DIAMOND; publish latent-action SDK | World models + event-based + latent actions (Genie/DIAMOND/Vista) | NSF CISE CoRe (IIS) | Digital Europe DIGITAL-2026-AI-09 Virtual Worlds Testbeds (1 Oct 2026) | SA TIA-TuksNovation Seed |
+| **ZPE-Video** | Double down on receipt wedge; build VideoSeal⊕Shallow Diffuse⊕C2PA triple-lock verifier benchmark | Content provenance + neural video codecs (VideoSeal, NVRC, DCVC-FM) | NIST CAISI CRADA + DARPA I2O BAA | HE CL4-2026-05 AI Agents + Digital Europe BESTUSE | AI Singapore + IndiaAI Safe/Trusted |
+| **ZPE-Prosody** | Narrow the lane: abandon p@5=0.80 generic-retrieval gate; reframe as streaming prosody-codec + emotion/SER retrieval on Mimi-first-codebook + RaBitQ | Speech tokenization (Mimi/FACodec/XEUS) + CPU retrieval (RaBitQ/SOAR) | NSF SBIR Phase I | EIC Pathfinder DeepRAP (28 Oct 2026) | IndiaAI Foundation Models (Indian-lang prosody) |
+| **ZPE-Neuro** | Add IBL Brain-Wide Map (Nature 2025) as scale corpus; adopt FALCON harness; keep DANDI 000034 as drift unit test | Neural foundation models (POYO+/MtM/NEDS/Brain-JEPA/NEMO) + FALCON | NIH BRAIN RFA-DA-27-004 R01 | ARIA Precision Neurotechnologies + ERC StG | India ANRF AI-SE Bio |
+| **ZPE-Mocap** | Retire playback claims; ship HumanML3D↔Motion-X++ cross-corpus TMR/SGAR retrieval + humanoid retarget head | Motion retrieval/RAG (TMR, SGAR, VimoRAG) + RVQ-motion (MoMask/MoGenTS) | NSF SBIR (Unitree/Figure LOI) | EIC AIC Physical AI Pilot (26 Feb 2026) | CSIRO / Korea IITP Robotics |
+| **ZPE-IoT** | Single bounded closure on DS-12 via TTM-r2 residual prior + Gorilla-XOR fallback | TSFM + SSM (TTM, Moirai-MoE, Time-MoE, Mamba-2) + lossless codec eval | NSF SBIR Phase I | Chips JU + EIC Pathfinder Open | SA TIA Seed + Taiwan NSTC |
+| **ZPE-Ink** | Reopen narrowly as cross-runtime ink-token interchange (integer canvas + UniTraj pretraining) | Trajectory FMs (UniTraj 2025) + ink tokenization (InkSight TMLR 2025) | NSF PESOSE | ARIA Maths-for-Safe-AI seeds + EIC Transition | Japan AIST (Wacom) |
+| **ZPE-Geo** | Sequence Phase 04 **after** AV2+NOAA AIS corpus closure, which itself is unlocked by adopting UniTraj resampling + TrAISformer tokenizer | Trajectory FMs (UniTraj, TrajFM, TrAISformer) + AV2 forecasting (DeMo/RealMotion/BeTopNet) | IARPA Open BAA + NSF SaTC | ARIA Scoping Our Planet seeds + HE CL4-2027-04-DATA-03 | SARAO research call + ARC Linkage (Spire-AU) |
+| **ZPE-FT** | Pivot Phase 06 gate: adopt FI-2010 + LOBSTER sample as auditable authority; build leak-audited benchmark harness over Kronos/MarS baselines | Financial TSFM (Kronos, MarS, Sundial, Time-MoE) + learned indexes (PGM++) | NSF CISE CoRe + NSF SBIR | EIC Accelerator | Singapore NRF + SA NRF CPRR |
+| **ZPE-Bio** | Fix red CI; freeze ECG strength; keep wearable Gate F blocked but re-scope to PCCP-ready design artifact | ECG-FM / HuBERT-ECG / ECG-JEPA / ST-MEM + FDA PCCP (Dec 2024) | ARPA-H Resilient Systems + NIH NHLBI R01 | HE HLTH-2026-01-DISEASE-15 (Cardiovascular, 16 Apr 2026) | **SAMRC-TIA Seed Fund** (best SA fit) |
+| **CROSS-LANE (portfolio)** | **Deterministic, compressed-searchable, provenance-grade codec substrate for regulated multi-modal data** — single thesis unifying all ten lanes | Neural compression ⊕ retrieval ⊕ provenance ⊕ PCCP-style replay | ARPA-H Resilient Systems + NSF Safe Learning-Enabled Systems | **ARIA Safeguarded AI (TA1) + EIC Pathfinder Open 12 May 2026** | SA NRF Thuthuka (15 Apr 2026) + India ANRF AI-SE |
+
+---
+
+## ZPE-XR — deterministic XR input-layer infrastructure
+
+### (i) Best downstream wedge and why
+
+**Best wedge: deterministic latent-action input layer for XR apps, anchored to Fanmode as first pilot customer.** The NeurIPS 2024/25 frontier has decisively moved from "record pixels" to "record latent actions + seeds + tokenized observations, replay via a world model." DIAMOND (Alonso et al., NeurIPS 2024 Spotlight, arXiv:2405.12399, OpenReview NadTwTODgC) shows an interactive CS:GO neural game engine is buildable **today** on consumer compute; Vista (Gao et al., NeurIPS 2024, arXiv:2405.17398) demonstrates 576×1024 action-conditioned driving rollouts; Genie / LAPO (Schmidt & Jiang, ICLR 2024, arXiv:2312.10812) proves **latent actions can be recovered unsupervised from video**, removing the need for ground-truth controller logs. This is the missing abstraction: ZPE-XR can ship a "latent-controller API" that makes any XR app replayable deterministically against a Cosmos-class world model without the app exposing raw input internals.
+
+Rationale vs alternatives: a pure "XR video codec" wedge collides head-on with NVRC/DCVC-FM and is easily obsoleted; a pure "event-camera tokenizer" wedge is too hardware-specific. The latent-action input layer is the only wedge where the portfolio's deterministic-replay DNA maps to a NeurIPS-validated abstraction that nobody else has productized.
+
+### (ii) Exact sequencing after Phase 09-02
+
+1. Close the 0/5 public comparator — ship reconciled public repo with a minimal `xr-replay-core` crate exposing (observation_token, latent_action, seed) triples.
+2. Integrate OmniTokenizer (Wang et al., NeurIPS 2024, arXiv:2406.09399) as the default observation tokenizer (1.11 rFID, 42 rFVD, joint image+video, window+causal attention) — this is industry-consistent and gives free cross-compatibility with Cosmos-Tokenizer-DV8x16x16 (NVIDIA, arXiv:2501.03575).
+3. Add a LAPO-style latent-action head trained on Ego-Exo4D (Grauman et al., CVPR 2024, arXiv:2311.18259) + OpenXR controller traces; publish an 8–16 latent-action vocabulary.
+4. Only after those three: Phase 10 Fanmode pilot, demonstrating deterministic session replay inside a DIAMOND-class diffusion engine.
+
+### (iii) Strongest commercial and grant framing
+
+**Commercial:** "Deterministic XR session recorder + latent-controller SDK" — primary customers Meta Reality Labs / Apple Vision / Microsoft Mesh XR QA teams who need replay for regression testing; secondary customers sim-to-real robotics teams (NVIDIA Isaac Lab, Unitree, 1X) who already need latent-action abstractions.
+
+**Grant:** EU Digital Europe **DIGITAL-2026-AI-09 Virtual Worlds Testbeds STEP** (deadline 1 Oct 2026) is the single most direct thematic match; HE CL4 HORIZON-CL4-2026-04-HUMAN-02 Web 4.0 is secondary. US vehicle: NSF CISE Future CoRe (IIS HCI), next target Feb 2027 with Sep 2026 fallback. SA/APAC: TIA-TuksNovation Seed for Fanmode pilot; Korea IITP XR track.
+
+### (iv) Minimal proof packet for the wedge
+
+(a) 500 XR session recordings, each ≤30 s, across 3 Fanmode-style apps;
+(b) OmniTokenizer-encoded observation stream at ≥50:1 compression vs raw H.264;
+(c) LAPO latent-action head with ≥0.85 action-consistency on held-out sessions;
+(d) 1-line public demo: "deterministic replay of recorded XR session in a DIAMOND-class world model";
+(e) reproducibility harness with fixed seeds + pinned tokenizer weights.
+
+### (v) Ranked 3-step action plan with hold conditions
+
+1. **Close Phase 09-02 public comparator (0/5 → 5/5)**. Hold: if closure requires >4 weeks, re-scope comparator to a narrower 3-test subset and ship.
+2. **Adopt OmniTokenizer + Cosmos-Tokenizer as observation tokenizer layer** (engineering complexity M). Hold: if OmniTokenizer rFVD on Ego-Exo4D test split >60 after finetune, fall back to Cosmos-CV8x8x8.
+3. **Train LAPO-style latent-action head on Ego-Exo4D + OpenXR traces, release `xr-replay-core` crate**. Hold: if latent-action stability <0.70 on held-out Fanmode sessions, park the latent-action wedge and ship pure tokenized-observation replay instead.
+
+**Kill condition:** if Phase 09-02 comparator cannot be stabilized in 6 weeks and Fanmode pilot LOI lapses, park ZPE-XR at Phase 10 and redirect capacity to ZPE-Video + ZPE-Bio (higher-gradient lanes).
+
+### (vi) NeurIPS 2024/25 citations — one-line relevance
+
+- **DIAMOND** (Alonso et al., NeurIPS 2024 Spotlight, arXiv:2405.12399, OpenReview NadTwTODgC) — continuous diffusion world model, direct substrate for deterministic XR replay.
+- **Vista** (Gao et al., NeurIPS 2024, arXiv:2405.17398, OpenReview Tw9nfNyOMy) — multi-modal action-conditioned rollouts at 576×1024, template for controller→pixel pipeline.
+- **OmniTokenizer** (Wang et al., NeurIPS 2024, arXiv:2406.09399, OpenReview H6C4p8Dir7) — joint image+video tokenizer, default XR observation encoder.
+- **Overcoming Challenges of Long-Horizon Prediction in Driving World Models** (Mousakhan et al., NeurIPS 2025 Poster) — continuous AR beats discrete tokens on long horizons; re-scopes "tokenize-everything" XR prior.
+
+### Re-scope argument against the current prior
+
+The current brief implicitly treats XR as a standalone codec lane. NeurIPS 2024/25 evidence (DIAMOND + Vista + LAPO + Cosmos) argues XR should be re-scoped as **a deterministic-replay front-end to a world-model substrate**, with the codec being the observation-tokenizer layer that feeds world models. This is a strictly larger surface area and the only framing in which Fanmode is a natural first customer rather than an arbitrary one.
+
+### Engineering augmentation (concrete build)
+
+**Build:** `xr-replay-core` — a 3-crate stack (Rust): `xr-obs-tok` wrapping OmniTokenizer + Cosmos-Tokenizer; `xr-latent-act` wrapping a LAPO head; `xr-replay-harness` providing deterministic seed+token replay. **Why:** unlocks (i) EU Virtual Worlds Testbeds grant alignment, (ii) QA-tooling commercial wedge at Meta/Apple/Microsoft, (iii) cross-lane reuse — the same harness serves ZPE-Mocap (retarget replay) and ZPE-Neuro (deterministic neural-data replay). **Expected complexity:** M (~10 eng-weeks).
+
+---
+
+## ZPE-Video — cross-writer hash-stable AI-perception receipts
+
+### (i) Near-term wedge: receipt program vs primitive-native continuation
+
+**Verdict: receipt program wins decisively.** NeurIPS 2024 evidence is unambiguous: **invisible pixel-perturbation watermarks are provably removable** (Zhao et al., NeurIPS 2024, proceedings 10272bfd0371ef960ec557ed6c866058) — 98% removal on RivaGAN — and the NeurIPS 2024 "Erasing the Invisible" competition (An et al., OpenReview BeFjjyzWOJ) confirmed empirically that top-5 teams removed ≥89% of watermarks in both Black-box and Beige-box tracks across Gaussian Shading + StegaStamp. The **primitive-native byte gate is not merely red — it is theoretically defeated**. Any serious receipt program must combine (a) semantic/inversion-based watermark (Shallow Diffuse, NeurIPS 2025 Spotlight), (b) cryptographic C2PA v2.0 manifest hard-binding, and (c) a semantic/detector stack such as DF40 (NeurIPS 2024 D&B, proceedings 34239f60eca7ce9bee5280aaf81362d8).
+
+### (ii) Best external buyer/grant/research audiences
+
+- **Buyers:** Adobe (C2PA founder), Microsoft, Google (SynthID-deployed in Gemini, published in *Nature* Oct 2024 — Dathathri et al.), BBC R&D, NYT, Truepic, Reuters. Publisher side: AP, Getty.
+- **Grants:** NIST CAISI CRADA (provenance measurement science — Adobe/Microsoft already consortium members); DARPA I2O FY2026 BAA HR001126S0001 (SemaFor successor line); EU Digital Europe DIGITAL-2026-BESTUSE Safer Internet Centres; HE CL4-2026-05-DIGITAL-EMERGING-02 Next-Gen AI Agents (provenance-by-default framing).
+- **Research:** Meta FAIR VideoSeal team (Fernandez et al., arXiv:2412.09492, with WmForger accepted NeurIPS 2025 Spotlight); Google DeepMind SynthID team; Microsoft DCVC group (Jiahao Li, Bin Li, Yan Lu — DCVC-FM CVPR 2024, DCVC-RT CVPR 2025).
+
+### (iii) Exact gating logic for Phase 10
+
+Phase 10 should be unblocked when **two of three** receipt-layer primitives are honestly green on a frozen test harness:
+
+1. VideoSeal recovery bit-accuracy ≥0.95 after DCVC-FM re-encoding + H.266/VVC pass;
+2. Shallow Diffuse detection AUC ≥0.90 on a frozen 1k-sample DF40 subset;
+3. C2PA v2.0 manifest hard-bind verification at 100% on the same frozen set with at least one production trust-list anchor (Adobe / Microsoft / Leica).
+
+This **re-scopes** the original primitive-native byte gate: under NeurIPS 2024 evidence, requiring a single-primitive byte gate is equivalent to requiring something the field has shown is theoretically defeatable; requiring 2-of-3 under the triple-lock is both defensible and achievable.
+
+### (iv) Best next phase to insert if receipt wedge wins
+
+**Insert a "Phase 10.5: Codec-Invariant Receipt Benchmark."** Publish a continuously updated leaderboard on DF40 + Panda-70M + LVD-2M measuring receipt survival after DCVC-FM / DCVC-RT / H.266 re-encoding and after NFPA-style next-frame-prediction attacks (NeurIPS 2025 poster). This is the neutral venue equivalent of GIFT-Eval for provenance; it positions ZPE-Video as the reference measurer, not the reference codec.
+
+### (v) Ranked 3-step action plan with kill/hold conditions
+
+1. **Ship VideoSeal + C2PA v2.0 manifest writer as the default receipt pipeline** (L, ~4 eng-weeks). Kill if VideoSeal bit-accuracy <0.70 after DCVC-FM on a 500-video smoke test after 4 weeks.
+2. **Add Shallow Diffuse semantic watermark as orthogonal second signal** (M, ~8 eng-weeks). Hold if forgery attacks (per Müller et al. arXiv:2412.03283 "Black-Box Forgery Attacks on Semantic Watermarks") show >30% forgery on our frozen key.
+3. **Release Phase 10.5 Codec-Invariant Receipt Benchmark as a public leaderboard** (M, ~6 eng-weeks). Kill if no external submissions arrive within 90 days post-release — pivot to CRADA arrangement instead.
+
+### (vi) NeurIPS 2024/25 citations — one-line relevance
+
+- **SynthID-Text** (Dathathri et al., *Nature* Oct 2024, doi:10.1038/s41586-024-08025-4) — production-deployed LLM watermark via tournament sampling, template for cross-writer receipt anchor.
+- **ROBIN** (Huang, Wu, Wang, NeurIPS 2024, proceedings 073c8584ef86bee26fe9d639ec648e28) — adversarial hiding-prompt survives DDIM inversion; reference for cross-editor persistence.
+- **Erasing the Invisible** (An et al., NeurIPS 2024 Competition Track, OpenReview BeFjjyzWOJ) — empirical ceiling of invisible image watermarks; evidence for triple-lock design.
+- **NVRC** (Kwan et al., NeurIPS 2024) — first INR video codec to beat VTM-RA; receipts must survive INR re-encoding.
+- **Shallow Diffuse** (NeurIPS 2025 Spotlight) — null-space semantic watermark, next-gen primitive.
+
+### Re-scope argument
+
+The current brief treats the "primitive-native byte gate" as a hard gate. NeurIPS 2024 evidence proves this gate cannot be closed with any single primitive; insisting on it indefinitely-parks a live commercial opportunity. Re-scope to a **triple-lock receipt gate** (VideoSeal + Shallow Diffuse + C2PA) that is both defensible and achievable.
+
+### Engineering augmentation
+
+**Build:** `receipt-core` — a verifier that ingests a video and returns a dense receipt: {videoseal_bits, shallow_diffuse_logit, c2pa_manifest_hash, trust_list_anchor}. **Why:** single integration point for any publisher; positions ZPE-Video as the de-facto EU AI Act Article 50 compliance layer for video. **Complexity:** M (~12 eng-weeks including DCVC-FM integration).
+
+---
+
+## ZPE-Prosody — speech/prosody codec with CPU retrieval
+
+### (i) Rescue-retrieval vs narrow-the-lane verdict
+
+**Verdict: narrow the lane.** The p@5=0.80 gate was set before the 2024 speech-tokenization revolution. Mimi (Kyutai, Défossez et al., arXiv:2410.00037) now distils WavLM semantics into the first RVQ codebook at 12.5 Hz / 1.1 kbps, and SpiRit-LM (Nguyen et al., TACL 2025, arXiv:2402.05755) models pitch + style as tokens *inside* a unified speech-text LM. In that world, a bespoke "prosody-only retrieval index" is architecturally obsolete — downstream users will query the semantic token space or WavLM embeddings directly. ZPE-Prosody's F0 RMSE 0.8925% and 16.6× compression are genuinely competitive artifacts; **they just aren't retrieval artifacts**.
+
+### (ii) Strongest current wedge if narrowed
+
+**Streaming prosody-aware codec + emotion/SER retrieval as the *service*, not the *gate*.** Narrow to (a) streaming Mimi-compatible codec with explicit prosody subspace à la FACodec (Ju et al., NaturalSpeech 3, ICML 2024, arXiv:2403.03100), and (b) retrieval keyed on emotion2vec+ distilled embeddings benchmarked on IEMOCAP + MSP-Podcast + Expresso + SD-Eval (NeurIPS 2024 D&B). This gives the lane an honest, defensible, measured SOTA-comparable posture.
+
+### (iii) Best CPU-first rescue path if retrieval stays
+
+If the business case forces retrieval-as-gate to stay, the CPU-first rescue is unambiguous: **XEUS layer-19 embeddings (Chen et al., EMNLP 2024 Best Paper, arXiv:2407.00837) k-means bucketed → RaBitQ 1-bit re-rank** (Gao & Long, SIGMOD 2024, arXiv:2405.12497), with SOAR spilling (Sun et al., NeurIPS 2023, arXiv:2404.00774). Elastic BBQ and Milvus 2.6 have shown ~3.6× QPS over FP32 at equivalent recall; this is the current CPU frontier. Expected p@5 on semantic-level retrieval: break the 0.80 gate comfortably. LoRANN (Vecchiato et al., NeurIPS 2024) is the alternative if supervised IVF is needed.
+
+### (iv) Most credible grant/commercial framing
+
+**Commercial:** streaming emotion-aware speech codec for call-center analytics (Cresta, Observe.AI, Uniphore), conversational AI (Kyutai/Moshi-style deployments), and multilingual TTS (ElevenLabs, Suno). **Grant:** IndiaAI Foundation Models CFP — Indian-language prosody is an explicit national priority with multi-crore budgets; AI Singapore's S$150M NAIRD pool; EIC Pathfinder Challenge **DeepRAP** (28 Oct 2026) for reasoning over speech tokens. US: NSF SBIR Phase I for commercial track; DARPA AIE rolling opportunities for speech-foundation thrusts.
+
+### (v) Ranked 3-step action plan with stop rule
+
+1. **Narrow the lane publicly: retire the p@5=0.80 gate; replace with streaming prosody-codec + emotion-retrieval KPI on IEMOCAP/MSP-Podcast** (L, ~2 eng-weeks). Stop if emotion2vec+ adapter cannot hit baseline within 3 weeks.
+2. **Ship Mimi-compatible RVQ head with explicit 3.1 Hz prosody branch following SNAC multi-scale design** (M, ~10 eng-weeks).
+3. **If retrieval stays as a ship target, build XEUS + RaBitQ-SOAR CPU retrieval pipeline as the honest baseline** (M, ~6 eng-weeks).
+
+**Stop rule:** if after narrowing + emotion2vec+ distillation the lane cannot publicly demonstrate SOTA-competitive MCD / MUSHRA numbers on Expresso by end-Q3 2026, park and redirect capacity.
+
+### (vi) NeurIPS 2024/25 citations
+
+- **Mimi** (Défossez et al., arXiv:2410.00037, Kyutai) — 12.5 Hz streaming prosody-aware codec, de-facto frontier.
+- **WavTokenizer** (Ji et al., ICLR 2025, arXiv:2408.16532, OpenReview yBlVlS2Fd9) — extreme single-codebook compression baseline.
+- **UniAudio 1.5 / LLM-Codec** (Yang et al., NeurIPS 2024) — codec-to-LLM token alignment; retrieval moves into LM space.
+- **SD-Eval** (NeurIPS 2024 D&B) — benchmark beyond-words speech dialog evaluation.
+- **RaBitQ** (Gao & Long, SIGMOD 2024, arXiv:2405.12497) — CPU ANN frontier; adopted by Elastic BBQ.
+
+### Re-scope argument
+
+The p@5=0.80 gate is not a sovereign constraint — it is a **1-year-obsolete retrieval KPI** now obviated by Mimi/SpiRit-LM's absorption of prosody into unified token streams. Continuing to treat it as sovereign is an epistemic mistake; re-scope to emotion-retrieval + streaming codec.
+
+### Engineering augmentation
+
+**Build:** `prosody-rvq-mimi-compat` — a Mimi-wire-compatible encoder with a prosody subspace codebook (FACodec factorization) and an emotion2vec+-distilled retrieval head. **Why:** unlocks IndiaAI Indian-language prosody grant track; directly productizable with Kyutai ecosystem. **Complexity:** M (~12 eng-weeks).
+
+---
+
+## ZPE-Neuro — deterministic extracellular spike-event encoding
+
+### (i) Best next breadth target
+
+**IBL Brain-Wide Map** (International Brain Laboratory, *Nature* 645:177–191, 2025, doi:10.1038/s41586-025-09235-0). 621,733 neurons across 699 Neuropixels probes / 139 mice / 279 brain areas — this is the scale at which NeurIPS 2024/25 foundation models (MtM, NEDS, NEMO, POYO+) are trained and evaluated. DANDI 000034 (Marques-Smith rat cortex) is fine as a drift unit test but is **not frontier-scale**. Secondary target: DANDI 000957 (Neuropixels Ultra, Ye et al., *Neuron* 2025) for cell-type-diagnostic waveform experiments.
+
+### (ii) Best blind-clone/replay strategy
+
+Use the **FALCON benchmark harness** (Karpowicz et al., NeurIPS 2024 D&B, OpenReview FN02v4nD8y; bioRxiv 10.1101/2024.09.15.613126) as the blind-clone surface. FALCON defines few-shot decoding across 5 datasets (H1/M1/M2/H2/B1) with an EvalAI leaderboard — this is the community-standard blind evaluation for neural decoders. ZPE-Neuro can publish a deterministic-encoder reproducibility harness that wraps FALCON's held-out-day evaluation, making the replay both rigorous and externally auditable.
+
+### (iii) Most credible grant/commercial framing
+
+**Grant (primary):** NIH BRAIN RFA-DA-27-004 Theories/Models/Methods for Complex Brain Data (R01); RFA-DA-27-005 Data Archives (U24) for DANDI-adjacent infrastructure. ARPA-H Health Science Futures ISO for BCI-resilience framing. UK: ARIA Precision Neurotechnologies (seed rolling, ≤£500k, Scalable Neural Interfaces opportunity space). EU: ERC Starting Grant. APAC: India ANRF AI-SE Bio/Life Sciences program with DBT.
+
+**Commercial:** Neuralink / Paradromics / Blackrock Neurotech / Synchron — all need deterministic encodings of their device streams for FDA IDE/510(k) submissions. IBL consortium members as research partners.
+
+### (iv) Sharpest narrow wedge
+
+**Deterministic FALCON-harness-compatible spike-event codec with replay guarantees across Kilosort4 version boundaries.** The sorting step introduces non-determinism; wrapping Kilosort4 (Pachitariu et al., *Nature Methods* 2024, doi:10.1038/s41592-024-02232-7) + DARTsort (Boussard et al.) in a byte-stable envelope with pinned random seeds and versioned templates is a real engineering contribution that no published foundation model provides.
+
+### (v) Ranked 3-step action plan with kill/park conditions
+
+1. **Pull a 50-session curated subset of IBL BWM via ONE-api; align deterministic encoder to MtM / FALCON protocols** (M, ~8 eng-weeks). Park if ONE-api licensing + data-access review exceeds 6 weeks.
+2. **Publish blind-clone authority replay pack on DANDI 000034 + IBL subset using the FALCON harness** (L, ~4 eng-weeks). Kill if co-smoothing baseline cannot hit Neural Latents Benchmark parity (Pei et al., NBDT 2021) after 6 weeks.
+3. **Add NEMO-style (Yu et al., ICLR 2025) ACG + multi-channel template triplet channels for cell-type retrieval at no extra commercialization cost** (M, ~10 eng-weeks). Kill if classification AUC on NP Ultra opto-tagged set <0.70 after 4 weeks.
+
+**Park condition:** if IBL BWM data-access review exceeds 10 weeks and no commercial LOI arrives from Neuralink/Paradromics/Blackrock, park ZPE-Neuro at deterministic DANDI 000034 closure and redirect to ZPE-Bio (higher clinical-path asymmetry).
+
+### (vi) NeurIPS 2024/25 citations
+
+- **MtM / "Universal Translator"** (Zhang et al., NeurIPS 2024, arXiv:2407.14668, OpenReview nRRJsDahEg) — multi-task masking on IBL repeated-site; reference training recipe.
+- **Brain-JEPA** (Dong et al., NeurIPS 2024 Spotlight, arXiv:2409.19407) — gradient positioning + spatiotemporal masking; methodologically central.
+- **LDNS** (Kapoor et al., NeurIPS 2024 Spotlight, arXiv:2407.08751, OpenReview ZX6CEo1Wtv) — S4 + latent diffusion for spikes; reference generative baseline.
+- **FALCON** (Karpowicz et al., NeurIPS 2024 D&B, OpenReview FN02v4nD8y) — the blind-clone benchmark to adopt.
+- **Neuroformer** (Antoniades et al., ICLR 2024, arXiv:2311.00136) — GPT on (neuron-id, Δt) tokens.
+
+### Re-scope argument
+
+Current scope "DANDI 000034 + bounded IBL" undersells what the lane can do. IBL BWM (Nature 2025) is the frontier corpus and is freely accessible via ONE-api; keeping scope bounded to 000034 makes ZPE-Neuro look like a toy relative to MtM/NEDS/NEMO. Re-scope to **IBL BWM primary, DANDI 000034 as drift/probe unit test**.
+
+### Engineering augmentation
+
+**Build:** `spike-codec-falcon` — deterministic encoder that consumes Kilosort4+DARTsort output, emits a FALCON-compatible token stream, and ships with a byte-stable replay harness. **Why:** unlocks NIH BRAIN R01 (FALCON compatibility is grant-legible); positions against Neuralink/Paradromics FDA submissions. **Complexity:** M (~12 eng-weeks).
+
+---
+
+## ZPE-Mocap — motion capture retrieval/indexing
+
+### (i) Strongest retrieval/indexing wedge
+
+**Cross-corpus motion retrieval across HumanML3D ↔ Motion-X++ ↔ AMASS with a TMR/SGAR-grade dual encoder + RVQ tokenization head.** The NeurIPS 2025 papers make this decisive: **SGAR** (NeurIPS 2025 main, neurips.cc/virtual/2025/loc/san-diego/poster/119557) provides LLM-decomposed body-part alignment for fine-grained motion-text retrieval on three benchmarks; **VimoRAG** (NeurIPS 2025) shows retrieval-augmented motion generation is a live research program with Gemini Motion Video Retriever. Synthetic P@10=1.0 is not a credible claim — it must be replaced by cross-corpus median rank on published datasets.
+
+### (ii) Best next real-data benchmark or corpus expansion
+
+**Motion-X++** (Zhang et al., arXiv:2501.05098) — 19.5M SMPL-X frames, 120.5K sequences, 80.8K RGB videos, 45.3K audios. It is the 2025 successor to Motion-X (NeurIPS 2023 D&B) and is the single best expansion for cross-corpus retrieval. Secondary: **SnapMoGen** (Guo et al., NeurIPS 2025, arXiv:2507.09122) with 20K clips + ~48-word descriptions for long-prompt retrieval. Third: cross-embodiment via DROID (Khazatsky et al., RSS 2024, arXiv:2403.12945) and Open-X Embodiment to bridge into robotics-retrieval commercial wedge.
+
+### (iii) Best commercial and grant story under current truth
+
+**Commercial:** humanoid retargeting-as-a-service for Unitree / Figure / 1X / Agility / Disney, using the 19-DoF Unitree H1 as the industry retargeting target (per ExBody, OmniH2O, HOVER, ASAP, SONIC). ZPE-Mocap's compressed retrieval index sits upstream of their control stacks.
+
+**Grant:** **EIC AIC Pilot "Accelerating Physical AI: Embodied Intelligence"** (Stage 1 cut-off 26 Feb 2026, €0.3M / 9 months, 20 teams, €6M pool) — primary. HE CL4 HORIZON-CL4-2026-04-DIGITAL-EMERGING-08 Robotics Apply AI (€18M, 15 Apr 2026). US: NSF SBIR Phase I with Unitree/Figure LOIs. APAC: CSIRO Next Gen Graduates, Korea IITP Robotics.
+
+### (iv) Exact claims to retire
+
+Retire: (a) "playback codec" framing — 32.45 mm MPJPE and 82.51° joint-angle RMSE are far from playback-quality (MoGenTS reports 13.8 mm MPJPE on HumanML3D VQ reconstruction); (b) "P@10=1.0 synthetic retrieval" — synthetic P@10=1.0 does not compare to TMR's median rank 19 on HumanML3D test split; (c) "18.77× compression vs BVH float32 as SOTA compression" — MoMask's 6-layer RVQ (512×512 codebooks) achieves higher compression with substantially better FID.
+
+### (v) Ranked 3-step action plan
+
+1. **Adopt MoMask-style RVQ tokenizer (6 layers × 512-dim codebooks); target MPJPE <20 mm on CMU/AMASS** (M, ~8 eng-weeks). Hold if RVQ reconstruction MPJPE cannot break 25 mm after 6 weeks.
+2. **Build TMR/SGAR dual-tower contrastive retrieval over HumanML3D + Motion-X++ with FAISS IVF-PQ or RaBitQ backing** (M, ~10 eng-weeks). Target: median rank <25 on cross-corpus TMR protocol.
+3. **Add SMPL-X → Unitree H1 retargeting head (19 DoF) following ExBody + OmniH2O remap convention** (M, ~10 eng-weeks). Kill if retarget produces >5% infeasible joint configurations on held-out AMASS clips.
+
+### (vi) NeurIPS 2024/25 citations
+
+- **MoGenTS** (Yuan et al., NeurIPS 2024, proceedings ebf8764ecf0688cdd9fe1e5a9c525d0d) — per-joint VQ + 2D masked transformer; MPJPE 13.8 mm on HumanML3D.
+- **SGAR** (NeurIPS 2025 main) — body-part-decomposed motion retrieval across three benchmarks.
+- **VimoRAG** (NeurIPS 2025 main) — video-based motion RAG with Motion-centric DPO.
+- **SnapMoGen / MoMask++** (Guo et al., NeurIPS 2025, arXiv:2507.09122) — multi-scale RVQ + long-prompt motion corpus.
+- **HPT** (Wang et al., NeurIPS 2024, proceedings e0f393e7980a24fd12fa6f15adfa25fb) — heterogeneous pre-training across Open-X datasets; cross-embodiment foundation.
+
+### Re-scope argument
+
+The brief already concedes retrieval-not-playback; the argument is for **going further** — explicitly retiring playback claims in the public repo and replacing with cross-corpus retrieval + humanoid retargeting positioning. Under NeurIPS 2025 evidence (VimoRAG, SONIC arXiv:2511.07820), motion retrieval is a live commercial path; motion playback is not.
+
+### Engineering augmentation
+
+**Build:** `mocap-rvq-tmr` — RVQ tokenizer + TMR dual-tower retrieval + Unitree H1 retarget head, all sharing a common SMPL-X tokenization front-end. **Why:** single artifact serves grant (EIC AIC Physical AI) and commercial (humanoid fleets) paths; cross-lane reuse with XR tokenizer and Geo trajectory tokenizer. **Complexity:** M-H (~20 eng-weeks end-to-end).
+
+---
+
+## ZPE-IoT — IoT sensor stream codec
+
+### (i) Best single bounded closure lane
+
+**DS-12 closure via TTM-r2 residual prior + Gorilla-XOR fallback.** DS-12 is the sole competitor-win in the 10/11 benchmark — it is the single highest-leverage closure because it turns a public 10/11 into an honest 11/11 while consuming <15 engineer-weeks. Adopting Tiny Time Mixers-r2 (Ekambaram et al., NeurIPS 2024, arXiv:2401.03955; HF ibm-granite/granite-timeseries-ttm-r2, 1–5M params, Apache license) as a residual predictor, with Gorilla-XOR as the entropy-fallback when residual entropy exceeds threshold, covers the known failure mode cleanly.
+
+### (ii) Why it beats others
+
+- **vs native-wheel:** infrastructure-only, no defensible research thesis, no grant upside.
+- **vs benchmark breadth (more DS-N):** diminishing returns after 10/11; GIFT-Eval (Aksu et al., NeurIPS 2024 TSALM + ICLR 2025, arXiv:2410.10393) + "Lossless Compression: A New Benchmark for Time Series Model Evaluation" (arXiv:2509.21002) already provide neutral 23-28 dataset evaluation — claiming more datasets internally is less credible than publishing on GIFT-Eval.
+- **vs observability adapters:** pure engineering, not grant-legible.
+- **DS-12 closure** turns a known weakness into a public strength, enables Phase-closure narrative, and unlocks referenceability.
+
+### (iii) Strongest commercial wedge
+
+**Sub-MCU-footprint sensor codec with TSFM-class generalization** — target STMicroelectronics / Nordic Semiconductor / ARM silicon partnership, benchmarked against MLCommons Tiny (MLPerf Tiny v1.x) + EEMBC IoTMark. TTM-r2's 1–5M params make it CPU-deployable; Mamba-2 (Dao & Gu, ICML 2024, arXiv:2405.21060) is the stretch backbone if long-context is needed.
+
+### (iv) Strongest grant-facing framing
+
+**Leak-audited codec benchmark for IoT under MLCommons Tiny compatibility.** Grant: NSF SBIR Phase I (silicon partner LOI); DOE SBIR FY26 topics (edge grid sensor); Chips JU 2026 actions (EU silicon sovereignty); DARPA ML2P follow-on (Mapping ML to Physics). SA: TIA Seed Fund via TuksNovation.
+
+### (v) Ranked 3-step plan with stop rules
+
+1. **Integrate TTM-r2 as residual predictor front-end; re-run DS-01..DS-12 with Gorilla-XOR fallback; target DS-12 win** (M, ~8 eng-weeks). Stop rule: if DS-12 compression ratio cannot exceed competitor after 4 weeks, try Moirai-MoE (Liu et al., ICML 2025, arXiv:2410.10469) or TimesFM (Das et al., ICML 2024, arXiv:2310.10688).
+2. **Publish results on GIFT-Eval public benchmark to re-contextualize 6.65× mean against Chronos / Moirai / TimesFM zero-shot baselines** (L, ~3 eng-weeks). Stop rule: if GIFT-Eval ranking is >top-5 on relevant tracks, narrow to the tracks where ZPE-IoT wins.
+3. **Release release-preflight v2 with MLCommons Tiny compatibility wrapper + LwM2M v1.2 conformance** (L, ~4 eng-weeks). Stop rule: if no silicon-partner engagement within 90 days, park the commercial track and keep the research track alive via grant submissions.
+
+### (vi) NeurIPS 2024/25 citations
+
+- **TTM** (Ekambaram et al., NeurIPS 2024, arXiv:2401.03955, OpenReview 3O5YCEWETq) — 1–5M params, CPU-deployable, beats TimesFM/Moirai/Chronos zero-shot.
+- **UniTS** (Gao et al., NeurIPS 2024, arXiv:2403.00131) — task-tokenized multi-mode time-series backbone.
+- **TimeXer** (Wang et al., NeurIPS 2024, arXiv:2402.19072) — endogenous+exogenous attention; sensor+covariate template.
+- **Time-MoE** (Shi et al., ICLR 2025 Spotlight, arXiv:2409.16040; NeurIPS 2024 TSALM) — 2.4B-param sparse TSFM, reference ceiling.
+- **GIFT-Eval** (Aksu et al., NeurIPS 2024 TSALM + ICLR 2025, arXiv:2410.10393) — neutral benchmark to re-contextualize.
+- **Lossless Compression Benchmark for TS** (arXiv:2509.21002) — re-scopes TSFM eval to codec axis directly.
+
+### Re-scope argument
+
+Brief already identifies DS-12 as the closure target; augmentation: **treat DS-12 not as a debt but as an opportunity** — the NeurIPS 2024 evidence (TTM, Moirai-MoE, TimeXer) says the right response is TSFM-residual prediction, which **simultaneously** gives a research narrative (first TSFM-residual-prior IoT codec) and closes the benchmark gap. Don't leave DS-12 unclosed for another quarter.
+
+### Engineering augmentation
+
+**Build:** `iot-tsfm-residual` — TTM-r2 / Moirai-MoE integration as residual predictor with arithmetic-coded residuals and XOR-predictor fallback gate. **Why:** closes DS-12 honestly; grant-legible (TSFM + codec); commercial-legible (ARM/STM silicon partnerships). **Complexity:** M (~8 eng-weeks).
+
+---
+
+## ZPE-Ink — cross-runtime digital ink interchange
+
+### (i) Reopen vs keep-closed verdict
+
+**Reopen narrowly.** The archived NO-GO was correct for the 2023 scope ("cross-runtime binary determinism is a plumbing problem"), but the 2024-25 frontier has fundamentally shifted. **InkSight** (Mitrevski et al., TMLR 2025, arXiv:2402.05804) proves that digital ink is best represented as VLM-compatible stroke tokens on a fixed canvas grid, which makes cross-runtime determinism **free** (integer arithmetic across Python/Rust/Swift/C#). **UniTraj** (Zhu et al., NeurIPS 2025 main, arXiv:2411.03859) provides a billion-scale trajectory foundation-model pretraining recipe that applies directly to stylus/pen traces.
+
+### (ii) Best narrow wedge if reopened
+
+**Ink-token interchange format (canvas-integer tokens) + trajectory-FM pretraining on IAM-OnDB + CROHME + stylus traces.** The W3C InkML standard has been static since 20 September 2011 — there is a clear market for a modern, deterministic, ML-native successor whose token vocabulary is compatible with VLMs. Target Google InkSight ecosystem + Microsoft Journal + Wacom WILL.
+
+### (iii) Exact proof packet first
+
+(a) Integer-canvas ink tokenizer with round-trip determinism across Python / Rust / Swift / C# (byte-identical);
+(b) 10 k-stroke round-trip fuzz test across all four runtimes with 0 byte mismatches;
+(c) a UniTraj-recipe pretrained encoder on IAM-OnDB + CROHME 2023 with a published embedding artifact;
+(d) an InkSight-compatible decoder wrapping Google's ink tokens on HierText.
+
+### (iv) Strongest external audience or use case
+
+- **Google InkSight team** (open artifact) — direct technical peer.
+- **Microsoft OneNote / Journal / Fluid Framework** — deterministic interchange is a tooling pain point.
+- **Wacom** — WILL v2 modernization.
+- **IAPR TC-11 / ICDAR / CROHME** — academic community for modern InkML successor.
+- **Use case:** cross-runtime stylus note deduplication + ML-augmented search across iPadOS/Windows/Android notes apps.
+
+### (v) Ranked 3-step plan with kill condition
+
+1. **Ship integer-canvas ink tokenizer library with fuzz-tested cross-runtime determinism (Py/Rust/Swift/C#)** (L-M, ~6 eng-weeks). Kill if any runtime pair cannot achieve byte-identical round-trip after 4 weeks.
+2. **Train UniTraj-recipe encoder on IAM-OnDB + CROHME + VNOn-DB, publish embedding + retrieval numbers against TMR-style protocol** (M, ~10 eng-weeks). Kill if median retrieval rank exceeds published InkSight baseline after 8 weeks.
+3. **Release a minimal InkSight-derender demo wrapping the tokenizer + encoder; submit to IAPR TC-11 / ICDAR workshop** (L, ~4 eng-weeks).
+
+### (vi) NeurIPS 2024/25 citations
+
+- **UniTraj** (Zhu et al., NeurIPS 2025 main, arXiv:2411.03859) — Adaptive Trajectory Resampling + Self-Supervised Trajectory Masking; direct recipe for pen-stroke pretraining.
+- **InkSight** (Mitrevski et al., TMLR 2025, arXiv:2402.05804) — VLM-compatible ink-tokenization; primary peer.
+- **Transformer-based Online+Offline HWR** (Lodh et al., ACPR 2025, arXiv:2506.20255) — bimodal early fusion; SOTA on IAM-OnDB.
+- **MGPO** (NeurIPS 2024) — prompt optimization over trajectories; adjacent primitive.
+
+### Re-scope argument
+
+The archived NO-GO treated ZPE-Ink as a plumbing problem and was correct under pre-2024 frontier. Under NeurIPS 2025 UniTraj + TMLR InkSight evidence, ZPE-Ink becomes a **trajectory foundation-model modality with trivial cross-runtime determinism**. Re-scope: reopen with a tightly-bounded trajectory-FM wedge, kill at end of Q3 2026 if no W3C/ICDAR/Google engagement materializes.
+
+### Engineering augmentation
+
+**Build:** `ink-token-std` — integer-canvas tokenizer + UniTraj-recipe encoder + InkSight-compatible decoder, released as NSF PESOSE open-source ecosystem candidate. **Why:** positions ZPE-Ink as the modern InkML successor; NSF PESOSE Phase I ($300k) is a clean fit. **Complexity:** M (~14 eng-weeks).
+
+---
+
+## ZPE-Geo — geospatial trajectory codec
+
+### (i) Verdict: Phase 4 now vs more corpus closure first
+
+**Corpus closure first, but closure itself is unlocked by adopting NeurIPS 2025 recipes rather than by more data engineering.** AV2 + NOAA AIS full-corpus closure has been blocked by resampling heterogeneity (AV2 at 10 Hz, AIS at sub-Hz irregular cadences) and coordinate representation. UniTraj (Zhu et al., NeurIPS 2025, arXiv:2411.03859) provides **Adaptive Trajectory Resampling + Interval-Consistent Resampling** that directly solves the cadence-heterogeneity problem; TrAISformer (Nguyen & Fablet, IEEE Access 2024, arXiv:2109.03958v4) provides the canonical AIS tokenization. Closure becomes a **3-week engineering task once these recipes are adopted**. Phase 04 blind-clone/release-readiness becomes credible immediately after.
+
+### (ii) Best commercial/grant wedge under current truth
+
+**Commercial:** AV2 + WOMD forecasting service layer (DeMo / RealMotion / BeTopNet all at NeurIPS 2024 are research baselines, not deployed infrastructure); AIS-based vessel intelligence for Global Fishing Watch / Spire Global.
+
+**Grant:** IARPA Open BAA (trajectory intel); NSF SaTC (rolling); DARPA I2O BAA (Digital RF Battlespace, PNT). UK/EU: ARIA Scoping Our Planet seeds (rolling, ≤£500k — direct match for AIS/Earth-system trajectories); HE CL4-2027-04-DATA-03 federated AI data. APAC/SA: **SARAO research call** — SA's compressed-data DNA from SKA/MeerKAT signal processing transfers directly to AIS time-series methods; ARC Linkage with Spire-AU or Global Fishing Watch.
+
+### (iii) Exact artifact or corpus milestone to improve authority
+
+**Publish a reproducible AV2 + NOAA AIS + Danish Maritime Authority (DMA) + Global Fishing Watch v3.0 (Zenodo 14982712) unified pretraining corpus with UniTraj-style Adaptive Trajectory Resampling applied, plus TrAISformer-style four-hot sparse tokenization.** This is the single artifact that unblocks GEO-C001 (tokenization), GEO-C002 (corpus closure), and sets up GEO-C004 (sovereign deployment).
+
+### (iv) Ranked 3-step action plan with upside and risk
+
+1. **Adopt UniTraj resampling + TrAISformer tokenization; unify AV2 + NOAA AIS + DMA + GFW v3.0** (M, ~6 eng-weeks). Upside: unblocks three sovereign blockers at once; risk: NOAA AIS ingest has historically been flaky (rate limits, gaps).
+2. **Ship Phase 04 blind-clone/release-readiness with published reproducibility harness** (M, ~8 eng-weeks). Upside: makes ZPE-Geo the first auditable cross-domain trajectory codec; risk: scope creep into full TrajFM/TrajMoE territory.
+3. **Submit to AV2 End-to-End Forecasting Challenge + ARIA Scoping Our Planet seed in parallel** (L, ~2 eng-weeks admin). Upside: two independent external validations; risk: AV2 leaderboard is competitive (DeMo, RealMotion, BeTopNet).
+
+**Kill condition:** if UniTraj resampling does not measurably improve cross-corpus embedding alignment within 8 weeks, park ZPE-Geo at AV2-only scope and deprioritize AIS/GFW.
+
+### (v) NeurIPS 2024/25 citations
+
+- **UniTraj** (Zhu et al., NeurIPS 2025 main, arXiv:2411.03859, neurips.cc/virtual/2025/loc/san-diego/poster/118831) — 2.45M trajectories / 70 countries; Adaptive Trajectory Resampling.
+- **DeMo** (Zhang et al., NeurIPS 2024, proceedings c0ff9e52e94ae331bc0f2d28be06a9ca) — SOTA on AV2 single-agent + multi-agent.
+- **RealMotion** (Song et al., NeurIPS 2024 Spotlight) — motion forecasting in continuous driving; AV2 benchmark.
+- **BeTopNet** (Liu et al., NeurIPS 2024, proceedings a862f5788fd09bb6843c694d8120d50c) — multi-agent behavioral topology on AV2 + WOMD.
+- **TrajAgent** (Du et al., NeurIPS 2025, arXiv:2410.20445) — LLM-agent framework for trajectory modeling.
+- **TrAISformer** (Nguyen & Fablet, IEEE Access 2024, arXiv:2109.03958v4) — canonical AIS transformer tokenization.
+
+### Re-scope argument
+
+The Phase 04 blocker has been framed as a corpus-engineering problem; NeurIPS 2025 UniTraj argues it is a **tokenization-recipe problem** that the field already solved. Re-scope: adopt UniTraj resampling as canonical preprocessing, and Phase 04 blind-clone becomes ~8 eng-weeks away.
+
+### Engineering augmentation
+
+**Build:** `geo-unitraj-adapter` — UniTraj resampling + TrAISformer tokenization wrapped in a byte-stable preprocessing pipeline for AV2 + AIS + GFW. **Why:** unlocks sovereign blockers; transferable to ZPE-Mocap (motion-as-trajectory) and ZPE-Ink (stroke-as-trajectory). **Complexity:** M (~6 eng-weeks).
+
+---
+
+## ZPE-FT — financial time-series
+
+### (i) Best exact-input closure strategy
+
+**Close Phase 06 via FI-2010 + LOBSTER 1-day sample as canonical auditable authority, benchmarked against LOB-Bench (arXiv:2502.09172, 2025) stylized-facts panel.** FI-2010 (Ntakaris 2018) is the most-cited public LOB benchmark (5 Nasdaq Nordic stocks, 10 days, 10-level LOB, ~395K events) and LOBSTER's free academic 1-day samples (GOOG, INTC, AAPL, MSFT) provide exact 3-tick top-of-book authority. LOB-Bench provides distributional evaluation (price-impact curves, KS distances to Cont'10 stylized facts) — the single cleanest FT-C004 auditable-truth framework.
+
+### (ii) Best current data/truth-source strategy
+
+Tier the data authority explicitly:
+
+1. **Tier-1 (public, auditable):** FI-2010 + LOBSTER samples + Binance public REST/WS OHLCV/depth + Coinbase L2/L3 streams.
+2. **Tier-2 (research-redistributable):** TimeBench subset from Sundial (Liu et al., ICML 2025 Oral, arXiv:2502.00816) for forecasting backbones.
+3. **Tier-3 (generative reference):** MarS LMM (Li et al., arXiv:2409.07486, Microsoft/MarS; OpenReview Yqk7EyT52H) as order-level synthetic authority for stress testing.
+
+### (iii) Strongest commercial wedge if Phase 06 passes
+
+**Leak-audited enterprise benchmark harness for financial TSFMs.** The 2025 literature (arXiv:2510.13654 "Time Series Foundation Models: Benchmarking Challenges and Requirements") documents widespread information-leakage in TSFM evaluations (7.6–59 pt MAPE swing from 0.1% leakage; 47–184% MSE advantage from benchmark leakage). ZPE-FT's deterministic/auditable DNA **is** the differentiator — not yet-another-forecaster, but the leak-audit infrastructure for existing ones. Buyers: LSEG, Nasdaq, Jane Street, CME, Bloomberg. This is genuinely novel commercial positioning.
+
+### (iv) Strongest honest pivot if Phase 06 fails
+
+Pivot from "financial TSFM" to **"auditable replay harness for regulated financial ML"** — shift from model claims to harness claims, align with SEC Consolidated Audit Trail (CAT) and CFTC Part 43/45 reporting granularity, and position as the FINOS/open-source audit layer. This is a strictly narrower, strictly more defensible claim and does not require Phase 06 to close.
+
+### (v) Ranked 3-option action ladder
+
+- **Option A (conservative, L):** FI-2010 + LOBSTER sample ingest + LOB-Bench evaluation panel; publish Phase 06 v1. ~6 eng-weeks. Success probability ~85%.
+- **Option B (mid, M):** Option A + Kronos-small fine-tune (Shi et al., arXiv:2508.02739, AAAI 2026; 24.7M params, 512 context) on 30-symbol OHLCV; publish as residual predictor for compressed storage. ~10 eng-weeks. Success probability ~65%.
+- **Option C (aggressive, H):** Option B + learned-index sidecar (PGM++ / ALEX / LIPP) for tick-level time→offset lookup with <400 ns on 800M keys (per arXiv:2410.00846, "Why Are Learned Indexes So Effective..."). ~20 eng-weeks. Success probability ~45% but unlocks major NSF SBIR / EIC Accelerator framing.
+
+### (vi) Explicit kill criteria
+
+Kill ZPE-FT if:
+
+1. FI-2010 + LOBSTER pipeline cannot produce Phase 06 v1 within 10 eng-weeks;
+2. LOB-Bench stylized-facts panel cannot pass ≥7/11 of Cont'10 facts on reconstructed ToB stream;
+3. No commercial LOI arrives from LSEG/Nasdaq/Jane Street/CME/Bloomberg within 6 months of Phase 06 v1 publication.
+
+### (vii) NeurIPS 2024/25 citations
+
+- **Kronos** (Shi et al., AAAI 2026, arXiv:2508.02739) — OHLCV-specific tokenizer, +93% RankIC vs general TSFM; primary reference architecture.
+- **MarS** (Li et al., Microsoft, arXiv:2409.07486, OpenReview Yqk7EyT52H) — order-level LMM; reproduces 9/11 Cont'10 stylized facts.
+- **Sundial** (Liu et al., ICML 2025 Oral, arXiv:2502.00816, OpenReview LO7ciRpjI5) — flow-matching TSFM on 1T-point TimeBench.
+- **Time-MoE** (Shi et al., ICLR 2025 Spotlight, arXiv:2409.16040) — 2.4B sparse TSFM reference.
+- **LOB-Bench** (arXiv:2502.09172) — distributional LOB benchmark; direct FT-C004 fit.
+- **TimeXer** (Wang et al., NeurIPS 2024, arXiv:2402.19072) — exogenous-variable template; OHLCV fundamentals.
+
+### Re-scope argument
+
+Current framing anchors Phase 06 to "exact 30-symbol OHLCV authority, exact 3-tick top-of-book authority." The **FT-C004 auditability** framing is the stronger differentiator because it aligns with the documented 2025 crisis of leak-contaminated TSFM evaluation (arXiv:2510.13654). Re-scope to "leak-audited replay harness" as the primary claim; forecasting quality becomes a secondary benchmark.
+
+### Engineering augmentation
+
+**Build:** `ft-audit-harness` — leak-audited replay pipeline over FI-2010 + LOBSTER + LOB-Bench stylized-facts panel, with PGM++ learned-index sidecar for tick lookup. **Why:** unlocks NSF CISE CoRe + NSF SBIR + EIC Accelerator framing; novel commercial position no major vendor currently occupies. **Complexity:** M-H (~16 eng-weeks).
+
+---
+
+## ZPE-Bio — ECG biosignal codec
+
+### (i) Strongest truthful product/research wedge
+
+**Deterministic, PCCP-ready ECG codec benchmarked against the 2025 ECG foundation-model reality check (arXiv:2509.25095).** That reality-check paper establishes that many ECG FMs (MERL, ST-MEM, HuBERT-ECG, ECGFM-KED) **fail to outperform a well-tuned S4 supervised baseline** on adult ECG interpretation. ZPE-Bio's ECG strength is thus credible in the current literature; the product wedge is **not another FM** but a deterministic codec + replay harness that plugs under any downstream model (FM or S4) and under FDA PCCP (Dec 2024 Final Guidance) replay requirements.
+
+### (ii) Strongest grant-facing framing
+
+**Primary:** "Deterministic replay for regulated ML under FDA PCCP" — directly aligned with the FDA's Dec 4 2024 Final PCCP Guidance (fda.gov/media/166704/download) on Marketing Submission Recommendations for AI-Enabled Device Software Functions. The August 2025 tri-national (FDA + Health Canada + MHRA) Five Guiding Principles for PCCPs (Focused / Risk-based / Evidence-based / Transparent / Lifecycle-oriented) explicitly require auditable lifecycle orientation that ZPE-Bio's deterministic replay uniquely provides. **Vehicles:** ARPA-H Resilient Systems ISO (rolling, $5M–$75M); NIH NHLBI R01 ECG parent PAs; HE HLTH-2026-01-DISEASE-15 Scaling Cardiovascular Innovation (16 Apr 2026, €6–10M); **SAMRC-TIA Seed Fund 6th call** (best SA fit — cardiology/ECG explicitly in scope).
+
+### (iii) Minimum next engineering slice
+
+1. **Fix red CI + repo-truth reconciliation** (L, ~1–2 eng-weeks) — hard prerequisite to any external claim.
+2. **Ship reproducibility harness pinning PTB-XL v1.0.3 + MIMIC-IV-ECG + CODE-15% + Chapman-Shaoxing + CPSC-2018 + PhysioNet Challenge 2024** (L, ~4 eng-weeks).
+3. **Benchmark the existing ECG codec against S4 supervised baseline (per arXiv:2509.25095) + ECG-FM + HuBERT-ECG on PTB-XL** (M, ~6 eng-weeks) — honest positioning.
+
+### (iv) Best external benchmark/comparator or dataset
+
+- **PTB-XL v1.0.3** (Wagner et al., PhysioNet; 21,799 records, 10-fold stratified) — canonical.
+- **MIMIC-IV-ECG** (Gow et al., 800,035 ECGs / 161,352 patients) — scale.
+- **CODE-15%** (Ribeiro et al., UFMG, ~345k ECGs) — global diversity.
+- **PhysioNet Challenge 2024 (Digitization + Classification of ECG Images)** — winner SignalSavants (arXiv:2410.14185).
+- **Comparators:** ECG-FM (McKeen et al., UHN, arXiv:2408.05178v2); HuBERT-ECG (Coppola et al., medRxiv 10.1101/2024.11.14.24317328, pretrained on 9.1M 12-lead ECGs / 164 CV conditions); ST-MEM (Na et al., ICLR 2024, arXiv:2402.09450, OpenReview WcOohbsF4H); ECG-JEPA (Kim, arXiv:2410.08559); C-MELT (NeurIPS 2024 main); ECGFounder (Li et al., arXiv:2410.04133, NEJM AI 2025).
+
+### (v) Wearable verdict: keep blocked / park / reopen with conditions
+
+**Keep Gate F blocked, but re-scope the block from "wearable NO_GO" to "wearable-under-PCCP design artifact."** The reality-check literature (GPT-PPG arXiv:2503.08015 + BioX-Bridge arXiv:2510.02276) documents large distribution shift between clinical PPG pretraining and WESAD/PPG-DaLiA/DALIA wearable datasets; this validates Gate F. However, the FDA's August 2025 tri-national PCCP principles make **deterministic replay of a wearable pre-specified change protocol** a grant-legible research artifact even without deployed product. Produce the artifact, don't ship the product.
+
+### (vi) Ranked 3-step action ladder with upside and risk
+
+1. **Close red CI + repo-truth; pin PTB-XL + MIMIC-IV-ECG reproducibility harness** (L, ~4 eng-weeks). Upside: restores lane sovereignty; risk: low.
+2. **Publish ECG codec + PCCP-ready replay benchmark against S4 + ECG-FM + HuBERT-ECG on PTB-XL + PhysioNet 2024** (M, ~8 eng-weeks). Upside: honest SOTA-comparable posture; major grant leverage; risk: benchmark results may reveal need for S4-backbone upgrade.
+3. **Submit ARPA-H Resilient Systems + HE HLTH-2026-01-DISEASE-15 + SAMRC-TIA Seed 6th call in parallel** (L, ~3 eng-weeks admin). Upside: three-geography parallel grants; risk: low.
+
+### (vii) NeurIPS 2024/25 citations
+
+- **C-MELT** (NeurIPS 2024 main, neurips.cc/virtual/2024/103032) — contrastive-enhanced MAE for ECG+text; reference multimodal ECG FM.
+- **ST-MEM** (Na et al., ICLR 2024, OpenReview WcOohbsF4H, arXiv:2402.09450) — spatio-temporal MAE for 12-lead ECG.
+- **MERL** (Liu et al., ICML 2024 Poster, arXiv:2403.06659) — zero-shot ECG classification with multimodal learning; K-MERL extension arXiv:2502.17900.
+- **Benchmarking ECG Foundational Models: A Reality Check** (arXiv:2509.25095, Strodthoff group, Sep 2025) — critical re-scope evidence; S4 baseline beats several FMs.
+- **Apple Biosignal FM** (Abbaspourazad et al., ICLR 2024, OpenReview pC3WJHf51j) — wearable-scale PPG+ECG precedent.
+
+### Re-scope argument
+
+The brief frames Wearable as NO_GO due to Gate F. NeurIPS-adjacent evidence supports **keeping Gate F blocked for product but reframing as a PCCP-replay research artifact** — this is a strictly stronger position because it unlocks ARPA-H/HE/SAMRC framings the current NO_GO does not.
+
+### Engineering augmentation
+
+**Build:** `ecg-pccp-replay` — deterministic replay harness compatible with FDA PCCP Final Guidance Dec 2024 + August 2025 tri-national principles, benchmarked on PTB-XL + MIMIC-IV-ECG + PhysioNet 2024 against S4 + ECG-FM + HuBERT-ECG. **Why:** single artifact satisfies US (ARPA-H), EU (HE HLTH), UK (MHRA SaMD CP), SA (SAMRC-TIA) grant paths; genuinely novel PCCP-aligned artifact. **Complexity:** M (~14 eng-weeks).
+
+---
+
+## CROSS-LANE SYNTHESIS
+
+### (a) The single emergent unifying thesis
+
+**Evidence-picked thesis:** *"Deterministic, compressed-searchable, provenance-grade codec substrate for regulated multi-modal data, anchored in NeurIPS-2024/25 tokenization and retrieval primitives."*
+
+This wins over the alternatives by construction, not by preference:
+
+- *"Cross-modal tokenization + retrieval as a substrate for world models"* is narrower — it excludes the provenance/audit DNA that ZPE-Video, ZPE-Bio, and ZPE-FT have independently developed, and which matches the 2024-2026 regulatory wave (EU AI Act Article 50, FDA PCCP Dec 2024, tri-national PCCP principles Aug 2025, NIST AI 100-4).
+- *"Provenance-grade codec layer for the AI Act era"* is narrower in the opposite direction — it excludes the retrieval and compression DNA that ZPE-Prosody, ZPE-Mocap, ZPE-Geo, ZPE-FT have developed.
+- *"Code-physics substrate for compressed-representation science across modalities"* is too abstract to be grant-legible.
+
+The winning thesis uniquely captures all three portfolio-DNA strands — determinism + compression+retrieval + provenance — and all three align with frontier primitives validated at NeurIPS 2024/25: tokenization (OmniTokenizer, Mimi, MoMask/MoGenTS, Kronos, UniTraj, ink-tokens), compressed retrieval (RaBitQ, SOAR, LoRANN, TMR/SGAR, VimoRAG), and provenance/replay (VideoSeal, SynthID, C2PA v2.0, FALCON, FDA PCCP). The same three primitives recur across all ten lanes — that recurrence **is** the unifying thesis.
+
+### (b) Three highest-asymmetry cross-lane moves
+
+**Move 1 — Shared deterministic replay harness across Neuro + Bio + Video + Mocap.** FALCON (NeurIPS 2024 D&B), FDA PCCP (Dec 2024), DIAMOND-style world-model replay (NeurIPS 2024 Spotlight), and TMR-style motion retrieval all require the same underlying primitive: byte-stable replay of a tokenized stream with pinned model weights and deterministic sampling. ZPE-Neuro's `spike-codec-falcon`, ZPE-Bio's `ecg-pccp-replay`, ZPE-Video's `receipt-core`, and ZPE-Mocap's `mocap-rvq-tmr` should share a single `zpe-replay-core` substrate. Only possible because all four lanes already exist with independent traction; building from scratch this abstraction would take 6+ months, but abstracting from four live lanes takes ~4 eng-weeks.
+
+**Move 2 — Shared compressed-search index substrate across Prosody + Mocap + Geo + FT + Ink.** All five lanes face the same retrieval problem: CPU-first ANN over billions of high-dimensional tokens with replay-deterministic indexing. RaBitQ (SIGMOD 2024) + SOAR (NeurIPS 2023) + LoRANN (NeurIPS 2024) + PGM++ (2024) + DiskANN cover the backbone. A single `zpe-index-core` library (Rust + SIMD, with Python/Swift/C# bindings following ZPE-Ink's cross-runtime discipline) would serve all five lanes. Asymmetry: a single investment in one team produces retrieval for five lanes, with identical correctness guarantees and identical benchmark story.
+
+**Move 3 — Shared provenance/receipt layer across Video + Ink + IoT + Bio + Geo.** EU AI Act Article 50, C2PA v2.0, FDA PCCP, SEC CAT, IMO AIS guidelines A.1106(29), and NIST AI 100-4 all demand the same thing: signed, verifiable, replay-auditable provenance over codec outputs. ZPE-Video's `receipt-core` (VideoSeal ⊕ Shallow Diffuse ⊕ C2PA) generalizes directly to: ECG receipts under PCCP (ZPE-Bio), sensor-stream receipts under MLCommons Tiny (ZPE-IoT), AIS receipts under IMO (ZPE-Geo), ink-stroke receipts for educational/legal contexts (ZPE-Ink). A single `zpe-receipt-core` layer turns the five lanes into a coherent regulatory-ready offering.
+
+### (c) Disproportionately large grant/commercial opportunity (12–24 months)
+
+**Flagship vehicle — EU EIC Pathfinder Open 2026 (deadline 12 May 2026, €4M per project, €166M call budget, ~2% success rate)** — submit under the portfolio thesis above, with the three cross-lane moves (`zpe-replay-core`, `zpe-index-core`, `zpe-receipt-core`) as the science-towards-technology breakthrough claim. ZPE-Geo's SKA/MeerKAT compressed-data DNA, ZPE-Neuro's IBL BWM alignment, and ZPE-Bio's PCCP-readiness provide three concrete regulatory-adjacent anchors. Requires 3-country consortium with ≥1 EU MS beneficiary; ZA PI participates as third-country associate via a UK (ARIA-eligible) / NL / DE coordinator.
+
+**Parallel flagship — ARIA Safeguarded AI (TA1 expansion, Nov 2025 pivot)** — £59M programme, £14.2M pool for 3-6 teams at 27-30 months with 12-month go/no-go. The ZPE portfolio thesis **literally is** the Safeguarded AI toolkit at the codec layer — deterministic, auditable, compressed-searchable representation infrastructure. Engage TA1.2/TA1.3 cohort directly.
+
+**US flagship — ARPA-H Resilient Systems ISO + NSF Safe Learning-Enabled Systems** — ARPA-H RSO rolling, $5M–$75M ceiling; NSF SLES $20M pool ~$1.5M/award, re-issue expected FY26. Portfolio framed as "safety-ML codec infrastructure with rigorous evidence of satisfaction of precise safety specifications."
+
+**APAC/SA flagship — SA NRF Thuthuka 2027 (15 Apr 2026) + SA TIA Seed + SAMRC-TIA Seed 6th call + India ANRF AI-SE Mission (up to ₹30 Cr / ~€3.3M per project)**. ANRF AI-SE Mission requires Indian lead PI but allows international collaboration; best sub-award path for ZPE-Neuro/Bio with IIT partner. SARAO's 2025 annual research call on next-generation arithmetic in spectrometry (ref 2026EM10) is a direct methodological transfer path for ZPE-Prosody/Neuro/Geo — leverage SA's unique SKA/MeerKAT compressed-DSP position as a portfolio-level technical moat.
+
+**Commercial 24-month target** — publish `zpe-replay-core` + `zpe-index-core` + `zpe-receipt-core` as NSF PESOSE open-source ecosystem (Phase I $300k, Phase II $1.5M), with multi-lane CRADAs at NIST CAISI (Video), FDA CDRH (Bio), IBL (Neuro). The commercial wedge is *regulated-ML-ready codec infrastructure*, not any single lane's product.
+
+### (d) Which 2-3 lanes feed the primary cross-lane move; which to park
+
+**Primary cross-lane feeder lanes (fund and accelerate):**
+
+1. **ZPE-Video** — already has defended receipt wedge, maps directly to `zpe-receipt-core`; commercial and grant paths (NIST CAISI, Digital Europe BESTUSE, HE CL4-2026-05 AI Agents) are clear and open.
+2. **ZPE-Bio** — ECG strength is real; FDA PCCP Dec 2024 + tri-national Aug 2025 principles make `zpe-replay-core` directly grant-legible; SAMRC-TIA Seed gives SA-native funding track.
+3. **ZPE-Neuro** — IBL BWM (Nature 2025) + FALCON (NeurIPS 2024 D&B) provide the cleanest scientific anchor for `zpe-replay-core`; NIH BRAIN R01 is the most competitive single grant for the portfolio.
+
+These three together already span the three cross-lane primitives: Video for provenance, Bio for regulated-ML replay, Neuro for scientific-replay at scale. They also span three geographies (Video → EU/US, Bio → SA/EU/US, Neuro → US/UK) giving parallel grant diversification.
+
+**Park or minimum-maintenance lanes (free capacity):**
+
+1. **ZPE-Ink** — reopen narrowly for 12 weeks of trajectory-FM work; if no W3C/ICDAR/Google engagement or NSF PESOSE progress by end-Q3 2026, close permanently. Frontier is real (UniTraj, InkSight) but commercial demand unproven.
+2. **ZPE-Prosody** — narrow-the-lane immediately as argued in Section 3; demote retrieval claim; maintain streaming prosody codec as a minimal artifact. Do not pursue as a flagship; IndiaAI Foundation Models remains an opportunistic target only.
+3. **ZPE-FT** — Option A only (conservative, ~6 eng-weeks); park Options B/C unless a commercial LOI (LSEG/Nasdaq/CME) materializes in Q2 2026. Financial TSFM space (Kronos, MarS, Sundial) is crowded and `zpe-replay-core` + `zpe-receipt-core` can be validated elsewhere.
+
+**Maintain at current tempo:**
+
+- **ZPE-XR** — keep the Fanmode pilot alive; feed XR tokenizer learnings into cross-lane observation-tokenizer interface.
+- **ZPE-Mocap** — keep retrieval + retarget wedge; feed learnings into `zpe-index-core`.
+- **ZPE-IoT** — close DS-12, then minimum-maintenance. Feeds `zpe-replay-core` telemetry patterns.
+- **ZPE-Geo** — adopt UniTraj resampling, close corpus, then minimum-maintenance. Feeds `zpe-index-core` for billion-scale trajectory search.
+
+**Net resource shift:** redirect ~40% of prior ZPE-Prosody + ZPE-FT + ZPE-Ink capacity into ZPE-Video (+20%) + ZPE-Bio (+10%) + ZPE-Neuro (+10%) over the next two quarters, organized around the three shared cross-lane primitives. The dominant 12-month bet is **submit EIC Pathfinder Open + ARIA Safeguarded AI + ARPA-H RSO + NIH BRAIN R01 + SAMRC-TIA Seed in parallel with a single portfolio-level narrative anchored by `zpe-replay-core` + `zpe-index-core` + `zpe-receipt-core`**, positioned as "deterministic, compressed-searchable, provenance-grade codec substrate for regulated multi-modal data" — the frontier claim that unifies what the portfolio has already built.
