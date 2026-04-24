@@ -37,7 +37,8 @@ GitHub PR:
 - URL: https://github.com/Zer0pa/ZPE-Ink/pull/21
 - Base branch: `chore/novelty-card-backfill-2026-04-22`
 - Custody branch: `codex/zpe-ink-custody-2026-04-24`
-- Latest custody commit at handoff: `650e694a55ff4f72779c335bd2b6a8d40f5784bf`
+- Startup prompt added in commit: `3858e3294a446170e6f0cdb68e307c2598248d71`
+- Verify current branch head with `git ls-remote --heads origin codex/zpe-ink-custody-2026-04-24`; later custody correction commits may exist.
 
 Custody commits on the branch:
 
@@ -45,6 +46,7 @@ Custody commits on the branch:
 - `c0670d130fc2f32b42285c024574fbe8cd0b4497` - `custody: add lane recovery snapshot`
 - `e6d61403ac9e44de8b46d488e6aecbf18c55bc99` - `custody: add ignored proof reruns`
 - `650e694a55ff4f72779c335bd2b6a8d40f5784bf` - `custody: add lane source materials`
+- `3858e3294a446170e6f0cdb68e307c2598248d71` - `custody: add deletion restart prompt`
 
 ## What The Custody Branch Preserves
 
@@ -176,7 +178,7 @@ Expected:
 - On `codex/zpe-ink-custody-2026-04-24`
 - Tracking `origin/codex/zpe-ink-custody-2026-04-24`
 - No untracked/ignored local-only valuable files
-- Latest commit should be at least `650e694`
+- Latest commit should be at least `3858e329`
 
 Then restore Python tooling locally:
 
@@ -236,4 +238,3 @@ Kill or hold conditions:
 ## Current Custody Verdict
 
 As of the startup prompt creation, deletion of the old local ZPE-Ink working directory is safe after verifying the GitHub branch `codex/zpe-ink-custody-2026-04-24` contains this prompt and latest custody commit. The intended recovery source is GitHub PR #21, not the deleted Mac workspace.
-
