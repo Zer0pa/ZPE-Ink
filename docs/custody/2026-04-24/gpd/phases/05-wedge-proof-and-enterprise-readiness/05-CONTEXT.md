@@ -1,0 +1,36 @@
+# Phase 05 Context
+
+- Phase 04 is complete. The next valid gate is Phase 05 wedge proof and enterprise-readiness closure.
+- The governing truth entering Phase 05 remains:
+  - sovereign release verdict: `FAIL` / `NO-GO`
+  - contradiction surface: `OPEN` / `INCONCLUSIVE`
+  - structured-tier authority: `PASS` at `5.590209480060199x`
+  - engineering comparator reality: frozen `brotli` still beats the sovereign runtime on the structured tier
+  - hard-corpus authority: `FAIL` (`MathWriting=1.0944074088858728x`, `CROHME=1.301456280301924x`)
+  - license surface: `LicenseRef-Zer0pa-SAL-6.0`
+- Phase 03 and Phase 04 carry the following decisive inputs into this phase:
+  - blind clone moved from `UNTESTED` to `INCONCLUSIVE`, but `gate_a_setup.py` still hard-failed on optional `npm` absence
+  - Calliar now exists as real non-Latin evidence at `2.774608127006351x`, but it does not close the broad authority story
+  - the primitive-token branch beats `brotli` on the structured tier, but bounded Calliar fidelity collapses and keeps it candidate-only
+  - the tokenizer scaffold is real but remains scaffold proof, not wedge closure
+- The user supplied `/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink_ACTION_BRIEF.md` on 2026-04-05.
+  - Treat it as a candidate-input brief, not as an override of the project contract.
+  - The brief is partly stale against the live repo state:
+    - it names commit `0353ec2`, which is not present in the current repo history
+    - it assumes Swift and C# binding lanes are active implementation targets, while the current local worktree has those tracked files deleted
+    - it assumes a stronger repo-local runtime surface than the current cleaned docs and dirty worktree support
+- Locked Phase 05 decisions for this lane:
+  - preserve the contradiction-first, same-corpus-honest contract from `.gpd/state.json`
+  - do not rewrite or silently restore the deleted tracked files in `ZPE-Ink/` without an explicit need grounded in the contract
+  - use git `HEAD` only as reference truth for feasibility analysis when the working tree diverges
+  - keep all wedge reasoning subordinate to the frozen authority and claim-scope artifacts
+  - permit Red Magic and RunPod only when a decisive Phase 05 artifact truly needs them; Phase 05 may still conclude locally with an honest `NO-GO`
+- Candidate wedge lanes that Phase 05 must evaluate explicitly:
+  - transport
+  - tokenizer
+  - interoperability
+- Forbidden shortcuts in this phase:
+  - treating the action brief itself as evidence
+  - narrating docs polish or planned decoder work as enterprise readiness
+  - relabeling candidate branch wins as sovereign runtime wins
+  - crossing into RunPod or phone execution without a concrete decisive need

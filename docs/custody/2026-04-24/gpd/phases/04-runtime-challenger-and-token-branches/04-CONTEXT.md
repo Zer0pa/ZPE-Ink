@@ -1,0 +1,27 @@
+# Phase 04 Context
+
+- Phase 03 is complete and the next valid work is Phase 04 candidate branches.
+- The governing truth entering Phase 04 remains:
+  - sovereign release verdict: `FAIL` / `NO-GO`
+  - contradiction surface: `INCONCLUSIVE`
+  - structured-tier authority: `PASS` at `5.590209480060199x`
+  - engineering comparator reality: `brotli` still beats `zpe_ink`
+- The user supplied a broader engineering brief that includes:
+  - GPD repo integration intent
+  - primitive-token runtime work
+  - tokenizer scaffold work
+  - blind-clone rerun intent
+  - strict Comet and RunPod discipline
+- Locked Phase 04 decisions for this lane:
+  - the authoritative repo for this phase is still `/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink`
+  - candidate branch artifacts must be labeled candidate-only
+  - frozen Phase 02 authority artifacts must remain frozen; write phase-local sidecars instead of rewriting history
+  - canonical telemetry constants come from `ZPE-Ink/code/scripts/log_current_state_to_comet.py`
+  - canonical Comet values are `workspace=zer0pa`, `project=zpe-ink`
+  - no Opik integration surface exists in this workstream
+- Current external reality that must remain visible:
+  - `COMET_API_KEY` missing in this shell
+  - `RUNPOD_API_KEY` missing in this shell
+  - RunPod direct TCP is reachable, but the current pod has only `1.8 GiB` free and fails the `5 GiB` floor from the brief
+  - the blind-clone npm crash is already fixed in the live repo and verified to exit `0` when `npm` is absent
+- Phase 04 must therefore prioritize the local runtime/tokenizer branch work first and treat external telemetry/fresh-pod reruns as explicitly unresolved side conditions.

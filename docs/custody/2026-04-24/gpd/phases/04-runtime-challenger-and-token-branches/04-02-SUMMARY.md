@@ -1,0 +1,5 @@
+# Phase 04-02 Summary
+
+Plan `04-02` shipped the tokenizer scaffold and the truthful Phase 04 sidecar. The bounded QuickDraw proof in [tokenizer_corpus_proof.json](/Users/Zer0pa/ZPE/ZPE%20Ink/ZPE-Ink/proofs/reruns/tokenizer_scaffold/tokenizer_corpus_proof.json) encoded `100` samples and `926` strokes with a deterministic `8`-token vocabulary. The phase sidecar in [phase4_candidate_state.json](/Users/Zer0pa/ZPE/ZPE%20Ink/ZPE-Ink/proofs/reruns/phase4_runtime/phase4_candidate_state.json) records the canonical Comet constants, the absence of an Opik surface, and the fact that local Comet/RunPod credentials were not present in this shell.
+
+Phase 04 candidate-branch execution is complete, but the governing authority surface is still not green. The primitive-token runtime stays candidate-only because of bounded Calliar fidelity loss, the tokenizer proof is a scaffold rather than wedge closure, and the next valid gate is Phase 05 planning against the unchanged sovereign release and claim-scope surface.

@@ -1,0 +1,848 @@
+{
+  "project_reference": {
+    "project_md_updated": null,
+    "core_research_question": "Can ZPE-Digital-Ink become a contradiction-free, same-corpus-honest, commercially disruptive ink utility kernel, or must the claim stay narrowly scoped to structured-tier transport plus explicit candidate branches?",
+    "current_focus": "Phase 05 is complete. The final verdict is `NO-GO`: no current commercial wedge is proven, and interoperability survives only as a future candidate lane on a stabilized repo state."
+  },
+  "project_contract": {
+    "schema_version": 1,
+    "scope": {
+      "question": "Can ZPE-Digital-Ink become a contradiction-free, same-corpus-honest, commercially disruptive ink utility kernel, or must the claim stay narrowly scoped to structured-tier transport plus explicit candidate branches?",
+      "in_scope": [
+        "Resolve the PASS-versus-NO-GO contradiction as far as the local lane can honestly resolve it.",
+        "Freeze same-corpus comparator accounting on the Mac M1 Air and rerun structured-tier plus hard-corpus benchmarks under that freeze.",
+        "Keep primitive-token, tokenizer, and interoperability work as explicit candidate branches rather than blended closure.",
+        "Operate inside the current compute envelope: M1-local first, Red Magic only when attached, RunPod only after explicit user approval."
+      ],
+      "out_of_scope": [
+        "Public promotion or enterprise-go language while the contradiction remains unresolved.",
+        "Any assumption that the active repo license is permissive or public-release ready; the current surface is LicenseRef-Zer0pa-SAL-6.0.",
+        "RunPod-first or hardware-assumed execution before the local lane is exhausted and the boundary is explicit.",
+        "Blending structured-tier and hard-corpus metrics into one authority story."
+      ],
+      "unresolved_questions": [
+        "Should direct UNIPEN acquisition receive more effort, or should it now be treated explicitly outside the current claim family?",
+        "Can a runtime or tokenizer challenger materially improve the real hard-corpus and cross-script ratios without breaking transport truth?",
+        "Should blind-clone verification be rerun after the repo absorbs the external-probe robustness fix and the latest local phase truth?"
+      ]
+    },
+    "context_intake": {
+      "must_read_refs": [
+        "ref-prd",
+        "ref-phase1-handoff",
+        "ref-phase1-scorecard",
+        "ref-phase1-claim-delta",
+        "ref-phase1-blockers",
+        "ref-phase1-compression",
+        "ref-phase1-inkml",
+        "ref-release-report",
+        "ref-license"
+      ],
+      "must_include_prior_outputs": [
+        ".gpd/phases/02-contradiction-resolution-and-honest-benchmark-freeze/02-CONTEXT.md",
+        ".gpd/phases/01-local-authority-rerun-and-kernel-uplift/01-03-SUMMARY.md",
+        ".gpd/phases/03-external-corpora-and-blind-clone-closure/03-01-SUMMARY.md",
+        ".gpd/phases/03-external-corpora-and-blind-clone-closure/03-02-SUMMARY.md",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/docs/team_review/2026-03-20_review_pack/01_ZPE_INK_TEAM_REVIEW_PACK_2026-03-20.md",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/comet_logging_manifest.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/comet_logging_result.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/external_boundary_manifest.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/blind_clone_verdict.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/calliar_benchmark.json"
+      ],
+      "user_asserted_anchors": [
+        "AM-INK-01 is frozen on the structured tier and may not be broadened by rhetoric.",
+        "MathWriting and CROHME hard-corpus weakness is a falsification result that must remain explicit.",
+        "FZ-09, the PASS-versus-NO-GO contradiction, is the primary current blocker.",
+        "The active repo license and execution posture is LicenseRef-Zer0pa-SAL-6.0.",
+        "Current compute starts with the Mac M1 Air; RunPod direct TCP is now an approved Phase 03 external lane.",
+        "Calliar at 2.774608127006351x is real non-Latin online-stroke evidence, but it does not close the 5x authority surface."
+      ],
+      "known_good_baselines": [
+        "Structured-tier compression anchor: 5.590209480060199x from proofs/reruns/phase1_m1_local/ink_compression_benchmark.json.",
+        "Cross-runtime parity passes locally across Python, WASM, Swift, PyO3, and the C# header probe.",
+        "Hard-corpus results remain weak: MathWriting 1.0944x and CROHME 1.3015x under the current Phase 1 lane.",
+        "Calliar executed on RunPod at 2.774608127006351x over 2500 Arabic online-stroke samples.",
+        "Blind-clone core Python verification passed on RunPod at commit 3d4efc2463e56077e4139b506c15a64bfd61fac5."
+      ],
+      "context_gaps": [
+        "Direct UNIPEN host resolution is still absent.",
+        "The published blind-clone surface still lacks the Phase 03 external-probe robustness fix.",
+        "RunPod alias-path SSH remains unusable even though the direct TCP lane works.",
+        "Structured-tier still loses to brotli under the frozen comparator stack."
+      ],
+      "crucial_inputs": [
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/PRD_ZPE_DIGITAL_INK.md",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/handoff_manifest.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/quality_gate_scorecard.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/claim_status_delta.md",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/blockers_before_after.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/pyproject.toml",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/external_boundary_manifest.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/blind_clone_verdict.json",
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase3_external/calliar_benchmark.json"
+      ]
+    },
+    "approach_policy": {
+      "formulations": [
+        "Treat the current runtime as a deterministic exact-coordinate transport core until a challenger branch earns promotion.",
+        "Use same-corpus byte accounting and frozen comparators before drawing any new authority conclusion.",
+        "Resolve contradiction semantics before broadening product or wedge language."
+      ],
+      "allowed_estimator_families": [
+        "structured-tier compression ratio against the frozen raw float32 baseline",
+        "hard-corpus same-corpus compression ratio reported separately from structured-tier results",
+        "roundtrip, fidelity, pressure, latency, and declared parity gates",
+        "explicit blocker-ledger status for contradiction resolution"
+      ],
+      "forbidden_estimator_families": [
+        "using the 5x figure without the structured-tier qualifier",
+        "adapter breadth, polished docs, or branch enthusiasm as substitutes for authority truth",
+        "benchmarks that quietly change datasets, byte accounting, or baselines"
+      ],
+      "allowed_fit_families": [
+        "frozen comparator reruns on the current corpus set",
+        "explicitly narrowed claim scopes when hard-corpus evidence stays weak"
+      ],
+      "forbidden_fit_families": [
+        "averaging structured-tier and hard-corpus results into a single headline number",
+        "declaring contradiction resolution without an explicit blocker-classified artifact",
+        "crossing into RunPod or unattached hardware work without an explicit boundary note"
+      ],
+      "stop_and_rethink_conditions": [
+        "Structured-tier reruns fall below AM-INK-01 under the frozen stack.",
+        "The contradiction ledger still carries ambiguous PASS and FAIL states for the same gate after local analysis.",
+        "A proposed wedge path depends on license assumptions or external resources that have not been approved."
+      ]
+    },
+    "observables": [
+      {
+        "id": "obs-structured-ratio",
+        "name": "Structured-tier compression ratio",
+        "kind": "scalar",
+        "definition": "Same-corpus compression ratio on the structured tier against the frozen raw float32 baseline.",
+        "regime": "structured ink tier",
+        "units": "x"
+      },
+      {
+        "id": "obs-hard-ratio",
+        "name": "Hard-corpus compression ratio",
+        "kind": "scalar",
+        "definition": "Same-corpus compression ratio on MathWriting, CROHME, and later broader corpora under frozen comparator accounting.",
+        "regime": "public hard-corpus tier",
+        "units": "x"
+      },
+      {
+        "id": "obs-transport-gates",
+        "name": "Transport gate status",
+        "kind": "classification",
+        "definition": "Pass/fail status for roundtrip, fidelity, pressure, latency, and declared cross-runtime parity.",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-fz09-status",
+        "name": "FZ-09 contradiction status",
+        "kind": "classification",
+        "definition": "Whether the PASS-versus-NO-GO release contradiction has been decomposed into a single coherent blocker truth surface.",
+        "regime": null,
+        "units": null
+      },
+      {
+        "id": "obs-local-boundary",
+        "name": "Current local execution boundary",
+        "kind": "proof_obligation",
+        "definition": "Evidence that the current phase stays within the M1-local lane unless an external boundary is explicitly crossed.",
+        "regime": null,
+        "units": null
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-authority-surface",
+        "statement": "The local authority surface remains valid only if AM-INK-01 stays at or above 5x on the structured tier, transport gates remain intact, and hard-corpus results are reported separately.",
+        "observables": [
+          "obs-structured-ratio",
+          "obs-hard-ratio",
+          "obs-transport-gates"
+        ],
+        "deliverables": [
+          "deliv-benchmark-freeze",
+          "deliv-claim-scope",
+          "deliv-phase2-summary"
+        ],
+        "acceptance_tests": [
+          "test-auth-structured",
+          "test-transport-gates",
+          "test-hard-claim-scope"
+        ],
+        "references": [
+          "ref-prd",
+          "ref-phase1-compression",
+          "ref-phase1-inkml"
+        ]
+      },
+      {
+        "id": "claim-contradiction-resolution",
+        "statement": "FZ-09 is only resolved when the current PASS and NO-GO surfaces are reduced to an explicit blocker-classified artifact with no ambiguous gate state left behind.",
+        "observables": [
+          "obs-fz09-status",
+          "obs-local-boundary"
+        ],
+        "deliverables": [
+          "deliv-contradiction-ledger",
+          "deliv-phase2-summary"
+        ],
+        "acceptance_tests": [
+          "test-fz09-ledger",
+          "test-local-boundary"
+        ],
+        "references": [
+          "ref-phase1-handoff",
+          "ref-phase1-scorecard",
+          "ref-phase1-blockers",
+          "ref-release-report"
+        ]
+      },
+      {
+        "id": "claim-commercial-wedge",
+        "statement": "Any later commercial wedge claim must remain subordinate to authority truth, structured-tier-only qualifier discipline, and the active SAL-v6 license surface.",
+        "observables": [
+          "obs-hard-ratio",
+          "obs-fz09-status"
+        ],
+        "deliverables": [
+          "deliv-phase2-summary",
+          "deliv-wedge-memo"
+        ],
+        "acceptance_tests": [
+          "test-wedge-honesty"
+        ],
+        "references": [
+          "ref-prd",
+          "ref-license",
+          "ref-release-report"
+        ]
+      }
+    ],
+    "deliverables": [
+      {
+        "id": "deliv-contradiction-ledger",
+        "kind": "report",
+        "path": "ZPE-Ink/proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json",
+        "description": "Blocker-classified contradiction artifact for the PASS-versus-NO-GO surface.",
+        "must_contain": [
+          "blocker ids",
+          "blocker classes",
+          "single current verdict per blocker"
+        ]
+      },
+      {
+        "id": "deliv-benchmark-freeze",
+        "kind": "report",
+        "path": "ZPE-Ink/proofs/reruns/benchmark_freeze_local/baseline_results.json",
+        "description": "Frozen comparator benchmark results for structured-tier and hard-corpus reruns.",
+        "must_contain": [
+          "comparator versions",
+          "structured-tier ratio",
+          "hard-corpus ratios"
+        ]
+      },
+      {
+        "id": "deliv-claim-scope",
+        "kind": "note",
+        "path": "ZPE-Ink/proofs/reruns/benchmark_freeze_local/claim_scope_map.json",
+        "description": "Claim-scope artifact that keeps structured-tier and hard-corpus authority surfaces separate.",
+        "must_contain": [
+          "structured-tier scope",
+          "blocked broad claims",
+          "hard-corpus ratios"
+        ]
+      },
+      {
+        "id": "deliv-phase2-summary",
+        "kind": "report",
+        "path": ".gpd/phases/02-contradiction-resolution-and-honest-benchmark-freeze/02-03-SUMMARY.md",
+        "description": "Phase 2 summary describing what the local lane resolved and what still requires an external boundary crossing.",
+        "must_contain": [
+          "current verdict",
+          "remaining blockers",
+          "external-boundary note if needed"
+        ]
+      },
+      {
+        "id": "deliv-wedge-memo",
+        "kind": "note",
+        "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/docs/team_review/2026-03-20_review_pack/01_ZPE_INK_TEAM_REVIEW_PACK_2026-03-20.md",
+        "description": "Interim wedge/narrowing memo used to keep later commercial branches honest.",
+        "must_contain": [
+          "narrow wedge framing",
+          "blocked wedge rhetoric until authority closure"
+        ]
+      }
+    ],
+    "acceptance_tests": [
+      {
+        "id": "test-auth-structured",
+        "subject": "claim-authority-surface",
+        "kind": "benchmark",
+        "procedure": "Rerun the structured-tier benchmark under frozen comparator accounting against the raw float32 baseline.",
+        "pass_condition": "Structured-tier compression ratio remains >= 5.0x.",
+        "evidence_required": [
+          "deliv-benchmark-freeze",
+          "ref-phase1-compression"
+        ],
+        "automation": "automated"
+      },
+      {
+        "id": "test-transport-gates",
+        "subject": "claim-authority-surface",
+        "kind": "consistency",
+        "procedure": "Run roundtrip, fidelity, pressure, latency, and declared cross-runtime parity checks after any benchmark or code-path change.",
+        "pass_condition": "All declared transport gates pass with no regression.",
+        "evidence_required": [
+          "deliv-benchmark-freeze",
+          "ref-phase1-scorecard"
+        ],
+        "automation": "automated"
+      },
+      {
+        "id": "test-hard-claim-scope",
+        "subject": "claim-authority-surface",
+        "kind": "human_review",
+        "procedure": "Verify that hard-corpus ratios are reported separately and that broad claims are explicitly blocked when those ratios remain weak.",
+        "pass_condition": "Claim-scope artifact preserves the structured-tier-only qualifier and blocks broad handwriting-compression claims.",
+        "evidence_required": [
+          "deliv-claim-scope",
+          "ref-phase1-inkml",
+          "ref-release-report"
+        ],
+        "automation": "hybrid"
+      },
+      {
+        "id": "test-fz09-ledger",
+        "subject": "claim-contradiction-resolution",
+        "kind": "consistency",
+        "procedure": "Map the current PASS and NO-GO surfaces to explicit blocker states and verify that no blocker carries ambiguous PASS/FAIL coexistence.",
+        "pass_condition": "Contradiction artifact contains one current status per blocker and a single current local verdict.",
+        "evidence_required": [
+          "deliv-contradiction-ledger",
+          "ref-phase1-handoff",
+          "ref-phase1-scorecard",
+          "ref-phase1-blockers"
+        ],
+        "automation": "hybrid"
+      },
+      {
+        "id": "test-local-boundary",
+        "subject": "claim-contradiction-resolution",
+        "kind": "reproducibility",
+        "procedure": "Verify that the current phase uses only the local M1 lane unless an explicit external-boundary note is written.",
+        "pass_condition": "No unapproved RunPod or unattached-hardware dependency is used; any remaining external need is named explicitly.",
+        "evidence_required": [
+          "deliv-phase2-summary"
+        ],
+        "automation": "hybrid"
+      },
+      {
+        "id": "test-wedge-honesty",
+        "subject": "claim-commercial-wedge",
+        "kind": "human_review",
+        "procedure": "Review candidate wedge language against the current authority surface and the active SAL-v6 license.",
+        "pass_condition": "No wedge claim outruns the authority surface or the current license posture.",
+        "evidence_required": [
+          "deliv-wedge-memo",
+          "ref-license",
+          "ref-release-report"
+        ],
+        "automation": "human"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-prd",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/PRD_ZPE_DIGITAL_INK.md",
+        "aliases": [
+          "prd",
+          "digital-ink-prd"
+        ],
+        "role": "definition",
+        "why_it_matters": "Canonical authority metric, runtime truth, wedge split, and release boundary.",
+        "applies_to": [
+          "claim-authority-surface",
+          "claim-commercial-wedge"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-phase1-handoff",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/handoff_manifest.json",
+        "aliases": [
+          "phase1-handoff"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Current NO-GO surface and blocker record.",
+        "applies_to": [
+          "claim-contradiction-resolution"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-phase1-scorecard",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/quality_gate_scorecard.json",
+        "aliases": [
+          "phase1-scorecard"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Current PASS surface that conflicts with the handoff verdict.",
+        "applies_to": [
+          "claim-authority-surface",
+          "claim-contradiction-resolution"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare"
+        ]
+      },
+      {
+        "id": "ref-phase1-claim-delta",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/claim_status_delta.md",
+        "aliases": [
+          "phase1-claim-delta"
+        ],
+        "role": "must_consider",
+        "why_it_matters": "Preserves what Phase 1 did and did not actually close.",
+        "applies_to": [
+          "claim-contradiction-resolution"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use"
+        ]
+      },
+      {
+        "id": "ref-phase1-blockers",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/blockers_before_after.json",
+        "aliases": [
+          "phase1-blockers"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Differentiates open blockers from closed or paused-external items.",
+        "applies_to": [
+          "claim-contradiction-resolution"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare"
+        ]
+      },
+      {
+        "id": "ref-phase1-compression",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/ink_compression_benchmark.json",
+        "aliases": [
+          "phase1-compression"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Current structured-tier 5.590209480060199x anchor.",
+        "applies_to": [
+          "claim-authority-surface"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare"
+        ]
+      },
+      {
+        "id": "ref-phase1-inkml",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/inkml_converter_validation.json",
+        "aliases": [
+          "phase1-hard-corpus"
+        ],
+        "role": "benchmark",
+        "why_it_matters": "Current MathWriting and CROHME hard-corpus results that must stay explicit.",
+        "applies_to": [
+          "claim-authority-surface"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "compare"
+        ]
+      },
+      {
+        "id": "ref-release-report",
+        "kind": "prior_artifact",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md",
+        "aliases": [
+          "release-report"
+        ],
+        "role": "must_consider",
+        "why_it_matters": "Freezes the contradiction as a real readiness blocker.",
+        "applies_to": [
+          "claim-contradiction-resolution",
+          "claim-commercial-wedge"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "cite"
+        ]
+      },
+      {
+        "id": "ref-license",
+        "kind": "spec",
+        "locator": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/code/pyproject.toml",
+        "aliases": [
+          "sal-v6-license"
+        ],
+        "role": "definition",
+        "why_it_matters": "Current repo execution posture is LicenseRef-Zer0pa-SAL-6.0.",
+        "applies_to": [
+          "claim-authority-surface",
+          "claim-commercial-wedge"
+        ],
+        "carry_forward_to": [
+          "planning",
+          "execution",
+          "verification",
+          "writing"
+        ],
+        "must_surface": true,
+        "required_actions": [
+          "read",
+          "use",
+          "cite"
+        ]
+      }
+    ],
+    "forbidden_proxies": [
+      {
+        "id": "fp-broad-5x",
+        "subject": "claim-authority-surface",
+        "proxy": "Using the structured-tier 5x result as if it proved broad handwriting-compression authority.",
+        "reason": "MathWriting and CROHME remain far below that threshold and must stay explicit."
+      },
+      {
+        "id": "fp-doc-resolution",
+        "subject": "claim-contradiction-resolution",
+        "proxy": "Treating the contradiction as resolved by wording cleanup without an explicit blocker-classified artifact.",
+        "reason": "The blocker truth surface must be real, not editorial."
+      },
+      {
+        "id": "fp-branch-promotion",
+        "subject": "claim-commercial-wedge",
+        "proxy": "Promoting runtime or tokenizer branches to sovereign status before authority and contradiction closure.",
+        "reason": "Candidate branches cannot outrun the transport truth surface."
+      }
+    ],
+    "links": [
+      {
+        "id": "link-authority-benchmark",
+        "source": "claim-authority-surface",
+        "target": "deliv-benchmark-freeze",
+        "relation": "supports",
+        "verified_by": [
+          "test-auth-structured",
+          "test-transport-gates"
+        ]
+      },
+      {
+        "id": "link-authority-scope",
+        "source": "claim-authority-surface",
+        "target": "deliv-claim-scope",
+        "relation": "supports",
+        "verified_by": [
+          "test-hard-claim-scope"
+        ]
+      },
+      {
+        "id": "link-contradiction-ledger",
+        "source": "claim-contradiction-resolution",
+        "target": "deliv-contradiction-ledger",
+        "relation": "supports",
+        "verified_by": [
+          "test-fz09-ledger"
+        ]
+      },
+      {
+        "id": "link-boundary-summary",
+        "source": "claim-contradiction-resolution",
+        "target": "deliv-phase2-summary",
+        "relation": "supports",
+        "verified_by": [
+          "test-local-boundary"
+        ]
+      },
+      {
+        "id": "link-wedge-summary",
+        "source": "claim-commercial-wedge",
+        "target": "deliv-wedge-memo",
+        "relation": "supports",
+        "verified_by": [
+          "test-wedge-honesty"
+        ]
+      }
+    ],
+    "uncertainty_markers": {
+      "weakest_anchors": [
+        "Hard-corpus authority remains weak relative to the structured-tier result.",
+        "The contradiction may reflect semantics or artifact plumbing rather than a single code fault."
+      ],
+      "unvalidated_assumptions": [
+        "The local harness can be frozen cleanly without changing the current structured-tier result.",
+        "A meaningful commercial wedge still exists after structured-tier-only qualification."
+      ],
+      "competing_explanations": [
+        "The codec is mainly a strong deterministic transport surface, while the true commercial wedge lives in later tokenizer or interoperability branches."
+      ],
+      "disconfirming_observations": [
+        "Frozen comparator reruns fail to preserve AM-INK-01 on the structured tier.",
+        "Contradiction analysis still leaves a real FAIL blocker that prevents a coherent local verdict."
+      ]
+    }
+  },
+  "position": {
+    "current_phase": "05",
+    "current_phase_name": "Wedge Proof and Enterprise Readiness",
+    "total_phases": 5,
+    "current_plan": "2",
+    "total_plans_in_phase": 2,
+    "status": "Complete",
+    "last_activity": "2026-04-05",
+    "last_activity_desc": null,
+    "progress_percent": 100,
+    "paused_at": null
+  },
+  "active_calculations": [],
+  "intermediate_results": [
+    "The sovereign release surface is still `FAIL` / `NO-GO`; the overall meta-surface remains `INCONCLUSIVE`.",
+    "Frozen sovereign structured-tier ratio remains `5.590209480060199x` against the raw float32 baseline.",
+    "The Phase 04 primitive-token candidate beats the frozen structured-tier `brotli` surface on ratio:",
+    "`primitive-token + zstd`: `12.377589251348581x`",
+    "`brotli`: `6.825565026256283x`",
+    "`sovereign zpe_ink`: `5.590209480060199x`",
+    "The same primitive-token candidate is not promotable:",
+    "bounded Calliar ratio: `2.883090351936113x`",
+    "bounded Calliar mean Hausdorff: `201.11119574321816 px`",
+    "bounded Calliar max Hausdorff: `636.5736406732532 px`",
+    "A real non-Latin online-stroke corpus now exists in-lane:",
+    "Calliar: `2.774608127006351x` over `2500` Arabic online-stroke samples",
+    "The tokenizer scaffold is now real:",
+    "QuickDraw `cat` proof slice: `100` samples, `926` strokes, deterministic `8`-token vocabulary",
+    "Phase 05 converted the 2026-04-05 action brief into a machine-readable reality audit instead of treating it as proof.",
+    "Phase 05 wedge ranking result:",
+    "current wedge verdict: `NO_CURRENT_WEDGE_PROVEN`",
+    "narrowest future candidate: `interoperability`",
+    "Phase 05 final decision surface:",
+    "enterprise readiness: `NOT_READY`",
+    "final go/no-go: `NO-GO`",
+    "Canonical telemetry constants remain:",
+    "Comet workspace/project: `zer0pa / zpe-ink`",
+    "Opik: no canonical surface found in this workstream",
+    "Local telemetry execution stayed skipped because `COMET_API_KEY` is absent in this shell",
+    "IAM landing page is reachable (`HTTP 200`), while UNIPEN remains unresolved at DNS level.",
+    "Current verified free disk is roughly `18-19 GiB` local in the current shell."
+  ],
+  "open_questions": [
+    "If future work is approved, should interoperability rehabilitation become a new branch or milestone on a stabilized repo state?",
+    "Is restoring the deleted binding and codec surfaces the right next move, or is the local dirty-worktree state intentionally redefining scope?",
+    "Should blind-clone and telemetry reruns remain paused until an interoperability branch exists, or should they be reopened earlier?"
+  ],
+  "performance_metrics": {
+    "rows": [
+      {
+        "label": "Phase 02 closeout",
+        "duration": "complete",
+        "tasks": "contradiction classification, comparator freeze, honest claim-scope update",
+        "files": "`.gpd/`, `ZPE-Ink/code/`, `ZPE-Ink/proofs/reruns/`"
+      },
+      {
+        "label": "Phase 03 external closure",
+        "duration": "complete",
+        "tasks": "RunPod blind clone, IAM/UNIPEN boundary probe, Calliar benchmark, roadmap coherence repair",
+        "files": "`.gpd/`, `ZPE-Ink/code/`, `ZPE-Ink/proofs/reruns/phase3_external/`"
+      },
+      {
+        "label": "Phase 04 candidate branches",
+        "duration": "complete",
+        "tasks": "primitive-token runtime benchmark, tokenizer scaffold proof, phase sidecar truth surface",
+        "files": "`.gpd/`, `ZPE-Ink/code/`, `ZPE-Ink/proofs/reruns/primitive_token_branch/`, `ZPE-Ink/proofs/reruns/tokenizer_scaffold/`, `ZPE-Ink/proofs/reruns/phase4_runtime/`"
+      },
+      {
+        "label": "Phase 05 wedge proof",
+        "duration": "complete",
+        "tasks": "action-brief reality audit, wedge candidate matrix, enterprise boundary note, final go/no-go closure",
+        "files": "`.gpd/`, `ZPE-Ink/proofs/reruns/phase5_wedge/`"
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "phase": null,
+      "summary": "Treat the existing `.gpd` workspace as a live project and re-scope in place instead of rerunning project bootstrap.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Make contradiction resolution and comparator freeze the current gate; later wedge or branch work stays subordinate.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Preserve the structured-tier-only qualifier and the active `LicenseRef-Zer0pa-SAL-6.0` surface as hard constraints.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Use the local M1 lane first; Red Magic only when attached and RunPod only after explicit user approval.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Treat frozen engineering-comparator results as sovereign against any broader \u201ccommercially disruptive compression\u201d language; `brotli` currently beats `zpe_ink` on the structured tier.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Use RunPod direct TCP as the authoritative Phase 03 external host because the pod alias path is not currently key-valid.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Treat Calliar as the strongest honest non-Latin online-stroke surface currently available in-lane.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Treat blind-clone core success as valuable but insufficient for a release `GO`.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Keep the primitive-token runtime candidate-only even after its structured-tier `brotli` win, because bounded Calliar fidelity collapses.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Treat the tokenizer scaffold as shipped evidence of branch viability, not as wedge or release closure.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Treat the 2026-04-05 action brief as candidate input rather than contract override when it conflicts with the live repo state.",
+      "rationale": null
+    },
+    {
+      "phase": null,
+      "summary": "Close Phase 05 with a final `NO-GO`: no current wedge is proven; interoperability is only a future candidate lane on a stabilized repo state.",
+      "rationale": null
+    }
+  ],
+  "approximations": [],
+  "convention_lock": {
+    "metric_signature": null,
+    "fourier_convention": null,
+    "natural_units": null,
+    "gauge_choice": null,
+    "regularization_scheme": null,
+    "renormalization_scheme": null,
+    "coordinate_system": null,
+    "spin_basis": null,
+    "state_normalization": null,
+    "coupling_convention": null,
+    "index_positioning": null,
+    "time_ordering": null,
+    "commutation_convention": null,
+    "levi_civita_sign": null,
+    "generator_normalization": null,
+    "covariant_derivative_sign": null,
+    "gamma_matrix_convention": null,
+    "creation_annihilation_order": null,
+    "custom_conventions": {}
+  },
+  "propagated_uncertainties": [],
+  "pending_todos": [
+    "Decide whether a future interoperability rehabilitation branch is worth starting.",
+    "Decide whether the deleted binding/codec surfaces should be restored or treated as intentional de-scope.",
+    "Restore `COMET_API_KEY` and `RUNPOD_API_KEY` only if a future lane truly requires telemetry or external reruns."
+  ],
+  "blockers": [
+    "Sovereign release verdict remains `FAIL` / `NO-GO`.",
+    "Hard-corpus authority remains weak and blocks broad compression claims.",
+    "The sovereign runtime still loses to `brotli`; the primitive-token branch beats `brotli` only as a lossy candidate and is not promotable.",
+    "Interoperability is the narrowest future candidate, but the current dirty worktree deletes the tracked binding surfaces needed for an honest proof pass.",
+    "Direct UNIPEN closure remains unresolved even after the external phase.",
+    "Local `COMET_API_KEY` and `RUNPOD_API_KEY` are absent, so telemetry and external reruns did not execute in this shell."
+  ],
+  "session": {
+    "last_date": "2026-04-05",
+    "stopped_at": "Phase 05 complete with final `NO-GO` and no current wedge proven.",
+    "resume_file": "`.gpd/phases/05-wedge-proof-and-enterprise-readiness/05-02-SUMMARY.md`"
+  },
+  "_version": 1,
+  "_synced_at": "2026-04-05T12:51:14.221997+00:00"
+}
