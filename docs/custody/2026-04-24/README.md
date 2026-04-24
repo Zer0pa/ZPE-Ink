@@ -8,6 +8,7 @@ Included here:
 
 - `gpd/`: ZPE-Ink GPD project state and phase artifacts, excluding `state.json.bak`.
 - `source_materials/`: lane handover/PRD source docs, ZPE-Ink augmentation brief, shared augmentation research, and governance/playbook inputs used to produce the PRD/readiness plan.
+- `startup_prompts/`: deletion/reclone startup prompt for the next ZPE-Ink agent.
 - `status_packets/augmentation_prd_readiness/`: augmentation PRD, runbooks, GPD execution plan, and readiness report.
 - `status_packets/ZPE-Ink_HF_CUSTODY_REPORT.md`: prior HF custody lane report.
 - `status_packets/ZPE-Ink_HARDENING_AUDIT.md`: reproducibility/PyPI audit card.

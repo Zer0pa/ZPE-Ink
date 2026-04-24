@@ -1,0 +1,239 @@
+# ZPE-Ink Startup Prompt - 2026-04-24 Custody Restart
+
+You are the successor agent for the ZPE-Ink lane.
+
+You are not starting from a local Mac state. Assume the previous Mac workspace was deleted. GitHub is the authority for code, docs, small proof files, GPD snapshots, PRD/readiness outputs, lane source materials, and this startup prompt. Hugging Face is the authority only if future large datasets, validation corpora, benchmark packs, model weights, checkpoints, RunPod salvage, or large proof bundles exist. As of the 2026-04-24 custody pass, no HF-required large ZPE-Ink artifact was found locally.
+
+## Non-Negotiable Operating Laws
+
+1. Treat the archived ZPE-Ink `NO-GO` as sovereign until a newer evidence-backed decision artifact replaces it.
+2. Do not convert cleaner docs, stronger parity, better custody, or nicer branch state into a narratable win.
+3. Do not let local improvements substitute for the authority metric.
+4. Do not escalate to GPU, RunPod, or external compute before exhausting the local CPU lane.
+5. Do not smooth contradictions across README, market surface, architecture docs, license metadata, and proof artifacts.
+6. Do not reopen a new milestone unless the reconciled truth surface and a fresh local rerun justify it.
+7. Do not perform commercialization narration.
+8. Do not reward-hack. The top acceptance gate is sovereign.
+
+## Recovery Source Of Truth
+
+Clone or fetch from GitHub:
+
+```bash
+git clone --branch codex/zpe-ink-custody-2026-04-24 https://github.com/Zer0pa/ZPE-Ink.git
+cd ZPE-Ink
+```
+
+If the repo already exists:
+
+```bash
+git fetch origin codex/zpe-ink-custody-2026-04-24
+git switch codex/zpe-ink-custody-2026-04-24
+git pull --ff-only
+```
+
+GitHub PR:
+
+- URL: https://github.com/Zer0pa/ZPE-Ink/pull/21
+- Base branch: `chore/novelty-card-backfill-2026-04-22`
+- Custody branch: `codex/zpe-ink-custody-2026-04-24`
+- Latest custody commit at handoff: `650e694a55ff4f72779c335bd2b6a8d40f5784bf`
+
+Custody commits on the branch:
+
+- `b1fe476063952b4f8fe05b7a1abc46126c03035a` - `custody: preserve ink follow-on work`
+- `c0670d130fc2f32b42285c024574fbe8cd0b4497` - `custody: add lane recovery snapshot`
+- `e6d61403ac9e44de8b46d488e6aecbf18c55bc99` - `custody: add ignored proof reruns`
+- `650e694a55ff4f72779c335bd2b6a8d40f5784bf` - `custody: add lane source materials`
+
+## What The Custody Branch Preserves
+
+Primary product repo:
+
+- `README.md`
+- `docs/ARCHITECTURE.md`
+- `docs/market_surface.json`
+- `LICENSE`
+- `code/zpe_ink/codec.py`
+- `code/zpe_ink/token_sidecar.py`
+- `code/zpe_ink/__init__.py`
+- `code/tests/test_cross_runtime_parity.py`
+- `code/tests/test_token_sidecar.py`
+- `code/scripts/run_candidate_token_sidecar_proof.py`
+- `code/bindings/swift/ZPEInk.swift`
+- `code/bindings/csharp/ZpeInk.cs`
+- `docs/family/ZPINK_TOKEN_SIDECAR_CONTRACT.md`
+
+Proof and rerun authority surface:
+
+- `proofs/reruns/benchmark_freeze_local/`
+- `proofs/reruns/contradiction_resolution_local/`
+- `proofs/reruns/follow_on_reassessment_2026-04-24/`
+- `proofs/reruns/phase3_external/`
+- `proofs/reruns/phase4_runtime/`
+- `proofs/reruns/phase5_wedge/`
+- `proofs/reruns/primitive_token_branch/`
+- `proofs/reruns/tokenizer_scaffold/`
+
+Custody/restart materials:
+
+- `docs/custody/2026-04-24/README.md`
+- `docs/custody/2026-04-24/gpd/`
+- `docs/custody/2026-04-24/status_packets/`
+- `docs/custody/2026-04-24/source_materials/`
+- `docs/custody/2026-04-24/startup_prompts/ZPE-Ink_STARTUP_PROMPT_2026-04-24.md`
+
+Source materials preserved in GitHub:
+
+- ZPE-Ink handover: `docs/custody/2026-04-24/source_materials/base_prd/ZPE-Ink-Handover-2026-04-23.md`
+- ZPE-Ink brief: `docs/custody/2026-04-24/source_materials/base_prd/ZPE-Ink.md`
+- Lane augmentation brief: `docs/custody/2026-04-24/source_materials/augmentation_briefs/ZPE-Ink_Deep_Research_Augmentation_Brief.md`
+- Shared augmentation research:
+  - `docs/custody/2026-04-24/source_materials/augmentation_research/Claude ZPE Augmentation Research`
+  - `docs/custody/2026-04-24/source_materials/augmentation_research/Gemini ZPE Augmentations.md`
+  - `docs/custody/2026-04-24/source_materials/augmentation_research/Perplexity ZPE Augmentation.md`
+- Governance:
+  - `docs/custody/2026-04-24/source_materials/governance/REPO_PLAYBOOK.md`
+  - `docs/custody/2026-04-24/source_materials/governance/MECHANICS_LAYER_AUDIT_BRIEF.md`
+  - `docs/custody/2026-04-24/source_materials/governance/Zer0pa Live Project Ethos.mdZer0pa Live Project Ethos.md.md`
+
+Planning/readiness outputs preserved in GitHub:
+
+- `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/AUGMENTED_PRD.md`
+- `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/RUNBOOK_INDEX.md`
+- `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/GPD_EXECUTION_PLAN.md`
+- `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/READINESS_REPORT.md`
+- `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/runbooks/`
+
+## Handoff Truth Surface
+
+The prior handoff established:
+
+- Product repo path before deletion: `/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink`
+- Remote: `https://github.com/Zer0pa/ZPE-Ink.git`
+- Live branch before custody: `chore/novelty-card-backfill-2026-04-22`
+- Custody/restart branch: `codex/zpe-ink-custody-2026-04-24`
+- Local pytest had passed before custody on `code/tests -q`
+- Local binding-contract verification had passed before custody
+- `test_cross_runtime_parity.py` exists and exercises Swift/C# decode parity
+- Immediate blocker was local disk exhaustion, not compute scarcity
+- Cleanup removed build/cache/generated outputs only
+
+Confirmed contradictions to keep visible:
+
+- Archived final result says `NO-GO`; live repo surfaces also contain `INCONCLUSIVE` framing.
+- README/market language may imply commercial wedge despite archived no-current-wedge result.
+- Public badge/license identity had SAL v7.0 vs SAL 6.2 metadata tension.
+- Architecture docs previously understated live Swift/C#/cross-runtime parity and test surface.
+
+Do not hide these contradictions. Reconcile them only through evidence-backed artifacts.
+
+## Hugging Face State
+
+As of custody:
+
+- Normalized auth initially returned `user=Architect-Prime orgs=Zer0pa`.
+- Later `hf repos create Zer0pa/ZPE-Ink-artifacts --type dataset --private --exist-ok` failed with 401 / not logged in.
+- No HF-required large dataset, model, checkpoint, validation corpus, benchmark pack, RunPod salvage, or large proof bundle was found locally for ZPE-Ink.
+- Therefore all valuable small ZPE-Ink lane materials were preserved in GitHub rather than Hugging Face.
+
+Before any future HF action, normalize auth:
+
+```bash
+unset HF_TOKEN
+unset HUGGINGFACE_HUB_TOKEN
+unset HF_HOME
+hf auth whoami
+```
+
+Expected:
+
+```text
+user=Architect-Prime orgs=Zer0pa
+```
+
+Use `Zer0pa` org storage only:
+
+- Dataset/artifact repo if needed: `Zer0pa/ZPE-Ink-artifacts`
+- Model/checkpoint repo if needed: `Zer0pa/ZPE-Ink-models`
+- Scratch/RunPod bucket if needed: `Zer0pa/ZPE-Ink-scratch`
+
+Do not upload code/docs/small proof files to HF. Those belong in GitHub.
+
+## First Commands After Reclone
+
+Run:
+
+```bash
+git status --short --branch
+git remote -v
+git log --oneline -6
+git ls-files --others --ignored --exclude-standard | sed -n '1,120p'
+```
+
+Expected:
+
+- On `codex/zpe-ink-custody-2026-04-24`
+- Tracking `origin/codex/zpe-ink-custody-2026-04-24`
+- No untracked/ignored local-only valuable files
+- Latest commit should be at least `650e694`
+
+Then restore Python tooling locally:
+
+```bash
+cd code
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -U pip
+python -m pip install -e ".[dev]"
+pytest tests -q
+```
+
+If the editable install is blocked by disk or dependency state, record the exact blocker rather than changing the decision surface.
+
+## Next Technical Lane
+
+The bounded follow-on lane is interoperability truth reconciliation, not broad commercialization.
+
+Read in this order from the cloned repo:
+
+1. `docs/custody/2026-04-24/source_materials/base_prd/ZPE-Ink-Handover-2026-04-23.md`
+2. `docs/custody/2026-04-24/source_materials/base_prd/ZPE-Ink.md`
+3. `docs/custody/2026-04-24/gpd/STATE.md`
+4. `docs/custody/2026-04-24/gpd/ROADMAP.md`
+5. `docs/custody/2026-04-24/gpd/phases/05-wedge-proof-and-enterprise-readiness/05-02-SUMMARY.md`
+6. `proofs/reruns/phase5_wedge/final_go_no_go_surface.json`
+7. `README.md`
+8. `docs/market_surface.json`
+9. `docs/ARCHITECTURE.md`
+10. `LICENSE`
+11. `code/tests/test_cross_runtime_parity.py`
+12. `docs/custody/2026-04-24/gpd/drafts/2026-04-23-follow-on-interoperability-truth-reconciliation-PLAN.md`
+13. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/AUGMENTED_PRD.md`
+14. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/GPD_EXECUTION_PLAN.md`
+15. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/RUNBOOK_INDEX.md`
+16. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/READINESS_REPORT.md`
+
+## Execution Guardrails
+
+Before implementing any next wave:
+
+1. Confirm repo state is clean after clone.
+2. Confirm all expected proof/rerun and custody files are present from GitHub.
+3. Run local CPU tests first.
+4. Re-run the binding/cross-runtime verification locally if toolchains are present.
+5. Produce evidence artifacts before changing roadmap-level truth.
+6. Preserve any new large artifact to HF as soon as it is generated.
+7. Preserve any new small code/doc/proof artifact to GitHub.
+
+Kill or hold conditions:
+
+- Any runtime pair cannot achieve byte-identical or contract-equivalent round-trip after the bounded reconciliation window.
+- The fresh local rerun cannot reproduce the evidence used to update the decision surface.
+- Any required artifact exists only on local disk or RunPod and cannot be moved to GitHub/HF.
+- Any proposed wedge depends on invented nouns, unverified commercial claims, or hidden contradictions.
+
+## Current Custody Verdict
+
+As of the startup prompt creation, deletion of the old local ZPE-Ink working directory is safe after verifying the GitHub branch `codex/zpe-ink-custody-2026-04-24` contains this prompt and latest custody commit. The intended recovery source is GitHub PR #21, not the deleted Mac workspace.
+
