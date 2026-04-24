@@ -37,6 +37,7 @@ GitHub PR:
 - URL: https://github.com/Zer0pa/ZPE-Ink/pull/21
 - Base branch: `chore/novelty-card-backfill-2026-04-22`
 - Custody branch: `codex/zpe-ink-custody-2026-04-24`
+- Minimum required custody head before deletion: `e0eb27fff5b86529b63972573c110ce7676d9f80`
 - Startup prompt added in commit: `3858e3294a446170e6f0cdb68e307c2598248d71`
 - Verify current branch head with `git ls-remote --heads origin codex/zpe-ink-custody-2026-04-24`; later custody correction commits may exist.
 
@@ -49,6 +50,13 @@ Initial custody commits on the branch:
 - `3858e3294a446170e6f0cdb68e307c2598248d71` - `custody: add deletion restart prompt`
 
 Later custody commits add the HF salvage manifest, historical external lane context, and report corrections. Verify the current branch head rather than relying on this prompt as a fixed commit list.
+
+Deletion-readiness custody commits after prompt creation include:
+
+- `628e897b69507525f3b6e39ddfb351616f0ec1b9` - `custody: add hf salvage and external lane context`
+- `9765bd4...` - `custody: refresh hf custody report`
+- `3c609e0...` - `custody: avoid stale hf report head`
+- `e0eb27fff5b86529b63972573c110ce7676d9f80` - `custody: clarify restart prompt commit list`
 
 ## What The Custody Branch Preserves
 
@@ -172,6 +180,20 @@ SHA256: b716cd9975c74dd36cbeb01f15d834e2469b6a9b0f9fd6d3d8d7a9abda473ad7
 
 Do not upload code/docs/small proof files to HF. Those belong in GitHub.
 
+Verify HF custody after restart:
+
+```bash
+env -u HF_TOKEN -u HUGGINGFACE_HUB_TOKEN HF_HOME="$HF_HOME" hf download Zer0pa/ZPE-Ink-artifacts --type dataset --include 'runpod_salvage/*' --include 'manifests/*' --dry-run
+env -u HF_TOKEN -u HUGGINGFACE_HUB_TOKEN HF_HOME="$HF_HOME" hf buckets list hf://buckets/Zer0pa/ZPE-Ink-scratch --recursive
+```
+
+Expected HF dataset dry-run:
+
+```text
+manifests/HF_CUSTODY_MANIFEST.md
+runpod_salvage/ZPE-Ink_runpod_ZPE-Cipher_2026-04-24.tar.gz
+```
+
 ## First Commands After Reclone
 
 Run:
@@ -188,7 +210,7 @@ Expected:
 - On `codex/zpe-ink-custody-2026-04-24`
 - Tracking `origin/codex/zpe-ink-custody-2026-04-24`
 - No untracked/ignored local-only valuable files
-- Latest commit should be at least `3858e329`
+- Latest commit should be at least `e0eb27f`
 
 Then restore Python tooling locally:
 
@@ -225,6 +247,8 @@ Read in this order from the cloned repo:
 14. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/GPD_EXECUTION_PLAN.md`
 15. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/RUNBOOK_INDEX.md`
 16. `docs/custody/2026-04-24/status_packets/augmentation_prd_readiness/READINESS_REPORT.md`
+17. `docs/custody/2026-04-24/hf/HF_CUSTODY_MANIFEST.md`
+18. `docs/custody/2026-04-24/status_packets/ZPE-Ink_HF_CUSTODY_REPORT.md`
 
 ## Execution Guardrails
 
@@ -247,4 +271,4 @@ Kill or hold conditions:
 
 ## Current Custody Verdict
 
-As of the startup prompt correction, deletion of the old local ZPE-Ink working directory is safe after verifying the GitHub branch `codex/zpe-ink-custody-2026-04-24` contains this prompt and latest custody commits, and after verifying the RunPod salvage exists on Hugging Face. The intended recovery sources are GitHub PR #21 plus `Zer0pa/ZPE-Ink-artifacts` / `Zer0pa/ZPE-Ink-scratch`, not the deleted Mac workspace.
+As of the startup prompt correction, deletion of the old local ZPE-Ink working directory is safe after verifying the GitHub branch `codex/zpe-ink-custody-2026-04-24` is at or beyond `e0eb27fff5b86529b63972573c110ce7676d9f80`, and after verifying the RunPod salvage exists on Hugging Face. The intended recovery sources are GitHub PR #21 plus `Zer0pa/ZPE-Ink-artifacts` / `Zer0pa/ZPE-Ink-scratch`, not the deleted Mac workspace.
