@@ -2,7 +2,7 @@
 
 You are the successor agent for the ZPE-Ink lane.
 
-You are not starting from a local Mac state. Assume the previous Mac workspace was deleted. GitHub is the authority for code, docs, small proof files, GPD snapshots, PRD/readiness outputs, lane source materials, and this startup prompt. Hugging Face is the authority only if future large datasets, validation corpora, benchmark packs, model weights, checkpoints, RunPod salvage, or large proof bundles exist. As of the 2026-04-24 custody pass, no HF-required large ZPE-Ink artifact was found locally.
+You are not starting from a local Mac state. Assume the previous Mac workspace was deleted. GitHub is the authority for code, docs, small proof files, GPD snapshots, PRD/readiness outputs, lane source materials, and this startup prompt. Hugging Face is the authority for large datasets, validation corpora, benchmark packs, model weights, checkpoints, RunPod salvage, and large proof bundles. As of the 2026-04-24 custody correction pass, no HF-required large ZPE-Ink artifact was found locally in the Mac product repo. A historical RunPod ZPE-Ink snapshot was found and uploaded to Hugging Face.
 
 ## Non-Negotiable Operating Laws
 
@@ -81,6 +81,8 @@ Custody/restart materials:
 
 - `docs/custody/2026-04-24/README.md`
 - `docs/custody/2026-04-24/gpd/`
+- `docs/custody/2026-04-24/hf/HF_CUSTODY_MANIFEST.md`
+- `docs/custody/2026-04-24/portfolio_surface/`
 - `docs/custody/2026-04-24/status_packets/`
 - `docs/custody/2026-04-24/source_materials/`
 - `docs/custody/2026-04-24/startup_prompts/ZPE-Ink_STARTUP_PROMPT_2026-04-24.md`
@@ -134,18 +136,14 @@ Do not hide these contradictions. Reconcile them only through evidence-backed ar
 
 As of custody:
 
-- Normalized auth initially returned `user=Architect-Prime orgs=Zer0pa`.
-- Later `hf repos create Zer0pa/ZPE-Ink-artifacts --type dataset --private --exist-ok` failed with 401 / not logged in.
-- No HF-required large dataset, model, checkpoint, validation corpus, benchmark pack, RunPod salvage, or large proof bundle was found locally for ZPE-Ink.
-- Therefore all valuable small ZPE-Ink lane materials were preserved in GitHub rather than Hugging Face.
+- The installed `Zer0pa HF Storage` token is valid, but environment variables can override it with a token that cannot write under `Zer0pa`.
+- The working HF command shape is to preserve `HF_HOME` and remove only the overriding token environment variables.
+- A historical RunPod snapshot was found at `/workspace/ZPE-Cipher/workspace/repos/ZPE-Ink` and uploaded to HF.
 
-Before any future HF action, normalize auth:
+Before any future HF action from this Mac, normalize auth this way:
 
 ```bash
-unset HF_TOKEN
-unset HUGGINGFACE_HUB_TOKEN
-unset HF_HOME
-hf auth whoami
+env -u HF_TOKEN -u HUGGINGFACE_HUB_TOKEN HF_HOME="$HF_HOME" hf auth whoami
 ```
 
 Expected:
@@ -156,9 +154,19 @@ user=Architect-Prime orgs=Zer0pa
 
 Use `Zer0pa` org storage only:
 
-- Dataset/artifact repo if needed: `Zer0pa/ZPE-Ink-artifacts`
-- Model/checkpoint repo if needed: `Zer0pa/ZPE-Ink-models`
-- Scratch/RunPod bucket if needed: `Zer0pa/ZPE-Ink-scratch`
+- Dataset/artifact repo: `https://huggingface.co/datasets/Zer0pa/ZPE-Ink-artifacts`
+- Scratch/RunPod bucket: `hf://buckets/Zer0pa/ZPE-Ink-scratch`
+- Model/checkpoint repo if needed later: `Zer0pa/ZPE-Ink-models`
+
+RunPod salvage uploaded:
+
+```text
+Source: /workspace/ZPE-Cipher/workspace/repos/ZPE-Ink
+Dataset path: Zer0pa/ZPE-Ink-artifacts/runpod_salvage/ZPE-Ink_runpod_ZPE-Cipher_2026-04-24.tar.gz
+Dataset commit: https://huggingface.co/datasets/Zer0pa/ZPE-Ink-artifacts/commit/38833a49611b8a2398399579647fa4ce3e5065bf
+Bucket path: hf://buckets/Zer0pa/ZPE-Ink-scratch/runpod_salvage/ZPE-Ink_runpod_ZPE-Cipher_2026-04-24.tar.gz
+SHA256: b716cd9975c74dd36cbeb01f15d834e2469b6a9b0f9fd6d3d8d7a9abda473ad7
+```
 
 Do not upload code/docs/small proof files to HF. Those belong in GitHub.
 
@@ -237,4 +245,4 @@ Kill or hold conditions:
 
 ## Current Custody Verdict
 
-As of the startup prompt creation, deletion of the old local ZPE-Ink working directory is safe after verifying the GitHub branch `codex/zpe-ink-custody-2026-04-24` contains this prompt and latest custody commit. The intended recovery source is GitHub PR #21, not the deleted Mac workspace.
+As of the startup prompt correction, deletion of the old local ZPE-Ink working directory is safe after verifying the GitHub branch `codex/zpe-ink-custody-2026-04-24` contains this prompt and latest custody commits, and after verifying the RunPod salvage exists on Hugging Face. The intended recovery sources are GitHub PR #21 plus `Zer0pa/ZPE-Ink-artifacts` / `Zer0pa/ZPE-Ink-scratch`, not the deleted Mac workspace.
