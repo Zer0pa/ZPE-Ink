@@ -6,6 +6,7 @@ import tomllib
 
 from .codec import ZPInkDecodeError, ZPInkEncodeError, decode_zpink, encode_zpink
 from .cli import demo_payload, roundtrip_check
+from .token_sidecar import build_token_sidecar, build_token_sidecar_from_zpink, reconstruct_token_sidecar
 
 
 def _fallback_version() -> str:
@@ -25,8 +26,11 @@ __all__ = [
     "ZPInkDecodeError",
     "ZPInkEncodeError",
     "__version__",
+    "build_token_sidecar",
+    "build_token_sidecar_from_zpink",
     "decode_zpink",
     "demo_payload",
     "encode_zpink",
+    "reconstruct_token_sidecar",
     "roundtrip_check",
 ]

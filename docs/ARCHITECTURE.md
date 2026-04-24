@@ -25,7 +25,7 @@ The canonical packet contract is defined here:
   <img src="../.github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">
 </p>
 
-Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOURCE-VERIFIED` means source checks passed but it is not a pip-installed runtime surface.
+Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOURCE-VERIFIED` means source checks passed on the current local rerun; `CANDIDATE-ONLY` means bounded follow-on work that cannot replace `.zpink`.
 
 <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
   <thead>
@@ -36,11 +36,12 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
     </tr>
   </thead>
   <tbody>
-    <tr><td>Python package (`code/zpe_ink`)</td><td><code>INSTALLABLE</code></td><td><code>proofs/logs/20260321_technical_alignment_wheel_install.txt</code></td></tr>
-    <tr><td>PyO3 binding (`code/bindings/python_native`)</td><td><code>SOURCE-VERIFIED</code></td><td><code>proofs/logs/20260321_technical_alignment_cargo_python_native.txt</code></td></tr>
-    <tr><td>WASM binding (`code/bindings/wasm`)</td><td><code>SOURCE-VERIFIED</code></td><td><code>proofs/logs/20260321_technical_alignment_cargo_wasm.txt</code></td></tr>
-    <tr><td>Swift binding (`code/bindings/swift`)</td><td><code>CONTRACT-CHECKED</code></td><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td></tr>
-    <tr><td>C# binding (`code/bindings/csharp`)</td><td><code>CONTRACT-CHECKED</code></td><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td></tr>
+    <tr><td>Python package (`code/zpe_ink`)</td><td><code>INSTALLABLE</code></td><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json</code></td></tr>
+    <tr><td>PyO3 binding (`code/bindings/python_native`)</td><td><code>SOURCE-VERIFIED</code></td><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json</code></td></tr>
+    <tr><td>WASM binding (`code/bindings/wasm`)</td><td><code>SOURCE-VERIFIED</code></td><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json</code></td></tr>
+    <tr><td>Swift binding (`code/bindings/swift`)</td><td><code>SOURCE-VERIFIED</code></td><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json</code></td></tr>
+    <tr><td>C# binding (`code/bindings/csharp`)</td><td><code>SOURCE-VERIFIED</code></td><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json</code></td></tr>
+    <tr><td>Hybrid token sidecar (`code/zpe_ink/token_sidecar.py`)</td><td><code>CANDIDATE-ONLY</code></td><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/token_sidecar_candidate_verdict.json</code></td></tr>
   </tbody>
 </table>
 
@@ -57,10 +58,10 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td><td>Release readiness and contradiction summary</td><td><code>INCONCLUSIVE</code></td></tr>
-    <tr><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td><td>Claim boundary and allowed statements</td><td><code>structured-tier-only</code></td></tr>
-    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Sovereign release surface</td><td><code>FAIL</code></td></tr>
-    <tr><td><code>proofs/reruns/phase3_external/external_boundary_manifest.json</code></td><td>External corpus boundary</td><td><code>UNIPEN FAIL</code>, <code>Calliar PASS</code></td></tr>
+    <tr><td><code>proofs/reruns/phase5_wedge/final_go_no_go_surface.json</code></td><td>Historical sovereign closeout</td><td><code>NO-GO</code></td></tr>
+    <tr><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/interoperability_candidate_verdict.json</code></td><td>Current bounded follow-on decision</td><td><code>NO-GO remains</code>, <code>OPEN_BOUNDED_CANDIDATE</code></td></tr>
+    <tr><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json</code></td><td>Current local CPU rerun</td><td><code>PASS</code></td></tr>
+    <tr><td><code>proofs/reruns/follow_on_reassessment_2026-04-24/token_sidecar_candidate_verdict.json</code></td><td>Candidate token sidecar boundary</td><td><code>CANDIDATE_ONLY</code></td></tr>
   </tbody>
 </table>
 
@@ -68,4 +69,4 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
   <img src="../.github/assets/readme/section-bars/out-of-scope.svg" alt="OUT OF SCOPE" width="100%">
 </p>
 
-What is not covered: production-grade packaging for Swift/C#/WASM, runtime parity beyond contract checks, and public-release certification.
+What is not covered: public-release certification, a current commercial wedge, blind-clone closure, or promotion of the token sidecar beyond its bounded directional/proxy fit surface.

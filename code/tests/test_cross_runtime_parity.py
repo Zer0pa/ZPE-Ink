@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -19,7 +20,28 @@ def _canonicalize(text: str) -> str:
 
 
 def _run(command: list[str], *, timeout: int = 45) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(command, capture_output=True, text=True, check=False, timeout=timeout)
+    with tempfile.TemporaryDirectory(prefix="zpeink-subprocess-") as tmp_dir:
+        stdout_path = Path(tmp_dir) / "stdout.txt"
+        stderr_path = Path(tmp_dir) / "stderr.txt"
+        with stdout_path.open("w+", encoding="utf-8") as stdout_file, stderr_path.open(
+            "w+", encoding="utf-8"
+        ) as stderr_file:
+            result = subprocess.run(
+                command,
+                stdout=stdout_file,
+                stderr=stderr_file,
+                text=True,
+                check=False,
+                timeout=timeout,
+            )
+            stdout_file.seek(0)
+            stderr_file.seek(0)
+            return subprocess.CompletedProcess(
+                args=result.args,
+                returncode=result.returncode,
+                stdout=stdout_file.read(),
+                stderr=stderr_file.read(),
+            )
 
 
 def _build_fixture(tmp_path: Path) -> tuple[Path, Path, str]:
