@@ -1,0 +1,12 @@
+{
+  "after": {},
+  "baseline": {
+    "compression_ratio": 0.0,
+    "cross_runtime_parity": 0.0,
+    "encode_latency_ms_per_stroke": 0.0,
+    "hausdorff_px": 0.0,
+    "lossless_roundtrip_pass_rate": 0.0,
+    "pressure_rmse_percent": 0.0
+  },
+  "delta": {}
+}

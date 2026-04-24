@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "repo": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink",
+  "head_commit": "98b5ed73473540667b65d7bd519c2980ff2c188d",
+  "head_branch": "main",
+  "dirty_worktree": true,
+  "conflict_summary": {
+    "reason": "The local nested repo worktree deletes tracked runtime and binding files that the revised action brief and the historical gate chain assume are present.",
+    "effect": "In-place execution would blur dirty local truth with tracked HEAD truth."
+  },
+  "deleted_tracked_files": [
+    "code/bindings/swift/ZPEInk.swift",
+    "code/bindings/csharp/ZpeInk.cs",
+    "code/zpe_ink/codec.py",
+    "code/zpe_ink/fixtures.py",
+    "code/zpe_ink/inkml.py",
+    "code/zpe_ink/io.py",
+    "code/zpe_ink/metrics.py",
+    "code/tests/test_codec_roundtrip.py",
+    "code/bindings/python_native/src/lib.rs",
+    "code/bindings/wasm/src/lib.rs"
+  ],
+  "head_surfaces_still_tracked": [
+    "code/bindings/swift/ZPEInk.swift",
+    "code/bindings/csharp/ZpeInk.cs",
+    "code/bindings/python_native/src/lib.rs",
+    "code/bindings/wasm/src/lib.rs",
+    "code/zpe_ink/codec.py",
+    "code/tests/test_codec_roundtrip.py"
+  ],
+  "safe_execution_choice": {
+    "mode": "clean_side_worktree_inside_lane",
+    "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/ZPE-Ink-phase05-exec",
+    "branch": "codex/phase05-wedge-proof",
+    "why": "Use tracked HEAD sources without restoring or overwriting the dirty main worktree."
+  },
+  "related_artifact": "ZPE-Ink/proofs/reruns/phase5_wedge/action_brief_reality_audit.json"
+}

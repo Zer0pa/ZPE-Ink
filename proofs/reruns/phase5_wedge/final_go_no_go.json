@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "source_surface": "ZPE-Ink/proofs/reruns/phase5_wedge/final_go_no_go_surface.json",
+  "phase": 5,
+  "go_no_go": "NO-GO",
+  "enterprise_readiness": "NOT_READY",
+  "current_wedge": null,
+  "narrowest_future_candidate": "interoperability",
+  "reason_summary": [
+    "No current commercial wedge is proven.",
+    "The sovereign release surface remains FAIL / NO-GO.",
+    "The contradiction surface remains OPEN / INCONCLUSIVE.",
+    "Interoperability survives only as a future candidate on a stabilized repo state."
+  ]
+}

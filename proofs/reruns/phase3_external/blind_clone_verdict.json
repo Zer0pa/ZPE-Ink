@@ -1,0 +1,42 @@
+{
+  "status": "INCONCLUSIVE",
+  "host": {
+    "provider": "RunPod",
+    "hostname": "e445a2982b5c",
+    "clone_path": "/root/zpe-blind-clone/repo"
+  },
+  "source": {
+    "remote": "https://github.com/Zer0pa/ZPE-Ink.git",
+    "clone_commit": "3d4efc2463e56077e4139b506c15a64bfd61fac5",
+    "clone_method": "Authenticated HTTPS clone over the direct TCP RunPod lane"
+  },
+  "checks": [
+    {
+      "id": "clone_remote",
+      "status": "PASS",
+      "detail": "The untouched host cloned the real GitHub remote."
+    },
+    {
+      "id": "editable_install",
+      "status": "PASS",
+      "detail": "Editable install in a fresh venv succeeded."
+    },
+    {
+      "id": "verify_roundtrip",
+      "status": "PASS",
+      "detail": "executable/verify_roundtrip.py returned roundtrip_ok."
+    },
+    {
+      "id": "pytest_code_tests",
+      "status": "PASS",
+      "detail": "pytest code/tests -q passed inside the blind-clone venv."
+    },
+    {
+      "id": "gate_a_resource_probe",
+      "status": "FAIL",
+      "detail": "gate_a_setup.py hard-aborted on missing optional binary npm instead of recording a probe miss."
+    }
+  ],
+  "overall_verdict": "INCONCLUSIVE",
+  "contradiction_impact": "Blind clone is no longer UNTESTED, but the release surface remains FAIL / NO-GO and the full external gate surface is not yet clean."
+}

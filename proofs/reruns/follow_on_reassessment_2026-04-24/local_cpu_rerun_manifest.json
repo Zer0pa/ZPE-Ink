@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-24T01:22:00Z",
+  "branch": "chore/novelty-card-backfill-2026-04-22",
+  "commit": "8919e0d8df2866112d55a968d77e008bf33e00a4",
+  "environment": {
+    "disk_free_gib": 22.0,
+    "python": "3.14.0",
+    "swift": "6.1.2",
+    "mono_mcs": "6.14.1.0",
+    "mono_jit": "6.14.1",
+    "wasm_pack": "0.14.0",
+    "node": "v24.10.0",
+    "cargo": "1.94.0"
+  },
+  "checks": [
+    {
+      "id": "binding_contracts",
+      "command": "python code/scripts/verify_binding_contracts.py --repo-root .",
+      "status": "PASS",
+      "seconds": 1.1
+    },
+    {
+      "id": "cross_runtime_parity",
+      "command": "python -m pytest code/tests/test_cross_runtime_parity.py -q",
+      "status": "PASS",
+      "seconds": 13.351
+    },
+    {
+      "id": "pytest_code_tests",
+      "command": "python -m pytest code/tests -q",
+      "status": "PASS",
+      "seconds": 17.321
+    },
+    {
+      "id": "package_build",
+      "command": "python -m build",
+      "status": "PASS",
+      "seconds": 13.626
+    },
+    {
+      "id": "wheel_install_smoke",
+      "command": "python -m pip install code/dist/zpe_ink-0.1.0-py3-none-any.whl && python -m zpe_ink verify-roundtrip",
+      "status": "PASS",
+      "seconds": 15.998
+    }
+  ],
+  "fixes_applied": [
+    {
+      "id": "swift_timeout_false_negative",
+      "path": "code/tests/test_cross_runtime_parity.py",
+      "change": "replaced pipe-based subprocess capture with temporary-file capture to avoid false Swift compile timeouts under Python subprocess pipes"
+    }
+  ],
+  "compute_boundary": {
+    "local_storage_blocker": "CLEARED",
+    "external_compute_required": false,
+    "runpod_required": false
+  },
+  "overall_status": "PASS"
+}

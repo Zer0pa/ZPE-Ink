@@ -1,0 +1,98 @@
+{
+  "appendix_b_items": [
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "Chaikin smoothing comparator if source path unavailable",
+      "id": "B1",
+      "planned_usage": "Primary smoothing baseline comparator",
+      "probe_returncode": 0,
+      "resource": "Google ink-stroke-modeler",
+      "source_reference": "https://github.com/google/ink-stroke-modeler",
+      "status": "PROBED"
+    },
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "Synthetic UIM-like stroke schema fixture",
+      "id": "B2",
+      "planned_usage": "Adapter smoke-test ingestion coverage",
+      "probe_returncode": 0,
+      "resource": "Wacom Universal Ink Library",
+      "source_reference": "https://github.com/Wacom-Developer/universal-ink-library",
+      "status": "PROBED"
+    },
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "Built-in minimal InkML parser for traceability test",
+      "id": "B3",
+      "planned_usage": "Web format adapter parity",
+      "probe_returncode": 1,
+      "resource": "Microsoft InkML.js or equivalent",
+      "source_reference": "https://github.com/Microsoft/InkMLjs",
+      "status": "INCONCLUSIVE"
+    },
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "IAM-shaped deterministic proxy corpus",
+      "id": "B4",
+      "planned_usage": "Validation matrix corpus",
+      "probe_returncode": 0,
+      "resource": "IAM On-Line Handwriting dataset",
+      "source_reference": "https://fki.tic.heia-fr.ch/databases/iam-on-line-handwriting-database",
+      "status": "PROBED"
+    },
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "UNIPEN-shaped deterministic proxy corpus",
+      "id": "B5",
+      "planned_usage": "Cross-script validation matrix corpus",
+      "probe_returncode": 6,
+      "resource": "UNIPEN dataset",
+      "source_reference": "https://unipen.nici.ru.nl",
+      "status": "INCONCLUSIVE"
+    },
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "Node-only parser for parity if wasm build unavailable",
+      "id": "B6",
+      "planned_usage": "WASM adapter build and parity run",
+      "probe_returncode": 127,
+      "resource": "wasm-bindgen path",
+      "source_reference": "https://github.com/rustwasm/wasm-bindgen",
+      "status": "INCONCLUSIVE"
+    },
+    {
+      "evidence_artifact": "artifacts/2026-02-20_zpe_ink_wave1/command_log.txt",
+      "fallback": "Pure Python adapter retained if native extension build fails",
+      "id": "B7",
+      "planned_usage": "Python native binding behavior validation",
+      "probe_returncode": 0,
+      "resource": "PyO3 path",
+      "source_reference": "https://github.com/PyO3/pyo3",
+      "status": "PROBED"
+    }
+  ],
+  "dataset_manifest": {
+    "adversarial_spike": {
+      "count": 24,
+      "seed": 20260223
+    },
+    "iam_proxy": {
+      "count": 64,
+      "seed": 20260220,
+      "source": "IAM On-Line proxy"
+    },
+    "long_page": {
+      "count": 2400,
+      "seed": 20260224
+    },
+    "synthetic_lossless": {
+      "count": 48,
+      "seed": 20260220
+    },
+    "unipen_proxy": {
+      "count": 64,
+      "seed": 20260221,
+      "source": "UNIPEN proxy"
+    }
+  }
+}

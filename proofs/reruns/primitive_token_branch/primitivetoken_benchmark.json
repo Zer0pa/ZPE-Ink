@@ -1,0 +1,130 @@
+{
+  "calliar_bounded": {
+    "hausdorff_max_px": 636.5736406732532,
+    "hausdorff_mean_px": 201.11119574321816,
+    "limit": 100,
+    "name": "calliar_bounded",
+    "point_count": 11643,
+    "ratios": {
+      "brotli": 2.7329382078516518,
+      "primitive_raw": 1.1988570545988106,
+      "primitive_zstd": 2.883090351936113,
+      "raw_float32_xy": 1.0,
+      "sovereign": 0.8224563138515333
+    },
+    "sample_count": 100,
+    "sizes_bytes": {
+      "brotli": 34082,
+      "primitive_raw": 77694,
+      "primitive_zstd": 32307,
+      "raw_float32_xy": 93144,
+      "sovereign": 113251
+    },
+    "source_url": "https://raw.githubusercontent.com/ARBML/Calliar/main/calliar_dataset/dataset.npz",
+    "stroke_count": 1697
+  },
+  "candidate_branch_result": {
+    "candidate_only": true,
+    "status": "BEATS_BROTLI",
+    "structured_beats_brotli": true
+  },
+  "command_log": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/primitive_token_branch/command_log.txt",
+  "disk_free_gib_before": 18.463,
+  "generated_at": "2026-03-21T16:06:58Z",
+  "schema_version": 1,
+  "structured_tier": {
+    "datasets": [
+      {
+        "hausdorff_max_px": 0.0,
+        "hausdorff_mean_px": 0.0,
+        "name": "synthetic_lossless",
+        "point_count": 9834,
+        "ratios": {
+          "brotli": 6.870917030567686,
+          "primitive_raw": 4.733574007220216,
+          "primitive_zstd": 12.703374777975133,
+          "raw_float32_xy": 1.0,
+          "sovereign": 6.073650891685324
+        },
+        "sample_count": 1,
+        "sizes_bytes": {
+          "brotli": 11450,
+          "primitive_raw": 16620,
+          "primitive_zstd": 6193,
+          "raw_float32_xy": 78672,
+          "sovereign": 12953
+        },
+        "stroke_count": 48
+      },
+      {
+        "hausdorff_max_px": 0.0,
+        "hausdorff_mean_px": 0.0,
+        "name": "iam_proxy",
+        "point_count": 16986,
+        "ratios": {
+          "brotli": 6.575437917352173,
+          "primitive_raw": 4.812068416020398,
+          "primitive_zstd": 13.59559779889945,
+          "raw_float32_xy": 1.0,
+          "sovereign": 6.194465970734376
+        },
+        "sample_count": 1,
+        "sizes_bytes": {
+          "brotli": 20666,
+          "primitive_raw": 28239,
+          "primitive_zstd": 9995,
+          "raw_float32_xy": 135888,
+          "sovereign": 21937
+        },
+        "stroke_count": 64
+      },
+      {
+        "hausdorff_max_px": 0.0,
+        "hausdorff_mean_px": 0.0,
+        "name": "unipen_proxy",
+        "point_count": 22969,
+        "ratios": {
+          "brotli": 7.030340130848988,
+          "primitive_raw": 3.7102877334679456,
+          "primitive_zstd": 10.833795177171158,
+          "raw_float32_xy": 1.0,
+          "sovereign": 4.502511577760898
+        },
+        "sample_count": 1,
+        "sizes_bytes": {
+          "brotli": 26137,
+          "primitive_raw": 49525,
+          "primitive_zstd": 16961,
+          "raw_float32_xy": 183752,
+          "sovereign": 40811
+        },
+        "stroke_count": 64
+      }
+    ],
+    "frozen_phase2_ratios": {
+      "brotli": 6.825565026256283,
+      "sovereign": 5.590209480060199,
+      "zstd": 4.9199524605723175
+    },
+    "overall_ratios": {
+      "brotli": 6.825565026256283,
+      "primitive_raw": 4.41864338556952,
+      "primitive_zstd": 12.377589251348581,
+      "raw_float32_xy": 1.0,
+      "sovereign": 5.590209480060199
+    }
+  },
+  "telemetry": {
+    "comet": {
+      "experiment_name": "phase04-primitive-token-branch",
+      "logged": false,
+      "project": "zpe-ink",
+      "reason": "COMET_API_KEY missing",
+      "workspace": "zer0pa"
+    },
+    "opik": {
+      "present": false,
+      "reason": "no canonical Opik surface found in this workstream"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "corpus": "quickdraw-cat-100",
+  "deterministic": true,
+  "disk_free_gib_before": 18.229,
+  "generated_at": "2026-03-21T16:09:14Z",
+  "sample_count": 100,
+  "schema_version": 1,
+  "source_url": "https://storage.googleapis.com/quickdraw_dataset/full/raw/cat.ndjson",
+  "strokes_encoded": 926,
+  "telemetry": {
+    "comet": {
+      "experiment_name": "phase04-tokenizer-scaffold",
+      "logged": false,
+      "project": "zpe-ink",
+      "reason": "COMET_API_KEY missing",
+      "workspace": "zer0pa"
+    },
+    "opik": {
+      "present": false,
+      "reason": "no canonical Opik surface found in this workstream"
+    }
+  },
+  "token_distribution": {
+    "0": 2694,
+    "1": 2209,
+    "2": 3497,
+    "3": 2093,
+    "4": 3630,
+    "5": 1915,
+    "6": 3090,
+    "7": 1622
+  },
+  "vocab_size": 8
+}

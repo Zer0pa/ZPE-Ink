@@ -1,0 +1,65 @@
+{
+  "authority_rule": ".zpink remains sovereign; token sidecar is a bounded follow-on layer",
+  "bounded_fit_summary": {
+    "degraded_datasets": [
+      "adversarial_spike"
+    ],
+    "exact_directional_or_proxy_datasets": [
+      "synthetic_lossless",
+      "iam_proxy",
+      "unipen_proxy"
+    ]
+  },
+  "candidate_surface": "hybrid_token_sidecar",
+  "datasets": [
+    {
+      "dataset": "synthetic_lossless",
+      "deterministic": true,
+      "fit_class": "bounded_directional_exact",
+      "hausdorff_px": 0.0,
+      "note": "directional synthetic fixture",
+      "sidecar_sha256": "5bd3804afa8998d61c73f34617f247ff48c91abe73e030bf68979f5fb79a3890",
+      "stroke_count": 48,
+      "zpink_bytes": 14257
+    },
+    {
+      "dataset": "iam_proxy",
+      "deterministic": true,
+      "fit_class": "bounded_directional_exact",
+      "hausdorff_px": 0.0,
+      "note": "IAM proxy fixture",
+      "sidecar_sha256": "5f67eb9bb73a6c04f62caf2c5b1ec739d6822d6ff643e4b05d47c3fd1a731d2e",
+      "stroke_count": 64,
+      "zpink_bytes": 24476
+    },
+    {
+      "dataset": "unipen_proxy",
+      "deterministic": true,
+      "fit_class": "bounded_directional_exact",
+      "hausdorff_px": 0.0,
+      "note": "UNIPEN proxy fixture",
+      "sidecar_sha256": "474bd6b98478b49b527ae53cb3337bcdcddb7c6ac4c44a370728c83f2f83358e",
+      "stroke_count": 64,
+      "zpink_bytes": 41307
+    },
+    {
+      "dataset": "adversarial_spike",
+      "deterministic": true,
+      "fit_class": "not_promotable_general_surface",
+      "hausdorff_px": 138.81282361511128,
+      "note": "high-velocity adversarial fixture",
+      "sidecar_sha256": "d0bf2809e050111c8c0fe68968f284f45e4996ccb4cb5d0a81cfd20c47bc2b3f",
+      "stroke_count": 24,
+      "zpink_bytes": 43319
+    }
+  ],
+  "decision": {
+    "allowed_use": "directional/proxy interchange indexing and candidate retrieval experiments",
+    "kill_condition": "If high-velocity or non-directional corpora become primary, stop using the token sidecar as a fidelity surface.",
+    "lane_verdict": "OPEN_BOUNDED_CANDIDATE",
+    "promotion_verdict": "DO_NOT_PROMOTE_AS_GENERAL_RUNTIME"
+  },
+  "generated_at": "2026-04-24T01:24:07.297335+00:00",
+  "schema_version": 1,
+  "status": "CANDIDATE_ONLY"
+}

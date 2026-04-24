@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "action_brief": {
+    "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink_ACTION_BRIEF.md",
+    "date": "2026-04-05",
+    "branch_claim": "main",
+    "commit_claim": "0353ec2"
+  },
+  "live_repo": {
+    "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink",
+    "head_commit": "98b5ed73473540667b65d7bd519c2980ff2c188d",
+    "head_branch": "main",
+    "brief_commit_present_in_history": false
+  },
+  "working_tree_reality": {
+    "dirty": true,
+    "key_deleted_tracked_files": [
+      "code/bindings/swift/ZPEInk.swift",
+      "code/bindings/csharp/ZpeInk.cs",
+      "code/zpe_ink/codec.py",
+      "code/zpe_ink/fixtures.py",
+      "code/zpe_ink/inkml.py",
+      "code/zpe_ink/io.py",
+      "code/zpe_ink/metrics.py",
+      "code/tests/test_codec_roundtrip.py",
+      "code/bindings/python_native/src/lib.rs",
+      "code/bindings/wasm/src/lib.rs"
+    ],
+    "non_conflicting_surfaces_still_present": [
+      "code/tests/test_binding_contracts.py",
+      "code/tests/test_phase2_authority.py",
+      "code/tests/test_primitivetoken.py",
+      "code/tests/test_tokenizer.py",
+      "code/scripts/gate_e_cross_runtime.py",
+      "code/scripts/run_primitivetoken_benchmark.py",
+      "code/zpe_ink/binding_contracts.py",
+      "code/zpe_ink/primitivetoken.py",
+      "code/zpe_ink/tokenizer.py",
+      "proofs/reruns/benchmark_freeze_local/baseline_results.json",
+      "proofs/reruns/phase3_external/calliar_benchmark.json",
+      "proofs/reruns/primitive_token_branch/primitivetoken_benchmark.json"
+    ]
+  },
+  "repo_truth_references": [
+    "ZPE-Ink/proofs/reruns/benchmark_freeze_local/claim_scope_map.json",
+    "ZPE-Ink/proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json",
+    "ZPE-Ink/proofs/reruns/phase3_external/blind_clone_verdict.json",
+    "ZPE-Ink/proofs/reruns/phase3_external/calliar_benchmark.json",
+    ".gpd/phases/04-runtime-challenger-and-token-branches/04-01-SUMMARY.md",
+    ".gpd/phases/04-runtime-challenger-and-token-branches/04-02-SUMMARY.md"
+  ],
+  "items": [
+    {
+      "id": "A1",
+      "title": "Implement full Swift decoder",
+      "classification": "BLOCKED_BY_DIRTY_WORKTREE",
+      "repo_head_reference": "code/bindings/swift/ZPEInk.swift",
+      "current_state": "Tracked in HEAD as a header-only probe, deleted in the local worktree.",
+      "why_not_now": "Executing this in-place would require restoring deleted tracked files that conflict with live uncommitted changes.",
+      "wedge_relevance": "Potential future interoperability candidate input, not current wedge proof."
+    },
+    {
+      "id": "A2",
+      "title": "Implement full C# decoder",
+      "classification": "BLOCKED_BY_DIRTY_WORKTREE",
+      "repo_head_reference": "code/bindings/csharp/ZpeInk.cs",
+      "current_state": "Tracked in HEAD as a header-only probe, deleted in the local worktree.",
+      "why_not_now": "Same conflict as A1.",
+      "wedge_relevance": "Potential future interoperability candidate input, not current wedge proof."
+    },
+    {
+      "id": "A3",
+      "title": "Create cross-runtime parity suite",
+      "classification": "STALE_AND_BLOCKED",
+      "repo_head_reference": "code/scripts/gate_e_cross_runtime.py",
+      "current_state": "Equivalent cross-runtime infrastructure already exists in the repo history, but the local worktree deletes required runtime surfaces.",
+      "why_not_now": "The brief frames parity as new work, but the contract already carries parity as a known-good baseline and the local tree currently lacks the files needed for an honest rerun.",
+      "wedge_relevance": "Useful only after binding surfaces are restored or stabilized."
+    },
+    {
+      "id": "A4",
+      "title": "Expand benchmark surface with public handwriting datasets",
+      "classification": "DIAGNOSTIC_ONLY",
+      "repo_head_reference": "proofs/artifacts/public_benchmarks/",
+      "current_state": "Would generate new benchmark intelligence but does not itself prove a wedge.",
+      "why_not_now": "Phase 05 needs a final wedge verdict; broader dataset ingestion is follow-on research unless it becomes decisive for a narrow candidate lane.",
+      "wedge_relevance": "Supports future diagnostic closure, especially for interoperability or algorithm-rehab follow-on."
+    },
+    {
+      "id": "A5",
+      "title": "Analyze MathWriting 1.09x to 1.5x gap",
+      "classification": "DIAGNOSTIC_ONLY",
+      "repo_head_reference": "proofs/artifacts/mathwriting_analysis/",
+      "current_state": "Potentially valuable algorithmic research, but not Phase 05 closure.",
+      "why_not_now": "This is blocker analysis, not enterprise-readiness proof, and it risks pretending transport can still become the wedge despite current comparator and hard-corpus truth.",
+      "wedge_relevance": "Supports future runtime rehab research, not current wedge proof."
+    },
+    {
+      "id": "A6",
+      "title": "Add ecosystem cross-link to README",
+      "classification": "FORBIDDEN_PROXY",
+      "repo_head_reference": "README.md",
+      "current_state": "Pure presentation work.",
+      "why_not_now": "Docs polish is explicitly not a substitute for the authority metric or enterprise readiness.",
+      "wedge_relevance": "None."
+    }
+  ],
+  "summary": {
+    "current_phase_05_use": "Treat A1-A5 as candidate-input ideas only; treat A6 as a forbidden proxy.",
+    "strongest_future_lane_from_brief": "interoperability",
+    "current_execution_verdict": "The brief does not override the contract and cannot be executed blindly against the present dirty worktree."
+  }
+}

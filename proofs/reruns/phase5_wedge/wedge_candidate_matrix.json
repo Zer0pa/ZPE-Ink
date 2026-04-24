@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "authority_inputs": {
+    "structured_tier_ratio": 5.590209480060199,
+    "frozen_brotli_ratio": 6.825565026256283,
+    "mathwriting_ratio": 1.0944074088858728,
+    "crohme_ratio": 1.301456280301924,
+    "calliar_ratio": 2.774608127006351,
+    "sovereign_release_verdict": "FAIL",
+    "contradiction_status": "OPEN",
+    "blind_clone_verdict": "INCONCLUSIVE",
+    "license_surface": "LicenseRef-Zer0pa-SAL-6.0"
+  },
+  "lanes": [
+    {
+      "lane": "transport",
+      "current_status": "NARROW_TRUTH_ONLY",
+      "wedge_viability": "REJECTED_FOR_CURRENT_PHASE",
+      "why": [
+        "Structured-tier pass survives, but the frozen engineering comparator verdict is still FAIL because brotli wins.",
+        "Hard-corpus ratios remain too weak for a broader commercial story.",
+        "The contradiction and release surfaces remain open or fail."
+      ],
+      "decisive_artifacts": [
+        "ZPE-Ink/proofs/reruns/benchmark_freeze_local/baseline_results.json",
+        "ZPE-Ink/proofs/reruns/benchmark_freeze_local/claim_scope_map.json",
+        "ZPE-Ink/proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json"
+      ],
+      "forbidden_proxy_to_reject": "Using the 5x structured-tier surface as if it were a broad enterprise-ready compression wedge."
+    },
+    {
+      "lane": "tokenizer",
+      "current_status": "SCAFFOLD_ONLY",
+      "wedge_viability": "REJECTED_FOR_CURRENT_PHASE",
+      "why": [
+        "Only a bounded QuickDraw scaffold proof exists.",
+        "No hard-corpus, blind-clone, or enterprise boundary evidence upgrades tokenizer into a wedge."
+      ],
+      "decisive_artifacts": [
+        ".gpd/phases/04-runtime-challenger-and-token-branches/04-02-SUMMARY.md",
+        "ZPE-Ink/proofs/reruns/tokenizer_scaffold/tokenizer_corpus_proof.json"
+      ],
+      "forbidden_proxy_to_reject": "Treating the tokenizer scaffold as wedge proof or product readiness."
+    },
+    {
+      "lane": "interoperability",
+      "current_status": "FUTURE_CANDIDATE_ONLY",
+      "wedge_viability": "NARROWEST_FOLLOW_ON_CANDIDATE",
+      "why": [
+        "It is the only lane in the action brief that maps cleanly to WEDG-02 without pretending transport or tokenizer are already promotable.",
+        "A cross-runtime ink interchange kit can stay narrow, license-correct, and commercially legible.",
+        "But the current dirty worktree deletes the tracked binding surfaces required for an honest proof pass."
+      ],
+      "decisive_artifacts": [
+        "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink_ACTION_BRIEF.md",
+        "ZPE-Ink/code/zpe_ink/binding_contracts.py",
+        "ZPE-Ink/code/tests/test_binding_contracts.py",
+        "ZPE-Ink/code/scripts/gate_e_cross_runtime.py"
+      ],
+      "required_next_evidence": [
+        "stabilize or explicitly restore the deleted binding surfaces",
+        "implement real Swift and C# decoders rather than header probes",
+        "rerun binding-contract and cross-runtime parity tests on a clean repo state"
+      ],
+      "forbidden_proxy_to_reject": "Calling interoperability proven while the local worktree deletes the required decoder surfaces."
+    },
+    {
+      "lane": "benchmark_expansion",
+      "current_status": "DIAGNOSTIC_SUPPORT_ONLY",
+      "wedge_viability": "NOT_A_WEDGE",
+      "why": [
+        "More corpora can sharpen blocker intelligence but do not create product wedge proof by themselves.",
+        "This lane is follow-on research after the final Phase 05 decision, not the decision itself."
+      ],
+      "decisive_artifacts": [
+        "ZPE-Ink/proofs/reruns/phase3_external/calliar_benchmark.json",
+        "ZPE-Ink/proofs/reruns/benchmark_freeze_local/baseline_results.json"
+      ],
+      "forbidden_proxy_to_reject": "Treating extra benchmark breadth as equivalent to a viable commercial wedge."
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "lane": "interoperability",
+      "status": "FUTURE_CANDIDATE_ONLY"
+    },
+    {
+      "rank": 2,
+      "lane": "benchmark_expansion",
+      "status": "DIAGNOSTIC_SUPPORT_ONLY"
+    },
+    {
+      "rank": 3,
+      "lane": "transport",
+      "status": "REJECTED_FOR_CURRENT_PHASE"
+    },
+    {
+      "rank": 4,
+      "lane": "tokenizer",
+      "status": "REJECTED_FOR_CURRENT_PHASE"
+    }
+  ],
+  "phase_05_result": {
+    "current_wedge_verdict": "NO_CURRENT_WEDGE_PROVEN",
+    "narrowest_future_candidate": "interoperability",
+    "enterprise_readiness_now": "NOT_READY"
+  }
+}

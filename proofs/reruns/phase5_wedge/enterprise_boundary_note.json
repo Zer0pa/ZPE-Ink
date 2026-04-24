@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "license_surface": {
+    "status": "ACTIVE_CONSTRAINT",
+    "value": "LicenseRef-Zer0pa-SAL-6.0",
+    "effect": "No permissive-open or enterprise-ready inference is allowed."
+  },
+  "compute_boundary": {
+    "default_lane": "M1-local",
+    "redmagic_available": true,
+    "runpod_user_approved": true,
+    "phase5_external_needed": false,
+    "effect": "Phase 05 closes locally because the decisive outcome is a final NO-GO, not a missing external rerun."
+  },
+  "repo_state_boundary": {
+    "nested_repo_head": "98b5ed73473540667b65d7bd519c2980ff2c188d",
+    "dirty_worktree_conflict": true,
+    "critical_deleted_tracked_files": [
+      "code/bindings/swift/ZPEInk.swift",
+      "code/bindings/csharp/ZpeInk.cs",
+      "code/zpe_ink/codec.py"
+    ],
+    "effect": "Phase 05 must not claim live interoperability proof from the current local state."
+  },
+  "evidence_boundary": {
+    "contradiction_status": "OPEN",
+    "sovereign_release_verdict": "FAIL",
+    "blind_clone_verdict": "INCONCLUSIVE",
+    "hard_corpus_verdict": "FAIL",
+    "effect": "Enterprise-readiness language remains blocked."
+  },
+  "allowed_follow_on": {
+    "lane": "interoperability",
+    "status": "future_candidate_only",
+    "preconditions": [
+      "stabilize repo state",
+      "restore or explicitly replace deleted binding surfaces",
+      "implement real Swift and C# decoders",
+      "rerun binding-contract and cross-runtime parity evidence"
+    ]
+  }
+}

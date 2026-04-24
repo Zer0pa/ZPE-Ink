@@ -1,0 +1,22 @@
+{
+  "initial_probe_summary": {
+    "google_ink_stroke_modeler": 0,
+    "iam_dataset": 0,
+    "inkmljs": 1,
+    "pyo3_toolchain": 0,
+    "unipen_dataset": 6,
+    "wacom_universal_ink_library": 0,
+    "wasm_bindgen_toolchain": 127
+  },
+  "runbooks": [
+    "proofs/runbooks/RUNBOOK_ZPE_INK_MASTER.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_A.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_B.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_C.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_D.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_E.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_M.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_NET_NEW.md",
+    "proofs/runbooks/RUNBOOK_ZPE_INK_GATE_F.md"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "source_matrix": "ZPE-Ink/proofs/reruns/phase5_wedge/wedge_candidate_matrix.json",
+  "summary": {
+    "current_wedge_verdict": "NO_CURRENT_WEDGE_PROVEN",
+    "enterprise_readiness_now": "NOT_READY",
+    "narrowest_future_candidate": "interoperability"
+  },
+  "evidence_rows": [
+    {
+      "lane": "transport",
+      "status": "REJECTED_FOR_CURRENT_PHASE",
+      "positive_signal": "Structured-tier ratio remains above 5x versus raw float32.",
+      "blocking_signal": "Brotli still wins on the frozen structured tier and hard-corpus ratios remain weak.",
+      "decisive_artifacts": [
+        "ZPE-Ink/proofs/reruns/benchmark_freeze_local/baseline_results.json",
+        "ZPE-Ink/proofs/reruns/benchmark_freeze_local/claim_scope_map.json"
+      ]
+    },
+    {
+      "lane": "tokenizer",
+      "status": "REJECTED_FOR_CURRENT_PHASE",
+      "positive_signal": "A deterministic tokenizer scaffold proof exists.",
+      "blocking_signal": "The scaffold has not advanced into a wedge or enterprise-readiness surface.",
+      "decisive_artifacts": [
+        ".gpd/phases/04-runtime-challenger-and-token-branches/04-02-SUMMARY.md",
+        "ZPE-Ink/proofs/reruns/tokenizer_scaffold/tokenizer_corpus_proof.json"
+      ]
+    },
+    {
+      "lane": "interoperability",
+      "status": "FUTURE_CANDIDATE_ONLY",
+      "positive_signal": "The brief's decoder/parity cluster maps to a narrow cross-runtime interchange story.",
+      "blocking_signal": "The current dirty worktree deletes tracked binding and codec surfaces required for an honest proof pass.",
+      "decisive_artifacts": [
+        "ZPE-Ink/proofs/reruns/phase5_wedge/action_brief_reality_audit.json",
+        "ZPE-Ink/proofs/reruns/phase5_wedge/worktree_reconciliation.json",
+        "ZPE-Ink/proofs/reruns/phase5_wedge/phase5_execution_manifest.json"
+      ]
+    },
+    {
+      "lane": "benchmark_expansion",
+      "status": "DIAGNOSTIC_SUPPORT_ONLY",
+      "positive_signal": "Additional corpus work could sharpen blocker intelligence.",
+      "blocking_signal": "Benchmark breadth does not itself prove a viable commercial wedge.",
+      "decisive_artifacts": [
+        "ZPE-Ink/proofs/reruns/phase3_external/calliar_benchmark.json",
+        "ZPE-Ink/proofs/reruns/benchmark_freeze_local/baseline_results.json"
+      ]
+    }
+  ]
+}

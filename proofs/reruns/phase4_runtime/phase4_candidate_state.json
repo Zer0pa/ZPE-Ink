@@ -1,0 +1,89 @@
+{
+  "candidate_branch_outcomes": {
+    "primitive_token_branch": {
+      "artifact": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/primitive_token_branch/primitivetoken_benchmark.json",
+      "calliar_bounded": {
+        "hausdorff_max_px": 636.5736406732532,
+        "hausdorff_mean_px": 201.11119574321816,
+        "ratio_brotli": 2.7329382078516518,
+        "ratio_primitive_zstd": 2.883090351936113
+      },
+      "promotion_blockers": [
+        "Bounded Calliar fidelity cost is too high for promotion.",
+        "Frozen claim-scope artifacts remain unchanged until a candidate wins without breaking truth."
+      ],
+      "promotion_status": "CANDIDATE_ONLY",
+      "structured_beats_brotli": true,
+      "structured_overall_ratios": {
+        "brotli": 6.825565026256283,
+        "primitive_raw": 4.41864338556952,
+        "primitive_zstd": 12.377589251348581,
+        "raw_float32_xy": 1.0,
+        "sovereign": 5.590209480060199
+      }
+    },
+    "tokenizer_scaffold": {
+      "artifact": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/tokenizer_scaffold/tokenizer_corpus_proof.json",
+      "deterministic": true,
+      "sample_count": 100,
+      "shipped": true,
+      "strokes_encoded": 926,
+      "vocab_size": 8
+    }
+  },
+  "canonical_telemetry": {
+    "comet": {
+      "project": "zpe-ink",
+      "source_result": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase1_m1_local/comet_logging_result.json",
+      "workspace": "zer0pa"
+    },
+    "opik": {
+      "present": false,
+      "reason": "no canonical Opik surface found in this workstream"
+    }
+  },
+  "credential_truth": {
+    "comet_api_key_present": false,
+    "runpod_api_key_present": false
+  },
+  "generated_at": "2026-03-21T16:10:39Z",
+  "lane": "ZPE Ink",
+  "open_items": [
+    "Primitive-token sovereign promotion blocked by bounded Calliar fidelity loss.",
+    "Comet logging remains skipped locally until COMET_API_KEY is present.",
+    "RunPod reruns remain unavailable from this shell until RUNPOD_API_KEY is present."
+  ],
+  "phase": "04",
+  "phase_name": "runtime-challenger-and-token-branches",
+  "repo": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink",
+  "schema_version": 1,
+  "telemetry_execution": {
+    "primitive_token_branch": {
+      "comet": {
+        "experiment_name": "phase04-primitive-token-branch",
+        "logged": false,
+        "project": "zpe-ink",
+        "reason": "COMET_API_KEY missing",
+        "workspace": "zer0pa"
+      },
+      "opik": {
+        "present": false,
+        "reason": "no canonical Opik surface found in this workstream"
+      }
+    },
+    "tokenizer_scaffold": {
+      "comet": {
+        "experiment_name": "phase04-tokenizer-scaffold",
+        "logged": false,
+        "project": "zpe-ink",
+        "reason": "COMET_API_KEY missing",
+        "workspace": "zer0pa"
+      },
+      "opik": {
+        "present": false,
+        "reason": "no canonical Opik surface found in this workstream"
+      }
+    }
+  },
+  "workspace": "/Users/Zer0pa/ZPE/ZPE Ink"
+}

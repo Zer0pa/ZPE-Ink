@@ -1,0 +1,93 @@
+{
+  "authority_state": {
+    "appendix_all_pass": false,
+    "overall_current_verdict": "INCONCLUSIVE",
+    "quality_surface_verdict": "PASS",
+    "release_go_no_go": "NO-GO",
+    "release_report_verdict": "INCONCLUSIVE",
+    "release_surface_verdict": "FAIL"
+  },
+  "blockers": [
+    {
+      "class": "claim-scope issue",
+      "evidence": [
+        "quality_gate_scorecard.json",
+        "handoff_manifest.json",
+        "generate_handoff.py",
+        "INK_WAVE1_RELEASE_READINESS_REPORT.md"
+      ],
+      "id": "BLK-FZ09-SURFACE-MISMATCH",
+      "note": "Internal quality PASS and sovereign release NO-GO coexist because they are different gate surfaces.",
+      "verdict": "FAIL"
+    },
+    {
+      "class": "external-access dependency",
+      "evidence": [
+        "maximalization_gate_results.json"
+      ],
+      "id": "BLK-M1-REAL-IAM-UNIPEN",
+      "note": "Gate M1 remains FAIL because direct UNIPEN parity evidence is unavailable.",
+      "verdict": "FAIL"
+    },
+    {
+      "class": "external-access dependency",
+      "evidence": [
+        "impracticality_decisions.json"
+      ],
+      "id": "BLK-UNIPEN-ACCESS",
+      "note": "UNIPEN acquisition remained impossible after three concrete attempts.",
+      "verdict": "PAUSED_EXTERNAL"
+    },
+    {
+      "class": "external-access dependency",
+      "evidence": [
+        "cross_script_generalization_report.json",
+        "net_new_gap_closure_matrix.json"
+      ],
+      "id": "BLK-CROSS-SCRIPT-NON_LATIN",
+      "note": "A real non-Latin online-stroke corpus has not yet been executed in-lane.",
+      "verdict": "PAUSED_EXTERNAL"
+    }
+  ],
+  "boundary": {
+    "adb_available": true,
+    "attached_adb_devices": [
+      "FY25013101C8           device usb:1-1 product:NX789J-EEA model:NX789J device:NX789J transport_id:4"
+    ],
+    "free_disk_gib": 3.296,
+    "lane": "M1-local"
+  },
+  "failing_release_gates": [
+    {
+      "evidence": "cross_script_generalization_report.json",
+      "id": "E-G3_cross_script_required",
+      "linked_blockers": [
+        "BLK-CROSS-SCRIPT-NON_LATIN"
+      ],
+      "note": "",
+      "verdict": "FAIL"
+    },
+    {
+      "evidence": "maximalization_gate_results.json",
+      "id": "M1_real_iam_unipen_non_inferior",
+      "linked_blockers": [
+        "BLK-M1-REAL-IAM-UNIPEN",
+        "BLK-UNIPEN-ACCESS"
+      ],
+      "note": "",
+      "verdict": "FAIL"
+    }
+  ],
+  "resolution_state": {
+    "classification_status": "CLASSIFIED_LOCAL",
+    "contradiction_status": "OPEN",
+    "sovereign_gate": "handoff_manifest.go_no_go",
+    "sovereign_release_verdict": "FAIL"
+  },
+  "root_cause_assessment": [
+    "The internal quality scorecard can pass without appendix D/E closure.",
+    "The release handoff remains NO-GO until appendix D/E gates pass as well as the core transport surface.",
+    "Current failing release gates: E-G3_cross_script_required, M1_real_iam_unipen_non_inferior"
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-24T01:20:00Z",
+  "branch": "chore/novelty-card-backfill-2026-04-22",
+  "commit": "8919e0d8df2866112d55a968d77e008bf33e00a4",
+  "governing_baseline": "proofs/reruns/phase5_wedge/final_go_no_go_surface.json",
+  "contradictions": [
+    {
+      "id": "verdict_surface",
+      "surfaces": [
+        "README.md",
+        "proofs/reruns/phase5_wedge/final_go_no_go_surface.json"
+      ],
+      "observed_conflict": "README said INCONCLUSIVE while the sovereign closeout said NO-GO.",
+      "classification": "stale_live_doc",
+      "resolution": "README now preserves NO-GO as the sovereign commercial verdict and points to a separate bounded follow-on decision artifact."
+    },
+    {
+      "id": "wedge_surface",
+      "surfaces": [
+        "docs/market_surface.json",
+        "proofs/reruns/phase5_wedge/final_go_no_go_surface.json"
+      ],
+      "observed_conflict": "market surface described a present commercial wedge while Phase 05 closed with no current wedge proven.",
+      "classification": "stale_live_doc",
+      "resolution": "market surface now says no current wedge is proven and names only one bounded interoperability candidate lane."
+    },
+    {
+      "id": "license_surface",
+      "surfaces": [
+        "README.md",
+        "LICENSE",
+        "pyproject.toml",
+        "code/pyproject.toml"
+      ],
+      "observed_conflict": "README badge said SAL v7.0 while legal and package metadata are SAL 6.2.",
+      "classification": "stale_live_doc",
+      "resolution": "README badge is corrected to SAL v6.2."
+    },
+    {
+      "id": "runtime_surface",
+      "surfaces": [
+        "docs/ARCHITECTURE.md",
+        "code/tests/test_cross_runtime_parity.py",
+        "proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json"
+      ],
+      "observed_conflict": "architecture understated Swift/C# as contract-checked only while the live rerun executes decode parity locally.",
+      "classification": "stale_live_doc",
+      "resolution": "architecture now marks Swift/C# as source-verified on the current local rerun and keeps the token sidecar candidate-only."
+    }
+  ],
+  "overall_truth_surface": "COHERENT",
+  "remaining_non_contradiction_blockers": [
+    "blind-clone verdict remains INCONCLUSIVE",
+    "hard-corpus authority remains weak",
+    "token sidecar degrades on adversarial high-velocity fixtures and cannot be promoted as a general runtime"
+  ]
+}

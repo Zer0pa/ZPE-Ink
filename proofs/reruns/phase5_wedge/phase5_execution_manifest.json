@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-05",
+  "phase": 5,
+  "phase_name": "wedge-proof-and-enterprise-readiness",
+  "primary_closeout_mode": "local_evidence_synthesis",
+  "repo": {
+    "main_worktree": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink",
+    "head_commit": "98b5ed73473540667b65d7bd519c2980ff2c188d",
+    "head_branch": "main",
+    "dirty_worktree": true
+  },
+  "execution_lane": {
+    "kind": "clean_side_worktree",
+    "path": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/ZPE-Ink-phase05-exec",
+    "branch": "codex/phase05-wedge-proof",
+    "reason": "The dirty main worktree deletes tracked codec and binding files that the revised action brief and historical gate scripts assume are present."
+  },
+  "phase05_primary_artifacts": [
+    "ZPE-Ink/proofs/reruns/phase5_wedge/action_brief_reality_audit.json",
+    "ZPE-Ink/proofs/reruns/phase5_wedge/wedge_candidate_matrix.json",
+    "ZPE-Ink/proofs/reruns/phase5_wedge/wedge_proof_memo.md",
+    "ZPE-Ink/proofs/reruns/phase5_wedge/enterprise_boundary_note.json",
+    "ZPE-Ink/proofs/reruns/phase5_wedge/final_go_no_go_surface.json"
+  ],
+  "bounded_local_replay": {
+    "artifact_root": "ZPE-Ink/proofs/reruns/phase5_wedge/replay_local_boundary_probe_20260405Z",
+    "notes": [
+      "This replay is supporting evidence only; it does not replace the governing Phase 02-04 proof surface.",
+      "The bundle was normalized to a stable boundary-probe path after the initial shell command created an incorrect literal timestamp directory."
+    ],
+    "gate_a": {
+      "status": "PASS",
+      "evidence": "ZPE-Ink/proofs/reruns/phase5_wedge/replay_local_boundary_probe_20260405Z/baseline_inventory.json"
+    },
+    "gate_e": {
+      "status": "FAIL",
+      "evidence": "ZPE-Ink/proofs/reruns/phase5_wedge/replay_local_boundary_probe_20260405Z/ink_cross_runtime_parity.json",
+      "failure_signature": {
+        "wasm_build_returncode": 127,
+        "swift_decode_returncode": 0,
+        "node_decode_returncode": 1,
+        "pyo3_build_returncode": 1,
+        "pyo3_import_returncode": 1
+      },
+      "interpretation": "The fresh local replay confirms a current toolchain boundary and does not reopen the final Phase 05 verdict."
+    }
+  },
+  "final_phase_verdict": {
+    "current_wedge": null,
+    "narrowest_future_candidate": "interoperability",
+    "enterprise_readiness": "NOT_READY",
+    "go_no_go": "NO-GO"
+  }
+}

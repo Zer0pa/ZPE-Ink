@@ -1,0 +1,47 @@
+{
+  "phase": "03",
+  "status": "COMPLETE",
+  "local_host": {
+    "workspace": "/Users/Zer0pa/ZPE/ZPE Ink",
+    "adb_devices": [],
+    "red_magic_available": false,
+    "disk_free": "38 GiB"
+  },
+  "runpod": {
+    "pod_id": "wijfmmgnjovmuu",
+    "ssh_runpod_io": {
+      "status": "FAIL",
+      "detail": "Permission denied (publickey)"
+    },
+    "direct_tcp": {
+      "status": "PASS",
+      "host": "38.80.152.72",
+      "port": 30709,
+      "user": "root",
+      "hostname": "e445a2982b5c",
+      "disk_free": "1.9 GiB"
+    }
+  },
+  "dataset_probes": {
+    "iam_on_line": {
+      "status": "PASS",
+      "http_status": 200,
+      "detail": "Landing page reachable"
+    },
+    "unipen": {
+      "status": "FAIL",
+      "detail": "DNS resolution failed for unipen.nici.ru.nl"
+    },
+    "calliar": {
+      "status": "PASS",
+      "samples": 2500,
+      "compression_ratio": 2.774608127006351,
+      "detail": "Real Arabic online-stroke corpus executed on RunPod"
+    }
+  },
+  "claim_impact": [
+    "Blind-clone verification is now executable through the direct TCP RunPod lane.",
+    "A real non-Latin online-stroke surface now exists in-lane through Calliar.",
+    "UNIPEN remains an explicit external blocker and must not be narrated as closed."
+  ]
+}

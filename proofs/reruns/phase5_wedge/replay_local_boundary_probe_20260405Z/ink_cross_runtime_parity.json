@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "node_stdout": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase5_wedge/replay_local_boundary_probe_20260405Z/parity/node_decoded.json",
+    "parity_input": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase5_wedge/replay_local_boundary_probe_20260405Z/parity/cross_runtime_input.zpink",
+    "swift_stdout": "/Users/Zer0pa/ZPE/ZPE Ink/ZPE-Ink/proofs/reruns/phase5_wedge/replay_local_boundary_probe_20260405Z/parity/swift_decoded.json"
+  },
+  "claim_id": "INK-C006",
+  "node_decode_returncode": 1,
+  "pass": false,
+  "pyo3_build_returncode": 1,
+  "pyo3_import_returncode": 1,
+  "python_hash": "973de44c7909617736a9748e066586ff16dfa557aed4249f983a7d44c0fe53b7",
+  "swift_decode_returncode": 0,
+  "swift_hash": "973de44c7909617736a9748e066586ff16dfa557aed4249f983a7d44c0fe53b7",
+  "wasm_build_returncode": 127,
+  "wasm_hash": null
+}

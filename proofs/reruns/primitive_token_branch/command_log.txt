@@ -1,0 +1,1236 @@
+[2026-03-21T16:06:32.437926+00:00] synthetic_lossless_primitive_zstd_000
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=6193
+---
+[2026-03-21T16:06:32.663704+00:00] synthetic_lossless_brotli_000
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=11450
+---
+[2026-03-21T16:06:34.402145+00:00] iam_proxy_primitive_zstd_000
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=9995
+---
+[2026-03-21T16:06:34.696334+00:00] iam_proxy_brotli_000
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=20666
+---
+[2026-03-21T16:06:38.645525+00:00] unipen_proxy_primitive_zstd_000
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=16961
+---
+[2026-03-21T16:06:39.098481+00:00] unipen_proxy_brotli_000
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=26137
+---
+[2026-03-21T16:06:52.637735+00:00] calliar_bounded_primitive_zstd_000
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=145
+---
+[2026-03-21T16:06:52.662491+00:00] calliar_bounded_brotli_000
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=159
+---
+[2026-03-21T16:06:52.688029+00:00] calliar_bounded_primitive_zstd_001
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=148
+---
+[2026-03-21T16:06:52.711888+00:00] calliar_bounded_brotli_001
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=155
+---
+[2026-03-21T16:06:52.737776+00:00] calliar_bounded_primitive_zstd_002
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=167
+---
+[2026-03-21T16:06:52.762135+00:00] calliar_bounded_brotli_002
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=147
+---
+[2026-03-21T16:06:52.791779+00:00] calliar_bounded_primitive_zstd_003
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=133
+---
+[2026-03-21T16:06:52.824286+00:00] calliar_bounded_brotli_003
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=150
+---
+[2026-03-21T16:06:52.853914+00:00] calliar_bounded_primitive_zstd_004
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=191
+---
+[2026-03-21T16:06:52.884251+00:00] calliar_bounded_brotli_004
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=282
+---
+[2026-03-21T16:06:52.917957+00:00] calliar_bounded_primitive_zstd_005
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=133
+---
+[2026-03-21T16:06:52.944658+00:00] calliar_bounded_brotli_005
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=111
+---
+[2026-03-21T16:06:52.979106+00:00] calliar_bounded_primitive_zstd_006
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=276
+---
+[2026-03-21T16:06:53.009333+00:00] calliar_bounded_brotli_006
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=333
+---
+[2026-03-21T16:06:53.042041+00:00] calliar_bounded_primitive_zstd_007
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=387
+---
+[2026-03-21T16:06:53.071495+00:00] calliar_bounded_brotli_007
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=505
+---
+[2026-03-21T16:06:53.105832+00:00] calliar_bounded_primitive_zstd_008
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=139
+---
+[2026-03-21T16:06:53.134839+00:00] calliar_bounded_brotli_008
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=113
+---
+[2026-03-21T16:06:53.162879+00:00] calliar_bounded_primitive_zstd_009
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=184
+---
+[2026-03-21T16:06:53.189002+00:00] calliar_bounded_brotli_009
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=178
+---
+[2026-03-21T16:06:53.218553+00:00] calliar_bounded_primitive_zstd_010
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=646
+---
+[2026-03-21T16:06:53.247887+00:00] calliar_bounded_brotli_010
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=692
+---
+[2026-03-21T16:06:53.279221+00:00] calliar_bounded_primitive_zstd_011
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=175
+---
+[2026-03-21T16:06:53.308060+00:00] calliar_bounded_brotli_011
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=207
+---
+[2026-03-21T16:06:53.342121+00:00] calliar_bounded_primitive_zstd_012
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=835
+---
+[2026-03-21T16:06:53.371550+00:00] calliar_bounded_brotli_012
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=892
+---
+[2026-03-21T16:06:53.403887+00:00] calliar_bounded_primitive_zstd_013
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=275
+---
+[2026-03-21T16:06:53.431751+00:00] calliar_bounded_brotli_013
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=336
+---
+[2026-03-21T16:06:53.461629+00:00] calliar_bounded_primitive_zstd_014
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=378
+---
+[2026-03-21T16:06:53.490175+00:00] calliar_bounded_brotli_014
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=387
+---
+[2026-03-21T16:06:53.532583+00:00] calliar_bounded_primitive_zstd_015
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=1117
+---
+[2026-03-21T16:06:53.567932+00:00] calliar_bounded_brotli_015
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=1162
+---
+[2026-03-21T16:06:53.610036+00:00] calliar_bounded_primitive_zstd_016
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=261
+---
+[2026-03-21T16:06:53.637812+00:00] calliar_bounded_brotli_016
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=272
+---
+[2026-03-21T16:06:53.667331+00:00] calliar_bounded_primitive_zstd_017
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=407
+---
+[2026-03-21T16:06:53.697957+00:00] calliar_bounded_brotli_017
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=384
+---
+[2026-03-21T16:06:53.732252+00:00] calliar_bounded_primitive_zstd_018
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=176
+---
+[2026-03-21T16:06:53.763116+00:00] calliar_bounded_brotli_018
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=208
+---
+[2026-03-21T16:06:53.795751+00:00] calliar_bounded_primitive_zstd_019
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=239
+---
+[2026-03-21T16:06:53.823196+00:00] calliar_bounded_brotli_019
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=262
+---
+[2026-03-21T16:06:53.849745+00:00] calliar_bounded_primitive_zstd_020
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=141
+---
+[2026-03-21T16:06:53.876365+00:00] calliar_bounded_brotli_020
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=134
+---
+[2026-03-21T16:06:53.907391+00:00] calliar_bounded_primitive_zstd_021
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=578
+---
+[2026-03-21T16:06:53.940059+00:00] calliar_bounded_brotli_021
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=607
+---
+[2026-03-21T16:06:53.971744+00:00] calliar_bounded_primitive_zstd_022
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=168
+---
+[2026-03-21T16:06:54.002015+00:00] calliar_bounded_brotli_022
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=204
+---
+[2026-03-21T16:06:54.037072+00:00] calliar_bounded_primitive_zstd_023
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=336
+---
+[2026-03-21T16:06:54.070624+00:00] calliar_bounded_brotli_023
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=361
+---
+[2026-03-21T16:06:54.107203+00:00] calliar_bounded_primitive_zstd_024
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=360
+---
+[2026-03-21T16:06:54.148148+00:00] calliar_bounded_brotli_024
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=337
+---
+[2026-03-21T16:06:54.188709+00:00] calliar_bounded_primitive_zstd_025
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=411
+---
+[2026-03-21T16:06:54.222903+00:00] calliar_bounded_brotli_025
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=487
+---
+[2026-03-21T16:06:54.260694+00:00] calliar_bounded_primitive_zstd_026
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=412
+---
+[2026-03-21T16:06:54.292186+00:00] calliar_bounded_brotli_026
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=416
+---
+[2026-03-21T16:06:54.333609+00:00] calliar_bounded_primitive_zstd_027
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=446
+---
+[2026-03-21T16:06:54.367005+00:00] calliar_bounded_brotli_027
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=404
+---
+[2026-03-21T16:06:54.404433+00:00] calliar_bounded_primitive_zstd_028
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=720
+---
+[2026-03-21T16:06:54.435910+00:00] calliar_bounded_brotli_028
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=751
+---
+[2026-03-21T16:06:54.469228+00:00] calliar_bounded_primitive_zstd_029
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=402
+---
+[2026-03-21T16:06:54.497336+00:00] calliar_bounded_brotli_029
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=355
+---
+[2026-03-21T16:06:54.524965+00:00] calliar_bounded_primitive_zstd_030
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=175
+---
+[2026-03-21T16:06:54.549909+00:00] calliar_bounded_brotli_030
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=217
+---
+[2026-03-21T16:06:54.576346+00:00] calliar_bounded_primitive_zstd_031
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=419
+---
+[2026-03-21T16:06:54.602665+00:00] calliar_bounded_brotli_031
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=485
+---
+[2026-03-21T16:06:54.629816+00:00] calliar_bounded_primitive_zstd_032
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=198
+---
+[2026-03-21T16:06:54.655938+00:00] calliar_bounded_brotli_032
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=150
+---
+[2026-03-21T16:06:54.687486+00:00] calliar_bounded_primitive_zstd_033
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=764
+---
+[2026-03-21T16:06:54.717140+00:00] calliar_bounded_brotli_033
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=739
+---
+[2026-03-21T16:06:54.750458+00:00] calliar_bounded_primitive_zstd_034
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=422
+---
+[2026-03-21T16:06:54.776943+00:00] calliar_bounded_brotli_034
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=388
+---
+[2026-03-21T16:06:54.808086+00:00] calliar_bounded_primitive_zstd_035
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=481
+---
+[2026-03-21T16:06:54.835983+00:00] calliar_bounded_brotli_035
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=549
+---
+[2026-03-21T16:06:54.864867+00:00] calliar_bounded_primitive_zstd_036
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=134
+---
+[2026-03-21T16:06:54.889983+00:00] calliar_bounded_brotli_036
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=155
+---
+[2026-03-21T16:06:54.916260+00:00] calliar_bounded_primitive_zstd_037
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=197
+---
+[2026-03-21T16:06:54.940716+00:00] calliar_bounded_brotli_037
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=168
+---
+[2026-03-21T16:06:54.969197+00:00] calliar_bounded_primitive_zstd_038
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=192
+---
+[2026-03-21T16:06:54.997770+00:00] calliar_bounded_brotli_038
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=211
+---
+[2026-03-21T16:06:55.024075+00:00] calliar_bounded_primitive_zstd_039
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=150
+---
+[2026-03-21T16:06:55.049546+00:00] calliar_bounded_brotli_039
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=146
+---
+[2026-03-21T16:06:55.077127+00:00] calliar_bounded_primitive_zstd_040
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=530
+---
+[2026-03-21T16:06:55.102944+00:00] calliar_bounded_brotli_040
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=587
+---
+[2026-03-21T16:06:55.132940+00:00] calliar_bounded_primitive_zstd_041
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=526
+---
+[2026-03-21T16:06:55.158091+00:00] calliar_bounded_brotli_041
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=458
+---
+[2026-03-21T16:06:55.185943+00:00] calliar_bounded_primitive_zstd_042
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=226
+---
+[2026-03-21T16:06:55.210071+00:00] calliar_bounded_brotli_042
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=272
+---
+[2026-03-21T16:06:55.237990+00:00] calliar_bounded_primitive_zstd_043
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=140
+---
+[2026-03-21T16:06:55.262559+00:00] calliar_bounded_brotli_043
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=136
+---
+[2026-03-21T16:06:55.290960+00:00] calliar_bounded_primitive_zstd_044
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=235
+---
+[2026-03-21T16:06:55.317503+00:00] calliar_bounded_brotli_044
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=249
+---
+[2026-03-21T16:06:55.344160+00:00] calliar_bounded_primitive_zstd_045
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=283
+---
+[2026-03-21T16:06:55.369949+00:00] calliar_bounded_brotli_045
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=255
+---
+[2026-03-21T16:06:55.397347+00:00] calliar_bounded_primitive_zstd_046
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=154
+---
+[2026-03-21T16:06:55.424494+00:00] calliar_bounded_brotli_046
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=134
+---
+[2026-03-21T16:06:55.450994+00:00] calliar_bounded_primitive_zstd_047
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=204
+---
+[2026-03-21T16:06:55.476467+00:00] calliar_bounded_brotli_047
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=169
+---
+[2026-03-21T16:06:55.507470+00:00] calliar_bounded_primitive_zstd_048
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=427
+---
+[2026-03-21T16:06:55.535984+00:00] calliar_bounded_brotli_048
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=370
+---
+[2026-03-21T16:06:55.567738+00:00] calliar_bounded_primitive_zstd_049
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=454
+---
+[2026-03-21T16:06:55.595872+00:00] calliar_bounded_brotli_049
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=509
+---
+[2026-03-21T16:06:55.630001+00:00] calliar_bounded_primitive_zstd_050
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=918
+---
+[2026-03-21T16:06:55.658679+00:00] calliar_bounded_brotli_050
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=866
+---
+[2026-03-21T16:06:55.692080+00:00] calliar_bounded_primitive_zstd_051
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=327
+---
+[2026-03-21T16:06:55.719609+00:00] calliar_bounded_brotli_051
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=389
+---
+[2026-03-21T16:06:55.750404+00:00] calliar_bounded_primitive_zstd_052
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=480
+---
+[2026-03-21T16:06:55.776146+00:00] calliar_bounded_brotli_052
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=510
+---
+[2026-03-21T16:06:55.804991+00:00] calliar_bounded_primitive_zstd_053
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=271
+---
+[2026-03-21T16:06:55.829130+00:00] calliar_bounded_brotli_053
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=276
+---
+[2026-03-21T16:06:55.855163+00:00] calliar_bounded_primitive_zstd_054
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=282
+---
+[2026-03-21T16:06:55.878706+00:00] calliar_bounded_brotli_054
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=248
+---
+[2026-03-21T16:06:55.904401+00:00] calliar_bounded_primitive_zstd_055
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=105
+---
+[2026-03-21T16:06:55.928034+00:00] calliar_bounded_brotli_055
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=123
+---
+[2026-03-21T16:06:55.953766+00:00] calliar_bounded_primitive_zstd_056
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=110
+---
+[2026-03-21T16:06:55.977699+00:00] calliar_bounded_brotli_056
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=169
+---
+[2026-03-21T16:06:56.003802+00:00] calliar_bounded_primitive_zstd_057
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=313
+---
+[2026-03-21T16:06:56.026986+00:00] calliar_bounded_brotli_057
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=346
+---
+[2026-03-21T16:06:56.054362+00:00] calliar_bounded_primitive_zstd_058
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=549
+---
+[2026-03-21T16:06:56.079041+00:00] calliar_bounded_brotli_058
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=559
+---
+[2026-03-21T16:06:56.105350+00:00] calliar_bounded_primitive_zstd_059
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=204
+---
+[2026-03-21T16:06:56.129573+00:00] calliar_bounded_brotli_059
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=203
+---
+[2026-03-21T16:06:56.159057+00:00] calliar_bounded_primitive_zstd_060
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=568
+---
+[2026-03-21T16:06:56.186692+00:00] calliar_bounded_brotli_060
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=666
+---
+[2026-03-21T16:06:56.218354+00:00] calliar_bounded_primitive_zstd_061
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=148
+---
+[2026-03-21T16:06:56.245246+00:00] calliar_bounded_brotli_061
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=272
+---
+[2026-03-21T16:06:56.274910+00:00] calliar_bounded_primitive_zstd_062
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=213
+---
+[2026-03-21T16:06:56.301252+00:00] calliar_bounded_brotli_062
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=231
+---
+[2026-03-21T16:06:56.329898+00:00] calliar_bounded_primitive_zstd_063
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=208
+---
+[2026-03-21T16:06:56.357947+00:00] calliar_bounded_brotli_063
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=241
+---
+[2026-03-21T16:06:56.393726+00:00] calliar_bounded_primitive_zstd_064
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=465
+---
+[2026-03-21T16:06:56.423691+00:00] calliar_bounded_brotli_064
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=502
+---
+[2026-03-21T16:06:56.456902+00:00] calliar_bounded_primitive_zstd_065
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=406
+---
+[2026-03-21T16:06:56.483684+00:00] calliar_bounded_brotli_065
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=444
+---
+[2026-03-21T16:06:56.510354+00:00] calliar_bounded_primitive_zstd_066
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=230
+---
+[2026-03-21T16:06:56.534710+00:00] calliar_bounded_brotli_066
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=292
+---
+[2026-03-21T16:06:56.560941+00:00] calliar_bounded_primitive_zstd_067
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=179
+---
+[2026-03-21T16:06:56.586352+00:00] calliar_bounded_brotli_067
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=158
+---
+[2026-03-21T16:06:56.615187+00:00] calliar_bounded_primitive_zstd_068
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=467
+---
+[2026-03-21T16:06:56.640232+00:00] calliar_bounded_brotli_068
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=604
+---
+[2026-03-21T16:06:56.668446+00:00] calliar_bounded_primitive_zstd_069
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=122
+---
+[2026-03-21T16:06:56.692388+00:00] calliar_bounded_brotli_069
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=147
+---
+[2026-03-21T16:06:56.718914+00:00] calliar_bounded_primitive_zstd_070
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=154
+---
+[2026-03-21T16:06:56.750808+00:00] calliar_bounded_brotli_070
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=182
+---
+[2026-03-21T16:06:56.783784+00:00] calliar_bounded_primitive_zstd_071
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=543
+---
+[2026-03-21T16:06:56.816721+00:00] calliar_bounded_brotli_071
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=594
+---
+[2026-03-21T16:06:56.855976+00:00] calliar_bounded_primitive_zstd_072
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=187
+---
+[2026-03-21T16:06:56.885828+00:00] calliar_bounded_brotli_072
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=199
+---
+[2026-03-21T16:06:56.917773+00:00] calliar_bounded_primitive_zstd_073
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=502
+---
+[2026-03-21T16:06:56.950401+00:00] calliar_bounded_brotli_073
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=498
+---
+[2026-03-21T16:06:56.986481+00:00] calliar_bounded_primitive_zstd_074
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=409
+---
+[2026-03-21T16:06:57.017830+00:00] calliar_bounded_brotli_074
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=441
+---
+[2026-03-21T16:06:57.050176+00:00] calliar_bounded_primitive_zstd_075
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=315
+---
+[2026-03-21T16:06:57.080440+00:00] calliar_bounded_brotli_075
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=340
+---
+[2026-03-21T16:06:57.110194+00:00] calliar_bounded_primitive_zstd_076
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=158
+---
+[2026-03-21T16:06:57.138112+00:00] calliar_bounded_brotli_076
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=286
+---
+[2026-03-21T16:06:57.165592+00:00] calliar_bounded_primitive_zstd_077
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=160
+---
+[2026-03-21T16:06:57.189351+00:00] calliar_bounded_brotli_077
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=131
+---
+[2026-03-21T16:06:57.214883+00:00] calliar_bounded_primitive_zstd_078
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=159
+---
+[2026-03-21T16:06:57.239816+00:00] calliar_bounded_brotli_078
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=206
+---
+[2026-03-21T16:06:57.266576+00:00] calliar_bounded_primitive_zstd_079
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=360
+---
+[2026-03-21T16:06:57.291830+00:00] calliar_bounded_brotli_079
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=372
+---
+[2026-03-21T16:06:57.319309+00:00] calliar_bounded_primitive_zstd_080
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=207
+---
+[2026-03-21T16:06:57.346113+00:00] calliar_bounded_brotli_080
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=164
+---
+[2026-03-21T16:06:57.373164+00:00] calliar_bounded_primitive_zstd_081
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=186
+---
+[2026-03-21T16:06:57.399950+00:00] calliar_bounded_brotli_081
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=183
+---
+[2026-03-21T16:06:57.426647+00:00] calliar_bounded_primitive_zstd_082
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=145
+---
+[2026-03-21T16:06:57.454109+00:00] calliar_bounded_brotli_082
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=150
+---
+[2026-03-21T16:06:57.483355+00:00] calliar_bounded_primitive_zstd_083
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=478
+---
+[2026-03-21T16:06:57.509949+00:00] calliar_bounded_brotli_083
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=464
+---
+[2026-03-21T16:06:57.538479+00:00] calliar_bounded_primitive_zstd_084
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=130
+---
+[2026-03-21T16:06:57.567242+00:00] calliar_bounded_brotli_084
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=144
+---
+[2026-03-21T16:06:57.595273+00:00] calliar_bounded_primitive_zstd_085
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=118
+---
+[2026-03-21T16:06:57.622530+00:00] calliar_bounded_brotli_085
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=182
+---
+[2026-03-21T16:06:57.652309+00:00] calliar_bounded_primitive_zstd_086
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=126
+---
+[2026-03-21T16:06:57.677611+00:00] calliar_bounded_brotli_086
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=161
+---
+[2026-03-21T16:06:57.706493+00:00] calliar_bounded_primitive_zstd_087
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=345
+---
+[2026-03-21T16:06:57.735431+00:00] calliar_bounded_brotli_087
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=332
+---
+[2026-03-21T16:06:57.767999+00:00] calliar_bounded_primitive_zstd_088
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=460
+---
+[2026-03-21T16:06:57.799059+00:00] calliar_bounded_brotli_088
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=539
+---
+[2026-03-21T16:06:57.830327+00:00] calliar_bounded_primitive_zstd_089
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=127
+---
+[2026-03-21T16:06:57.856144+00:00] calliar_bounded_brotli_089
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=131
+---
+[2026-03-21T16:06:57.882109+00:00] calliar_bounded_primitive_zstd_090
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=187
+---
+[2026-03-21T16:06:57.906408+00:00] calliar_bounded_brotli_090
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=182
+---
+[2026-03-21T16:06:57.932250+00:00] calliar_bounded_primitive_zstd_091
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=201
+---
+[2026-03-21T16:06:57.956633+00:00] calliar_bounded_brotli_091
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=219
+---
+[2026-03-21T16:06:57.987856+00:00] calliar_bounded_primitive_zstd_092
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=946
+---
+[2026-03-21T16:06:58.016613+00:00] calliar_bounded_brotli_092
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=977
+---
+[2026-03-21T16:06:58.048245+00:00] calliar_bounded_primitive_zstd_093
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=179
+---
+[2026-03-21T16:06:58.073555+00:00] calliar_bounded_brotli_093
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=174
+---
+[2026-03-21T16:06:58.103360+00:00] calliar_bounded_primitive_zstd_094
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=227
+---
+[2026-03-21T16:06:58.131114+00:00] calliar_bounded_brotli_094
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=299
+---
+[2026-03-21T16:06:58.161371+00:00] calliar_bounded_primitive_zstd_095
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=286
+---
+[2026-03-21T16:06:58.188838+00:00] calliar_bounded_brotli_095
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=348
+---
+[2026-03-21T16:06:58.220032+00:00] calliar_bounded_primitive_zstd_096
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=650
+---
+[2026-03-21T16:06:58.304538+00:00] calliar_bounded_brotli_096
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=598
+---
+[2026-03-21T16:06:58.338104+00:00] calliar_bounded_primitive_zstd_097
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=251
+---
+[2026-03-21T16:06:58.365994+00:00] calliar_bounded_brotli_097
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=205
+---
+[2026-03-21T16:06:58.395402+00:00] calliar_bounded_primitive_zstd_098
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=432
+---
+[2026-03-21T16:06:58.424569+00:00] calliar_bounded_brotli_098
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=522
+---
+[2026-03-21T16:06:58.458883+00:00] calliar_bounded_primitive_zstd_099
+CMD: /usr/local/bin/zstd -3 -q -c
+RC: 0
+STDOUT:
+stdout_bytes=417
+---
+[2026-03-21T16:06:58.486483+00:00] calliar_bounded_brotli_099
+CMD: /usr/local/bin/brotli -q 11 -c
+RC: 0
+STDOUT:
+stdout_bytes=275
+---

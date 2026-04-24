@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-24T01:24:00Z",
+  "historical_baseline": {
+    "phase5_verdict": "NO-GO",
+    "enterprise_readiness": "NOT_READY",
+    "current_wedge": null,
+    "narrowest_future_candidate": "interoperability"
+  },
+  "truth_surface": "COHERENT",
+  "commercial_readiness": "NO-GO",
+  "enterprise_readiness": "NOT_READY",
+  "current_wedge": null,
+  "follow_on_lane": {
+    "status": "OPEN_BOUNDED_CANDIDATE",
+    "name": "deterministic_multi_runtime_interoperability",
+    "scope": [
+      "local Python/WASM/Swift/C# decode parity",
+      "binding-contract consistency",
+      "candidate-only token sidecar for bounded interchange indexing"
+    ],
+    "blocked_promotions": [
+      "enterprise readiness",
+      "broad commercial wedge",
+      "general-fidelity token runtime",
+      "hard-corpus closure"
+    ]
+  },
+  "evidence": {
+    "truth_matrix": "proofs/reruns/follow_on_reassessment_2026-04-24/repo_truth_matrix.json",
+    "local_cpu_rerun": "proofs/reruns/follow_on_reassessment_2026-04-24/local_cpu_rerun_manifest.json",
+    "token_sidecar": "proofs/reruns/follow_on_reassessment_2026-04-24/token_sidecar_candidate_verdict.json",
+    "historical_closeout": "proofs/reruns/phase5_wedge/final_go_no_go_surface.json"
+  },
+  "decision": {
+    "reopen_lane": true,
+    "new_phase": "05.1",
+    "promotion_verdict": "BOUND_ONLY",
+    "next_honest_move": "execute bounded interoperability and candidate token-sidecar work without narrating a current wedge"
+  }
+}
