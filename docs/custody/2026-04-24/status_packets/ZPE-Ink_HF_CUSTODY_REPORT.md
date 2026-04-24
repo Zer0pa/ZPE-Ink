@@ -11,7 +11,7 @@
 - GitHub remote: `https://github.com/Zer0pa/ZPE-Ink.git`
 - Branch/status: `codex/zpe-ink-custody-2026-04-24` tracking `origin/codex/zpe-ink-custody-2026-04-24`; PR #21 open against `chore/novelty-card-backfill-2026-04-22`
 - Did you mutate GitHub? yes
-- If yes, exactly what changed: committed and pushed custody branch updates preserving local source/docs/tests, ignored proof reruns, GPD/status/source-material snapshots, historical status packets, portfolio surface snapshot, HF manifest, and startup prompt. Current verified remote head: `628e897b69507525f3b6e39ddfb351616f0ec1b9`.
+- If yes, exactly what changed: committed and pushed custody branch updates preserving local source/docs/tests, ignored proof reruns, GPD/status/source-material snapshots, historical status packets, portfolio surface snapshot, HF manifest, and startup prompt. The custody branch contains the HF salvage/context commit `628e897b69507525f3b6e39ddfb351616f0ec1b9` and later report-refresh commits; verify the current head with `git ls-remote --heads origin codex/zpe-ink-custody-2026-04-24`.
 - Uncommitted/unpushed local code/docs/small-proof risk: none identified in the product repo; worktree clean and ignored/untracked value scan empty.
 
 ## Hugging Face Auth
