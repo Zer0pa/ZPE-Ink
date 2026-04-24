@@ -40,13 +40,15 @@ GitHub PR:
 - Startup prompt added in commit: `3858e3294a446170e6f0cdb68e307c2598248d71`
 - Verify current branch head with `git ls-remote --heads origin codex/zpe-ink-custody-2026-04-24`; later custody correction commits may exist.
 
-Custody commits on the branch:
+Initial custody commits on the branch:
 
 - `b1fe476063952b4f8fe05b7a1abc46126c03035a` - `custody: preserve ink follow-on work`
 - `c0670d130fc2f32b42285c024574fbe8cd0b4497` - `custody: add lane recovery snapshot`
 - `e6d61403ac9e44de8b46d488e6aecbf18c55bc99` - `custody: add ignored proof reruns`
 - `650e694a55ff4f72779c335bd2b6a8d40f5784bf` - `custody: add lane source materials`
 - `3858e3294a446170e6f0cdb68e307c2598248d71` - `custody: add deletion restart prompt`
+
+Later custody commits add the HF salvage manifest, historical external lane context, and report corrections. Verify the current branch head rather than relying on this prompt as a fixed commit list.
 
 ## What The Custody Branch Preserves
 
