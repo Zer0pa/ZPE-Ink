@@ -16,9 +16,9 @@ Deterministic digital-ink codec centered on the `.zpink` packet format. Always-i
 
 ## What This Is
 
-Cross-runtime deterministic ink codec. 1.0–2.8× compression on bounded real public corpora, with an additional UJI Pen Characters row at 1.6111× exact roundtrip; 5.59× on structured tier vs raw float32 xy-only baseline. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — identically across every runtime. Same input, same output, iOS to Web to Android. Strokes are tokenised using 8-direction Freeman chain codes packed as 4-bit nibbles.
+Cross-runtime deterministic ink codec. The committed public benchmark surface spans 1.02–1.61× compression across five public datasets, with UJI Pen Characters at 1.6111× exact roundtrip. The `.zpink` packet format encodes stroke streams — pressure, tilt, timing — across Python, Rust, WASM, Swift, and C# bindings using 8-direction Freeman chain codes packed as 4-bit nibbles.
 
-ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. Validated through Calliar non-Latin corpus. Bindings surface: Rust, WASM, Swift, C#.
+ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastructure where ink fidelity matters and generic codecs destroy structural detail. The public proof surface in this repo is bounded to committed public-benchmark and technical-alignment artifacts.
 
 **Readiness: always-in-beta.** Structured-tier transport proved. Sovereign release surface remains FAIL.
 
@@ -31,32 +31,20 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 
 | Metric | Value | Baseline |
 |--------|-------|----------|
-| STRUCT_CR | 5.59× | structured tier, synthetic data, vs raw float32 xy-only baseline |
-| REAL_CR | 1.02–2.77× | 5 public datasets (MathWriting, CROHME, QuickDraw, DigiLeTs, Calliar) |
+| PUBLIC_CR | 1.02–1.61× | 5 public datasets |
 | UJI_PUBLIC | 1.6111× | exact roundtrip on bounded UJI Pen Characters public row |
-| PARITY | 3/3 | Py/Rust/WASM decode |
+| PARITY | 5/5 | Python, Rust, WASM, Swift, C# |
+| CONTRACTS | 0 failures | binding contract checks |
 
-## Competitive Benchmarks
-
-> Structured tier; version-locked tools. Source: [`proofs/reruns/benchmark_freeze_local/`](proofs/reruns/benchmark_freeze_local/)
-
-| Tool | Ratio | Notes |
-|------|-------|-------|
-| Brotli (q11) | **6.83×** | wins structured tier |
-| **ZPE-Ink** | **5.59×** | 5 runtimes; deterministic |
-| zstd (l19) | 4.92× | — |
-| LZ4 (l9) | 1.99× | — |
-
-Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic encode.
+> Source: `proofs/artifacts/public_benchmarks/README.md`, `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json`, `proofs/logs/20260321_technical_alignment_cross_runtime.json`, `proofs/logs/20260321_technical_alignment_binding_contracts.json`
 
 ## What We Prove
 
-> Auditable guarantees backed by committed proof artifacts. Start at `proofs/reruns/phase5_wedge/final_go_no_go_surface.json`.
+> Auditable guarantees backed by committed public-benchmark and technical-alignment artifacts.
 
-- Structured-tier compression exceeds 5× vs raw float32
-- Python/Rust/WASM decode parity passes locally
+- Public benchmark corpus replay remains lossless across committed benchmarked datasets
+- Python/Rust/WASM parity passes locally
 - Swift/C# header contracts pass (magic, version, header size)
-- Structured tier ratio: 5.59×
 - UJI Pen Characters public row: 1.6111× with exact roundtrip on `1,364` samples / `74,592` points
 
 <p>
@@ -69,7 +57,7 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 - No claim of blind-clone closure (INCONCLUSIVE)
 - No claim of hard-corpus pass
 - No claim of general digital-ink dominance
-- 5× compression on real handwriting data — structured-tier 5.59× applies to synthetic data against a raw float32 xy-only baseline; real public corpora achieve 1.0–2.8×
+- No claim that the current public-benchmark surface closes release readiness or hard-corpus authority
 - No claim that the UJI Pen Characters row closes release readiness, hard-corpus authority, or the sovereign gate
 
 <p>
@@ -81,28 +69,27 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 | Field | Value |
 |-------|-------|
 | Verdict | INCONCLUSIVE |
-| Commit SHA | 98b5ed734735 |
+| Commit SHA | 8cec1bcdcaef |
 | Confidence | 67% |
-| Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
+| Source | proofs/release_validation/README.md |
 
 ## Tests and Verification
 
 | Code | Check | Verdict |
 |------|-------|---------|
-| V_01 | Structured-tier compression boundary | PASS |
+| V_01 | Public benchmark roundtrip surface | PASS |
 | V_02 | Python/Rust/WASM parity | PASS |
 | V_03 | Swift/C# header contracts | PASS |
 | V_04 | Pytest regression surface | PASS |
-| V_05 | Sovereign release surface | FAIL |
+| V_05 | Release-validation surface | INC |
 | V_06 | Blind-clone closure | INC |
 
 ## Proof Anchors
 
 | Path | State |
 |------|-------|
-| proofs/reruns/phase5_wedge/final_go_no_go_surface.json | CURRENT |
-| proofs/reruns/benchmark_freeze_local/claim_scope_map.json | CURRENT |
-| proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json | CURRENT |
+| proofs/release_validation/README.md | CURRENT |
+| proofs/artifacts/public_benchmarks/README.md | CURRENT |
 | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json | CURRENT |
 | proofs/logs/20260321_technical_alignment_cross_runtime.json | VERIFIED |
 | proofs/logs/20260321_technical_alignment_binding_contracts.json | VERIFIED |
@@ -119,9 +106,9 @@ Any contradiction across these anchors keeps the repo `INCONCLUSIVE`.
 
 | Field | Value |
 |-------|-------|
-| Proof Anchors | 8 |
+| Proof Anchors | 7 |
 | Modality Lanes | 6 |
-| Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
+| Authority Source | proofs/release_validation/README.md |
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE-Ink Masthead Option 3.3" width="100%">
@@ -168,10 +155,7 @@ Verification anchors: `proofs/logs/20260321_technical_alignment_pytest.txt`, `pr
 | Route | Target |
 |-------|--------|
 | Documentation index | `docs/ARCHITECTURE.md` |
-| Auditor path | `proofs/reruns/phase5_wedge/final_go_no_go_surface.json` |
-| Governance rules | `GOVERNANCE.md` |
-| Release gate rules | `RELEASING.md` |
-| Contribution workflow | `CONTRIBUTING.md` |
+| Auditor path | `proofs/release_validation/README.md` |
 | Security policy | `SECURITY.md` |
 | Support routing | `docs/LEGAL_BOUNDARIES.md` |
 

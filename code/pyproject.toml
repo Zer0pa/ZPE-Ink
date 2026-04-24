@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "ZPE Ink Wave-1 codec and falsification harness"
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [{name = "Zer0pa Labs"}]
+authors = [{name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai"}]
 license = "LicenseRef-Zer0pa-SAL-7.0"
 dependencies = []
 
