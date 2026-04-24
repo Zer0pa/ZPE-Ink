@@ -36,9 +36,11 @@ ZPE-Ink targets annotation-runtime teams and cross-platform pen-input infrastruc
 | UJI_PUBLIC | 1.6111× | exact roundtrip on bounded UJI Pen Characters public row |
 | PARITY | 3/3 | Py/Rust/WASM decode |
 
+> Source: `proofs/artifacts/public_benchmarks/dataset_matrix.json`, `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json`, `proofs/logs/20260321_technical_alignment_cross_runtime.json`.
+
 ## Competitive Benchmarks
 
-> Structured tier; version-locked tools. Source: [`proofs/reruns/benchmark_freeze_local/`](proofs/reruns/benchmark_freeze_local/)
+> Structured tier; version-locked tools. The historical comparator-freeze path is not present on this branch; current committed public benchmark anchors are listed under Proof Anchors.
 
 | Tool | Ratio | Notes |
 |------|-------|-------|
@@ -51,7 +53,7 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 
 ## What We Prove
 
-> Auditable guarantees backed by committed proof artifacts. Start at `proofs/reruns/phase5_wedge/final_go_no_go_surface.json`.
+> Auditable guarantees backed by committed proof artifacts. Start at `proofs/release_validation/README.md` and the committed anchors below.
 
 - Structured-tier compression exceeds 5× vs raw float32
 - Python/Rust/WASM decode parity passes locally
@@ -81,9 +83,9 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 | Field | Value |
 |-------|-------|
 | Verdict | INCONCLUSIVE |
-| Commit SHA | 98b5ed734735 |
+| Commit SHA | 8cec1bcdcaef |
 | Confidence | 67% |
-| Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
+| Source | proofs/release_validation/README.md |
 
 ## Tests and Verification
 
@@ -100,14 +102,14 @@ Brotli wins on ratio; ZPE-Ink wins on cross-runtime parity and deterministic enc
 
 | Path | State |
 |------|-------|
-| proofs/reruns/phase5_wedge/final_go_no_go_surface.json | CURRENT |
-| proofs/reruns/benchmark_freeze_local/claim_scope_map.json | CURRENT |
-| proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json | CURRENT |
 | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json | CURRENT |
+| proofs/artifacts/public_benchmarks/dataset_matrix.json | VERIFIED |
+| proofs/artifacts/mathwriting_analysis/comparison.json | VERIFIED |
 | proofs/logs/20260321_technical_alignment_cross_runtime.json | VERIFIED |
 | proofs/logs/20260321_technical_alignment_binding_contracts.json | VERIFIED |
+| proofs/logs/20260321_technical_alignment_cargo_python_native.txt | VERIFIED |
+| proofs/logs/20260321_technical_alignment_cargo_wasm.txt | VERIFIED |
 | proofs/logs/20260321_technical_alignment_pytest.txt | VERIFIED |
-| proofs/logs/20260321_technical_alignment_wheel_install.txt | VERIFIED |
 
 Any contradiction across these anchors keeps the repo `INCONCLUSIVE`.
 
@@ -121,7 +123,7 @@ Any contradiction across these anchors keeps the repo `INCONCLUSIVE`.
 |-------|-------|
 | Proof Anchors | 8 |
 | Modality Lanes | 6 |
-| Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
+| Authority Source | proofs/release_validation/README.md |
 
 <p>
   <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE-Ink Masthead Option 3.3" width="100%">
@@ -137,7 +139,7 @@ pip install zpe-ink
 Or install from source (development). Prereqs: Python 3.11+, Rust toolchain, and `wasm32-unknown-unknown` target for binding checks.
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e './code[dev]'
@@ -168,7 +170,7 @@ Verification anchors: `proofs/logs/20260321_technical_alignment_pytest.txt`, `pr
 | Route | Target |
 |-------|--------|
 | Documentation index | `docs/ARCHITECTURE.md` |
-| Auditor path | `proofs/reruns/phase5_wedge/final_go_no_go_surface.json` |
+| Auditor path | `proofs/release_validation/README.md` |
 | Governance rules | `GOVERNANCE.md` |
 | Release gate rules | `RELEASING.md` |
 | Contribution workflow | `CONTRIBUTING.md` |

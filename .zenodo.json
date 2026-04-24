@@ -1,0 +1,25 @@
+{
+  "title": "ZPE-Ink",
+  "description": "Deterministic digital-ink codec centered on the .zpink packet format for bounded cross-runtime stroke replay.",
+  "creators": [
+    {
+      "name": "Zer0pa (Pty) Ltd"
+    }
+  ],
+  "keywords": [
+    "digital ink",
+    "codec",
+    "stroke streams",
+    "cross-runtime parity",
+    "zpink"
+  ],
+  "license": "LicenseRef-Zer0pa-SAL-7.0",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Zer0pa/ZPE-Ink",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

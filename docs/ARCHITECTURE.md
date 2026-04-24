@@ -25,7 +25,7 @@ The canonical packet contract is defined here:
   <img src="../.github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">
 </p>
 
-Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOURCE-VERIFIED` means source checks passed but it is not a pip-installed runtime surface.
+Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOURCE-VERIFIED` means source checks passed but it is not a pip-installed runtime surface. Python-native Rust is not promoted here as a packaged native runtime.
 
 <table width="100%" border="1" bordercolor="#b8c0ca" cellpadding="0" cellspacing="0">
   <thead>
@@ -57,10 +57,11 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td><td>Release readiness and contradiction summary</td><td><code>INCONCLUSIVE</code></td></tr>
-    <tr><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td><td>Claim boundary and allowed statements</td><td><code>structured-tier-only</code></td></tr>
-    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Sovereign release surface</td><td><code>FAIL</code></td></tr>
-    <tr><td><code>proofs/reruns/phase3_external/external_boundary_manifest.json</code></td><td>External corpus boundary</td><td><code>UNIPEN FAIL</code>, <code>Calliar PASS</code></td></tr>
+    <tr><td><code>proofs/release_validation/README.md</code></td><td>Release validation boundary</td><td><code>INCONCLUSIVE</code></td></tr>
+    <tr><td><code>proofs/artifacts/public_benchmarks/dataset_matrix.json</code></td><td>Public benchmark matrix</td><td><code>bounded-public</code></td></tr>
+    <tr><td><code>proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json</code></td><td>UJI public benchmark and gated-corpus boundary</td><td><code>UJI PASS</code>, <code>IAM/CASIA blocked</code></td></tr>
+    <tr><td><code>proofs/logs/20260321_technical_alignment_cross_runtime.json</code></td><td>Cross-runtime parity evidence</td><td><code>PASS</code></td></tr>
+    <tr><td><code>proofs/logs/20260321_technical_alignment_binding_contracts.json</code></td><td>Swift/C# binding contract evidence</td><td><code>PASS</code></td></tr>
   </tbody>
 </table>
 

@@ -8,9 +8,8 @@
   "ideal_first_buyer": "Stylus/annotation runtime team or cross-platform pen-input infrastructure team",
   "deployment_model": "SDK — Python package with repo-local Rust/WASM/Swift/C# bindings",
   "proof_anchors": [
-    "proofs/reruns/benchmark_freeze_local/claim_scope_map.json",
-    "proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json",
-    "proofs/reruns/phase5_wedge/final_go_no_go_surface.json",
+    "proofs/release_validation/README.md",
+    "proofs/artifacts/public_benchmarks/dataset_matrix.json",
     "proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json"
   ],
   "not_claimed": [
