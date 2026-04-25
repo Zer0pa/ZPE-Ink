@@ -1,11 +1,3 @@
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
-</p>
-
-<p>
-  <img src="../.github/assets/readme/section-bars/license-and-ip.svg" alt="LICENSE AND IP" width="100%">
-</p>
-
 - `LICENSE` is the legal source of truth.
 - This document is not legal advice.
 - This repo is an always-in-beta surface, not a public commercial claim packet.
@@ -18,7 +10,3 @@ Boundary anchors:
 
 - `proofs/artifacts/public_benchmarks/README.md`
 - `proofs/reruns/phase3_public_benchmarks/BENCHMARKS.md`
-
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
-</p>

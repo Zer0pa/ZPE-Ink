@@ -1,17 +1,16 @@
 {
   "repo_name": "ZPE-Ink",
-  "repo_role": "secondary_product_candidate",
-  "status": "STAGED_PROOF_SURFACE",
-  "plain_english_summary": "Deterministic digital-ink transport codec for structured pen-stream workflows across multiple runtimes.",
-  "commercial_wedge": "Cross-runtime deterministic .zpink codec for structured pen-stream workflows. Multi-runtime bindings (Python, Rust, WASM, Swift, C#). The committed public surface includes UJI Pen Characters at 1.6111x exact roundtrip.",
-  "technical_wedge": "Multi-runtime .zpink codec with 8-direction Freeman chain-code stroke tokenisation packed as 4-bit nibbles. Cross-runtime parity is verified locally, and the committed public-benchmark surface spans five public datasets.",
-  "ideal_first_buyer": "Stylus/annotation runtime team or cross-platform pen-input infrastructure team",
-  "deployment_model": "SDK — Python package with repo-local Rust/WASM/Swift/C# bindings",
+  "repo_role": "bounded_technical_surface",
+  "status": "NO_CURRENT_COMMERCIAL_WEDGE",
+  "plain_english_summary": "Deterministic digital-ink transport codec with a Python reference package and repo-local binding contract surfaces.",
+  "commercial_wedge": "No current commercial wedge is claimed. Release-readiness and hard-corpus authority remain unclosed.",
+  "technical_wedge": "Python encode/decode commands for deterministic .zpink stroke packets, with committed tests for generated-fixture roundtrip, corruption rejection, optional-channel behavior, and static binding-contract consistency.",
+  "ideal_first_buyer": "Not claimed",
+  "deployment_model": "Development package under code/ with repo-local binding source surfaces",
   "proof_anchors": [
     "proofs/release_validation/README.md",
     "proofs/artifacts/public_benchmarks/README.md",
-    "proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json",
-    "proofs/logs/20260321_technical_alignment_cross_runtime.json"
+    "proofs/logs/20260321_technical_alignment_binding_contracts.json"
   ],
   "not_claimed": [
     "Release readiness (sovereign surface FAIL)",
@@ -21,7 +20,7 @@
     "Runtime coupling to ZPE-IMC",
     "Any claim that the UJI Pen Characters row closes release readiness or hard-corpus authority"
   ],
-  "family_position": "Secondary product candidate in the Zer0pa deterministic encoding family. Not the lead commercial front door.",
+  "family_position": "Bounded technical surface in the Zer0pa deterministic encoding family; not a commercial front door.",
   "license": "LicenseRef-Zer0pa-SAL-7.0",
   "license_surface": "Free below $100M annual revenue",
   "contact": "architects@zer0pa.ai"
