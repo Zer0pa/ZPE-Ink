@@ -1,7 +1,3 @@
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
-</p>
-
 # Code Surface
 
 This directory is the installable package boundary for ZPE-Ink.
@@ -34,7 +30,3 @@ Current technical truth:
 - binding drift is checked against `docs/family/ZPINK_COMPATIBILITY_VECTOR.json`
 
 Source-verified means the source tree passed contract or build checks, not that a packaged runtime was shipped.
-
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">
-</p>
