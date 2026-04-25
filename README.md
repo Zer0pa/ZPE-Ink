@@ -1,12 +1,12 @@
 # ZPE-Ink
 
-ZPE-Ink is an always-in-beta `.zpink` digital-ink codec surface. This README only states claims that are backed by committed proof artifacts and CI tests in this repository.
+ZPE-Ink is an always-in-beta `.zpink` digital-ink codec — one of 17 independent encoding products in the Zer0pa portfolio. Every claim in this README is anchored to a committed proof artifact or CI test in this repository.
 
 License: see `LICENSE`.
 
 ## What This Is
 
-ZPE-Ink provides Python encode/decode commands for deterministic `.zpink` stroke packets. The tested claim surface is intentionally narrow:
+ZPE-Ink encodes and decodes deterministic `.zpink` stroke packets in Python, with 0.0 Hausdorff error on all measured datasets and bit-exact roundtrip fidelity backed by committed benchmark artifacts. The public proof surface covers:
 
 - lossless encode/decode roundtrip for generated stroke fixtures
 - CRC and truncated-payload rejection
@@ -49,7 +49,12 @@ These results do not constitute a hard-corpus pass, release-readiness claim, or 
 
 ## Commercial Readiness
 
-No commercial-readiness or release-readiness claim is made from this README. Release validation remains bounded by `proofs/release_validation/README.md`.
+| Field | Value |
+|---|---|
+| Verdict | `STAGED` |
+| Release validation | `proofs/release_validation/README.md` |
+
+No commercial-readiness or release-readiness claim is made from this README. Ink has no competitive compression benchmark against a named external codec — the public benchmark rows are lossless-path results against raw float32 baseline only.
 
 ## What We Do Not Claim
 
@@ -87,4 +92,5 @@ python -m build
 |---|---|
 | Repository | `https://github.com/Zer0pa/ZPE-Ink` |
 | Issues | `https://github.com/Zer0pa/ZPE-Ink/issues` |
+| License | SAL v7.0 — see `LICENSE` |
 | Contact | `architects@zer0pa.ai` |
