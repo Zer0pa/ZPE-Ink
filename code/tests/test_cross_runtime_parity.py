@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -12,6 +13,7 @@ from zpe_ink.fixtures import generate_synthetic_lossless
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CODE_ROOT = REPO_ROOT / "code"
+FULL_RUNTIME_PARITY_ENV = "ZPE_INK_FULL_RUNTIME_PARITY"
 
 
 def _canonicalize(text: str) -> str:
@@ -20,6 +22,11 @@ def _canonicalize(text: str) -> str:
 
 def _run(command: list[str], *, timeout: int = 45) -> subprocess.CompletedProcess[str]:
     return subprocess.run(command, capture_output=True, text=True, check=False, timeout=timeout)
+
+
+def _require_full_runtime_parity() -> None:
+    if os.environ.get(FULL_RUNTIME_PARITY_ENV) != "1":
+        pytest.skip(f"set {FULL_RUNTIME_PARITY_ENV}=1 to run optional runtime parity toolchains")
 
 
 def _build_fixture(tmp_path: Path) -> tuple[Path, Path, str]:
@@ -34,6 +41,7 @@ def _build_fixture(tmp_path: Path) -> tuple[Path, Path, str]:
 
 
 def test_cross_runtime_parity_python_swift_csharp(tmp_path: Path) -> None:
+    _require_full_runtime_parity()
     swiftc = shutil.which("swiftc")
     mcs = shutil.which("mcs")
     mono = shutil.which("mono")
@@ -75,6 +83,7 @@ def test_cross_runtime_parity_python_swift_csharp(tmp_path: Path) -> None:
 
 
 def test_cross_runtime_parity_wasm(tmp_path: Path) -> None:
+    _require_full_runtime_parity()
     wasm_pack = shutil.which("wasm-pack")
     node = shutil.which("node")
     if not wasm_pack or not node:

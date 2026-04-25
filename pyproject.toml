@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=68,<82", "wheel>=0.42,<1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -19,7 +19,6 @@ keywords = [
     "pyo3",
 ]
 classifiers = [
-    "License :: Other/Proprietary License",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
     "Development Status :: 3 - Alpha",
@@ -35,11 +34,11 @@ Changelog = "https://github.com/Zer0pa/ZPE-Ink/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [
-    "build>=1.2.2",
-    "pytest>=8.0",
+    "build>=1.2.2,<2",
+    "pytest>=8,<10",
 ]
 telemetry = [
-    "comet-ml>=3.49",
+    "comet-ml>=3.49,<4",
 ]
 
 [project.scripts]
