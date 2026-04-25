@@ -82,17 +82,27 @@ def generate_high_velocity_stroke(rng: random.Random, points: int) -> dict[str, 
     }
 
 
-def generate_iam_proxy(seed: int = 20260220) -> list[dict[str, list[int]]]:
+def generate_synthetic_directional_a(seed: int = 20260220) -> list[dict[str, list[int]]]:
+    """Synthetic 64-stroke set: 8-direction strokes, 8–18 segments each.
+
+    Content-descriptive name — does not approximate any specific real corpus.
+    Designed to exercise the codec's integer-native delta+RLE path.
+    """
     rng = random.Random(seed)
     return [generate_directional_stroke(rng, segments=rng.randint(8, 18)) for _ in range(64)]
 
 
-def generate_unipen_proxy(seed: int = 20260221) -> list[dict[str, list[int]]]:
+def generate_synthetic_directional_b_sin_pressure(seed: int = 20260221) -> list[dict[str, list[int]]]:
+    """Synthetic 64-stroke set: 8-direction strokes, 10–22 segments, sin-modulated pressure.
+
+    Content-descriptive name — does not approximate any specific real corpus.
+    Adds a sin-perturbed pressure channel on top of the directional generator.
+    """
     rng = random.Random(seed)
     out: list[dict[str, list[int]]] = []
     for _ in range(64):
         stroke = generate_directional_stroke(rng, segments=rng.randint(10, 22))
-        # Cross-script proxy augmentation: stronger diagonal/loop pressure transitions.
+        # Pressure perturbation: sin-modulated channel transitions.
         for idx in range(0, len(stroke["pressure"]), 9):
             stroke["pressure"][idx] = _bounded(
                 stroke["pressure"][idx] + int(35 * math.sin(idx / 7.0)),
@@ -101,6 +111,14 @@ def generate_unipen_proxy(seed: int = 20260221) -> list[dict[str, list[int]]]:
             )
         out.append(stroke)
     return out
+
+
+# Backward-compatible aliases retained so unrelated gate scripts (gate_c, gate_e,
+# phase2_truth_surface, run_primitivetoken_benchmark) keep importing without a
+# coordinated rename across non-comp-benchmark artifacts. Comp benchmark uses the
+# canonical content-descriptive names above.
+generate_iam_proxy = generate_synthetic_directional_a
+generate_unipen_proxy = generate_synthetic_directional_b_sin_pressure
 
 
 def generate_synthetic_lossless(seed: int = 20260220) -> list[dict[str, list[int]]]:
@@ -129,8 +147,16 @@ def generate_long_page(seed: int = 20260224) -> list[dict[str, list[int]]]:
 def dataset_manifest() -> dict[str, Any]:
     return {
         "synthetic_lossless": {"seed": 20260220, "count": 48},
-        "iam_proxy": {"seed": 20260220, "count": 64, "source": "IAM On-Line proxy"},
-        "unipen_proxy": {"seed": 20260221, "count": 64, "source": "UNIPEN proxy"},
+        "synthetic_directional_64a": {
+            "seed": 20260220,
+            "count": 64,
+            "source": "in-repo synthetic directional strokes (set A)",
+        },
+        "synthetic_directional_64b_sin_pressure": {
+            "seed": 20260221,
+            "count": 64,
+            "source": "in-repo synthetic directional strokes with sin-modulated pressure (set B)",
+        },
         "adversarial_spike": {"seed": 20260223, "count": 24},
         "long_page": {"seed": 20260224, "count": 2400},
     }

@@ -3,27 +3,28 @@
   "lane": "ZPE-Ink",
   "wave": "CB",
   "phase": 1,
-  "generated_at_utc": "2026-04-25T21:30:20.916745+00:00",
+  "generated_at_utc": "2026-04-25T22:26:16.718407+00:00",
   "comparators": [
     "gzip(level=6)",
     "zlib(level=6)"
   ],
   "metric": "compression_ratio + symmetric_hausdorff_xy",
   "data_source": {
-    "kind": "in_repo_deterministic_fixtures",
+    "kind": "in_repo_deterministic_synthetic_fixtures",
     "module": "zpe_ink.fixtures",
     "generators": [
-      "generate_iam_proxy",
-      "generate_unipen_proxy"
+      "generate_synthetic_directional_a",
+      "generate_synthetic_directional_b_sin_pressure"
     ],
-    "note": "Lane fixtures are deterministic synthetic strokes mirroring IAM-/UNIPEN-style stroke statistics. Seeds recorded per set. No third-party raw stroke data is committed."
+    "note": "Lane fixtures are deterministic in-repo synthetic strokes \u2014 content-descriptive names; no claim of approximating any specific real corpus. Seeds recorded per set. No third-party raw stroke data is committed."
   },
-  "comparator_path": "b_apples_to_apples_same_buffer",
+  "comparator_path": "c_apples_to_apples_same_buffer_int32_synthetic",
+  "comparator_path_note": "Option (c): same-buffer apples-to-apples on in-repo synthetic int32 fixtures. Option (a) [download CROHME/UJI/QuickDraw] was attempted in scope but blocked at upstream-data level: real IAM is registration-gated, real UNIPEN host is unavailable. Option (b) as literally specified in the brief assumed float32 representation, but ZPE-Ink is integer-native (varuint + zigzag delta + RLE); the codec never ingests floats. Option (c) on the codec's actual ingest type is the next-best apples-to-apples.",
   "raw_buffer_layout": "int32_le concat(x, y, pressure, tilt, azimuth)",
   "framing_note": "ZPE-Ink is not optimised to dominate general-purpose entropy coders on raw compression ratio. Its product claim is (i) lossless roundtrip with exact-bit recovery of structured channels (Hausdorff = 0.0 px on x,y), (ii) deterministic CRC-framed bytes suitable for cross-runtime parity (WASM / PyO3 / Swift), and (iii) typed semantics (per-channel range validation, mode flags). Where gzip/zlib compress better, that reflects their statistical advantage on opaque byte streams; ZPE-Ink trades a fraction of raw CR for verifiable structure. The numbers below are reported as-found; no claim of CR dominance is made.",
   "sets": [
     {
-      "label": "iam_proxy",
+      "label": "synthetic_directional_64a",
       "seed": 20260220,
       "stroke_count": 64,
       "raw_total_bytes": 339720,
@@ -826,7 +827,7 @@
       ]
     },
     {
-      "label": "unipen_proxy",
+      "label": "synthetic_directional_64b_sin_pressure",
       "seed": 20260221,
       "stroke_count": 64,
       "raw_total_bytes": 459380,
@@ -1641,5 +1642,6 @@
     },
     "hausdorff_xy_px_max": 0.0
   },
-  "verdict": "PASS_LOSSLESS"
+  "verdict": "PASS",
+  "property": "lossless_roundtrip"
 }
