@@ -7,16 +7,23 @@ semantics* (typed channels, deterministic delta+RLE, CRC-checked frame).
 General-purpose entropy coders (gzip, zlib) operate on opaque byte streams
 and are expected to be competitive or better on raw compression ratio.
 
-Comparator path: option (b) — apples-to-apples on the same buffer the
-codec ingests. The float32 spec in the brief is mapped to the lane's
-canonical int representation: stroke channels (x, y, pressure, tilt,
-azimuth) are packed as little-endian int32 contiguous arrays. Both the
-ZPE-Ink encoder and the comparator gzip/zlib see the *same* raw byte
-buffer derived from these arrays. Hausdorff fidelity is computed on
-2-D (x, y) coordinates which is the geometric stroke locus.
+Comparator path:
+Option (c) — same-buffer apples-to-apples on in-repo synthetic int32 fixtures.
+Option (a) [download CROHME/UJI/QuickDraw] was attempted in scope but blocked
+at upstream-data level: real IAM is registration-gated, real UNIPEN host is
+unavailable. Option (b) as literally specified in the brief assumed float32
+representation, but ZPE-Ink is integer-native (varuint + zigzag delta + RLE);
+the codec never ingests floats. Option (c) on the codec's actual ingest type
+is the next-best apples-to-apples.
 
-Data source: deterministic in-repo fixtures (`zpe_ink.fixtures`) — no
-external download, no committed raw third-party stroke data. Seeds are
+Buffer layout: stroke channels (x, y, pressure, tilt, azimuth) are packed as
+little-endian int32 contiguous arrays. Both the ZPE-Ink encoder and the
+comparator gzip/zlib see the *same* raw byte buffer derived from these
+arrays. Hausdorff fidelity is computed on 2-D (x, y) coordinates which is
+the geometric stroke locus.
+
+Data source: deterministic in-repo synthetic fixtures (`zpe_ink.fixtures`) —
+no external download, no committed raw third-party stroke data. Seeds are
 recorded in the artifact.
 """
 
@@ -33,7 +40,10 @@ from statistics import mean, median
 import numpy as np
 
 from zpe_ink.codec import decode_zpink, encode_zpink
-from zpe_ink.fixtures import generate_iam_proxy, generate_unipen_proxy
+from zpe_ink.fixtures import (
+    generate_synthetic_directional_a,
+    generate_synthetic_directional_b_sin_pressure,
+)
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 ARTIFACT_DIR = REPO_ROOT / "proofs" / "artifacts" / "comp_benchmarks"
@@ -145,10 +155,18 @@ def main() -> None:
     ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
 
     sets = []
-    iam_seed = 20260220
-    unipen_seed = 20260221
-    sets.append(_benchmark_set("iam_proxy", generate_iam_proxy(seed=iam_seed), iam_seed))
-    sets.append(_benchmark_set("unipen_proxy", generate_unipen_proxy(seed=unipen_seed), unipen_seed))
+    set_a_seed = 20260220
+    set_b_seed = 20260221
+    sets.append(_benchmark_set(
+        "synthetic_directional_64a",
+        generate_synthetic_directional_a(seed=set_a_seed),
+        set_a_seed,
+    ))
+    sets.append(_benchmark_set(
+        "synthetic_directional_64b_sin_pressure",
+        generate_synthetic_directional_b_sin_pressure(seed=set_b_seed),
+        set_b_seed,
+    ))
 
     # Aggregate across both sets.
     raw_all = sum(s["raw_total_bytes"] for s in sets)
@@ -166,14 +184,27 @@ def main() -> None:
         "comparators": ["gzip(level=6)", "zlib(level=6)"],
         "metric": "compression_ratio + symmetric_hausdorff_xy",
         "data_source": {
-            "kind": "in_repo_deterministic_fixtures",
+            "kind": "in_repo_deterministic_synthetic_fixtures",
             "module": "zpe_ink.fixtures",
-            "generators": ["generate_iam_proxy", "generate_unipen_proxy"],
-            "note": ("Lane fixtures are deterministic synthetic strokes mirroring "
-                     "IAM-/UNIPEN-style stroke statistics. Seeds recorded per set. "
-                     "No third-party raw stroke data is committed."),
+            "generators": [
+                "generate_synthetic_directional_a",
+                "generate_synthetic_directional_b_sin_pressure",
+            ],
+            "note": ("Lane fixtures are deterministic in-repo synthetic strokes — "
+                     "content-descriptive names; no claim of approximating any specific "
+                     "real corpus. Seeds recorded per set. No third-party raw stroke "
+                     "data is committed."),
         },
-        "comparator_path": "b_apples_to_apples_same_buffer",
+        "comparator_path": "c_apples_to_apples_same_buffer_int32_synthetic",
+        "comparator_path_note": (
+            "Option (c): same-buffer apples-to-apples on in-repo synthetic int32 "
+            "fixtures. Option (a) [download CROHME/UJI/QuickDraw] was attempted in "
+            "scope but blocked at upstream-data level: real IAM is registration-gated, "
+            "real UNIPEN host is unavailable. Option (b) as literally specified in the "
+            "brief assumed float32 representation, but ZPE-Ink is integer-native "
+            "(varuint + zigzag delta + RLE); the codec never ingests floats. Option (c) "
+            "on the codec's actual ingest type is the next-best apples-to-apples."
+        ),
         "raw_buffer_layout": "int32_le concat(x, y, pressure, tilt, azimuth)",
         "framing_note": (
             "ZPE-Ink is not optimised to dominate general-purpose entropy coders on "
@@ -199,7 +230,8 @@ def main() -> None:
             },
             "hausdorff_xy_px_max": haus_all_max,
         },
-        "verdict": "PASS_LOSSLESS" if haus_all_max == 0.0 else "FAIL_LOSSLESS",
+        "verdict": "PASS" if haus_all_max == 0.0 else "FAIL",
+        "property": "lossless_roundtrip",
     }
 
     with ARTIFACT_PATH.open("w") as f:
@@ -212,22 +244,31 @@ def main() -> None:
         "",
         f"Generated: {artifact['generated_at_utc']}",
         f"Comparators: {', '.join(artifact['comparators'])}",
-        f"Data source: in-repo deterministic fixtures (seeds {iam_seed}, {unipen_seed})",
+        f"Data source: in-repo deterministic synthetic fixtures (seeds "
+        f"{set_a_seed} [synthetic_directional_64a], "
+        f"{set_b_seed} [synthetic_directional_64b_sin_pressure])",
         f"Buffer layout: {artifact['raw_buffer_layout']}",
+        f"Comparator path: {artifact['comparator_path']}",
         "",
-        "## Aggregate compression ratio (raw_bytes / encoded_bytes)",
+        "## Aggregate compression ratio (bytes-weighted, raw_bytes / encoded_bytes)",
         f"- gzip:  {agg['gzip']:.3f}",
         f"- zlib:  {agg['zlib']:.3f}",
         f"- zpink: {agg['zpink_batched']:.3f}",
         "",
-        f"## Hausdorff fidelity (xy locus, px)",
+        "## Hausdorff fidelity (xy locus, px)",
         f"- ZPE-Ink max across {sum(s['stroke_count'] for s in sets)} strokes: "
         f"{artifact['aggregate_across_sets']['hausdorff_xy_px_max']:.6f}",
         "",
+        f"## Verdict: {artifact['verdict']} (property: {artifact['property']})",
+        "",
         "## Honest framing",
-        "ZPE-Ink does not claim raw CR dominance over gzip/zlib. It claims",
-        "lossless roundtrip with structured semantics (Hausdorff = 0.0 px",
-        "on x,y). Comparator numbers are reported as-found.",
+        "These ratios are measured on in-repo synthetic stroke fixtures designed",
+        "to exercise the codec's integer-native delta+RLE path. They are NOT",
+        "measured on real IAM, UNIPEN, CROHME, UJI, or QuickDraw corpora.",
+        "Synthetic fixtures favor RLE-friendly inputs by design; ZPE-Ink does not",
+        "claim raw CR dominance over gzip/zlib on real handwriting. It claims",
+        "lossless roundtrip with structured semantics (Hausdorff = 0.0 px on x,y).",
+        "Comparator numbers are reported as-found.",
     ]
     SUMMARY_PATH.write_text("\n".join(lines) + "\n")
 

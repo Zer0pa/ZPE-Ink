@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "lane": "ZPE-Ink",
+  "wave": "CB",
+  "phase": 1,
+  "kind": "real_public_corpora_addendum",
+  "comparators": [
+    "gzip(level=6)",
+    "zlib(level=6)"
+  ],
+  "metric": "compression_ratio + symmetric_hausdorff_xy",
+  "data_sources": [
+    {
+      "label": "quickdraw_cat_simplified_50",
+      "source": "https://storage.googleapis.com/quickdraw_dataset/full/simplified/cat.ndjson",
+      "limit": 50,
+      "ingest": "int32 channels (x,y from simplified ndjson; pressure=512, tilt=0, azimuth=0)"
+    },
+    {
+      "label": "crohme_icfhr_package_50",
+      "source": "https://oldweb.isical.ac.in/~crohme/ICFHR_package.zip",
+      "limit": 50,
+      "ingest": "InkML parser -> int32 channels"
+    }
+  ],
+  "comparator_path": "c_apples_to_apples_same_buffer_int32_real",
+  "raw_buffer_layout": "int32_le concat(x, y, pressure, tilt, azimuth)",
+  "framing_note": "Real-public-corpus addendum to the synthetic comp benchmark. Methodology mirrors the synthetic comparator: every codec ingests the same int32 byte buffer; gzip/zlib see exactly the bytes ZPE-Ink ingests. QuickDraw simplified ndjson supplies (x, y) only with pressure=512, tilt=0, azimuth=0 stuffed into the channel slots so the buffer shape matches; this advantages RLE on the constant channels and is reported as-found.",
+  "corpora": [
+    {
+      "label": "quickdraw_cat_simplified_50",
+      "samples": 50,
+      "strokes": 465,
+      "raw_total_bytes": 57700,
+      "gzip_total_bytes": 25668,
+      "zlib_total_bytes": 20088,
+      "zpink_total_bytes": 22757,
+      "aggregate_cr": {
+        "gzip": 2.2479351721988468,
+        "zlib": 2.8723616089207487,
+        "zpink_batched": 2.5354835874675925
+      },
+      "hausdorff_xy_px_max": 0.0
+    },
+    {
+      "label": "crohme_icfhr_package_50",
+      "samples": 50,
+      "strokes": 939,
+      "raw_total_bytes": 459240,
+      "gzip_total_bytes": 129683,
+      "zlib_total_bytes": 118415,
+      "zpink_total_bytes": 112635,
+      "aggregate_cr": {
+        "gzip": 3.5412505879722094,
+        "zlib": 3.8782248870497824,
+        "zpink_batched": 4.077240644559861
+      },
+      "hausdorff_xy_px_max": 0.0
+    }
+  ],
+  "aggregate_across_corpora": {
+    "raw_total_bytes": 516940,
+    "gzip_total_bytes": 155351,
+    "zlib_total_bytes": 138503,
+    "zpink_total_bytes": 135392,
+    "aggregate_cr": {
+      "gzip": 3.3275614576024615,
+      "zlib": 3.732337927698317,
+      "zpink_batched": 3.8180985582604587
+    },
+    "hausdorff_xy_px_max": 0.0
+  },
+  "verdict": "PASS",
+  "property": "lossless_roundtrip"
+}

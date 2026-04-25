@@ -49,17 +49,33 @@ These results do not constitute a hard-corpus pass, release-readiness claim, or 
 
 ## Comp Benchmarks
 
-ZPE-Ink against general-purpose entropy coders on the lane's deterministic in-repo stroke fixtures (Wave-CB Phase 1). Apples-to-apples: every codec is fed the same byte buffer, an `int32` little-endian concatenation of `(x, y, pressure, tilt, azimuth)` per stroke. Hausdorff is the symmetric distance between original and decoded `(x, y)` loci in stroke-coordinate units (px).
+These ratios are measured on **in-repo synthetic stroke fixtures** designed to exercise the codec's integer-native delta+RLE path. They are NOT measured on real IAM, UNIPEN, CROHME, UJI, or QuickDraw corpora — note that real IAM and real UNIPEN are marked "skipped" in the Public Benchmark Results section above. Synthetic fixtures favor RLE-friendly inputs by design and should not be read as compression-superiority claims on real handwriting.
 
-| Codec | Mean CR | Median CR | Hausdorff Error (px) | Notes |
-|---|---:|---:|---:|---|
-| gzip (level 6) | 7.39 | 7.40 | n/a (lossless byte stream, not stroke-aware) | Python `gzip.compress`, deterministic `mtime=0` |
-| zlib (level 6) | 7.51 | 7.50 | n/a (lossless byte stream, not stroke-aware) | Python `zlib.compress` |
-| ZPE-Ink (`.zpink`) | 12.59 | 12.60 | **0.0** on all 128 strokes | Lossless, CRC-framed, typed channels |
+ZPE-Ink against general-purpose entropy coders on the lane's deterministic in-repo synthetic stroke fixtures (Wave-CB Phase 1). Apples-to-apples: every codec is fed the same byte buffer, an `int32` little-endian concatenation of `(x, y, pressure, tilt, azimuth)` per stroke. Hausdorff is the symmetric distance between original and decoded `(x, y)` loci in stroke-coordinate units (px).
 
-Means/medians are taken across the two fixture sets (`iam_proxy` seed 20260220, `unipen_proxy` seed 20260221, 64 strokes each). Per-set per-stroke breakdowns and the full byte-level table are committed at `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json`; the human-readable summary is at `proofs/artifacts/comp_benchmarks/summary.md`.
+| Codec | Aggregate CR (bytes-weighted) | Hausdorff Error (px) | Notes |
+|---|---:|---:|---|
+| gzip (level 6) | 7.336 | n/a (lossless byte stream, not stroke-aware) | Python `gzip.compress`, deterministic `mtime=0` |
+| zlib (level 6) | 7.441 | n/a (lossless byte stream, not stroke-aware) | Python `zlib.compress` |
+| ZPE-Ink (`.zpink`) | 12.735 | **0.0** on all 128 strokes | Lossless, CRC-framed, typed channels |
 
-**Honest framing.** ZPE-Ink's product claim is *lossless roundtrip with structured semantics*, not raw CR dominance. The gzip/zlib comparators operate on opaque byte streams; ZPE-Ink operates on typed stroke channels with deterministic delta + RLE, CRC framing, and per-channel range validation. On these fixtures the typed approach happens to also dominate raw CR because the int32 channels are dense in small deltas — but no generalised CR-superiority claim is made and no claim is extended to corpora outside this artifact. Where general-purpose coders compress better on a given corpus, that should be reported as-found.
+Headline values are the **bytes-weighted aggregate** ratio (`sum(raw_bytes) / sum(encoded_bytes)`) across both fixture sets — the industry-conventional aggregation for compression. The mean-of-per-set-means alternative (gzip 7.39 / zlib 7.51 / zpink 12.59) is also computable from the per-set entries in the committed artifact. Two fixture sets: `synthetic_directional_64a` (seed 20260220, 64 strokes) and `synthetic_directional_64b_sin_pressure` (seed 20260221, 64 strokes). Per-set per-stroke breakdowns and the full byte-level table are committed at `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json`; the human-readable summary is at `proofs/artifacts/comp_benchmarks/summary.md`.
+
+**Honest framing.** ZPE-Ink's product claim is *lossless roundtrip with structured semantics*, not raw CR dominance. The gzip/zlib comparators operate on opaque byte streams; ZPE-Ink operates on typed stroke channels with deterministic delta + RLE, CRC framing, and per-channel range validation. On these synthetic fixtures the typed approach happens to also dominate raw CR because the int32 channels are dense in small deltas — but no generalised CR-superiority claim is made and no claim is extended to real corpora outside this artifact. Where general-purpose coders compress better on a given corpus, that should be reported as-found.
+
+### Comp Benchmarks — real public corpora (addendum)
+
+Same comparator path applied to two real public handwriting corpora. Real IAM remains registration-gated and real UNIPEN remains host-blocked (per the Public Benchmark Results table); QuickDraw and CROHME are downloadable.
+
+| Corpus | Source | Samples | gzip CR | zlib CR | ZPE-Ink CR | Hausdorff (px) |
+|---|---|---:|---:|---:|---:|---:|
+| QuickDraw `cat` (simplified) | `storage.googleapis.com/quickdraw_dataset` | 50 | 2.248 | 2.872 | 2.535 | 0.0 |
+| CROHME (ICFHR package) | `oldweb.isical.ac.in/~crohme/ICFHR_package.zip` | 50 | 3.541 | 3.878 | 4.077 | 0.0 |
+| **Aggregate (bytes-weighted)** | — | 100 | **3.328** | **3.732** | **3.818** | **0.0** |
+
+Methodology: same int32 little-endian buffer layout fed to all three codecs; per-sample `encode_zpink` for ZPE-Ink. QuickDraw simplified ndjson supplies (x, y) only — `pressure=512`, `tilt=0`, `azimuth=0` are stuffed into the buffer slots so shape matches; this advantages RLE on the constant channels and is reported as-found. Full byte-level table at `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json`.
+
+**Read this honestly.** On real handwriting the gap between ZPE-Ink and gzip/zlib narrows substantially compared to the synthetic fixtures — zlib is competitive on QuickDraw, ZPE-Ink leads on CROHME. The synthetic numbers in the row block above are RLE-friendly by construction; the real numbers in this addendum are the more representative reference for non-fixture inputs. Lossless roundtrip (Hausdorff = 0.0) holds on both real corpora.
 
 ## Commercial Readiness
 
