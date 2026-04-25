@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zpe-ink"
-version = "0.1.0"
+version = "0.1.1"
 description = "ZPE Ink Wave-1 codec and falsification harness"
 readme = "README.md"
 requires-python = ">=3.11"

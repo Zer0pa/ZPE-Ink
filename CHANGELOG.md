@@ -2,6 +2,11 @@
 
 This is not a public release history. It tracks private staging changes only.
 
+## 2026-04-25 — v0.1.1
+
+- refreshed PyPI long-description: removed stale ZPE-IMC ecosystem reference
+- confirmed SAL v7.0 alignment in pyproject.toml license field
+
 ## 2026-03-21
 
 - aligned the repo documentation surface to the current authority artifacts
