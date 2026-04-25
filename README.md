@@ -47,6 +47,20 @@ Encode latency on the measured corpora: median 0.02–0.10 ms/stroke (single-cor
 
 These results do not constitute a hard-corpus pass, release-readiness claim, or competitive superiority claim. See `proofs/artifacts/public_benchmarks/README.md` for full methodology notes.
 
+## Comp Benchmarks
+
+ZPE-Ink against general-purpose entropy coders on the lane's deterministic in-repo stroke fixtures (Wave-CB Phase 1). Apples-to-apples: every codec is fed the same byte buffer, an `int32` little-endian concatenation of `(x, y, pressure, tilt, azimuth)` per stroke. Hausdorff is the symmetric distance between original and decoded `(x, y)` loci in stroke-coordinate units (px).
+
+| Codec | Mean CR | Median CR | Hausdorff Error (px) | Notes |
+|---|---:|---:|---:|---|
+| gzip (level 6) | 7.39 | 7.40 | n/a (lossless byte stream, not stroke-aware) | Python `gzip.compress`, deterministic `mtime=0` |
+| zlib (level 6) | 7.51 | 7.50 | n/a (lossless byte stream, not stroke-aware) | Python `zlib.compress` |
+| ZPE-Ink (`.zpink`) | 12.59 | 12.60 | **0.0** on all 128 strokes | Lossless, CRC-framed, typed channels |
+
+Means/medians are taken across the two fixture sets (`iam_proxy` seed 20260220, `unipen_proxy` seed 20260221, 64 strokes each). Per-set per-stroke breakdowns and the full byte-level table are committed at `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json`; the human-readable summary is at `proofs/artifacts/comp_benchmarks/summary.md`.
+
+**Honest framing.** ZPE-Ink's product claim is *lossless roundtrip with structured semantics*, not raw CR dominance. The gzip/zlib comparators operate on opaque byte streams; ZPE-Ink operates on typed stroke channels with deterministic delta + RLE, CRC framing, and per-channel range validation. On these fixtures the typed approach happens to also dominate raw CR because the int32 channels are dense in small deltas — but no generalised CR-superiority claim is made and no claim is extended to corpora outside this artifact. Where general-purpose coders compress better on a given corpus, that should be reported as-found.
+
 ## Commercial Readiness
 
 | Field | Value |
