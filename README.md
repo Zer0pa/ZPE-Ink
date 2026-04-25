@@ -43,7 +43,7 @@ Baseline: raw little-endian float32 x/y pairs per point. Hausdorff = 0.0 on all 
 
 **Zero-channel suppression improvement (committed):** auto-suppressing zero tilt/azimuth streams raised CROHME mean compression from 1.52× to 1.76× (max 3.34×) and MathWriting mean from 1.06× to 1.15×. This change is captured in `proofs/artifacts/mathwriting_analysis/comparison.json` and exercised by `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default`.
 
-Encode latency on the measured corpora: median 0.03–0.10 ms/stroke (single-core Python, macOS). Source: `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke` field).
+Encode latency on the measured corpora: median 0.02–0.10 ms/stroke (single-core Python, macOS; QuickDraw low end 0.026 ms/stroke, MathWriting high end 0.099 ms/stroke). Source: `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke` field).
 
 These results do not constitute a hard-corpus pass, release-readiness claim, or competitive superiority claim. See `proofs/artifacts/public_benchmarks/README.md` for full methodology notes.
 
