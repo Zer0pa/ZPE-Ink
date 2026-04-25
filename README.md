@@ -52,9 +52,8 @@ These results do not constitute a hard-corpus pass, release-readiness claim, or 
 | Field | Value |
 |---|---|
 | Verdict | `STAGED` |
+| Posture | No release-readiness or hard-corpus authority claim is made. Public benchmark rows are lossless-path results against raw float32 baseline only; no named external codec comparison is claimed. |
 | Release validation | `proofs/release_validation/README.md` |
-
-No commercial-readiness or release-readiness claim is made from this README. Ink has no competitive compression benchmark against a named external codec — the public benchmark rows are lossless-path results against raw float32 baseline only.
 
 ## What We Do Not Claim
 
