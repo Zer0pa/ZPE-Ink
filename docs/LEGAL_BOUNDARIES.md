@@ -16,8 +16,8 @@ Redistribution constraints summary: external corpora (UNIPEN, IAM) remain access
 
 Boundary anchors:
 
-- `proofs/reruns/phase3_external/external_boundary_manifest.json`
-- `proofs/reruns/benchmark_freeze_local/claim_scope_map.json`
+- `proofs/artifacts/public_benchmarks/README.md`
+- `proofs/reruns/phase3_public_benchmarks/BENCHMARKS.md`
 
 <p>
   <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE-Ink Masthead" width="100%">

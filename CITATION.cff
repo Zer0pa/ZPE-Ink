@@ -3,11 +3,19 @@ title: ZPE-Ink
 message: If you use this repository, please cite the codec surface and its bounded validation artifacts.
 type: software
 authors:
-  - name: Zer0pa
+  - name: Zer0pa (Pty) Ltd
+    email: architects@zer0pa.ai
 version: 0.1.0
 repository-code: https://github.com/Zer0pa/ZPE-Ink
 url: https://github.com/Zer0pa/ZPE-Ink
 license: LicenseRef-Zer0pa-SAL-7.0
+keywords:
+  - digital-ink
+  - stroke-codec
+  - pen-input
+  - cross-runtime
+  - wasm
+  - pyo3
 contact:
   - email: architects@zer0pa.ai
 abstract: >

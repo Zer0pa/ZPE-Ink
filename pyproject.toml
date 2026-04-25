@@ -8,9 +8,30 @@ version = "0.1.0"
 description = "ZPE Ink Wave-1 codec and falsification harness"
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [{name = "Zer0pa (Pty) Ltd"}]
+authors = [{name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai"}]
 license = "LicenseRef-Zer0pa-SAL-7.0"
+keywords = [
+    "digital-ink",
+    "stroke-codec",
+    "pen-input",
+    "cross-runtime",
+    "wasm",
+    "pyo3",
+]
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Development Status :: 3 - Alpha",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Zer0pa/ZPE-Ink"
+Documentation = "https://github.com/Zer0pa/ZPE-Ink#readme"
+Repository = "https://github.com/Zer0pa/ZPE-Ink"
+Issues = "https://github.com/Zer0pa/ZPE-Ink/issues"
+Changelog = "https://github.com/Zer0pa/ZPE-Ink/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [

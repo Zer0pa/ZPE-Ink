@@ -1,0 +1,26 @@
+{
+  "title": "ZPE-Ink",
+  "description": "Cross-runtime deterministic ink codec. The committed public benchmark surface spans 1.02–1.61× compression across five public datasets, with UJI Pen Characters at 1.6111× exact roundtrip.",
+  "creators": [
+    {
+      "name": "Zer0pa (Pty) Ltd"
+    }
+  ],
+  "keywords": [
+    "digital-ink",
+    "stroke-codec",
+    "pen-input",
+    "cross-runtime",
+    "wasm",
+    "pyo3"
+  ],
+  "license": "LicenseRef-Zer0pa-SAL-7.0",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Zer0pa/ZPE-Ink",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

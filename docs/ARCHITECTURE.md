@@ -57,10 +57,9 @@ Status legend: `INSTALLABLE` means packaged and verified via wheel install; `SOU
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>proofs/INK_WAVE1_RELEASE_READINESS_REPORT.md</code></td><td>Release readiness and contradiction summary</td><td><code>INCONCLUSIVE</code></td></tr>
-    <tr><td><code>proofs/reruns/benchmark_freeze_local/claim_scope_map.json</code></td><td>Claim boundary and allowed statements</td><td><code>structured-tier-only</code></td></tr>
-    <tr><td><code>proofs/reruns/contradiction_resolution_local/contradiction_resolution_manifest.json</code></td><td>Sovereign release surface</td><td><code>FAIL</code></td></tr>
-    <tr><td><code>proofs/reruns/phase3_external/external_boundary_manifest.json</code></td><td>External corpus boundary</td><td><code>UNIPEN FAIL</code>, <code>Calliar PASS</code></td></tr>
+    <tr><td><code>proofs/release_validation/README.md</code></td><td>Release-validation directory status</td><td><code>INCOMPLETE</code></td></tr>
+    <tr><td><code>proofs/artifacts/public_benchmarks/README.md</code></td><td>Public-benchmark scope and dataset status</td><td><code>public-benchmark-only</code></td></tr>
+    <tr><td><code>proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json</code></td><td>Current committed public-corpus evidence</td><td><code>UJI exact</code>, <code>IAM/UNIPEN blocked</code></td></tr>
   </tbody>
 </table>
 
