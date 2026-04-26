@@ -49,7 +49,25 @@ These results do not constitute a hard-corpus pass, release-readiness claim, or 
 
 ## Comp Benchmarks
 
-These ratios are measured on **in-repo synthetic stroke fixtures** designed to exercise the codec's integer-native delta+RLE path. They are NOT measured on real IAM, UNIPEN, CROHME, UJI, or QuickDraw corpora — note that real IAM and real UNIPEN are marked "skipped" in the Public Benchmark Results section above. Synthetic fixtures favor RLE-friendly inputs by design and should not be read as compression-superiority claims on real handwriting.
+ZPE-Ink is a lossless CRC-framed structured-channel stroke codec — Hausdorff = 0.0 px on all measured corpora. Compression ratio is reported below for reference, but the product claim is structural fidelity + tamper detection, not CR dominance. The representative reference for non-fixture inputs is the real-public-corpora row block; the synthetic fixtures that follow are an RLE-friendly ceiling and are retained only as an upper-bound reference.
+
+### Comp Benchmarks — real public corpora (representative)
+
+Same comparator path applied to two real public handwriting corpora. Real IAM remains registration-gated and real UNIPEN remains host-blocked (per the Public Benchmark Results table); QuickDraw and CROHME are downloadable.
+
+| Corpus | Source | Samples | gzip CR | zlib CR | ZPE-Ink CR | Hausdorff (px) |
+|---|---|---:|---:|---:|---:|---:|
+| QuickDraw `cat` (simplified) | `storage.googleapis.com/quickdraw_dataset` | 50 | 2.248 | 2.872 | 2.535 | 0.0 |
+| CROHME (ICFHR package) | `oldweb.isical.ac.in/~crohme/ICFHR_package.zip` | 50 | 3.541 | 3.878 | 4.077 | 0.0 |
+| **Aggregate (bytes-weighted)** | — | 100 | **3.328** | **3.732** | **3.818** | **0.0** |
+
+Methodology: same int32 little-endian buffer layout fed to all three codecs; per-sample `encode_zpink` for ZPE-Ink. QuickDraw simplified ndjson supplies (x, y) only — `pressure=512`, `tilt=0`, `azimuth=0` are stuffed into the buffer slots so shape matches; this advantages RLE on the constant channels and is reported as-found. Full byte-level table at `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json`.
+
+**Read this honestly.** On real handwriting the gap between ZPE-Ink and gzip/zlib is narrow — zlib is competitive on QuickDraw, ZPE-Ink leads on CROHME. These real-corpus numbers are the representative reference for non-fixture inputs. Lossless roundtrip (Hausdorff = 0.0) holds on both real corpora; that structural-fidelity property, not the CR delta, is the product claim.
+
+### Synthetic ceiling fixtures (RLE-friendly by construction)
+
+These ratios are measured on **in-repo synthetic stroke fixtures** designed to exercise the codec's integer-native delta+RLE path. They are NOT measured on real IAM, UNIPEN, CROHME, UJI, or QuickDraw corpora — note that real IAM and real UNIPEN are marked "skipped" in the Public Benchmark Results section above. Synthetic fixtures favor RLE-friendly inputs by design and should be read as a ceiling, not a representative ratio.
 
 ZPE-Ink against general-purpose entropy coders on the lane's deterministic in-repo synthetic stroke fixtures (Wave-CB Phase 1). Apples-to-apples: every codec is fed the same byte buffer, an `int32` little-endian concatenation of `(x, y, pressure, tilt, azimuth)` per stroke. Hausdorff is the symmetric distance between original and decoded `(x, y)` loci in stroke-coordinate units (px).
 
@@ -62,20 +80,6 @@ ZPE-Ink against general-purpose entropy coders on the lane's deterministic in-re
 Headline values are the **bytes-weighted aggregate** ratio (`sum(raw_bytes) / sum(encoded_bytes)`) across both fixture sets — the industry-conventional aggregation for compression. The mean-of-per-set-means alternative (gzip 7.39 / zlib 7.51 / zpink 12.59) is also computable from the per-set entries in the committed artifact. Two fixture sets: `synthetic_directional_64a` (seed 20260220, 64 strokes) and `synthetic_directional_64b_sin_pressure` (seed 20260221, 64 strokes). Per-set per-stroke breakdowns and the full byte-level table are committed at `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json`; the human-readable summary is at `proofs/artifacts/comp_benchmarks/summary.md`.
 
 **Honest framing.** ZPE-Ink's product claim is *lossless roundtrip with structured semantics*, not raw CR dominance. The gzip/zlib comparators operate on opaque byte streams; ZPE-Ink operates on typed stroke channels with deterministic delta + RLE, CRC framing, and per-channel range validation. On these synthetic fixtures the typed approach happens to also dominate raw CR because the int32 channels are dense in small deltas — but no generalised CR-superiority claim is made and no claim is extended to real corpora outside this artifact. Where general-purpose coders compress better on a given corpus, that should be reported as-found.
-
-### Comp Benchmarks — real public corpora (addendum)
-
-Same comparator path applied to two real public handwriting corpora. Real IAM remains registration-gated and real UNIPEN remains host-blocked (per the Public Benchmark Results table); QuickDraw and CROHME are downloadable.
-
-| Corpus | Source | Samples | gzip CR | zlib CR | ZPE-Ink CR | Hausdorff (px) |
-|---|---|---:|---:|---:|---:|---:|
-| QuickDraw `cat` (simplified) | `storage.googleapis.com/quickdraw_dataset` | 50 | 2.248 | 2.872 | 2.535 | 0.0 |
-| CROHME (ICFHR package) | `oldweb.isical.ac.in/~crohme/ICFHR_package.zip` | 50 | 3.541 | 3.878 | 4.077 | 0.0 |
-| **Aggregate (bytes-weighted)** | — | 100 | **3.328** | **3.732** | **3.818** | **0.0** |
-
-Methodology: same int32 little-endian buffer layout fed to all three codecs; per-sample `encode_zpink` for ZPE-Ink. QuickDraw simplified ndjson supplies (x, y) only — `pressure=512`, `tilt=0`, `azimuth=0` are stuffed into the buffer slots so shape matches; this advantages RLE on the constant channels and is reported as-found. Full byte-level table at `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json`.
-
-**Read this honestly.** On real handwriting the gap between ZPE-Ink and gzip/zlib narrows substantially compared to the synthetic fixtures — zlib is competitive on QuickDraw, ZPE-Ink leads on CROHME. The synthetic numbers in the row block above are RLE-friendly by construction; the real numbers in this addendum are the more representative reference for non-fixture inputs. Lossless roundtrip (Hausdorff = 0.0) holds on both real corpora.
 
 ## Commercial Readiness
 
@@ -123,3 +127,9 @@ python -m build
 | Issues | `https://github.com/Zer0pa/ZPE-Ink/issues` |
 | License | SAL v7.0 — see `LICENSE` |
 | Contact | `architects@zer0pa.ai` |
+
+## Upcoming Workstreams
+
+This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
+
+- **Real-corpus expansion (IAM unblock + UNIPEN mirror)** — Operations / External Dependency. IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is and produces the proper headline.
