@@ -15,15 +15,28 @@ ZPE-Ink encodes and decodes deterministic `.zpink` stroke packets in Python, wit
 
 The committed public benchmark artifacts are in `proofs/` and their compression-ratio results are surfaced below. CI does not rerun those external corpora; the benchmark rows are static committed artifacts.
 
-## Encoding Contract
+## Key Metrics
 
-| Claim | Proof artifact | CI test |
+| Metric | Value | Source |
 |---|---|---|
-| `.zpink` lossless roundtrip is bit-exact for generated fixtures | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_lossless_roundtrip_bit_exact` |
-| Corrupted or truncated payloads are rejected | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_crc_tamper_detection`, `code/tests/test_codec_roundtrip.py::test_reject_truncated_payload` |
-| zero-valued optional channels can be omitted without changing decoded strokes | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default` |
-| binding headers and package version are contract-consistent | `proofs/logs/20260321_technical_alignment_binding_contracts.json` | `code/tests/test_binding_contracts.py::test_repo_binding_contracts_pass` |
-| CLI demo and roundtrip entry points execute | `proofs/logs/20260321_technical_alignment_wheel_install.txt` | `code/tests/test_cli.py` |
+| UJI Pen Characters compression ratio | **1.6111×** | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
+| Max Hausdorff error (all measured corpora) | **0.0 px** | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+| Measured samples (UJI corpus) | **1,364** | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
+| Encode latency | **0.02–0.10 ms/stroke** | `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke`) |
+
+> Source: committed static benchmark artifacts at `proofs/artifacts/public_benchmarks/` and `proofs/reruns/phase3_public_benchmarks/`. CI does not rerun external corpora; results are bounded to the sample sizes shown.
+
+## License and Portfolio
+
+License: SAL v7.0 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer0pa portfolio; repository index at `https://github.com/Zer0pa/ZPE-Ink`.
+
+## What We Prove
+
+- `.zpink` lossless roundtrip is bit-exact for all generated stroke fixtures — CRC-framed, structured-channel, not byte-opaque. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt`
+- Corrupted or truncated payloads are rejected by the codec before decoded data is returned. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt`
+- Zero-valued optional channels (tilt, azimuth) are suppressed by default without altering decoded strokes; zero-channel suppression raised CROHME mean compression from 1.52× to 1.76×. Proof: `proofs/artifacts/mathwriting_analysis/comparison.json`
+- Binding headers and package version are contract-consistent across the Python, PyO3, WASM, Swift, and C# surfaces. Proof: `proofs/logs/20260321_technical_alignment_binding_contracts.json`
+- Hausdorff error = 0.0 px on all five measured public corpora (UJI, CROHME, DigiLeTs, MathWriting, QuickDraw). Proof: `proofs/artifacts/public_benchmarks/dataset_matrix.json`
 
 ## Public Benchmark Results
 
@@ -47,11 +60,11 @@ Encode latency on the measured corpora: median 0.02–0.10 ms/stroke (single-cor
 
 These results do not constitute a hard-corpus pass, release-readiness claim, or competitive superiority claim. See `proofs/artifacts/public_benchmarks/README.md` for full methodology notes.
 
-## Comp Benchmarks
+## Competitive Benchmarks
 
 ZPE-Ink is a lossless CRC-framed structured-channel stroke codec — Hausdorff = 0.0 px on all measured corpora. Compression ratio is reported below for reference, but the product claim is structural fidelity + tamper detection, not CR dominance. The representative reference for non-fixture inputs is the real-public-corpora row block; the synthetic fixtures that follow are an RLE-friendly ceiling and are retained only as an upper-bound reference.
 
-### Comp Benchmarks — real public corpora (representative)
+### Real public corpora (representative)
 
 Same comparator path applied to two real public handwriting corpora. Real IAM remains registration-gated and real UNIPEN remains host-blocked (per the Public Benchmark Results table); QuickDraw and CROHME are downloadable.
 
@@ -89,7 +102,7 @@ Headline values are the **bytes-weighted aggregate** ratio (`sum(raw_bytes) / su
 | Posture | No release-readiness or hard-corpus authority claim is made. Public benchmark rows are lossless-path results against raw float32 baseline only; no named external codec comparison is claimed. |
 | Release validation | `proofs/release_validation/README.md` |
 
-## What We Do Not Claim
+## What We Don't Claim
 
 - No claim of release readiness
 - No claim of blind-clone closure
@@ -119,6 +132,62 @@ Package build:
 python -m build
 ```
 
+## Tests and Verification
+
+| Code | Check | Verdict |
+|---|---|---|
+| `code/tests/test_codec_roundtrip.py::test_lossless_roundtrip_bit_exact` | Bit-exact encode→decode roundtrip on generated fixtures | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
+| `code/tests/test_codec_roundtrip.py::test_crc_tamper_detection` | Corrupted payloads are rejected before decode | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
+| `code/tests/test_codec_roundtrip.py::test_reject_truncated_payload` | Truncated payloads are rejected | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
+| `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default` | Zero tilt/azimuth channels suppressed without altering decoded strokes | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
+| `code/tests/test_binding_contracts.py::test_repo_binding_contracts_pass` | Binding headers + package version are contract-consistent | PASS — `proofs/logs/20260321_technical_alignment_binding_contracts.json` |
+| `code/tests/test_cli.py` | CLI demo and verify-roundtrip entry points execute | PASS — `proofs/logs/20260321_technical_alignment_wheel_install.txt` |
+
+## Proof Anchors
+
+| Path | State |
+|---|---|
+| `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` | committed — UJI 1.6111× / Hausdorff 0.0 / 1,364 samples |
+| `proofs/artifacts/public_benchmarks/dataset_matrix.json` | committed — all 5 measured corpora, per-sample latency |
+| `proofs/artifacts/public_benchmarks/README.md` | committed — full methodology notes |
+| `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json` | committed — synthetic fixture byte-level breakdown |
+| `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json` | committed — real-corpus comparator (QuickDraw, CROHME) |
+| `proofs/artifacts/comp_benchmarks/summary.md` | committed — human-readable comp benchmark summary |
+| `proofs/artifacts/mathwriting_analysis/comparison.json` | committed — zero-channel suppression improvement |
+| `proofs/logs/20260321_technical_alignment_pytest.txt` | committed — full pytest run, all codec roundtrip tests PASS |
+| `proofs/logs/20260321_technical_alignment_binding_contracts.json` | committed — binding contract surface PASS |
+| `proofs/logs/20260321_technical_alignment_cross_runtime.json` | committed — cross-runtime parity log |
+| `proofs/release_validation/README.md` | committed — release validation checklist |
+
+## Repo Shape
+
+| Key | Value |
+|---|---|
+| Codec source | `code/` (Python package: `zpe_ink`) |
+| Tests | `code/tests/` (pytest; 8 test modules) |
+| Proof artifacts | `proofs/artifacts/` and `proofs/reruns/` |
+| Proof logs | `proofs/logs/` |
+| Release validation | `proofs/release_validation/` |
+| Bindings | `code/bindings/` (PyO3, WASM, Swift, C#) |
+| CI | `.github/workflows/ink-ci.yml` |
+| License | SAL v7.0 — `LICENSE` |
+
+## Upcoming Workstreams
+
+This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
+
+- **Real-corpus expansion (IAM unblock + UNIPEN mirror)** — Operations / External Dependency. IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is and produces the proper headline.
+
+## Encoding Contract
+
+| Claim | Proof artifact | CI test |
+|---|---|---|
+| `.zpink` lossless roundtrip is bit-exact for generated fixtures | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_lossless_roundtrip_bit_exact` |
+| Corrupted or truncated payloads are rejected | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_crc_tamper_detection`, `code/tests/test_codec_roundtrip.py::test_reject_truncated_payload` |
+| zero-valued optional channels can be omitted without changing decoded strokes | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default` |
+| binding headers and package version are contract-consistent | `proofs/logs/20260321_technical_alignment_binding_contracts.json` | `code/tests/test_binding_contracts.py::test_repo_binding_contracts_pass` |
+| CLI demo and roundtrip entry points execute | `proofs/logs/20260321_technical_alignment_wheel_install.txt` | `code/tests/test_cli.py` |
+
 ## Repository Links
 
 | Field | Value |
@@ -127,9 +196,3 @@ python -m build
 | Issues | `https://github.com/Zer0pa/ZPE-Ink/issues` |
 | License | SAL v7.0 — see `LICENSE` |
 | Contact | `architects@zer0pa.ai` |
-
-## Upcoming Workstreams
-
-This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
-
-- **Real-corpus expansion (IAM unblock + UNIPEN mirror)** — Operations / External Dependency. IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is and produces the proper headline.
