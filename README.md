@@ -6,29 +6,62 @@ License: see `LICENSE`.
 
 ## What This Is
 
-ZPE-Ink encodes and decodes deterministic `.zpink` stroke packets in Python, with 0.0 Hausdorff error on all measured datasets and bit-exact roundtrip fidelity backed by committed benchmark artifacts. The public proof surface covers:
+Deterministic stroke-packet codec. Bit-exact .zpink roundtrip with 0.0 Hausdorff error on measured datasets. Install from PyPI: `pip install zpe-ink`
 
-- lossless encode/decode roundtrip for generated stroke fixtures
-- CRC and truncated-payload rejection
-- optional pressure, tilt, and azimuth channel handling
-- static binding-contract consistency across the Python, PyO3, WASM, Swift, and C# surfaces
+- lossless encode/decode roundtrip for generated stroke fixtures - CRC and truncated-payload rejection - optional pressure, tilt, and azimuth channel handling - static binding-contract consistency across the Python, PyO3, WASM, Swift, and C# surfaces
 
 The committed public benchmark artifacts are in `proofs/` and their compression-ratio results are surfaced below. CI does not rerun those external corpora; the benchmark rows are static committed artifacts.
 
+## Codec Mechanics
+
+<p>
+  <img src=".github/assets/readme/lane-mechanics/INK.gif" alt="ZPE-Ink Codec Mechanics animation" width="100%">
+</p>
+
+| Field | Value |
+| ------- | ------- |
+| Architecture | STROKE_MANIFOLD |
+| Encoding | INK_DELTA_V1 |
+| Mechanics Asset | `.github/assets/readme/lane-mechanics/INK.gif` |
+
 ## Key Metrics
 
-| Metric | Value | Source |
-|---|---|---|
-| UJI Pen Characters compression ratio | **1.6111×** | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
-| Max Hausdorff error (all measured corpora) | **0.0 px** | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| Measured samples (UJI corpus) | **1,364** | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
-| Encode latency | **0.02–0.10 ms/stroke** | `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke`) |
+| Metric | Value | Baseline |
+| -------- | ------- | ---------- |
+| UJI Pen Characters compression ratio | 1.6111× | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json |
+| Max Hausdorff error (all measured corpora) | 0.0 px | proofs/artifacts/public_benchmarks/dataset_matrix.json |
+| Measured samples (UJI corpus) | 1,364 | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json |
+| Encode latency | 0.02–0.10 ms/stroke | proofs/artifacts/public_benchmarks/dataset_matrix.json (median_ms_per_stroke) |
 
 > Source: committed static benchmark artifacts at `proofs/artifacts/public_benchmarks/` and `proofs/reruns/phase3_public_benchmarks/`. CI does not rerun external corpora; results are bounded to the sample sizes shown.
 
-## License and Portfolio
+## Repo Identity
 
-License: SAL v7.0 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer0pa portfolio; repository index at `https://github.com/Zer0pa/ZPE-Ink`.
+| Field | Value |
+| ------- | ------- |
+| Identifier | ZPE-Ink |
+| Repository | https://github.com/Zer0pa/ZPE-Ink |
+| Section | encoding |
+| Visibility | PUBLIC |
+| Architecture | STROKE_MANIFOLD |
+| Encoding | INK_DELTA_V1 |
+| Commit SHA | 98b5ed734735 |
+| License | SAL-7.0 |
+| Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
+
+## Readiness
+
+| Field | Value |
+| ------- | ------- |
+| Verdict | STAGED |
+| Checks | 6/6 |
+| Anchors | 6 display anchors |
+| Commit | 98b5ed734735 |
+| Authority | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
+
+### Honest Blocker
+
+No claim of release readiness (release surface FAIL); No claim of blind-clone closure (INCONCLUSIVE); No claim of hard-corpus pass
 
 ## What We Prove
 
@@ -38,27 +71,48 @@ License: SAL v7.0 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer
 - Binding headers and package version are contract-consistent across the Python, PyO3, WASM, Swift, and C# surfaces. Proof: `proofs/logs/20260321_technical_alignment_binding_contracts.json`
 - Hausdorff error = 0.0 px on all five measured public corpora (UJI, CROHME, DigiLeTs, MathWriting, QuickDraw). Proof: `proofs/artifacts/public_benchmarks/dataset_matrix.json`
 
-## Public Benchmark Results
+## What We Don't Claim
 
-These rows are committed static artifacts. The codec ran `encode → decode → verify` on each dataset using the repo-local lossless path. CI does not rerun these external corpora; results are bounded to the sample sizes shown.
+- No claim of release readiness
+- No claim of blind-clone closure
+- No claim of hard-corpus pass
+- No claim of general digital-ink dominance
+- No claim that the public benchmark rows close release readiness or hard-corpus authority
+- No claim that local binding-contract checks prove full runtime parity for every downstream environment
+- No claim that committed compression ratios on the above datasets constitute superiority over general-purpose codecs on those corpora
 
-| Dataset | Samples | Compression ratio | Max Hausdorff (px) | Roundtrip fidelity | Proof artifact |
-|---|---:|---:|---:|---|---|
-| UJI Pen Characters | 1,364 | **1.6111×** | 0.0 | exact | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
-| CROHME (ICFHR package) | 90 | **1.4360×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| DigiLeTs | 180 | **1.0891×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| MathWriting excerpt | 70 | **1.1870×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| QuickDraw (cat) | 256 | **1.0181×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| IAM On-Line | — | — | — | skipped: registration-gated | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| UNIPEN | — | — | — | skipped: host unavailable | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+## Verification Status
 
-Baseline: raw little-endian float32 x/y pairs per point. Hausdorff = 0.0 on all measured datasets means decoded coordinates match the source integers exactly.
+| Code | Check | Verdict |
+| ------ | ------- | --------- |
+| V_01 | Bit-exact encode→decode roundtrip on generated fixtures | PASS |
+| V_02 | Corrupted payloads are rejected before decode | PASS |
+| V_03 | Truncated payloads are rejected | PASS |
+| V_04 | Zero tilt/azimuth channels suppressed without altering decoded strokes | PASS |
+| V_05 | Binding headers + package version are contract-consistent | PASS |
+| V_06 | CLI demo and verify-roundtrip entry points execute | PASS |
 
-**Zero-channel suppression improvement (committed):** auto-suppressing zero tilt/azimuth streams raised CROHME mean compression from 1.52× to 1.76× (max 3.34×) and MathWriting mean from 1.06× to 1.15×. This change is captured in `proofs/artifacts/mathwriting_analysis/comparison.json` and exercised by `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default`.
+## Proof Anchors
 
-Encode latency on the measured corpora: median 0.02–0.10 ms/stroke (single-core Python, macOS; QuickDraw low end 0.026 ms/stroke, MathWriting high end 0.099 ms/stroke). Source: `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke` field).
+| Path | State |
+| ------ | ------- |
+| `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` | VERIFIED |
+| `proofs/artifacts/public_benchmarks/dataset_matrix.json` | VERIFIED |
+| `proofs/artifacts/public_benchmarks/README.md` | VERIFIED |
+| `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json` | VERIFIED |
+| `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json` | VERIFIED |
+| `proofs/artifacts/comp_benchmarks/summary.md` | VERIFIED |
 
-These results do not constitute a hard-corpus pass, release-readiness claim, or competitive superiority claim. See `proofs/artifacts/public_benchmarks/README.md` for full methodology notes.
+## Repo Shape
+
+| Field | Value |
+| ------- | ------- |
+| Proof Anchors | 6 display anchors |
+| Modality Lanes | 6 |
+| Architecture | STROKE_MANIFOLD |
+| Encoding | INK_DELTA_V1 |
+| Verification | 6/6 checks |
+| Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
 
 ## Competitive Benchmarks
 
@@ -94,24 +148,6 @@ Headline values are the **bytes-weighted aggregate** ratio (`sum(raw_bytes) / su
 
 **Honest framing.** ZPE-Ink's product claim is *lossless roundtrip with structured semantics*, not raw CR dominance. The gzip/zlib comparators operate on opaque byte streams; ZPE-Ink operates on typed stroke channels with deterministic delta + RLE, CRC framing, and per-channel range validation. On these synthetic fixtures the typed approach happens to also dominate raw CR because the int32 channels are dense in small deltas — but no generalised CR-superiority claim is made and no claim is extended to real corpora outside this artifact. Where general-purpose coders compress better on a given corpus, that should be reported as-found.
 
-## Commercial Readiness
-
-| Field | Value |
-|---|---|
-| Verdict | `STAGED` |
-| Posture | No release-readiness or hard-corpus authority claim is made. Public benchmark rows are lossless-path results against raw float32 baseline only; no named external codec comparison is claimed. |
-| Release validation | `proofs/release_validation/README.md` |
-
-## What We Don't Claim
-
-- No claim of release readiness
-- No claim of blind-clone closure
-- No claim of hard-corpus pass
-- No claim of general digital-ink dominance
-- No claim that the public benchmark rows close release readiness or hard-corpus authority
-- No claim that local binding-contract checks prove full runtime parity for every downstream environment
-- No claim that committed compression ratios on the above datasets constitute superiority over general-purpose codecs on those corpora
-
 ## Quick Start
 
 Development install:
@@ -132,51 +168,37 @@ Package build:
 python -m build
 ```
 
-## Tests and Verification
-
-| Code | Check | Verdict |
-|---|---|---|
-| `code/tests/test_codec_roundtrip.py::test_lossless_roundtrip_bit_exact` | Bit-exact encode→decode roundtrip on generated fixtures | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
-| `code/tests/test_codec_roundtrip.py::test_crc_tamper_detection` | Corrupted payloads are rejected before decode | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
-| `code/tests/test_codec_roundtrip.py::test_reject_truncated_payload` | Truncated payloads are rejected | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
-| `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default` | Zero tilt/azimuth channels suppressed without altering decoded strokes | PASS — `proofs/logs/20260321_technical_alignment_pytest.txt` |
-| `code/tests/test_binding_contracts.py::test_repo_binding_contracts_pass` | Binding headers + package version are contract-consistent | PASS — `proofs/logs/20260321_technical_alignment_binding_contracts.json` |
-| `code/tests/test_cli.py` | CLI demo and verify-roundtrip entry points execute | PASS — `proofs/logs/20260321_technical_alignment_wheel_install.txt` |
-
-## Proof Anchors
-
-| Path | State |
-|---|---|
-| `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` | committed — UJI 1.6111× / Hausdorff 0.0 / 1,364 samples |
-| `proofs/artifacts/public_benchmarks/dataset_matrix.json` | committed — all 5 measured corpora, per-sample latency |
-| `proofs/artifacts/public_benchmarks/README.md` | committed — full methodology notes |
-| `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json` | committed — synthetic fixture byte-level breakdown |
-| `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json` | committed — real-corpus comparator (QuickDraw, CROHME) |
-| `proofs/artifacts/comp_benchmarks/summary.md` | committed — human-readable comp benchmark summary |
-| `proofs/artifacts/mathwriting_analysis/comparison.json` | committed — zero-channel suppression improvement |
-| `proofs/logs/20260321_technical_alignment_pytest.txt` | committed — full pytest run, all codec roundtrip tests PASS |
-| `proofs/logs/20260321_technical_alignment_binding_contracts.json` | committed — binding contract surface PASS |
-| `proofs/logs/20260321_technical_alignment_cross_runtime.json` | committed — cross-runtime parity log |
-| `proofs/release_validation/README.md` | committed — release validation checklist |
-
-## Repo Shape
-
-| Key | Value |
-|---|---|
-| Codec source | `code/` (Python package: `zpe_ink`) |
-| Tests | `code/tests/` (pytest; 8 test modules) |
-| Proof artifacts | `proofs/artifacts/` and `proofs/reruns/` |
-| Proof logs | `proofs/logs/` |
-| Release validation | `proofs/release_validation/` |
-| Bindings | `code/bindings/` (PyO3, WASM, Swift, C#) |
-| CI | `.github/workflows/ink-ci.yml` |
-| License | SAL v7.0 — `LICENSE` |
-
 ## Upcoming Workstreams
 
 This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
 
 - **Real-corpus expansion (IAM unblock + UNIPEN mirror)** — Operations / External Dependency. IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is and produces the proper headline.
+
+## License and Portfolio
+
+License: SAL v7.0 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer0pa portfolio; repository index at `https://github.com/Zer0pa/ZPE-Ink`.
+
+## Public Benchmark Results
+
+These rows are committed static artifacts. The codec ran `encode → decode → verify` on each dataset using the repo-local lossless path. CI does not rerun these external corpora; results are bounded to the sample sizes shown.
+
+| Dataset | Samples | Compression ratio | Max Hausdorff (px) | Roundtrip fidelity | Proof artifact |
+|---|---:|---:|---:|---|---|
+| UJI Pen Characters | 1,364 | **1.6111×** | 0.0 | exact | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
+| CROHME (ICFHR package) | 90 | **1.4360×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+| DigiLeTs | 180 | **1.0891×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+| MathWriting excerpt | 70 | **1.1870×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+| QuickDraw (cat) | 256 | **1.0181×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+| IAM On-Line | — | — | — | skipped: registration-gated | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+| UNIPEN | — | — | — | skipped: host unavailable | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+
+Baseline: raw little-endian float32 x/y pairs per point. Hausdorff = 0.0 on all measured datasets means decoded coordinates match the source integers exactly.
+
+**Zero-channel suppression improvement (committed):** auto-suppressing zero tilt/azimuth streams raised CROHME mean compression from 1.52× to 1.76× (max 3.34×) and MathWriting mean from 1.06× to 1.15×. This change is captured in `proofs/artifacts/mathwriting_analysis/comparison.json` and exercised by `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default`.
+
+Encode latency on the measured corpora: median 0.02–0.10 ms/stroke (single-core Python, macOS; QuickDraw low end 0.026 ms/stroke, MathWriting high end 0.099 ms/stroke). Source: `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke` field).
+
+These results do not constitute a hard-corpus pass, release-readiness claim, or competitive superiority claim. See `proofs/artifacts/public_benchmarks/README.md` for full methodology notes.
 
 ## Encoding Contract
 
