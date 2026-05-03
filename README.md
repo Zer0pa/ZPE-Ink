@@ -176,7 +176,7 @@ This section captures the active lane priorities — what the next agent or cont
 
 ## License and Portfolio
 
-License: SAL v7.0 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer0pa portfolio; repository index at `https://github.com/Zer0pa/ZPE-Ink`.
+License: SAL v7.1 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer0pa portfolio; repository index at `https://github.com/Zer0pa/ZPE-Ink`.
 
 ## Public Benchmark Results
 
@@ -216,5 +216,5 @@ These results do not constitute a hard-corpus pass, release-readiness claim, or 
 |---|---|
 | Repository | `https://github.com/Zer0pa/ZPE-Ink` |
 | Issues | `https://github.com/Zer0pa/ZPE-Ink/issues` |
-| License | SAL v7.0 — see `LICENSE` |
+| License | SAL v7.1 — see `LICENSE` |
 | Contact | `architects@zer0pa.ai` |
