@@ -2,6 +2,41 @@
 
 ## Install / Developer Commands
 
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-ink`.
+Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-ink/).
+Source: [Zer0pa/ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink/).
+
+```bash
+python3.11 -m pip install zpe-ink
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_ink
+
+print("zpe-ink", md.version("zpe-ink"))
+PY
+```
+
+
+CLI smoke:
+
+```bash
+zpe-ink --help
+zpe-ink-demo --help
+zpe-ink-verify-roundtrip --help
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- Version skew exists: root manifest is 0.1.1 while code/native manifests still carry 0.1.0; align before publishing again.
+<!-- INSTALL-DX:END -->
+
 #### Quick Start
 
 Development install:
