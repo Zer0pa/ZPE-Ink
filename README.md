@@ -1,239 +1,255 @@
 # ZPE-Ink
 
-> Product-page mirror for `/encoding/ZPE-Ink/`.
-> Live public repo: [Zer0pa/ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink).
-> GitHub Markdown cannot reproduce the website typography, CSS, JavaScript, scroll behavior, or live bento layout; this README translates the product page into GitHub-safe Markdown evidence blocks.
-
 ## 0. Install / Developer Commands
 
-The product page is the positioning authority. This section is the only retained developer-surface material from the previous root README.
+#### Quick Start
+
+Development install:
 
 ```bash
-Deterministic stroke-packet codec. Bit-exact .zpink roundtrip with 0.0 Hausdorff error on measured datasets. Install from PyPI: `pip install zpe-ink
-- `.zpink` lossless roundtrip is bit-exact for all generated stroke fixtures — CRC-framed, structured-channel, not byte-opaque. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt
-- Corrupted or truncated payloads are rejected by the codec before decoded data is returned. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e './code[dev]'
 python -m pytest code/tests -q
+python -m zpe_ink demo
+python -m zpe_ink verify-roundtrip
 ```
 
-## Product Page Mirror
-
-**Product-page title:** ZPE-Ink · Deterministic .zpink stroke transport · Zer0pa
-
-**Product-page description:** ZPE-Ink · deterministic .zpink stroke packets · exact roundtrip on UJI, CROHME, DigiLeTs, MathWriting, QuickDraw · 0.0 px Hausdorff · PyPI 0.1.1 stale
-
-### Hero Translation
-
-> 00 · ZPE-INK · STROKE PROTOCOLRESEARCH-READY · PyPI STALE Ink that knows the hand that wrote. Stylus stroke codec · ZPE-Ink · PyPI zpe-ink 0.1.1 stale · github.com/Zer0pa/ZPE-Ink When a stylus draws, the mark carries more than its shape — it carries the pressure of the hand, the angle of the pen, the rhythm of how it moved. That information has always been in digital ink. It has never had a codec that kept it exactly. ZPE-Ink is a Python .zpink encoder that seals the full stroke — x, y, pressure, tilt, azimuth — and returns it with 0.00 px Hausdorff error on three public handwriting corpora. The hand's rhythm, kept.
-
-## Positioning
-
-| Field | Value |
-| --- | --- |
-| Section | encoding |
-| Product route | /encoding/ZPE-Ink/ |
-| Live public repository | https://github.com/Zer0pa/ZPE-Ink |
-| Repo identity used here | ZPE-Ink |
-| Website display identity | ZPE-Ink |
-| Verdict | STAGED |
-| Posture | always_in_beta |
-| Headline metric | COMPRESSION: 1.6111×. UJI Pen Characters; Hausdorff 0.0 px on all measured corpora. ZPE-Ink canonical authority surface; useful now, improving continuously. |
-| Honest blocker | No claim of release readiness (release surface FAIL); No claim of blind-clone closure (INCONCLUSIVE); No claim of hard-corpus pass |
-| Mechanics asset from product page | INK.gif |
-
-## Key Metrics
-
-| Metric | Value | Baseline |
-| --- | --- | --- |
-| UJI Pen Characters compression ratio | 1.6111× | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json |
-| Max Hausdorff error (all measured corpora) | 0.0 px | proofs/artifacts/public_benchmarks/dataset_matrix.json |
-| Measured samples (UJI corpus) | 1,364 | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json |
-| Encode latency | 0.02–0.10 ms/stroke | proofs/artifacts/public_benchmarks/dataset_matrix.json (median_ms_per_stroke) |
-
-## Proof Anchors
-
-| Path | State |
-| --- | --- |
-| proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json | VERIFIED |
-| proofs/artifacts/public_benchmarks/dataset_matrix.json | VERIFIED |
-| proofs/artifacts/public_benchmarks/README.md | VERIFIED |
-| proofs/artifacts/comp_benchmarks/ink_codec_comparison.json | VERIFIED |
-| proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json | VERIFIED |
-| proofs/artifacts/comp_benchmarks/summary.md | VERIFIED |
-
-## What We Prove
-
-- `.zpink` lossless roundtrip is bit-exact for all generated stroke fixtures — CRC-framed, structured-channel, not byte-opaque. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt`
-- Corrupted or truncated payloads are rejected by the codec before decoded data is returned. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt`
-- Zero-valued optional channels (tilt, azimuth) are suppressed by default without altering decoded strokes; zero-channel suppression raised CROHME mean compression from 1.52× to 1.76×. Proof: `proofs/artifacts/mathwriting_analysis/comparison.json`
-- Binding headers and package version are contract-consistent across the Python, PyO3, WASM, Swift, and C# surfaces. Proof: `proofs/logs/20260321_technical_alignment_binding_contracts.json`
-- Hausdorff error = 0.0 px on all five measured public corpora (UJI, CROHME, DigiLeTs, MathWriting, QuickDraw). Proof: `proofs/artifacts/public_benchmarks/dataset_matrix.json`
-
-## What We Do Not Claim
-
-- No claim of release readiness
-- No claim of blind-clone closure
-- No claim of hard-corpus pass
-- No claim of general digital-ink dominance
-- No claim that the public benchmark rows close release readiness or hard-corpus authority
-- No claim that local binding-contract checks prove full runtime parity for every downstream environment
-- No claim that committed compression ratios on the above datasets constitute superiority over general-purpose codecs on those corpora
-
-## Blockers / Failures
-
-> No claim of release readiness (release surface FAIL); No claim of blind-clone closure (INCONCLUSIVE); No claim of hard-corpus pass
-
-## Verification Surface
-
-| Code | Check | Verdict |
-| --- | --- | --- |
-| V_01 | Bit-exact encode→decode roundtrip on generated fixtures | PASS |
-| V_02 | Corrupted payloads are rejected before decode | PASS |
-| V_03 | Truncated payloads are rejected | PASS |
-| V_04 | Zero tilt/azimuth channels suppressed without altering decoded strokes | PASS |
-| V_05 | Binding headers + package version are contract-consistent | PASS |
-| V_06 | CLI demo and verify-roundtrip entry points execute | PASS |
-
-## License
-
-| Field | Value |
-| --- | --- |
-| License | SAL-7.0 |
-| Authority source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
-
-## Upcoming Workstreams
-
-| Category | Summary |
-| --- | --- |
-| Operations / External Dependency | Real-corpus expansion (IAM unblock + UNIPEN mirror); IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is. |
-| Active Engineering | Continue current authority-packet refinement on ZPE-Ink; surface new receipts as they land. |
-
-## Related Repos
-
-- Repo-local proof-surface conventions only; no retired cross-lane repo is current authority.
-- ZPE-Mocap - adjacent motion-stream codec in the ZPE transport family.
-- ZPE-XR - sibling XR motion compression surface with multi-runtime packaging work.
-
-<details>
-<summary>Full Visible Product-Page Bento Translation</summary>
-
-This section preserves the product page cells as Markdown text blocks. It intentionally omits shared site navigation, footer chrome, CSS, and scripts.
-
-### Bento Cell 1
-
-> 00 · ZPE-INK · STROKE PROTOCOLRESEARCH-READY · PyPI STALE Ink that knows the hand that wrote. Stylus stroke codec · ZPE-Ink · PyPI zpe-ink 0.1.1 stale · github.com/Zer0pa/ZPE-Ink When a stylus draws, the mark carries more than its shape — it carries the pressure of the hand, the angle of the pen, the rhythm of how it moved. That information has always been in digital ink. It has never had a codec that kept it exactly. ZPE-Ink is a Python .zpink encoder that seals the full stroke — x, y, pressure, tilt, azimuth — and returns it with 0.00 px Hausdorff error on three public handwriting corpora. The hand's rhythm, kept.
-
-### Bento Cell 2
-
-> 01 · THE GAPSTORED, NOT KEPT Digital ink stores coordinates. It has never had a codec that preserved everything the hand did.
-
-### Bento Cell 3
-
-> 02 · MARKETSADJACENT FORECASTS Digital pen / handwriting market'30 · $5.3B Digital pen'30 · $7.2B Digital writing instruments'30 · $6.2B E-learning content tools'30 · $38.1B Handwriting recognition softwareest. $2.1B Every stylus that captures a stroke moves through these markets; ZPE-Ink is the exact-geometry record underneath them.
-
-### Bento Cell 4
-
-> 03 · VALUE $6.2B 2030 digital writing instruments; ZPE-Ink is the stroke record three public corpora proved exact.
-
-### Bento Cell 5
-
-> 04 · INSIGHT A signature keeps more than the mark — the hand's rhythm.
-
-### Bento Cell 6
-
-> 05.1 · CURRENT TECHSTORED AND FLATTENED A stylus measures pressure and angle dozens of times a second, then a bitmap takes over and flattens the motion into pixels. The hand's rhythm exists in the device for a moment, then disappears into the file.
-
-### Bento Cell 7
-
-> 05.2 · OUR TECHKEEP THE FULL STROKE ZPE-Ink keeps the full stroke. It seals x, y, pressure, tilt, and azimuth into a CRC-framed .zpink packet and returns every coordinate unchanged — 0.00 px Hausdorff error on UJI, CROHME, and DigiLeTs. Zero-channel suppression raises CROHME mean compression from 1.52× to 1.76× when a device omits tilt. The hand's motion, intact.
-
-### Bento Cell 8
-
-> 05.3 · BENCHMARKSPUBLIC CORPUS DATA UJI1.61× · 1,364 samples CROHME1.44× · 90 samples Hausdorff0.00px CRCPASSpublic corpus data UJI1.61× PASS CROHME1.44× PASS DigiLeTs1.09× PASS Scope: UJI, CROHME, DigiLeTs, MathWriting, QuickDraw. IAM/UNIPEN skipped.
-
-### Bento Cell 9
-
-> 06 · MEASUREMENTCORPUS CHECK SUITE Five public corpora replay with exact geometry. CRC rejects the rest.
-
-### Bento Cell 10
-
-> 06.1 · COMPARATIVE PERFORMANCESTROKE BYTES PER SAMPLE .zpink UJI1.61× .zpink CROHME1.44× .zpink DigiLeTs1.09× gzip / zlib aggregate3.33× / 3.73× Same int32 (x, y, pressure, tilt, azimuth) buffer across every corpus. On the QuickDraw plus CROHME aggregate, .zpink compresses 3.82×, gzip 3.33×, zlib 3.73×. IAM is registration-limited; UNIPEN is host-unavailable.
-
-### Bento Cell 11
-
-> 07 · KEY METRICSMEASURED PUBLIC EVIDENCE
-
-### Bento Cell 12
-
-> 07.1 · UJI 1.61× vs raw · 1,364 UJI samples
-
-### Bento Cell 13
-
-> 07.2 · CROHME 1.44× ICFHR package · 90 CROHME samples
-
-### Bento Cell 14
-
-> 07.3 · DIGILETS 1.09× real corpus · 180 DigiLeTs samples
-
-### Bento Cell 15
-
-> 07.4 · HAUSDORFF 0.00px all measured corpora · exact roundtrip
-
-### Bento Cell 16
-
-> 07.5 · PYPI v0.1.1 PyPI stale · next release closes the version skew
-
-### Bento Cell 17
-
-> 08 · STROKE FIDELITYENCODE AND DECODE A stroke enters. The same stroke exits. 0.0 px proves it.
-
-### Bento Cell 18
-
-> 08.1 · WHAT THE CODEC KEEPSALL FIVE CHANNELS Committed artifacts show bit-exact encode-decode on generated fixtures: int32 (x, y, pressure, tilt, azimuth) buffers seal into a CRC-framed .zpink packet and exit without coordinate change — 0.00 px Hausdorff error confirmed on UJI, CROHME, DigiLeTs, MathWriting, and QuickDraw. CRC rejects malformed payloads before decode. Zero-channel suppression raises CROHME mean compression from 1.52× to 1.76× without altering decoded strokes — a device that omits tilt or azimuth gets better compression, not worse. Non-Python runtime parity is not claimed beyond static bindings checked across PyO3, WASM, Swift, and C#.
-
-### Bento Cell 19
-
-> 08.2 · HONEST BLOCKER Honest Blocker · Three checks remain open: cutting the next release, passing the harder IAM and UNIPEN corpora (IAM is registration-limited, UNIPEN is host-unavailable), and proving a clean-room rebuild from spec. Today the PyPI package at 0.1.1 sits ahead of its bindings and runtime at 0.1.0 — a version skew the next release closes.
-
-### Bento Cell 20
-
-> 09 INK THAT KEEPS THE HAND.
-
-### Bento Cell 21
-
-> 09.1 · THE AMBITION The aim is a stroke record that travels — from a tablet to a server to a researcher's workstation to another device entirely — without losing the pressure, the angle, or the rhythm that made the mark a particular person's. Handwriting becomes citable data, not a frozen picture of itself, across the platforms where pens actually write.
-
-### Bento Cell 22
-
-> 09.2 · WHAT WORKS NOW Working today: 0.00 px Hausdorff error on UJI, CROHME, and DigiLeTs; CRC framing confirmed.
-
-### Bento Cell 23
-
-> 09.3 · WHAT'S STILL OPEN Open: PyPI 0.1.2 release, hard-corpus pass on IAM and UNIPEN, blind-clone closure, shipped runtime parity.
-
-### Bento Cell 24
-
-> 09.4 · EDUCATION · NEAR-TERM (12–24 MO) Student handwriting survives the upload An e-learning platform that stores a million pages of student maths working can keep the hand that wrote them — pressure, hesitation, retraced strokes — not a flattened image. A teacher reviewing late work sees the thinking, not the result.
-
-### Bento Cell 25
-
-> 09.5 · SIGNATURES · NEAR-TERM (12–24 MO) A signature carries the hand A bank or notary capturing a signature on a tablet can archive the full stroke dynamics, not a glyph image. Forensic comparison stops being a visual judgment about pixels and becomes a measurable comparison of pressure curves and pen angles across signings.
-
-### Bento Cell 26
-
-> 09.6 · STYLUS PLATFORMS · MID-TERM (24–48 MO) One stroke packet across devices A stylus drawing made on an iPad reaches a Windows tablet, a web canvas, and an Android phone without a conversion step that drops tilt or smooths pressure. The note-taking app stops choosing between portability and fidelity.
-
-### Bento Cell 27
-
-> 09.7 · RESEARCH ARCHIVES · MID-TERM (24–48 MO) Handwriting corpora become jointly searchable UJI, CROHME, DigiLeTs, and any future corpus on the same exact-geometry codec can be queried as one. A handwriting researcher hunting for a specific letter formation stops running three retrieval pipelines and starts asking one question of one archive.
-
-### Bento Cell 28
-
-> 09.8 · ARCHIVE STANDARD · PARADIGM (48 MO+) Pen computing acquires a common record Notes, signatures, sketches, maths, and annotations from any device resolve to the same kind of stroke record. A handwritten archive becomes a citable, retrievable substrate — the way text and code already are — instead of a folder of frozen images that lose the hand.
-
-</details>
-
----
-
-Source mapping: product route `/encoding/ZPE-Ink/` -> live public repo `Zer0pa/ZPE-Ink`. README generated from product-page authority plus retained install/dev commands only.
+Package build:
+
+```bash
+python -m build
+```
+
+<table>
+<tr>
+<td colspan="7" valign="top">
+<sub>01 · Bento cell · b-cell b-hero cell-7 row-2</sub>
+<div><span><b>00 · ZPE-INK</b> · STROKE PROTOCOL</span><span>RESEARCH-READY · PyPI STALE</span></div>
+      <h1>Ink that knows <span>the hand that wrote.</span></h1>
+      <p>Stylus stroke codec · ZPE-Ink · PyPI <em>zpe-ink</em> 0.1.1 stale · github.com/Zer0pa/ZPE-Ink</p>
+      <p>When a stylus draws, the mark carries more than its shape — it carries the pressure of the hand, the angle of the pen, the rhythm of how it moved. That information has always been in digital ink. It has never had a codec that kept it exactly. ZPE-Ink is a Python <em>.zpink</em> encoder that seals the full stroke — <em>x</em>, <em>y</em>, pressure, tilt, azimuth — and returns it with <strong>0.00 px Hausdorff error</strong> on three public handwriting corpora. The hand's rhythm, kept.</p>
+</td>
+<td colspan="5" valign="top">
+<sub>02 · ZPE Ink animated mechanics diagram · b-cell b-codec-mechanics cell-5 row-2</sub>
+<figure>
+        <div><img src="docs/assets/product-page-mechanics.gif" alt="ZPE-Ink approved scientific square mechanics diagram showing stroke codec with Freeman direction and nibble pack mechanics."></div>
+        <figcaption><b>Scope:</b> tested handwriting corpora. Full stylus stroke replay includes x, y, pressure, tilt, and azimuth; PyPI remains stale.</figcaption>
+      </figure>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top">
+<sub>03 · Bento cell · b-cell b-title cell-4</sub>
+<div><b>01 · THE GAP</b><span>STORED, NOT KEPT</span></div>
+      <h2>Digital ink stores coordinates. It has never had a codec that preserved everything the hand did.</h2>
+</td>
+<td colspan="5" valign="top">
+<sub>04 · Bento cell · b-cell b-fig cell-5</sub>
+<div><b>02 · MARKETS</b><span>ADJACENT FORECASTS</span></div>
+      <div>
+        <div>
+          <div><span>Digital pen / handwriting market</span><span></span><span>'30 · $5.3B</span></div>
+          <div><span>Digital pen</span><span></span><span>'30 · $7.2B</span></div>
+          <div><span>Digital writing instruments</span><span></span><span>'30 · $6.2B</span></div>
+          <div><span>E-learning content tools</span><span></span><span>'30 · $38.1B</span></div>
+          <div><span>Handwriting recognition software</span><span></span><span>est. $2.1B</span></div>
+        </div>
+      </div>
+      <div>Every stylus that captures a stroke moves through these markets; ZPE-Ink is the exact-geometry record underneath them.</div>
+</td>
+<td colspan="3" valign="top">
+<sub>05 · Bento cell · b-cell b-stat cell-3</sub>
+<div><b>03 · VALUE</b></div>
+      <div>$6.2<span>B</span></div>
+      <div>2030 digital writing instruments; ZPE-Ink is the stroke record three public corpora proved exact.</div>
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+<sub>06 · Bento cell · b-cell b-title is-centered cell-3</sub>
+<div><b>04 · INSIGHT</b></div>
+      <h2>A signature keeps more than the mark — <span>the hand's rhythm.</span></h2>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>07 · Bento cell · b-cell b-prose is-technical b-tech-panel</sub>
+<div><b>05.1 · CURRENT TECH</b><span>STORED AND FLATTENED</span></div>
+        <p>A stylus measures pressure and angle dozens of times a second, then a bitmap takes over and flattens the motion into pixels. The hand's rhythm exists in the device for a moment, then disappears into the file.</p>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>08 · Bento cell · b-cell b-prose is-technical b-tech-panel</sub>
+<div><b>05.2 · OUR TECH</b><span>KEEP THE FULL STROKE</span></div>
+        <p>ZPE-Ink keeps the full stroke. It seals <em>x</em>, <em>y</em>, pressure, tilt, and azimuth into a CRC-framed <em>.zpink</em> packet and returns every coordinate unchanged — <strong>0.00 px Hausdorff error</strong> on UJI, CROHME, and DigiLeTs. Zero-channel suppression raises CROHME mean compression from <strong>1.52× to 1.76×</strong> when a device omits tilt. The hand's motion, intact.</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+<sub>09 · Bento cell · b-cell b-fig b-benchmark-mini cell-3</sub>
+<div><b>05.3 · BENCHMARKS</b><span>PUBLIC CORPUS DATA</span></div>
+      <div>
+        <div>
+          <div><span>UJI</span><b>1.61</b><small>× · 1,364 samples</small></div>
+          <div><span>CROHME</span><b>1.44</b><small>× · 90 samples</small></div>
+          <div><span>Hausdorff</span><b>0.00</b><small>px</small></div>
+          <div><span>CRC</span><b>PASS</b><small>public corpus data</small></div>
+        </div>
+        <div>
+          <div><span>UJI</span><span></span><span>1.61× PASS</span></div>
+          <div><span>CROHME</span><span></span><span>1.44× PASS</span></div>
+          <div><span>DigiLeTs</span><span></span><span>1.09× PASS</span></div>
+        </div>
+      </div>
+      <div><b>Scope:</b> UJI, CROHME, DigiLeTs, MathWriting, QuickDraw. <strong>IAM/UNIPEN skipped.</strong></div>
+</td>
+<td colspan="4" valign="top">
+<sub>10 · Bento cell · b-cell b-title cell-4</sub>
+<div><b>06 · MEASUREMENT</b><span>CORPUS CHECK SUITE</span></div>
+      <h2>Five public corpora replay with exact geometry. <span>CRC rejects the rest.</span></h2>
+</td>
+</tr>
+<tr>
+<td colspan="8" valign="top">
+<sub>11 · Bento cell · b-cell b-fig cell-8</sub>
+<div><b>06.1 · COMPARATIVE PERFORMANCE</b><span>STROKE BYTES PER SAMPLE</span></div>
+      <div>
+        <div>
+          <div><span>.zpink UJI</span><span></span><span>1.61×</span></div>
+          <div><span>.zpink CROHME</span><span></span><span>1.44×</span></div>
+          <div><span>.zpink DigiLeTs</span><span></span><span>1.09×</span></div>
+          <div><span>gzip / zlib aggregate</span><span></span><span>3.33× / 3.73×</span></div>
+        </div>
+      </div>
+      <div>Same int32 (<em>x</em>, <em>y</em>, pressure, tilt, azimuth) buffer across every corpus. On the QuickDraw plus CROHME aggregate, <strong>.zpink compresses 3.82×, gzip 3.33×, zlib 3.73×</strong>. IAM is registration-limited; UNIPEN is host-unavailable.</div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>12 · Bento cell · b-cell b-row-label cell-12</sub>
+<div><b>07 · KEY METRICS</b><span>MEASURED PUBLIC EVIDENCE</span></div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>13 · Bento cell · b-cell b-stat</sub>
+<div><b>07.1 · UJI</b></div>
+      <div>1.61<span>×</span></div>
+      <div>vs raw · <b>1,364 UJI samples</b></div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>14 · Bento cell · b-cell b-stat</sub>
+<div><b>07.2 · CROHME</b></div>
+      <div>1.44<span>×</span></div>
+      <div>ICFHR package · <b>90 CROHME samples</b></div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>15 · Bento cell · b-cell b-stat</sub>
+<div><b>07.3 · DIGILETS</b></div>
+      <div>1.09<span>×</span></div>
+      <div>real corpus · <b>180 DigiLeTs samples</b></div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>16 · Bento cell · b-cell b-stat</sub>
+<div><b>07.4 · HAUSDORFF</b></div>
+      <div>0.00<span>px</span></div>
+      <div>all measured corpora · <b>exact roundtrip</b></div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>17 · Bento cell · b-cell b-stat</sub>
+<div><b>07.5 · PYPI</b></div>
+      <div>v0.1.1</div>
+      <div>PyPI stale · <b>next release closes the version skew</b></div>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top">
+<sub>18 · Bento cell · b-cell b-title is-centered cell-4</sub>
+<div><b>08 · STROKE FIDELITY</b><span>ENCODE AND DECODE</span></div>
+      <h2>A stroke enters. The same stroke exits. <span>0.0 px proves it.</span></h2>
+</td>
+<td colspan="5" valign="top">
+<sub>19 · Bento cell · b-cell b-prose is-technical cell-5</sub>
+<div><b>08.1 · WHAT THE CODEC KEEPS</b><span>ALL FIVE CHANNELS</span></div>
+      <p>Committed artifacts show bit-exact encode-decode on generated fixtures: int32 (<em>x</em>, <em>y</em>, pressure, tilt, azimuth) buffers seal into a CRC-framed <em>.zpink</em> packet and exit without coordinate change — <strong>0.00 px Hausdorff error</strong> confirmed on UJI, CROHME, DigiLeTs, MathWriting, and QuickDraw. CRC rejects malformed payloads before decode. Zero-channel suppression raises CROHME mean compression from <strong>1.52× to 1.76×</strong> without altering decoded strokes — a device that omits tilt or azimuth gets better compression, not worse. <strong>Non-Python runtime parity is not claimed</strong> beyond static bindings checked across PyO3, WASM, Swift, and C#.</p>
+</td>
+<td colspan="3" valign="top">
+<sub>20 · Bento cell · b-cell b-blocker cell-3</sub>
+<div><b>08.2 · HONEST BLOCKER</b></div>
+      <span>Honest Blocker ·</span>
+      <p>Three checks remain open: cutting the next release, passing the harder IAM and UNIPEN corpora (IAM is registration-limited, UNIPEN is host-unavailable), and proving a clean-room rebuild from spec. Today the PyPI package at <strong>0.1.1</strong> sits ahead of its bindings and runtime at <strong>0.1.0</strong> — a version skew the next release closes.</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="top">
+<sub>21 · Bento cell · b-cell b-title cell-4</sub>
+<div><b>09</b></div>
+      <h2>INK THAT KEEPS <span>THE HAND.</span></h2>
+</td>
+<td colspan="4" valign="top">
+<sub>22 · Bento cell · b-cell b-prose cell-4</sub>
+<div><b>09.1 · THE AMBITION</b></div>
+      <p>The aim is a stroke record that travels — from a tablet to a server to a researcher's workstation to another device entirely — without losing the pressure, the angle, or the rhythm that made the mark a particular person's. Handwriting becomes citable data, not a frozen picture of itself, across the platforms where pens actually write.</p>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>23 · Bento cell · b-cell b-title b-statement-card</sub>
+<div><b>09.2 · WHAT WORKS NOW</b></div>
+        <h2>Working today: 0.00 px Hausdorff error on UJI, CROHME, and DigiLeTs; CRC framing confirmed.</h2>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>24 · Bento cell · b-cell b-title b-statement-card</sub>
+<div><b>09.3 · WHAT'S STILL OPEN</b></div>
+        <h2>Open: PyPI 0.1.2 release, hard-corpus pass on IAM and UNIPEN, blind-clone closure, shipped runtime parity.</h2>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>25 · Bento cell · b-cell b-unlock</sub>
+<div><b>09.4</b> &middot; EDUCATION · NEAR-TERM (12–24 MO)</div>
+      <div>Student handwriting survives the upload</div><div>An e-learning platform that stores a million pages of student maths working can keep the hand that wrote them — pressure, hesitation, retraced strokes — not a flattened image. A teacher reviewing late work sees the thinking, not the result.</div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>26 · Bento cell · b-cell b-unlock</sub>
+<div><b>09.5</b> &middot; SIGNATURES · NEAR-TERM (12–24 MO)</div>
+      <div>A signature carries the hand</div><div>A bank or notary capturing a signature on a tablet can archive the full stroke dynamics, not a glyph image. Forensic comparison stops being a visual judgment about pixels and becomes a measurable comparison of pressure curves and pen angles across signings.</div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>27 · Bento cell · b-cell b-unlock</sub>
+<div><b>09.6</b> &middot; STYLUS PLATFORMS · MID-TERM (24–48 MO)</div>
+      <div>One stroke packet across devices</div><div>A stylus drawing made on an iPad reaches a Windows tablet, a web canvas, and an Android phone without a conversion step that drops tilt or smooths pressure. The note-taking app stops choosing between portability and fidelity.</div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>28 · Bento cell · b-cell b-unlock</sub>
+<div><b>09.7</b> &middot; RESEARCH ARCHIVES · MID-TERM (24–48 MO)</div>
+      <div>Handwriting corpora become jointly searchable</div><div>UJI, CROHME, DigiLeTs, and any future corpus on the same exact-geometry codec can be queried as one. A handwriting researcher hunting for a specific letter formation stops running three retrieval pipelines and starts asking one question of one archive.</div>
+</td>
+</tr>
+<tr>
+<td colspan="12" valign="top">
+<sub>29 · Bento cell · b-cell b-unlock</sub>
+<div><b>09.8</b> &middot; ARCHIVE STANDARD · PARADIGM (48 MO+)</div>
+      <div>Pen computing acquires a common record</div><div>Notes, signatures, sketches, maths, and annotations from any device resolve to the same kind of stroke record. A handwritten archive becomes a citable, retrievable substrate — the way text and code already are — instead of a folder of frozen images that lose the hand.</div>
+</td>
+</tr>
+</table>
