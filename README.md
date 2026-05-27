@@ -74,7 +74,7 @@ python -m build
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div>$6.2<span>B</span></div>
       <div>2030 digital writing instruments; ZPE-Ink is the stroke record three public corpora proved exact.</div>
 </td>
