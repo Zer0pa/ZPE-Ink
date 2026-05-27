@@ -1,67 +1,66 @@
 # ZPE-Ink
 
-ZPE-Ink is an always-in-beta `.zpink` digital-ink codec — one of 17 independent encoding products in the Zer0pa portfolio. Every claim in this README is anchored to a committed proof artifact or CI test in this repository.
+> Product-page mirror for `/encoding/ZPE-Ink/`.
+> Live public repo: [Zer0pa/ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink).
+> GitHub Markdown cannot reproduce the website typography, CSS, JavaScript, scroll behavior, or live bento layout; this README translates the product page into GitHub-safe Markdown evidence blocks.
 
-License: see `LICENSE`.
+## 0. Install / Developer Commands
 
-## What This Is
+The product page is the positioning authority. This section is the only retained developer-surface material from the previous root README.
 
-Deterministic stroke-packet codec. Bit-exact .zpink roundtrip with 0.0 Hausdorff error on measured datasets. Install from PyPI: `pip install zpe-ink`
+```bash
+Deterministic stroke-packet codec. Bit-exact .zpink roundtrip with 0.0 Hausdorff error on measured datasets. Install from PyPI: `pip install zpe-ink
+- `.zpink` lossless roundtrip is bit-exact for all generated stroke fixtures — CRC-framed, structured-channel, not byte-opaque. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt
+- Corrupted or truncated payloads are rejected by the codec before decoded data is returned. Proof: `proofs/logs/20260321_technical_alignment_pytest.txt
+python -m pip install --upgrade pip
+python -m pip install -e './code[dev]'
+python -m pytest code/tests -q
+```
 
-- lossless encode/decode roundtrip for generated stroke fixtures - CRC and truncated-payload rejection - optional pressure, tilt, and azimuth channel handling - static binding-contract consistency across the Python, PyO3, WASM, Swift, and C# surfaces
+## Product Page Mirror
 
-The committed public benchmark artifacts are in `proofs/` and their compression-ratio results are surfaced below. CI does not rerun those external corpora; the benchmark rows are static committed artifacts.
+**Product-page title:** ZPE-Ink · Deterministic .zpink stroke transport · Zer0pa
 
-## Codec Mechanics
+**Product-page description:** ZPE-Ink · deterministic .zpink stroke packets · exact roundtrip on UJI, CROHME, DigiLeTs, MathWriting, QuickDraw · 0.0 px Hausdorff · PyPI 0.1.1 stale
 
-<p>
-  <img src=".github/assets/readme/lane-mechanics/INK.gif" alt="ZPE-Ink Codec Mechanics animation" width="100%">
-</p>
+### Hero Translation
+
+> 00 · ZPE-INK · STROKE PROTOCOLRESEARCH-READY · PyPI STALE Ink that knows the hand that wrote. Stylus stroke codec · ZPE-Ink · PyPI zpe-ink 0.1.1 stale · github.com/Zer0pa/ZPE-Ink When a stylus draws, the mark carries more than its shape — it carries the pressure of the hand, the angle of the pen, the rhythm of how it moved. That information has always been in digital ink. It has never had a codec that kept it exactly. ZPE-Ink is a Python .zpink encoder that seals the full stroke — x, y, pressure, tilt, azimuth — and returns it with 0.00 px Hausdorff error on three public handwriting corpora. The hand's rhythm, kept.
+
+## Positioning
 
 | Field | Value |
-| ------- | ------- |
-| Architecture | STROKE_MANIFOLD |
-| Encoding | INK_DELTA_V1 |
-| Mechanics Asset | `.github/assets/readme/lane-mechanics/INK.gif` |
+| --- | --- |
+| Section | encoding |
+| Product route | /encoding/ZPE-Ink/ |
+| Live public repository | https://github.com/Zer0pa/ZPE-Ink |
+| Repo identity used here | ZPE-Ink |
+| Website display identity | ZPE-Ink |
+| Verdict | STAGED |
+| Posture | always_in_beta |
+| Headline metric | COMPRESSION: 1.6111×. UJI Pen Characters; Hausdorff 0.0 px on all measured corpora. ZPE-Ink canonical authority surface; useful now, improving continuously. |
+| Honest blocker | No claim of release readiness (release surface FAIL); No claim of blind-clone closure (INCONCLUSIVE); No claim of hard-corpus pass |
+| Mechanics asset from product page | INK.gif |
 
 ## Key Metrics
 
 | Metric | Value | Baseline |
-| -------- | ------- | ---------- |
+| --- | --- | --- |
 | UJI Pen Characters compression ratio | 1.6111× | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json |
 | Max Hausdorff error (all measured corpora) | 0.0 px | proofs/artifacts/public_benchmarks/dataset_matrix.json |
 | Measured samples (UJI corpus) | 1,364 | proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json |
 | Encode latency | 0.02–0.10 ms/stroke | proofs/artifacts/public_benchmarks/dataset_matrix.json (median_ms_per_stroke) |
 
-> Source: committed static benchmark artifacts at `proofs/artifacts/public_benchmarks/` and `proofs/reruns/phase3_public_benchmarks/`. CI does not rerun external corpora; results are bounded to the sample sizes shown.
+## Proof Anchors
 
-## Repo Identity
-
-| Field | Value |
-| ------- | ------- |
-| Identifier | ZPE-Ink |
-| Repository | https://github.com/Zer0pa/ZPE-Ink |
-| Section | encoding |
-| Visibility | PUBLIC |
-| Architecture | STROKE_MANIFOLD |
-| Encoding | INK_DELTA_V1 |
-| Commit SHA | 98b5ed734735 |
-| License | SAL-7.0 |
-| Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
-
-## Readiness
-
-| Field | Value |
-| ------- | ------- |
-| Verdict | STAGED |
-| Checks | 6/6 |
-| Anchors | 6 display anchors |
-| Commit | 98b5ed734735 |
-| Authority | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
-
-### Honest Blocker
-
-No claim of release readiness (release surface FAIL); No claim of blind-clone closure (INCONCLUSIVE); No claim of hard-corpus pass
+| Path | State |
+| --- | --- |
+| proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json | VERIFIED |
+| proofs/artifacts/public_benchmarks/dataset_matrix.json | VERIFIED |
+| proofs/artifacts/public_benchmarks/README.md | VERIFIED |
+| proofs/artifacts/comp_benchmarks/ink_codec_comparison.json | VERIFIED |
+| proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json | VERIFIED |
+| proofs/artifacts/comp_benchmarks/summary.md | VERIFIED |
 
 ## What We Prove
 
@@ -71,7 +70,7 @@ No claim of release readiness (release surface FAIL); No claim of blind-clone cl
 - Binding headers and package version are contract-consistent across the Python, PyO3, WASM, Swift, and C# surfaces. Proof: `proofs/logs/20260321_technical_alignment_binding_contracts.json`
 - Hausdorff error = 0.0 px on all five measured public corpora (UJI, CROHME, DigiLeTs, MathWriting, QuickDraw). Proof: `proofs/artifacts/public_benchmarks/dataset_matrix.json`
 
-## What We Don't Claim
+## What We Do Not Claim
 
 - No claim of release readiness
 - No claim of blind-clone closure
@@ -81,10 +80,14 @@ No claim of release readiness (release surface FAIL); No claim of blind-clone cl
 - No claim that local binding-contract checks prove full runtime parity for every downstream environment
 - No claim that committed compression ratios on the above datasets constitute superiority over general-purpose codecs on those corpora
 
-## Verification Status
+## Blockers / Failures
+
+> No claim of release readiness (release surface FAIL); No claim of blind-clone closure (INCONCLUSIVE); No claim of hard-corpus pass
+
+## Verification Surface
 
 | Code | Check | Verdict |
-| ------ | ------- | --------- |
+| --- | --- | --- |
 | V_01 | Bit-exact encode→decode roundtrip on generated fixtures | PASS |
 | V_02 | Corrupted payloads are rejected before decode | PASS |
 | V_03 | Truncated payloads are rejected | PASS |
@@ -92,129 +95,145 @@ No claim of release readiness (release surface FAIL); No claim of blind-clone cl
 | V_05 | Binding headers + package version are contract-consistent | PASS |
 | V_06 | CLI demo and verify-roundtrip entry points execute | PASS |
 
-## Proof Anchors
-
-| Path | State |
-| ------ | ------- |
-| `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` | VERIFIED |
-| `proofs/artifacts/public_benchmarks/dataset_matrix.json` | VERIFIED |
-| `proofs/artifacts/public_benchmarks/README.md` | VERIFIED |
-| `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json` | VERIFIED |
-| `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json` | VERIFIED |
-| `proofs/artifacts/comp_benchmarks/summary.md` | VERIFIED |
-
-## Repo Shape
+## License
 
 | Field | Value |
-| ------- | ------- |
-| Proof Anchors | 6 display anchors |
-| Modality Lanes | 6 |
-| Architecture | STROKE_MANIFOLD |
-| Encoding | INK_DELTA_V1 |
-| Verification | 6/6 checks |
-| Authority Source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
-
-## Competitive Benchmarks
-
-ZPE-Ink is a lossless CRC-framed structured-channel stroke codec — Hausdorff = 0.0 px on all measured corpora. Compression ratio is reported below for reference, but the product claim is structural fidelity + tamper detection, not CR dominance. The representative reference for non-fixture inputs is the real-public-corpora row block; the synthetic fixtures that follow are an RLE-friendly ceiling and are retained only as an upper-bound reference.
-
-### Real public corpora (representative)
-
-Same comparator path applied to two real public handwriting corpora. Real IAM remains registration-gated and real UNIPEN remains host-blocked (per the Public Benchmark Results table); QuickDraw and CROHME are downloadable.
-
-| Corpus | Source | Samples | gzip CR | zlib CR | ZPE-Ink CR | Hausdorff (px) |
-|---|---|---:|---:|---:|---:|---:|
-| QuickDraw `cat` (simplified) | `storage.googleapis.com/quickdraw_dataset` | 50 | 2.248 | 2.872 | 2.535 | 0.0 |
-| CROHME (ICFHR package) | `oldweb.isical.ac.in/~crohme/ICFHR_package.zip` | 50 | 3.541 | 3.878 | 4.077 | 0.0 |
-| **Aggregate (bytes-weighted)** | — | 100 | **3.328** | **3.732** | **3.818** | **0.0** |
-
-Methodology: same int32 little-endian buffer layout fed to all three codecs; per-sample `encode_zpink` for ZPE-Ink. QuickDraw simplified ndjson supplies (x, y) only — `pressure=512`, `tilt=0`, `azimuth=0` are stuffed into the buffer slots so shape matches; this advantages RLE on the constant channels and is reported as-found. Full byte-level table at `proofs/artifacts/comp_benchmarks/ink_codec_comparison_real_corpora.json`.
-
-**Read this honestly.** On real handwriting the gap between ZPE-Ink and gzip/zlib is narrow — zlib is competitive on QuickDraw, ZPE-Ink leads on CROHME. These real-corpus numbers are the representative reference for non-fixture inputs. Lossless roundtrip (Hausdorff = 0.0) holds on both real corpora; that structural-fidelity property, not the CR delta, is the product claim.
-
-### Synthetic ceiling fixtures (RLE-friendly by construction)
-
-These ratios are measured on **in-repo synthetic stroke fixtures** designed to exercise the codec's integer-native delta+RLE path. They are NOT measured on real IAM, UNIPEN, CROHME, UJI, or QuickDraw corpora — note that real IAM and real UNIPEN are marked "skipped" in the Public Benchmark Results section above. Synthetic fixtures favor RLE-friendly inputs by design and should be read as a ceiling, not a representative ratio.
-
-ZPE-Ink against general-purpose entropy coders on the lane's deterministic in-repo synthetic stroke fixtures (Wave-CB Phase 1). Apples-to-apples: every codec is fed the same byte buffer, an `int32` little-endian concatenation of `(x, y, pressure, tilt, azimuth)` per stroke. Hausdorff is the symmetric distance between original and decoded `(x, y)` loci in stroke-coordinate units (px).
-
-| Codec | Aggregate CR (bytes-weighted) | Hausdorff Error (px) | Notes |
-|---|---:|---:|---|
-| gzip (level 6) | 7.336 | n/a (lossless byte stream, not stroke-aware) | Python `gzip.compress`, deterministic `mtime=0` |
-| zlib (level 6) | 7.441 | n/a (lossless byte stream, not stroke-aware) | Python `zlib.compress` |
-| ZPE-Ink (`.zpink`) | 12.735 | **0.0** on all 128 strokes | Lossless, CRC-framed, typed channels |
-
-Headline values are the **bytes-weighted aggregate** ratio (`sum(raw_bytes) / sum(encoded_bytes)`) across both fixture sets — the industry-conventional aggregation for compression. The mean-of-per-set-means alternative (gzip 7.39 / zlib 7.51 / zpink 12.59) is also computable from the per-set entries in the committed artifact. Two fixture sets: `synthetic_directional_64a` (seed 20260220, 64 strokes) and `synthetic_directional_64b_sin_pressure` (seed 20260221, 64 strokes). Per-set per-stroke breakdowns and the full byte-level table are committed at `proofs/artifacts/comp_benchmarks/ink_codec_comparison.json`; the human-readable summary is at `proofs/artifacts/comp_benchmarks/summary.md`.
-
-**Honest framing.** ZPE-Ink's product claim is *lossless roundtrip with structured semantics*, not raw CR dominance. The gzip/zlib comparators operate on opaque byte streams; ZPE-Ink operates on typed stroke channels with deterministic delta + RLE, CRC framing, and per-channel range validation. On these synthetic fixtures the typed approach happens to also dominate raw CR because the int32 channels are dense in small deltas — but no generalised CR-superiority claim is made and no claim is extended to real corpora outside this artifact. Where general-purpose coders compress better on a given corpus, that should be reported as-found.
-
-## Quick Start
-
-Development install:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e './code[dev]'
-python -m pytest code/tests -q
-python -m zpe_ink demo
-python -m zpe_ink verify-roundtrip
-```
-
-Package build:
-
-```bash
-python -m build
-```
+| --- | --- |
+| License | SAL-7.0 |
+| Authority source | proofs/reruns/phase5_wedge/final_go_no_go_surface.json |
 
 ## Upcoming Workstreams
 
-This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
+| Category | Summary |
+| --- | --- |
+| Operations / External Dependency | Real-corpus expansion (IAM unblock + UNIPEN mirror); IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is. |
+| Active Engineering | Continue current authority-packet refinement on ZPE-Ink; surface new receipts as they land. |
 
-- **Real-corpus expansion (IAM unblock + UNIPEN mirror)** — Operations / External Dependency. IAM is registration-gated and UNIPEN host is unavailable; once unblocked, the existing comparator path runs as-is and produces the proper headline.
+## Related Repos
 
-## License and Portfolio
+- Repo-local proof-surface conventions only; no retired cross-lane repo is current authority.
+- ZPE-Mocap - adjacent motion-stream codec in the ZPE transport family.
+- ZPE-XR - sibling XR motion compression surface with multi-runtime packaging work.
 
-License: SAL v7.1 — see `LICENSE`. ZPE-Ink is one of 17 codec lanes in the Zer0pa portfolio; repository index at `https://github.com/Zer0pa/ZPE-Ink`.
+<details>
+<summary>Full Visible Product-Page Bento Translation</summary>
 
-## Public Benchmark Results
+This section preserves the product page cells as Markdown text blocks. It intentionally omits shared site navigation, footer chrome, CSS, and scripts.
 
-These rows are committed static artifacts. The codec ran `encode → decode → verify` on each dataset using the repo-local lossless path. CI does not rerun these external corpora; results are bounded to the sample sizes shown.
+### Bento Cell 1
 
-| Dataset | Samples | Compression ratio | Max Hausdorff (px) | Roundtrip fidelity | Proof artifact |
-|---|---:|---:|---:|---|---|
-| UJI Pen Characters | 1,364 | **1.6111×** | 0.0 | exact | `proofs/reruns/phase3_public_benchmarks/phase3_public_benchmarks.json` |
-| CROHME (ICFHR package) | 90 | **1.4360×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| DigiLeTs | 180 | **1.0891×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| MathWriting excerpt | 70 | **1.1870×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| QuickDraw (cat) | 256 | **1.0181×** | 0.0 | exact | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| IAM On-Line | — | — | — | skipped: registration-gated | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
-| UNIPEN | — | — | — | skipped: host unavailable | `proofs/artifacts/public_benchmarks/dataset_matrix.json` |
+> 00 · ZPE-INK · STROKE PROTOCOLRESEARCH-READY · PyPI STALE Ink that knows the hand that wrote. Stylus stroke codec · ZPE-Ink · PyPI zpe-ink 0.1.1 stale · github.com/Zer0pa/ZPE-Ink When a stylus draws, the mark carries more than its shape — it carries the pressure of the hand, the angle of the pen, the rhythm of how it moved. That information has always been in digital ink. It has never had a codec that kept it exactly. ZPE-Ink is a Python .zpink encoder that seals the full stroke — x, y, pressure, tilt, azimuth — and returns it with 0.00 px Hausdorff error on three public handwriting corpora. The hand's rhythm, kept.
 
-Baseline: raw little-endian float32 x/y pairs per point. Hausdorff = 0.0 on all measured datasets means decoded coordinates match the source integers exactly.
+### Bento Cell 2
 
-**Zero-channel suppression improvement (committed):** auto-suppressing zero tilt/azimuth streams raised CROHME mean compression from 1.52× to 1.76× (max 3.34×) and MathWriting mean from 1.06× to 1.15×. This change is captured in `proofs/artifacts/mathwriting_analysis/comparison.json` and exercised by `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default`.
+> 01 · THE GAPSTORED, NOT KEPT Digital ink stores coordinates. It has never had a codec that preserved everything the hand did.
 
-Encode latency on the measured corpora: median 0.02–0.10 ms/stroke (single-core Python, macOS; QuickDraw low end 0.026 ms/stroke, MathWriting high end 0.099 ms/stroke). Source: `proofs/artifacts/public_benchmarks/dataset_matrix.json` (`median_ms_per_stroke` field).
+### Bento Cell 3
 
-These results do not constitute a hard-corpus pass, release-readiness claim, or competitive superiority claim. See `proofs/artifacts/public_benchmarks/README.md` for full methodology notes.
+> 02 · MARKETSADJACENT FORECASTS Digital pen / handwriting market'30 · $5.3B Digital pen'30 · $7.2B Digital writing instruments'30 · $6.2B E-learning content tools'30 · $38.1B Handwriting recognition softwareest. $2.1B Every stylus that captures a stroke moves through these markets; ZPE-Ink is the exact-geometry record underneath them.
 
-## Encoding Contract
+### Bento Cell 4
 
-| Claim | Proof artifact | CI test |
-|---|---|---|
-| `.zpink` lossless roundtrip is bit-exact for generated fixtures | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_lossless_roundtrip_bit_exact` |
-| Corrupted or truncated payloads are rejected | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_crc_tamper_detection`, `code/tests/test_codec_roundtrip.py::test_reject_truncated_payload` |
-| zero-valued optional channels can be omitted without changing decoded strokes | `proofs/logs/20260321_technical_alignment_pytest.txt` | `code/tests/test_codec_roundtrip.py::test_zero_optional_channels_are_omitted_by_default` |
-| binding headers and package version are contract-consistent | `proofs/logs/20260321_technical_alignment_binding_contracts.json` | `code/tests/test_binding_contracts.py::test_repo_binding_contracts_pass` |
-| CLI demo and roundtrip entry points execute | `proofs/logs/20260321_technical_alignment_wheel_install.txt` | `code/tests/test_cli.py` |
+> 03 · VALUE $6.2B 2030 digital writing instruments; ZPE-Ink is the stroke record three public corpora proved exact.
 
-## Repository Links
+### Bento Cell 5
 
-| Field | Value |
-|---|---|
-| Repository | `https://github.com/Zer0pa/ZPE-Ink` |
-| Issues | `https://github.com/Zer0pa/ZPE-Ink/issues` |
-| License | SAL v7.1 — see `LICENSE` |
-| Contact | `architects@zer0pa.ai` |
+> 04 · INSIGHT A signature keeps more than the mark — the hand's rhythm.
+
+### Bento Cell 6
+
+> 05.1 · CURRENT TECHSTORED AND FLATTENED A stylus measures pressure and angle dozens of times a second, then a bitmap takes over and flattens the motion into pixels. The hand's rhythm exists in the device for a moment, then disappears into the file.
+
+### Bento Cell 7
+
+> 05.2 · OUR TECHKEEP THE FULL STROKE ZPE-Ink keeps the full stroke. It seals x, y, pressure, tilt, and azimuth into a CRC-framed .zpink packet and returns every coordinate unchanged — 0.00 px Hausdorff error on UJI, CROHME, and DigiLeTs. Zero-channel suppression raises CROHME mean compression from 1.52× to 1.76× when a device omits tilt. The hand's motion, intact.
+
+### Bento Cell 8
+
+> 05.3 · BENCHMARKSPUBLIC CORPUS DATA UJI1.61× · 1,364 samples CROHME1.44× · 90 samples Hausdorff0.00px CRCPASSpublic corpus data UJI1.61× PASS CROHME1.44× PASS DigiLeTs1.09× PASS Scope: UJI, CROHME, DigiLeTs, MathWriting, QuickDraw. IAM/UNIPEN skipped.
+
+### Bento Cell 9
+
+> 06 · MEASUREMENTCORPUS CHECK SUITE Five public corpora replay with exact geometry. CRC rejects the rest.
+
+### Bento Cell 10
+
+> 06.1 · COMPARATIVE PERFORMANCESTROKE BYTES PER SAMPLE .zpink UJI1.61× .zpink CROHME1.44× .zpink DigiLeTs1.09× gzip / zlib aggregate3.33× / 3.73× Same int32 (x, y, pressure, tilt, azimuth) buffer across every corpus. On the QuickDraw plus CROHME aggregate, .zpink compresses 3.82×, gzip 3.33×, zlib 3.73×. IAM is registration-limited; UNIPEN is host-unavailable.
+
+### Bento Cell 11
+
+> 07 · KEY METRICSMEASURED PUBLIC EVIDENCE
+
+### Bento Cell 12
+
+> 07.1 · UJI 1.61× vs raw · 1,364 UJI samples
+
+### Bento Cell 13
+
+> 07.2 · CROHME 1.44× ICFHR package · 90 CROHME samples
+
+### Bento Cell 14
+
+> 07.3 · DIGILETS 1.09× real corpus · 180 DigiLeTs samples
+
+### Bento Cell 15
+
+> 07.4 · HAUSDORFF 0.00px all measured corpora · exact roundtrip
+
+### Bento Cell 16
+
+> 07.5 · PYPI v0.1.1 PyPI stale · next release closes the version skew
+
+### Bento Cell 17
+
+> 08 · STROKE FIDELITYENCODE AND DECODE A stroke enters. The same stroke exits. 0.0 px proves it.
+
+### Bento Cell 18
+
+> 08.1 · WHAT THE CODEC KEEPSALL FIVE CHANNELS Committed artifacts show bit-exact encode-decode on generated fixtures: int32 (x, y, pressure, tilt, azimuth) buffers seal into a CRC-framed .zpink packet and exit without coordinate change — 0.00 px Hausdorff error confirmed on UJI, CROHME, DigiLeTs, MathWriting, and QuickDraw. CRC rejects malformed payloads before decode. Zero-channel suppression raises CROHME mean compression from 1.52× to 1.76× without altering decoded strokes — a device that omits tilt or azimuth gets better compression, not worse. Non-Python runtime parity is not claimed beyond static bindings checked across PyO3, WASM, Swift, and C#.
+
+### Bento Cell 19
+
+> 08.2 · HONEST BLOCKER Honest Blocker · Three checks remain open: cutting the next release, passing the harder IAM and UNIPEN corpora (IAM is registration-limited, UNIPEN is host-unavailable), and proving a clean-room rebuild from spec. Today the PyPI package at 0.1.1 sits ahead of its bindings and runtime at 0.1.0 — a version skew the next release closes.
+
+### Bento Cell 20
+
+> 09 INK THAT KEEPS THE HAND.
+
+### Bento Cell 21
+
+> 09.1 · THE AMBITION The aim is a stroke record that travels — from a tablet to a server to a researcher's workstation to another device entirely — without losing the pressure, the angle, or the rhythm that made the mark a particular person's. Handwriting becomes citable data, not a frozen picture of itself, across the platforms where pens actually write.
+
+### Bento Cell 22
+
+> 09.2 · WHAT WORKS NOW Working today: 0.00 px Hausdorff error on UJI, CROHME, and DigiLeTs; CRC framing confirmed.
+
+### Bento Cell 23
+
+> 09.3 · WHAT'S STILL OPEN Open: PyPI 0.1.2 release, hard-corpus pass on IAM and UNIPEN, blind-clone closure, shipped runtime parity.
+
+### Bento Cell 24
+
+> 09.4 · EDUCATION · NEAR-TERM (12–24 MO) Student handwriting survives the upload An e-learning platform that stores a million pages of student maths working can keep the hand that wrote them — pressure, hesitation, retraced strokes — not a flattened image. A teacher reviewing late work sees the thinking, not the result.
+
+### Bento Cell 25
+
+> 09.5 · SIGNATURES · NEAR-TERM (12–24 MO) A signature carries the hand A bank or notary capturing a signature on a tablet can archive the full stroke dynamics, not a glyph image. Forensic comparison stops being a visual judgment about pixels and becomes a measurable comparison of pressure curves and pen angles across signings.
+
+### Bento Cell 26
+
+> 09.6 · STYLUS PLATFORMS · MID-TERM (24–48 MO) One stroke packet across devices A stylus drawing made on an iPad reaches a Windows tablet, a web canvas, and an Android phone without a conversion step that drops tilt or smooths pressure. The note-taking app stops choosing between portability and fidelity.
+
+### Bento Cell 27
+
+> 09.7 · RESEARCH ARCHIVES · MID-TERM (24–48 MO) Handwriting corpora become jointly searchable UJI, CROHME, DigiLeTs, and any future corpus on the same exact-geometry codec can be queried as one. A handwriting researcher hunting for a specific letter formation stops running three retrieval pipelines and starts asking one question of one archive.
+
+### Bento Cell 28
+
+> 09.8 · ARCHIVE STANDARD · PARADIGM (48 MO+) Pen computing acquires a common record Notes, signatures, sketches, maths, and annotations from any device resolve to the same kind of stroke record. A handwritten archive becomes a citable, retrievable substrate — the way text and code already are — instead of a folder of frozen images that lose the hand.
+
+</details>
+
+---
+
+Source mapping: product route `/encoding/ZPE-Ink/` -> live public repo `Zer0pa/ZPE-Ink`. README generated from product-page authority plus retained install/dev commands only.
