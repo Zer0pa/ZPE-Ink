@@ -1,9 +1,6 @@
 # ZPE-Ink
 
-## Install / Developer Commands
-
-<!-- INSTALL-DX:START -->
-#### Package Install
+## Package Install
 
 Installable package: `python3.11 -m pip install zpe-ink`.
 Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-ink/).
@@ -13,49 +10,9 @@ Source: [Zer0pa/ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink/).
 python3.11 -m pip install zpe-ink
 ```
 
-Import smoke:
+For full install, smoke, source, and developer commands, [click here](#install-developer-commands-detailed).
 
-```bash
-python3.11 - <<'PY'
-import importlib.metadata as md
-import zpe_ink
-
-print("zpe-ink", md.version("zpe-ink"))
-PY
-```
-
-
-CLI smoke:
-
-```bash
-zpe-ink --help
-zpe-ink-demo --help
-zpe-ink-verify-roundtrip --help
-```
-
-Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
-- Version skew exists: root manifest is 0.1.1 while code/native manifests still carry 0.1.0; align before publishing again.
-<!-- INSTALL-DX:END -->
-
-#### Quick Start
-
-Development install:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e './code[dev]'
-python -m pytest code/tests -q
-python -m zpe_ink demo
-python -m zpe_ink verify-roundtrip
-```
-
-Package build:
-
-```bash
-python -m build
-```
+---
 
 <table width="100%">
 <tr>
@@ -327,3 +284,64 @@ python -m build
 </td>
 </tr>
 </table>
+
+---
+
+<a id="install-developer-commands-detailed"></a>
+
+## Install / Developer Commands Detailed
+
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-ink`.
+Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-ink/).
+Source: [Zer0pa/ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink/).
+
+```bash
+python3.11 -m pip install zpe-ink
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_ink
+
+print("zpe-ink", md.version("zpe-ink"))
+PY
+```
+
+
+CLI smoke:
+
+```bash
+zpe-ink --help
+zpe-ink-demo --help
+zpe-ink-verify-roundtrip --help
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- Version skew exists: root manifest is 0.1.1 while code/native manifests still carry 0.1.0; align before publishing again.
+<!-- INSTALL-DX:END -->
+
+#### Quick Start
+
+Development install:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e './code[dev]'
+python -m pytest code/tests -q
+python -m zpe_ink demo
+python -m zpe_ink verify-roundtrip
+```
+
+Package build:
+
+```bash
+python -m build
+```
