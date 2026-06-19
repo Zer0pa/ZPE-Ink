@@ -19,6 +19,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <td width="100%" valign="top">
 <div><span><b>00 · ZPE-INK</b> · STROKE PROTOCOL</span> <span>RESEARCH-READY · PyPI STALE</span></div>
       <h1>Ink that knows <span>the hand that wrote.</span></h1>
+      <p><strong>Live experiment. Not a release. Ambition headlined. Claims bounded.</strong></p>
       <p>Stylus stroke codec · ZPE-Ink · PyPI <em>zpe-ink</em> 0.1.1 stale · github.com/Zer0pa/ZPE-Ink</p>
       <p>When a stylus draws, the mark carries more than its shape — it carries the pressure of the hand, the angle of the pen, the rhythm of how it moved. That information has always been in digital ink. It has never had a codec that kept it exactly. ZPE-Ink is a Python <em>.zpink</em> encoder that seals the full stroke — <em>x</em>, <em>y</em>, pressure, tilt, azimuth — and returns it with <strong>0.00 px Hausdorff error</strong> on three public handwriting corpora. The hand's rhythm, kept.</p>
 </td>
